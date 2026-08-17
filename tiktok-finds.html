@@ -7,10 +7,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TikTok Finds – Virale Produkte vergleichen | Produktfinder</title>
+<title>TikTok Finds – Produkte vergleichen | Produktfinder</title>
 
 <meta name="description"
-content="Entdecke virale TikTok Finds und vergleiche verschiedene Produktmodelle miteinander.">
+content="Entdecke virale TikTok-Produkte, vergleiche verschiedene Modelle und finde günstige Alternativen.">
+
 
 <style>
 
@@ -106,8 +107,6 @@ nav a {
     font-size: 14px;
 
     opacity: 0.9;
-
-    transition: opacity 0.2s ease;
 }
 
 nav a:hover {
@@ -166,7 +165,7 @@ nav a:hover {
 }
 
 .hero p {
-    max-width: 700px;
+    max-width: 720px;
 
     margin: auto;
 
@@ -177,7 +176,7 @@ nav a:hover {
 
 
 /* =========================
-   HAUPTBEREICH
+   CONTAINER
 ========================= */
 
 .container {
@@ -244,12 +243,7 @@ nav a:hover {
 
     font-weight: bold;
 
-    cursor: pointer;
-
-    transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
+    transition: 0.2s ease;
 }
 
 .category-button:hover {
@@ -266,7 +260,7 @@ nav a:hover {
 
 
 /* =========================
-   VERGLEICHSBEREICH
+   VERGLEICHSTITEL
 ========================= */
 
 .comparison-title {
@@ -294,10 +288,6 @@ nav a:hover {
    KARUSSELL
 ========================= */
 
-.carousel-wrapper {
-    position: relative;
-}
-
 .product-carousel {
     display: flex;
 
@@ -312,10 +302,6 @@ nav a:hover {
     padding: 5px 5px 20px;
 
     scrollbar-width: thin;
-}
-
-.product-carousel::-webkit-scrollbar {
-    height: 6px;
 }
 
 
@@ -357,7 +343,7 @@ nav a:hover {
 ========================= */
 
 .product-image {
-    height: 230px;
+    height: 220px;
 
     background:
         linear-gradient(
@@ -439,8 +425,6 @@ nav a:hover {
     color: #98a2b3;
 
     font-weight: normal;
-
-    margin-top: 2px;
 }
 
 
@@ -495,8 +479,6 @@ nav a:hover {
     display: block;
 
     margin-bottom: 4px;
-
-    color: #111827;
 }
 
 
@@ -523,20 +505,18 @@ nav a:hover {
 
     font-weight: bold;
 
-    transition:
-        transform 0.2s ease,
-        background 0.2s ease;
+    transition: 0.2s ease;
 }
 
 .amazon-button:hover {
-    transform: translateY(-2px);
-
     background: #1f2937;
+
+    transform: translateY(-2px);
 }
 
 
 /* =========================
-   KARUSSELL-HINWEIS
+   WISCH-HINWEIS
 ========================= */
 
 .swipe-hint {
@@ -547,39 +527,6 @@ nav a:hover {
     font-size: 12px;
 
     margin-top: 8px;
-}
-
-
-/* =========================
-   PUNKTE
-========================= */
-
-.dots {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 7px;
-
-    margin-top: 15px;
-}
-
-.dot {
-    width: 7px;
-
-    height: 7px;
-
-    background: #d0d5dd;
-
-    border-radius: 50%;
-}
-
-.dot.active {
-    background: #111827;
-
-    width: 20px;
-
-    border-radius: 10px;
 }
 
 
@@ -615,7 +562,7 @@ nav a:hover {
 
 
 /* =========================
-   VERGLEICHSTABELLE
+   TABELLE
 ========================= */
 
 .table-wrapper {
@@ -638,7 +585,7 @@ nav a:hover {
 
 .compare-table th,
 .compare-table td {
-    padding: 15px;
+    padding: 14px;
 
     text-align: left;
 
@@ -649,12 +596,218 @@ nav a:hover {
 
 .compare-table th {
     background: #f2f4f7;
-
-    font-size: 13px;
 }
 
-.compare-table tr:last-child td {
-    border-bottom: none;
+
+/* =========================
+   ALTERNATIVEN
+========================= */
+
+.alternative-section {
+    margin-top: 40px;
+}
+
+
+/* =========================
+   ALTERNATIVEN HEADER
+========================= */
+
+.alternative-header {
+    background: #fff8e7;
+
+    border: 1px solid #f2dfad;
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    margin-bottom: 20px;
+}
+
+.alternative-label {
+    color: #9a6700;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+.alternative-header h2 {
+    font-size: 27px;
+
+    margin-bottom: 8px;
+}
+
+.alternative-header p {
+    color: #667085;
+
+    font-size: 14px;
+
+    max-width: 780px;
+}
+
+
+/* =========================
+   ALTERNATIVE GRID
+========================= */
+
+.alternatives {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================
+   ALTERNATIVE CARD
+========================= */
+
+.alternative-card {
+    background: white;
+
+    border: 1px solid #eaecf0;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.alternative-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.08);
+}
+
+.alternative-image {
+    height: 190px;
+
+    background: #eef0f3;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 70px;
+}
+
+.alternative-content {
+    padding: 24px;
+}
+
+.alternative-content h3 {
+    font-size: 21px;
+
+    margin-bottom: 8px;
+}
+
+.alternative-price {
+    font-size: 24px;
+
+    font-weight: 800;
+
+    margin: 15px 0;
+}
+
+.price-note {
+    display: block;
+
+    color: #98a2b3;
+
+    font-size: 11px;
+
+    font-weight: normal;
+}
+
+
+/* =========================
+   SPEZIAL LABEL
+========================= */
+
+.principle-label {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    border-radius: 7px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    margin-bottom: 14px;
+}
+
+.same-principle {
+    background: #e9f7ee;
+
+    color: #217a3b;
+}
+
+.different-principle {
+    background: #f2f4f7;
+
+    color: #667085;
+}
+
+
+/* =========================
+   SPAREN
+========================= */
+
+.saving {
+    display: inline-block;
+
+    background: #e9f7ee;
+
+    color: #217a3b;
+
+    padding: 5px 9px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   FAZIT
+========================= */
+
+.final-verdict {
+    margin-top: 25px;
+
+    background: #f7f8fa;
+
+    border-radius: 15px;
+
+    padding: 25px;
+}
+
+.final-verdict h3 {
+    font-size: 20px;
+
+    margin-bottom: 10px;
+}
+
+.final-verdict p {
+    color: #667085;
+
+    font-size: 14px;
 }
 
 
@@ -688,6 +841,27 @@ nav a:hover {
     color: #667085;
 
     font-size: 14px;
+}
+
+
+/* =========================
+   AMAZON HINWEIS
+========================= */
+
+.amazon-note {
+    background: #fff8e7;
+
+    border: 1px solid #f2dfad;
+
+    border-radius: 12px;
+
+    padding: 15px 18px;
+
+    margin-top: 20px;
+
+    color: #6b5500;
+
+    font-size: 12px;
 }
 
 
@@ -753,19 +927,8 @@ footer a {
         font-size: 16px;
     }
 
-    .product-carousel {
-        gap: 14px;
-
-        padding-left: 2px;
-        padding-right: 2px;
-    }
-
     .product-card {
         flex: 0 0 88%;
-    }
-
-    .product-image {
-        height: 210px;
     }
 
     .comparison-title {
@@ -778,6 +941,10 @@ footer a {
 
     .comparison-box {
         padding: 25px 18px;
+    }
+
+    .alternatives {
+        grid-template-columns: 1fr;
     }
 
 }
@@ -856,9 +1023,9 @@ finde das richtige Produkt.
 </h1>
 
 <p>
-Wir vergleichen verschiedene Versionen beliebter
-TikTok-Produkte, damit du nicht nur den Hype siehst,
-sondern das Modell findest, das wirklich zu dir passt.
+Wir vergleichen beliebte Produkte, verschiedene Modelle
+und interessante Alternativen, damit du leichter entscheiden
+kannst, welches Produkt wirklich zu dir passt.
 </p>
 
 </div>
@@ -933,7 +1100,7 @@ class="category-button">
 
 
 <!-- =========================
-     KÜCHE
+     NINJA
 ========================= -->
 
 <section class="section" id="kueche">
@@ -947,7 +1114,7 @@ class="category-button">
 </h2>
 
 <p>
-Drei Modelle, unterschiedliche Funktionen und Preise.
+Verschiedene Modelle der CREAMi-Familie.
 </p>
 
 </div>
@@ -959,15 +1126,10 @@ Drei Modelle, unterschiedliche Funktionen und Preise.
 </div>
 
 
-<div class="carousel-wrapper">
+<div class="product-carousel">
 
 
-<div class="product-carousel" id="creamiCarousel">
-
-
-<!-- =========================
-     CREAMI STANDARD
-========================= -->
+<!-- STANDARD -->
 
 <article class="product-card">
 
@@ -982,22 +1144,24 @@ EINSTIEG
 </span>
 
 <h3>
-Ninja CREAMi Standard
+Ninja CREAMi NC302EU
 </h3>
 
 <p class="product-description">
-Der einfache Einstieg in die CREAMi-Welt.
-Ideal für alle, die hauptsächlich Eiscreme,
-Sorbet und ähnliche Desserts zubereiten möchten.
+Die klassische CREAMi für selbstgemachte
+Eiscreme, Sorbet, Gelato und weitere gefrorene
+Desserts.
 </p>
 
 <div class="price">
-Preis prüfen
-<small>
-Aktueller Amazon-Preis
-</small>
-</div>
 
+ca. 190 €
+
+<small>
+Preis kann sich ändern
+</small>
+
+</div>
 
 <div class="pros-cons">
 
@@ -1006,38 +1170,37 @@ Vorteile
 </strong>
 
 <div class="pros">
-✓ Günstiger Einstieg<br>
-✓ Einfaches Konzept<br>
-✓ Für klassische Eiscreme geeignet
+✓ CREAMi-Konzept<br>
+✓ 7 Programme<br>
+✓ Mix-In-Funktion<br>
+✓ Große Rezeptauswahl
 </div>
-
 
 <strong>
 Nachteile
 </strong>
 
 <div class="cons">
-✕ Weniger Möglichkeiten als neuere Modelle<br>
-✕ Kleinerer Funktionsumfang
+✕ Grundmasse muss vorher eingefroren werden<br>
+✕ Lauter als eine klassische Eismaschine
 </div>
 
 </div>
-
 
 <div class="recommendation">
 
 <strong>
-👤 Für wen?
+💰 Für wen?
 </strong>
 
-Wenn du hauptsächlich Eiscreme machen möchtest
-und nicht alle Zusatzfunktionen benötigst.
+Für alle, die das bekannte CREAMi-Konzept
+ausprobieren möchten, ohne direkt zum
+größeren Premium-Modell zu greifen.
 
 </div>
 
-
 <a
-href="https://www.amazon.de/s?k=Ninja+CREAMi+Eismaschine"
+href="https://www.amazon.de/s?k=Ninja+CREAMi+NC302EU"
 class="amazon-button"
 target="_blank"
 rel="nofollow sponsored noopener">
@@ -1052,9 +1215,7 @@ Bei Amazon ansehen →
 
 
 
-<!-- =========================
-     DELUXE
-========================= -->
+<!-- DELUXE -->
 
 <article class="product-card">
 
@@ -1073,18 +1234,20 @@ Ninja CREAMi Deluxe
 </h3>
 
 <p class="product-description">
-Eine umfangreichere Variante mit größerem
-Fassungsvermögen und mehr Möglichkeiten
-für unterschiedliche Desserts.
+Mehr Fassungsvermögen und zusätzliche
+Programme für Nutzer, die besonders
+vielseitige Desserts zubereiten möchten.
 </p>
 
 <div class="price">
-Preis prüfen
-<small>
-Aktueller Amazon-Preis
-</small>
-</div>
 
+ca. 230–300 €
+
+<small>
+Je nach Angebot und Variante
+</small>
+
+</div>
 
 <div class="pros-cons">
 
@@ -1094,22 +1257,21 @@ Vorteile
 
 <div class="pros">
 ✓ Größeres Fassungsvermögen<br>
-✓ Mehr Programme<br>
-✓ Vielseitiger
+✓ 9 Programme<br>
+✓ Sehr vielseitig<br>
+✓ Re-Spin & Mix-In
 </div>
-
 
 <strong>
 Nachteile
 </strong>
 
 <div class="cons">
-✕ Teurer als das Standardmodell<br>
+✕ Höherer Preis<br>
 ✕ Größeres Gerät
 </div>
 
 </div>
-
 
 <div class="recommendation">
 
@@ -1117,15 +1279,14 @@ Nachteile
 ⭐ Für wen?
 </strong>
 
-Für die meisten Nutzer interessant,
-wenn du regelmäßig verschiedene Desserts
-ausprobieren möchtest.
+Für Nutzer, die regelmäßig verschiedene
+Desserts ausprobieren und mehr
+Möglichkeiten benötigen.
 
 </div>
 
-
 <a
-href="https://www.amazon.de/s?k=Ninja+CREAMi+Deluxe"
+href="https://www.amazon.de/s?k=Ninja+CREAMi+Deluxe+NC501EU"
 class="amazon-button"
 target="_blank"
 rel="nofollow sponsored noopener">
@@ -1140,9 +1301,7 @@ Bei Amazon ansehen →
 
 
 
-<!-- =========================
-     SCOOP & SWIRL
-========================= -->
+<!-- SCOOP SWIRL -->
 
 <article class="product-card">
 
@@ -1157,22 +1316,24 @@ PREMIUM
 </span>
 
 <h3>
-Ninja CREAMi Scoop & Swirl NC701EU
+Ninja CREAMi Scoop & Swirl
 </h3>
 
 <p class="product-description">
-Die umfangreiche Variante mit zusätzlichen
-Möglichkeiten und Funktionen für besonders
-abwechslungsreiche Desserts.
+Das umfangreichste Modell der Auswahl
+mit 13 Programmen und zusätzlicher
+Softeis-Funktion.
 </p>
 
 <div class="price">
-Preis prüfen
-<small>
-Aktueller Amazon-Preis
-</small>
-</div>
 
+ca. 300 €
+
+<small>
+Aktueller Preis kann schwanken
+</small>
+
+</div>
 
 <div class="pros-cons">
 
@@ -1181,24 +1342,23 @@ Vorteile
 </strong>
 
 <div class="pros">
-✓ Sehr vielseitig<br>
 ✓ 13 Programme<br>
-✓ Zwei Behälter<br>
-✓ Scoop- & Swirl-Funktionen
+✓ Softeis-Funktion<br>
+✓ CREAMiFit<br>
+✓ Mix-In<br>
+✓ Sehr vielseitig
 </div>
-
 
 <strong>
 Nachteile
 </strong>
 
 <div class="cons">
-✕ Höherer Anschaffungspreis<br>
-✕ Mehr Funktionen als manche Nutzer benötigen
+✕ Höchster Preis<br>
+✕ Nicht jeder benötigt alle Funktionen
 </div>
 
 </div>
-
 
 <div class="recommendation">
 
@@ -1207,14 +1367,13 @@ Nachteile
 </strong>
 
 Für Nutzer, die möglichst viele Möglichkeiten
-haben möchten und regelmäßig unterschiedliche
-Desserts ausprobieren wollen.
+haben möchten und besonders die
+Softeis-Funktion interessant finden.
 
 </div>
 
-
 <a
-href="https://www.amazon.de/s?k=Ninja+CREAMi+Scoop+Swirl+NC701EU"
+href="https://www.amazon.de/s?k=Ninja+CREAMi+Scoop+Swirl+NC702EU"
 class="amazon-button"
 target="_blank"
 rel="nofollow sponsored noopener">
@@ -1236,31 +1395,20 @@ Bei Amazon ansehen →
 </div>
 
 
-<div class="dots">
-
-<div class="dot active"></div>
-<div class="dot"></div>
-<div class="dot"></div>
-
-</div>
-
-</div>
-
-
 
 <!-- =========================
-     VERGLEICH
+     VERGLEICHSTABELLE
 ========================= -->
 
 <div class="comparison-box">
 
 <h2>
-🤔 Welche CREAMi ist die richtige?
+🤔 Welche CREAMi passt zu dir?
 </h2>
 
 <p>
-Die teuerste Variante ist nicht automatisch die beste.
-Es kommt darauf an, welche Funktionen du tatsächlich brauchst.
+Mehr Funktionen bedeuten nicht automatisch,
+dass das teuerste Modell für jeden die beste Wahl ist.
 </p>
 
 
@@ -1275,7 +1423,7 @@ Eigenschaft
 </th>
 
 <th>
-Standard
+NC302EU
 </th>
 
 <th>
@@ -1287,7 +1435,6 @@ Scoop & Swirl
 </th>
 
 </tr>
-
 
 <tr>
 
@@ -1309,7 +1456,6 @@ Preisniveau
 
 </tr>
 
-
 <tr>
 
 <td>
@@ -1330,28 +1476,6 @@ Vielseitigkeit
 
 </tr>
 
-
-<tr>
-
-<td>
-Fassungsvermögen
-</td>
-
-<td>
-Standard
-</td>
-
-<td>
-Größer
-</td>
-
-<td>
-Größer
-</td>
-
-</tr>
-
-
 <tr>
 
 <td>
@@ -1359,11 +1483,11 @@ Programme
 </td>
 
 <td>
-Weniger
+7
 </td>
 
 <td>
-Mehr
+9
 </td>
 
 <td>
@@ -1372,32 +1496,30 @@ Mehr
 
 </tr>
 
-
 <tr>
 
 <td>
-Für Einsteiger
+Softeis
 </td>
 
 <td>
-⭐⭐⭐⭐⭐
+❌
 </td>
 
 <td>
-⭐⭐⭐⭐
+❌
 </td>
 
 <td>
-⭐⭐⭐
+✅
 </td>
 
 </tr>
 
-
 <tr>
 
 <td>
-Unsere Empfehlung
+Unsere Einschätzung
 </td>
 
 <td>
@@ -1405,11 +1527,11 @@ Unsere Empfehlung
 </td>
 
 <td>
-⭐ Preis-Leistung
+⭐ Vielseitig
 </td>
 
 <td>
-🏆 Maximale Möglichkeiten
+🏆 Maximum
 </td>
 
 </tr>
@@ -1417,6 +1539,324 @@ Unsere Empfehlung
 </table>
 
 </div>
+
+</div>
+
+
+
+<!-- =========================
+     GÜNSTIGERE ALTERNATIVEN
+========================= -->
+
+<div class="alternative-section">
+
+
+<div class="alternative-header">
+
+<div class="alternative-label">
+💰 GÜNSTIGERE ALTERNATIVEN
+</div>
+
+<h2>
+Du möchtest weniger ausgeben?
+</h2>
+
+<p>
+Nicht jeder braucht das teuerste Modell. Deshalb zeigen wir
+dir Alternativen mit einem anderen Preis-Leistungs-Verhältnis.
+Dabei unterscheiden wir ausdrücklich zwischen Geräten,
+die ähnlich funktionieren, und Geräten mit einem anderen
+Funktionsprinzip.
+</p>
+
+</div>
+
+
+
+<div class="alternatives">
+
+
+<!-- =========================
+     CUISINART
+========================= -->
+
+<article class="alternative-card">
+
+<div class="alternative-image">
+🍦
+</div>
+
+<div class="alternative-content">
+
+<span class="principle-label same-principle">
+✓ ÄHNLICHES FUNKTIONSPRINZIP
+</span>
+
+<span class="tag">
+💰 PREIS-LEISTUNGS-TIPP
+</span>
+
+<h3>
+Cuisinart FreezeWand ICEFD10E
+</h3>
+
+<p class="product-description">
+
+Der FreezeWand verfolgt ein ähnliches Grundprinzip
+wie die Ninja: Die vorbereitete Masse wird eingefroren
+und anschließend verarbeitet.
+
+Mit drei 240-ml-Behältern und fünf Programmen
+ist er besonders interessant für kleinere Portionen.
+
+</p>
+
+
+<div class="alternative-price">
+
+ca. 69 €
+
+<span class="price-note">
+Aktueller Amazon-Preis zum Zeitpunkt der Recherche
+</span>
+
+</div>
+
+
+<div class="saving">
+💰 Deutlich günstiger als Ninja
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Ähnliches Grundprinzip<br>
+✓ 3 Behälter<br>
+✓ 5 Programme<br>
+✓ Eis, Sorbet & Milchshake<br>
+✓ Kompakt<br>
+✓ 4,5/5 bei aktuellen Produktdaten
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Kleinere 240-ml-Behälter<br>
+✕ Weniger Programme als Ninja<br>
+✕ Kein Softeis-System wie Scoop & Swirl
+</div>
+
+</div>
+
+
+<div class="recommendation">
+
+<strong>
+💡 Unsere Einschätzung
+</strong>
+
+Wenn du vor allem das Grundprinzip der Ninja
+suchst und deutlich weniger bezahlen möchtest,
+ist der FreezeWand sehr interessant.
+
+Die Ninja bietet dafür das umfangreichere
+System und deutlich mehr Möglichkeiten.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Cuisinart+FreezeWand+ICEFD10E"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Cuisinart bei Amazon ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- =========================
+     WMF
+========================= -->
+
+<article class="alternative-card">
+
+<div class="alternative-image">
+🍨
+</div>
+
+<div class="alternative-content">
+
+<span class="principle-label different-principle">
+ℹ ANDERES FUNKTIONSPRINZIP
+</span>
+
+<span class="tag">
+💰 GÜNSTIGE ALTERNATIVE
+</span>
+
+<h3>
+WMF KÜCHENminis 3-in-1
+</h3>
+
+<p class="product-description">
+
+Die WMF ist eine klassische kompakte Eismaschine.
+Der Gefrierbehälter wird vorgekühlt und die
+Eismasse anschließend während der Zubereitung
+gerührt.
+
+Sie funktioniert deshalb anders als die Ninja.
+
+</p>
+
+
+<div class="alternative-price">
+
+ca. 54–70 €
+
+<span class="price-note">
+Je nach aktuellem Amazon-Angebot
+</span>
+
+</div>
+
+
+<div class="saving">
+💰 Sehr günstiger Einstieg
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Eiscreme<br>
+✓ Sorbet<br>
+✓ Frozen Yogurt<br>
+✓ Kompakt<br>
+✓ Etablierte Marke
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Anderes Funktionsprinzip<br>
+✕ 300-ml-Behälter<br>
+✕ Weniger Möglichkeiten als CREAMi
+</div>
+
+</div>
+
+
+<div class="recommendation">
+
+<strong>
+💡 Unsere Einschätzung
+</strong>
+
+Wenn dir das CREAMi-Prinzip nicht wichtig ist
+und du einfach selbst kleinere Portionen Eis,
+Sorbet oder Frozen Yogurt herstellen möchtest,
+ist die WMF interessant.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=WMF+K%C3%9CCHENminis+3in1+Eismaschine"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+WMF bei Amazon ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+
+
+<!-- =========================
+     ABSCHLIESSENDES FAZIT
+========================= -->
+
+<div class="final-verdict">
+
+<h3>
+🏆 Unsere Einschätzung
+</h3>
+
+<p>
+
+<strong>
+🏆 Du möchtest möglichst viele Möglichkeiten?
+</strong>
+
+Dann ist die Ninja CREAMi die stärkere Wahl.
+Sie bietet je nach Modell deutlich mehr Programme,
+größere Behälter und bei der Scoop & Swirl zusätzlich
+Softeis-Funktionen.
+
+<br><br>
+
+<strong>
+💰 Du möchtest das CREAMi-Prinzip günstiger ausprobieren?
+</strong>
+
+Dann ist der Cuisinart FreezeWand besonders interessant.
+Er verfolgt ein ähnliches Grundprinzip, kostet aber
+deutlich weniger.
+
+<br><br>
+
+<strong>
+🍨 Dir ist das Funktionsprinzip egal?
+</strong>
+
+Dann kann die WMF KÜCHENminis interessant sein.
+Sie ist eine kompakte klassische Eismaschine und
+liegt preislich deutlich niedriger.
+
+<br><br>
+
+<strong>
+👉 Wichtig:
+</strong>
+
+Die günstigeren Alternativen machen die Ninja nicht
+schlecht. Sie bieten vielmehr unterschiedliche Lösungen
+für unterschiedliche Bedürfnisse und Budgets.
+
+</p>
+
+</div>
+
 
 </div>
 
@@ -1442,7 +1882,6 @@ Weitere Produktvergleiche kommen hier.
 
 </div>
 
-
 <div class="info">
 
 <h2>
@@ -1450,9 +1889,9 @@ Bald: Technik im Karussell
 </h2>
 
 <p>
-Hier vergleichen wir beispielsweise verschiedene
-Powerbanks, Ladegeräte, Kopfhörer und andere
-virale Technik-Gadgets miteinander.
+Powerbanks, Ladegeräte, Kopfhörer, Handy-Gadgets
+und weitere virale Technikprodukte werden nach
+dem gleichen Prinzip verglichen.
 </p>
 
 </div>
@@ -1474,21 +1913,21 @@ virale Technik-Gadgets miteinander.
 </h2>
 
 <p>
-Praktische Haushalts- und Küchen-Gadgets.
+Praktische Haushalts-Gadgets.
 </p>
 
 </div>
 
-
 <div class="info">
 
 <h2>
-Bald: Haushalts-Gadgets im Vergleich
+Bald: Haushalts-Gadgets
 </h2>
 
 <p>
-Zum Beispiel verschiedene Mini-Handstaubsauger,
-LED-Gadgets, Küchenhelfer und andere Produkte.
+Verschiedene Modelle, Preisbereiche und
+günstige Alternativen werden hier später
+miteinander verglichen.
 </p>
 
 </div>
@@ -1515,17 +1954,15 @@ Praktische Gadgets für dein Fahrzeug.
 
 </div>
 
-
 <div class="info">
 
 <h2>
-Bald: Auto-Gadgets im Vergleich
+Bald: Auto-Gadgets
 </h2>
 
 <p>
-Hier können wir später beispielsweise
-verschiedene Handyhalterungen, Ladegeräte,
-Organizer und andere Auto-Gadgets vergleichen.
+Handyhalterungen, Ladegeräte, Organizer
+und weitere praktische Produkte.
 </p>
 
 </div>
@@ -1543,25 +1980,25 @@ Organizer und andere Auto-Gadgets vergleichen.
 <div class="section-header">
 
 <h2>
-🔧 Heimwerker Finds
+🔧 Heimwerken Finds
 </h2>
 
 <p>
-Kleine Werkzeuge und clevere Helfer.
+Kleine Werkzeuge und praktische Helfer.
 </p>
 
 </div>
 
-
 <div class="info">
 
 <h2>
-Bald: Werkzeug-Gadgets im Vergleich
+Bald: Werkzeug-Gadgets
 </h2>
 
 <p>
-Zum Beispiel kompakte Akkuschrauber,
-Messwerkzeuge und andere praktische Helfer.
+Auch hier werden wir später Premiumprodukte,
+Preis-Leistungs-Tipps und günstige Alternativen
+miteinander vergleichen.
 </p>
 
 </div>
@@ -1579,15 +2016,28 @@ Messwerkzeuge und andere praktische Helfer.
 <div class="info">
 
 <h2>
-💡 Warum wir Modelle vergleichen
+💡 Unser Prinzip
 </h2>
 
 <p>
-Nicht jeder braucht das teuerste Modell.
-Wir wollen dir zeigen, welche Variante für
-welchen Nutzer sinnvoll ist – damit du nicht
-für Funktionen bezahlst, die du gar nicht brauchst.
+Nicht jeder braucht das teuerste Produkt.
+Wir zeigen deshalb sowohl beliebte Premium-Produkte
+als auch interessante günstigere Alternativen und
+erklären ehrlich, wo die Unterschiede liegen.
 </p>
+
+</div>
+
+
+<div class="amazon-note">
+
+<strong>
+Preis-Hinweis:
+</strong>
+
+Preise und Verfügbarkeit können sich jederzeit ändern.
+Der tatsächlich auf Amazon angezeigte Preis ist
+maßgeblich.
 
 </div>
 
@@ -1641,90 +2091,6 @@ Geschenke
 </p>
 
 </footer>
-
-
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
-<script>
-
-/* =========================
-   KARUSSELL-PUNKTE
-========================= */
-
-const carousel =
-document.getElementById("creamiCarousel");
-
-const dots =
-document.querySelectorAll(".dot");
-
-
-carousel.addEventListener(
-"scroll",
-function() {
-
-const scrollPosition =
-carousel.scrollLeft;
-
-const cardWidth =
-carousel.querySelector(".product-card").offsetWidth + 20;
-
-const index =
-Math.round(
-scrollPosition / cardWidth
-);
-
-dots.forEach(
-(dot, i) => {
-
-dot.classList.toggle(
-"active",
-i === index
-);
-
-}
-);
-
-}
-);
-
-
-/* =========================
-   KATEGORIE BUTTONS
-========================= */
-
-const categoryButtons =
-document.querySelectorAll(
-".category-button"
-);
-
-
-categoryButtons.forEach(
-(button) => {
-
-button.addEventListener(
-"click",
-function() {
-
-categoryButtons.forEach(
-(item) => {
-
-item.classList.remove("active");
-
-}
-);
-
-this.classList.add("active");
-
-}
-);
-
-}
-);
-
-</script>
 
 
 </body>
