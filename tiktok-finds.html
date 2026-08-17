@@ -1,866 +1,1246 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>TikTok Finds – Virale Produkte & Gadgets | Produktfinder</title>
+<meta charset="UTF-8">
 
-    <meta name="description"
-          content="Entdecke virale TikTok Finds, angesagte Gadgets und praktische Produkte, die gerade im Trend liegen.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
+<title>TikTok Finds – Virale Produkte & Gadgets | Produktfinder</title>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<meta name="description"
+content="Entdecke interessante TikTok Finds, virale Gadgets und praktische Produkte, die aktuell im Trend liegen.">
 
-        html {
-            scroll-behavior: smooth;
-        }
+<style>
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f6f7f9;
-            color: #17202a;
-            line-height: 1.6;
-        }
+/* =========================
+   GRUNDLAGEN
+========================= */
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        header {
-            background: #111827;
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-inner {
-            max-width: 1150px;
-            margin: auto;
-            padding: 16px 20px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-        }
-
-        .logo span {
-            color: #f59e0b;
-        }
-
-        nav {
-            display: flex;
-            gap: 20px;
-        }
-
-        nav a {
-            color: white;
-            font-size: 14px;
-            opacity: .9;
-        }
-
-        .hero {
-            background: #111827;
-            color: white;
-            padding: 75px 20px;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: auto;
-        }
-
-        .badge {
-            display: inline-block;
-            background: white;
-            color: #111827;
-            padding: 7px 15px;
-            border-radius: 30px;
-            font-size: 13px;
-            font-weight: bold;
-            margin-bottom: 18px;
-        }
-
-        .hero h1 {
-            font-size: 46px;
-            line-height: 1.15;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: #f59e0b;
-        }
-
-        .hero p {
-            color: #d1d5db;
-            max-width: 650px;
-            margin: auto;
-            font-size: 18px;
-        }
-
-        .container {
-            max-width: 1150px;
-            margin: auto;
-            padding: 55px 20px;
-        }
-
-        .section {
-            margin-bottom: 65px;
-        }
-
-        .section-title {
-            margin-bottom: 25px;
-        }
-
-        .section-title h2 {
-            font-size: 30px;
-        }
-
-        .section-title p {
-            color: #667085;
-            font-size: 14px;
-        }
-
-        .filters {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-
-        .filter {
-            background: white;
-            border: 1px solid #d9dde3;
-            padding: 9px 15px;
-            border-radius: 30px;
-            font-size: 13px;
-            cursor: pointer;
-        }
-
-        .filter.active {
-            background: #111827;
-            color: white;
-            border-color: #111827;
-        }
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .product {
-            background: white;
-            border: 1px solid #eaecf0;
-            border-radius: 16px;
-            overflow: hidden;
-
-            transition:
-                transform .3s ease,
-                box-shadow .3s ease;
-        }
-
-        .product:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 15px 35px rgba(0,0,0,.10);
-        }
-
-        .product-image {
-            height: 210px;
-            background: #eef0f3;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            font-size: 75px;
-        }
-
-        .product-content {
-            padding: 22px;
-        }
-
-        .tag {
-            display: inline-block;
-            background: #f2f4f7;
-            padding: 5px 9px;
-            border-radius: 5px;
-            font-size: 11px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .product h3 {
-            font-size: 20px;
-            margin-bottom: 8px;
-        }
-
-        .product p {
-            color: #667085;
-            font-size: 14px;
-            margin-bottom: 18px;
-        }
-
-        .rating {
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-
-        .button {
-            display: inline-block;
-            background: #111827;
-            color: white;
-            padding: 10px 16px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .info {
-            background: white;
-            border: 1px solid #eaecf0;
-            border-radius: 16px;
-            padding: 30px;
-        }
-
-        .info h2 {
-            margin-bottom: 10px;
-        }
-
-        .info p {
-            color: #667085;
-        }
-
-        footer {
-            background: #0b1120;
-            color: #9ca3af;
-            text-align: center;
-            padding: 35px 20px;
-        }
-
-        footer a {
-            color: #d1d5db;
-            margin: 0 8px;
-            font-size: 13px;
-        }
-
-        @media (max-width: 800px) {
-
-            .products {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .hero h1 {
-                font-size: 38px;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            nav {
-                display: none;
-            }
-
-            .hero {
-                padding: 55px 20px;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .products {
-                grid-template-columns: 1fr;
-            }
-
-        }
-
-.back-button-container {
-    max-width: 1150px;
-    margin: auto;
-    padding: 18px 20px;
-    background: #111827;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.back-button {
-    display: inline-block;
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f7f9;
+    color: #17202a;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: #111827;
     color: white;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+.back {
+    max-width: 1150px;
+    margin: auto;
+
+    padding: 13px 20px;
+}
+
+.back a {
+    color: #d1d5db;
+
     font-size: 14px;
     font-weight: bold;
+
+    transition: color 0.2s ease;
+}
+
+.back a:hover {
+    color: white;
+}
+
+.header-inner {
+    max-width: 1150px;
+    margin: auto;
+
+    padding: 16px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #f59e0b;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: white;
+
+    font-size: 14px;
+
     opacity: 0.9;
+
     transition: opacity 0.2s ease;
 }
 
-.back-button:hover {
+nav a:hover {
     opacity: 1;
 }
 
-    </style>
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    background: #111827;
+
+    color: white;
+
+    padding: 75px 20px;
+
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.hero-label {
+    display: inline-block;
+
+    background: #f59e0b;
+
+    color: #111827;
+
+    padding: 7px 15px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+
+    line-height: 1.15;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #f59e0b;
+}
+
+.hero p {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #d1d5db;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.container {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 55px 20px;
+}
+
+.section {
+    margin-bottom: 70px;
+}
+
+.section-header {
+    margin-bottom: 25px;
+}
+
+.section-header h2 {
+    font-size: 30px;
+
+    margin-bottom: 5px;
+}
+
+.section-header p {
+    color: #667085;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   PRODUKT GRID
+========================= */
+
+.products {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================
+   PRODUKTKARTE
+========================= */
+
+.product-card {
+    background: white;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    border: 1px solid #eaecf0;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.10);
+}
+
+
+/* =========================
+   PRODUKTBILD
+========================= */
+
+.product-image {
+    height: 210px;
+
+    background: #eef0f3;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 75px;
+}
+
+
+/* =========================
+   PRODUKTINHALT
+========================= */
+
+.product-content {
+    padding: 23px;
+}
+
+.tag {
+    display: inline-block;
+
+    background: #f2f4f7;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.product-content h3 {
+    font-size: 20px;
+
+    line-height: 1.3;
+
+    margin-bottom: 8px;
+}
+
+.rating {
+    margin-bottom: 10px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+.rating span {
+    color: #f59e0b;
+}
+
+.product-content p {
+    color: #667085;
+
+    font-size: 14px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   VOR / NACHTEILE
+========================= */
+
+.pros-cons {
+    margin: 18px 0;
+}
+
+.pros-cons strong {
+    display: block;
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+}
+
+.pros {
+    color: #217a3b;
+
+    font-size: 13px;
+
+    margin-bottom: 10px;
+}
+
+.cons {
+    color: #a33a3a;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.amazon-button {
+    display: block;
+
+    width: 100%;
+
+    background: #111827;
+
+    color: white;
+
+    padding: 12px 16px;
+
+    border-radius: 9px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.amazon-button:hover {
+    transform: translateY(-2px);
+
+    background: #1f2937;
+}
+
+
+/* =========================
+   FEATURED NINJA
+========================= */
+
+.featured {
+    background:
+        linear-gradient(
+            135deg,
+            #111827,
+            #1f2937
+        );
+
+    color: white;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    gap: 30px;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.featured-image {
+    width: 180px;
+
+    height: 180px;
+
+    border-radius: 18px;
+
+    background: #374151;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 80px;
+}
+
+.featured-content h2 {
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.featured-content p {
+    color: #d1d5db;
+
+    font-size: 15px;
+
+    margin-bottom: 15px;
+}
+
+.featured .rating {
+    margin-bottom: 15px;
+}
+
+.featured .amazon-button {
+    display: inline-block;
+
+    width: auto;
+
+    background: #f59e0b;
+
+    color: #111827;
+}
+
+
+/* =========================
+   INFO BOX
+========================= */
+
+.info {
+    background: #111827;
+
+    color: white;
+
+    padding: 40px;
+
+    border-radius: 18px;
+
+    text-align: center;
+}
+
+.info h2 {
+    font-size: 28px;
+
+    margin-bottom: 12px;
+}
+
+.info p {
+    max-width: 750px;
+
+    margin: auto;
+
+    color: #d1d5db;
+}
+
+
+/* =========================
+   AMAZON HINWEIS
+========================= */
+
+.amazon-note {
+    background: #fff8e7;
+
+    border: 1px solid #f3dfad;
+
+    color: #6b5500;
+
+    border-radius: 12px;
+
+    padding: 16px 18px;
+
+    margin-top: 20px;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #0b1120;
+
+    color: #9ca3af;
+
+    text-align: center;
+
+    padding: 35px 20px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #d1d5db;
+
+    margin: 0 8px;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav {
+        display: none;
+    }
+
+    .featured {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-image {
+        margin: auto;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 55px 20px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .featured {
+        padding: 25px;
+    }
+
+    .featured-content h2 {
+        font-size: 25px;
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
+
 <header>
 
-<div class="back-button-container">
-    <a href="index.html" class="back-button">
-        ← Zurück zu Produktfinder
-    </a>
+<div class="back">
+
+<a href="index.html">
+← Zurück zu Produktfinder
+</a>
+
 </div>
 
-    <div class="header-inner">
 
-        <a href="index.html" class="logo">
-            Produkt<span>finder</span>
-        </a>
+<div class="header-inner">
 
-        <nav>
+<a href="index.html" class="logo">
+Produkt<span>finder</span>
+</a>
 
-            <a href="index.html">
-                Startseite
-            </a>
 
-            <a href="tiktok-finds.html">
-                TikTok Finds
-            </a>
+<nav>
 
-            <a href="index.html#ratgeber">
-                Ratgeber
-            </a>
+<a href="index.html">
+Startseite
+</a>
 
-        </nav>
+<a href="zuhause.html">
+Zuhause
+</a>
 
-    </div>
+<a href="technik.html">
+Technik
+</a>
+
+<a href="auto.html">
+Auto
+</a>
+
+</nav>
+
+</div>
 
 </header>
 
 
+
 <section class="hero">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <div class="badge">
-            🔥 TIKTOK FINDS
-        </div>
+<div class="hero-label">
+🔥 TIKTOK FINDS
+</div>
 
-        <h1>
-            Was gerade
-            <span>viral geht.</span>
-        </h1>
+<h1>
+Was geht gerade <span>viral?</span>
+</h1>
 
-        <p>
-            Entdecke Produkte und Gadgets, die gerade auf
-            TikTok und Social Media für Aufmerksamkeit sorgen.
-            Wir schauen genauer hin und unterscheiden
-            echte Empfehlungen vom kurzen Hype.
-        </p>
+<p>
+Wir suchen nach Produkten, die auf TikTok und
+Social Media Aufmerksamkeit bekommen – und
+schauen genauer hin, ob sie den Hype wirklich wert sind.
+</p>
 
-    </div>
+</div>
 
 </section>
+
 
 
 <main class="container">
 
 
-    <section class="section">
+<!-- =========================
+     NINJA FEATURED
+========================= -->
 
-        <div class="section-title">
+<section class="section">
 
-            <h2>
-                TikTok Finds entdecken
-            </h2>
+<div class="section-header">
 
-            <p>
-                Durchsuche unsere verschiedenen Trend-Kategorien.
-            </p>
+<h2>
+🔥 Unser Highlight
+</h2>
 
-        </div>
+<p>
+Ein echter Social-Media-Dauerbrenner.
+</p>
 
+</div>
 
-        <div class="filters">
 
-            <a href="#heute" class="filter active">
-                🔥 Heute viral
-            </a>
+<div class="featured">
 
-            <a href="#woche" class="filter">
-                📈 Diese Woche
-            </a>
 
-            <a href="#dauerbrenner" class="filter">
-                ⭐ Dauerbrenner
-            </a>
+<div class="featured-image">
+🍦
+</div>
 
-            <a href="#unter20" class="filter">
-                💰 Unter 20 €
-            </a>
 
-        </div>
+<div class="featured-content">
 
-    </section>
+<div class="tag">
+KÜCHE • TIKTOK FIND
+</div>
 
+<h2>
+Ninja CREAMi Scoop & Swirl NC701EU
+</h2>
 
+<div class="rating">
+<span>★★★★★</span>
+ 4,4–4,5 / 5
+</div>
 
-    <section class="section" id="heute">
+<p>
+Die Ninja CREAMi verwandelt vorbereitete und gefrorene
+Mischungen in Eiscreme, Sorbet, Gelato, Milchshakes
+und weitere Desserts. Die aktuelle NC701EU bietet
+13 Programme und zwei Behälter.
+</p>
 
-        <div class="section-title">
+<div class="pros">
+✓ Sehr vielseitig<br>
+✓ Starker Social-Media-Faktor<br>
+✓ 13 Programme<br>
+✓ Zwei Behälter
+</div>
 
-            <h2>
-                🔥 Heute viral
-            </h2>
+<div class="cons">
+✕ Relativ teuer<br>
+✕ Benötigt Vorbereitung und Einfrieren<br>
+✕ Relativ groß und hörbar
+</div>
 
-            <p>
-                Produkte, die gerade besonders viel
-                Aufmerksamkeit bekommen.
-            </p>
+<br>
 
-        </div>
+<a
+href="https://www.amazon.de/s?k=Ninja+CREAMi+Scoop+%26+Swirl+NC701EU"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
 
+Bei Amazon ansehen →
 
-        <div class="products">
+</a>
 
+</div>
 
-            <article class="product">
+</div>
 
-                <div class="product-image">
-                    📱
-                </div>
+</section>
 
-                <div class="product-content">
 
-                    <span class="tag">
-                        VIRAL
-                    </span>
 
-                    <h3>
-                        Viral Gadget #1
-                    </h3>
+<!-- =========================
+     PRODUKTE
+========================= -->
 
-                    <div class="rating">
-                        ⭐⭐⭐⭐⭐
-                    </div>
+<section class="section">
 
-                    <p>
-                        Hier kommt später eine echte
-                        Produktbeschreibung mit unserer
-                        Einschätzung hin.
-                    </p>
+<div class="section-header">
 
-                    <a href="#" class="button">
-                        Produkt ansehen
-                    </a>
+<h2>
+🔥 Weitere interessante Finds
+</h2>
 
-                </div>
+<p>
+Sechs Produkte, die wir für Produktfinder interessant finden.
+</p>
 
-            </article>
+</div>
 
 
+<div class="products">
 
-            <article class="product">
 
-                <div class="product-image">
-                    🏠
-                </div>
+<!-- UGREEN -->
 
-                <div class="product-content">
+<article class="product-card">
 
-                    <span class="tag">
-                        VIRAL
-                    </span>
+<div class="product-image">
+💳
+</div>
 
-                    <h3>
-                        Viral Gadget #2
-                    </h3>
+<div class="product-content">
 
-                    <div class="rating">
-                        ⭐⭐⭐⭐☆
-                    </div>
+<span class="tag">
+TECHNIK
+</span>
 
-                    <p>
-                        Hier kommt später eine echte
-                        Produktbeschreibung mit unserer
-                        Einschätzung hin.
-                    </p>
+<h3>
+UGREEN Tracker Slim
+</h3>
 
-                    <a href="#" class="button">
-                        Produkt ansehen
-                    </a>
+<div class="rating">
+<span>★★★★★</span>
+ 4,8 / 5
+</div>
 
-                </div>
+<p>
+Sehr dünner Bluetooth-Tracker im Kartenformat,
+der sich besonders für Portemonnaie, Tasche oder
+andere Gegenstände eignet.
+</p>
 
-            </article>
+<div class="pros-cons">
 
+<strong>Vorteile</strong>
 
+<div class="pros">
+✓ Sehr flach<br>
+✓ Geringes Gewicht<br>
+✓ Interessantes Alltags-Gadget
+</div>
 
-            <article class="product">
+<strong>Nachteile</strong>
 
-                <div class="product-image">
-                    🚗
-                </div>
+<div class="cons">
+✕ Funktionsumfang abhängig vom Smartphone-System
+</div>
 
-                <div class="product-content">
+</div>
 
-                    <span class="tag">
-                        VIRAL
-                    </span>
+<a
+href="https://www.amazon.de/s?k=UGREEN+Tracker+Slim"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
 
-                    <h3>
-                        Viral Gadget #3
-                    </h3>
+Bei Amazon ansehen →
 
-                    <div class="rating">
-                        ⭐⭐⭐⭐⭐
-                    </div>
+</a>
 
-                    <p>
-                        Hier kommt später eine echte
-                        Produktbeschreibung mit unserer
-                        Einschätzung hin.
-                    </p>
+</div>
 
-                    <a href="#" class="button">
-                        Produkt ansehen
-                    </a>
+</article>
 
-                </div>
 
-            </article>
 
+<!-- SEVERIN -->
 
-        </div>
+<article class="product-card">
 
-    </section>
+<div class="product-image">
+🧹
+</div>
 
+<div class="product-content">
 
+<span class="tag">
+ZUHAUSE
+</span>
 
-    <section class="section" id="woche">
+<h3>
+Severin HV 7144 S Power home & car Li 20
+</h3>
 
-        <div class="section-title">
+<div class="rating">
+<span>★★★★☆</span>
+ 4,5 / 5
+</div>
 
-            <h2>
-                📈 Diese Woche beliebt
-            </h2>
+<p>
+Kompakter Akku-Handstaubsauger für kleine
+Reinigungsarbeiten zuhause oder im Auto.
+</p>
 
-            <p>
-                Trends, die sich gerade besonders stark
-                entwickeln.
-            </p>
+<div class="pros-cons">
 
-        </div>
+<strong>Vorteile</strong>
 
+<div class="pros">
+✓ Kompakt<br>
+✓ Kabellos<br>
+✓ Für Auto und Zuhause geeignet
+</div>
 
-        <div class="products">
+<strong>Nachteile</strong>
 
+<div class="cons">
+✕ Nicht als Ersatz für einen großen Staubsauger gedacht
+</div>
 
-            <article class="product">
+</div>
 
-                <div class="product-image">
-                    🎧
-                </div>
+<a
+href="https://www.amazon.de/s?k=Severin+HV+7144+S"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
 
-                <div class="product-content">
+Bei Amazon ansehen →
 
-                    <span class="tag">
-                        TREND
-                    </span>
+</a>
 
-                    <h3>
-                        Trend Gadget #1
-                    </h3>
+</div>
 
-                    <p>
-                        Produktbeschreibung folgt.
-                    </p>
+</article>
 
-                    <a href="#" class="button">
-                        Produkt ansehen
-                    </a>
 
-                </div>
 
-            </article>
+<!-- GOVEE -->
 
+<article class="product-card">
 
-            <article class="product">
+<div class="product-image">
+💡
+</div>
 
-                <div class="product-image">
-                    🔌
-                </div>
+<div class="product-content">
 
-                <div class="product-content">
+<span class="tag">
+TECHNIK • ZUHAUSE
+</span>
 
-                    <span class="tag">
-                        TREND
-                    </span>
+<h3>
+Govee RGBIC LED Strip
+</h3>
 
-                    <h3>
-                        Trend Gadget #2
-                    </h3>
+<div class="rating">
+<span>★★★★☆</span>
+ ca. 4,6 / 5
+</div>
 
-                    <p>
-                        Produktbeschreibung folgt.
-                    </p>
+<p>
+Smarte RGBIC-Beleuchtung mit App-Steuerung
+und zahlreichen Farb- und Lichteffekten.
+</p>
 
-                    <a href="#" class="button">
-                        Produkt ansehen
-                    </a>
+<div class="pros-cons">
 
-                </div>
+<strong>Vorteile</strong>
 
-            </article>
+<div class="pros">
+✓ Viele Farben und Effekte<br>
+✓ App-Steuerung<br>
+✓ Sehr gut für Gaming- und Raum-Setups
+</div>
 
+<strong>Nachteile</strong>
 
-            <article class="product">
+<div class="cons">
+✕ Je nach Variante unterschiedliche Ausstattung
+</div>
 
-                <div class="product-image">
-                    🍳
-                </div>
+</div>
 
-                <div class="product-content">
+<a
+href="https://www.amazon.de/s?k=Govee+RGBIC+LED+Strip+M1"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
 
-                    <span class="tag">
-                        TREND
-                    </span>
+Bei Amazon ansehen →
 
-                    <h3>
-                        Trend Gadget #3
-                    </h3>
+</a>
 
-                    <p>
-                        Produktbeschreibung folgt.
-                    </p>
+</div>
 
-                    <a href="#" class="button">
-                        Produkt ansehen
-                    </a>
+</article>
 
-                </div>
 
-            </article>
 
+<!-- BOSCH -->
 
-        </div>
+<article class="product-card">
 
-    </section>
+<div class="product-image">
+🔧
+</div>
 
+<div class="product-content">
 
+<span class="tag">
+HEIMWERKEN
+</span>
 
-    <section class="section" id="dauerbrenner">
+<h3>
+Bosch GO Professional Akku-Schrauber
+</h3>
 
-        <div class="section-title">
+<div class="rating">
+<span>★★★★★</span>
+ 4,6 / 5
+</div>
 
-            <h2>
-                ⭐ TikTok-Dauerbrenner
-            </h2>
+<p>
+Kompakter Akku-Schrauber für kleine Montagearbeiten,
+Möbel und alltägliche Schraubarbeiten.
+</p>
 
-            <p>
-                Produkte, die nicht nur kurz viral waren,
-                sondern dauerhaft interessant bleiben.
-            </p>
+<div class="pros-cons">
 
-        </div>
+<strong>Vorteile</strong>
 
+<div class="pros">
+✓ Kompakt<br>
+✓ Einfache Bedienung<br>
+✓ Für viele kleine Arbeiten geeignet
+</div>
 
-        <div class="products">
+<strong>Nachteile</strong>
 
+<div class="cons">
+✕ Kein Ersatz für einen kräftigen Bohrschrauber
+</div>
 
-            <article class="product">
+</div>
 
-                <div class="product-image">
-                    ✨
-                </div>
+<a
+href="https://www.amazon.de/s?k=Bosch+GO+Professional+Akku-Schrauber"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
 
-                <div class="product-content">
+Bei Amazon ansehen →
 
-                    <span class="tag">
-                        DAUERBRENNER
-                    </span>
+</a>
 
-                    <h3>
-                        Dauerbrenner #1
-                    </h3>
+</div>
 
-                    <p>
-                        Produktbeschreibung folgt.
-                    </p>
+</article>
 
-                    <a href="#" class="button">
-                        Produkt ansehen
-                    </a>
 
-                </div>
 
-            </article>
+<!-- NEEWER -->
 
+<article class="product-card">
 
-            <article class="product">
+<div class="product-image">
+❄️
+</div>
 
-                <div class="product-image">
-                    🔥
-                </div>
+<div class="product-content">
 
-                <div class="product-content">
+<span class="tag">
+TECHNIK
+</span>
 
-                    <span class="tag">
-                        DAUERBRENNER
-                    </span>
+<h3>
+NEEWER PA069 Handy-Kühler
+</h3>
 
-                    <h3>
-                        Dauerbrenner #2
-                    </h3>
+<div class="rating">
+<span>★★★★☆</span>
+ 4,3 / 5
+</div>
 
-                    <p>
-                        Produktbeschreibung folgt.
-                    </p>
+<p>
+Magnetischer Smartphone-Kühler für Gaming,
+Streaming und Situationen, in denen das Smartphone
+stärker belastet wird.
+</p>
 
-                    <a href="#" class="button">
-                        Produkt ansehen
-                    </a>
+<div class="pros-cons">
 
-                </div>
+<strong>Vorteile</strong>
 
-            </article>
+<div class="pros">
+✓ Kompakt<br>
+✓ Magnetische Befestigung<br>
+✓ Interessant für Gaming
+</div>
 
+<strong>Nachteile</strong>
 
-            <article class="product">
+<div class="cons">
+✕ Kompatibilität mit Smartphone/Case beachten
+</div>
 
-                <div class="product-image">
-                    💡
-                </div>
+</div>
 
-                <div class="product-content">
+<a
+href="https://www.amazon.de/s?k=NEEWER+PA069+Handy+K%C3%BChler"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
 
-                    <span class="tag">
-                        DAUERBRENNER
-                    </span>
+Bei Amazon ansehen →
 
-                    <h3>
-                        Dauerbrenner #3
-                    </h3>
+</a>
 
-                    <p>
-                        Produktbeschreibung folgt.
-                    </p>
+</div>
 
-                    <a href="#" class="button">
-                        Produkt ansehen
-                    </a>
+</article>
 
-                </div>
 
-            </article>
 
+<!-- ZUSATZ -->
 
-        </div>
+<article class="product-card">
 
-    </section>
+<div class="product-image">
+🔥
+</div>
 
+<div class="product-content">
 
+<span class="tag">
+TIKTOK FIND
+</span>
 
-    <section class="section" id="unter20">
+<h3>
+Weitere virale Gadgets
+</h3>
 
-        <div class="section-title">
+<div class="rating">
+<span>🔥</span>
+ Wird regelmäßig aktualisiert
+</div>
 
-            <h2>
-                💰 TikTok Finds unter 20 €
-            </h2>
+<p>
+Wir suchen laufend nach neuen Produkten,
+die auf TikTok und Social Media Aufmerksamkeit bekommen.
+</p>
 
-            <p>
-                Kleine virale Produkte mit niedriger
-                Einstiegshürde.
-            </p>
+<div class="pros-cons">
 
-        </div>
+<strong>Unser Ziel</strong>
 
+<div class="pros">
+✓ Praktischer Nutzen<br>
+✓ Interessanter Preis<br>
+✓ Gute Eignung für Social Media
+</div>
 
-        <div class="info">
+<strong>Wichtig</strong>
 
-            <h2>
-                Bald hier: echte Empfehlungen
-            </h2>
+<div class="cons">
+✕ Viral bedeutet nicht automatisch gut
+</div>
 
-            <p>
-                Wir füllen diesen Bereich anschließend
-                mit echten Produkten, aktuellen Preisen,
-                Bewertungen und ausführlichen Einschätzungen.
-            </p>
+</div>
 
-        </div>
+<a
+href="index.html"
+class="amazon-button">
 
-    </section>
+Weitere Produktfinder entdecken →
 
+</a>
 
+</div>
 
-    <section class="section">
+</article>
 
-        <div class="info">
 
-            <h2>
-                🔎 Mehr als nur ein viraler Hype
-            </h2>
+</div>
 
-            <p>
-                Nicht jedes Produkt, das auf TikTok viral geht,
-                ist automatisch gut. Deshalb wollen wir bei
-                Produktfinder nicht einfach Trends kopieren,
-                sondern erklären, ob ein Produkt tatsächlich
-                sinnvoll ist und für wen es sich lohnt.
-            </p>
+</section>
 
-        </div>
 
-    </section>
+
+<!-- =========================
+     HINWEIS
+========================= -->
+
+<section class="section">
+
+<div class="info">
+
+<h2>
+🔎 Nicht jeder TikTok-Hype ist ein guter Kauf
+</h2>
+
+<p>
+Unser Ziel ist nicht, einfach virale Produkte zu sammeln.
+Wir wollen herausfinden, welche Produkte tatsächlich
+einen sinnvollen Nutzen bieten und bei welchen man
+sich den Kauf eher sparen kann.
+</p>
+
+</div>
+
+
+<div class="amazon-note">
+
+<strong>Hinweis:</strong>
+
+Produktpreise und Verfügbarkeit können sich ändern.
+Für den tatsächlichen Preis und die aktuelle Verfügbarkeit
+ist die jeweilige Amazon-Produktseite maßgeblich.
+
+Die dargestellten Produktinformationen dienen zunächst
+der Orientierung. Sobald die Amazon-Partnerlinks und
+offiziellen Produktdaten eingebunden werden, aktualisieren
+wir die Produktdarstellung entsprechend den Amazon-Richtlinien.
+
+</div>
+
+</section>
 
 
 </main>
 
 
+
 <footer>
 
-    <p>
-        © 2026 Produktfinder
-    </p>
+<p>
+© 2026 Produktfinder
+</p>
 
-    <p>
+<p>
 
-        <a href="index.html">
-            Startseite
-        </a>
+<a href="index.html">
+Startseite
+</a>
 
-        |
+<a href="zuhause.html">
+Zuhause
+</a>
 
-        <a href="#">
-            Impressum
-        </a>
+<a href="technik.html">
+Technik
+</a>
 
-        |
+<a href="auto.html">
+Auto
+</a>
 
-        <a href="#">
-            Datenschutz
-        </a>
+<a href="unterwegs.html">
+Unterwegs
+</a>
 
-    </p>
+<a href="heimwerken.html">
+Heimwerken
+</a>
+
+<a href="geschenke.html">
+Geschenke
+</a>
+
+</p>
 
 </footer>
 
 
 </body>
+
 </html>
