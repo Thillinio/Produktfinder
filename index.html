@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Produktfinder – Produkte entdecken & vergleichen</title>
+    <title>Produktfinder – Praktische Produkte & Gadgets entdecken</title>
 
-    <meta name="description" content="Produktfinder hilft dir dabei, interessante Produkte zu entdecken und miteinander zu vergleichen.">
+    <meta name="description"
+          content="Produktfinder entdeckt praktische Gadgets, nützliche Produkte und clevere Helfer für den Alltag.">
 
     <style>
         * {
@@ -17,23 +18,31 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #f5f6f8;
-            color: #1f2937;
+            background: #f6f7f9;
+            color: #17202a;
             line-height: 1.6;
         }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* HEADER */
 
         header {
             background: #111827;
             color: white;
-            padding: 18px 20px;
             position: sticky;
             top: 0;
-            z-index: 10;
+            z-index: 100;
         }
 
-        .nav {
-            max-width: 1100px;
+        .header-inner {
+            max-width: 1150px;
             margin: auto;
+            padding: 16px 20px;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -41,327 +50,252 @@
 
         .logo {
             font-size: 24px;
-            font-weight: bold;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #f59e0b;
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
         }
 
         nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 15px;
+            color: #ffffff;
+            font-size: 14px;
+            opacity: 0.9;
         }
 
+        nav a:hover {
+            opacity: 1;
+        }
+
+        /* HERO */
+
         .hero {
-            background: white;
+            background: #ffffff;
+            padding: 75px 20px 65px;
             text-align: center;
-            padding: 70px 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: #fff3d6;
+            color: #9a6700;
+            padding: 7px 14px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 18px;
         }
 
         .hero h1 {
-            font-size: 42px;
-            margin-bottom: 15px;
+            font-size: 46px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #f59e0b;
         }
 
         .hero p {
             max-width: 650px;
             margin: auto;
-            color: #6b7280;
+            color: #667085;
             font-size: 18px;
         }
 
-        .container {
-            max-width: 1100px;
-            margin: 45px auto;
-            padding: 0 20px;
+        /* SEARCH */
+
+        .search-box {
+            max-width: 650px;
+            margin: 30px auto 0;
+
+            display: flex;
+            background: white;
+            border: 1px solid #d9dde3;
+            border-radius: 12px;
+            padding: 5px;
         }
 
-        .section-title {
-            font-size: 28px;
+        .search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 13px;
+            font-size: 15px;
+            min-width: 0;
+        }
+
+        .search-box button {
+            border: none;
+            background: #111827;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* MAIN */
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 55px 20px;
+        }
+
+        .section {
+            margin-bottom: 65px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
             margin-bottom: 25px;
         }
 
+        .section-header h2 {
+            font-size: 30px;
+        }
+
+        .section-header p {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        /* CATEGORIES */
+
         .categories {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(6, 1fr);
             gap: 15px;
-            margin-bottom: 55px;
         }
 
         .category {
             background: white;
-            padding: 25px 15px;
-            border-radius: 12px;
+            border-radius: 14px;
+            padding: 22px 12px;
             text-align: center;
-            text-decoration: none;
-            color: #111827;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-            transition: transform 0.2s;
+            border: 1px solid #eaecf0;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .category:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
         }
 
         .category-icon {
-            font-size: 32px;
+            font-size: 35px;
             margin-bottom: 8px;
         }
 
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 22px;
+        .category strong {
+            display: block;
+            font-size: 15px;
         }
 
-        .product {
+        .category small {
+            color: #667085;
+            font-size: 12px;
+        }
+
+        /* PRODUCT CARDS */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .product-card {
             background: white;
-            border-radius: 14px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.07);
-            padding: 22px;
+            border: 1px solid #eaecf0;
         }
 
         .product-image {
-            height: 170px;
-            background: #e5e7eb;
-            border-radius: 10px;
+            height: 180px;
+            background: #eef0f3;
+
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 55px;
-            margin-bottom: 18px;
+
+            font-size: 65px;
         }
 
-        .product h3 {
+        .product-content {
+            padding: 22px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #f2f4f7;
+            padding: 5px 9px;
+            border-radius: 5px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-content h3 {
             font-size: 20px;
             margin-bottom: 8px;
         }
 
-        .rating {
-            margin-bottom: 10px;
-        }
-
-        .product p {
-            color: #6b7280;
-            margin-bottom: 15px;
+        .product-content p {
+            color: #667085;
+            font-size: 14px;
+            margin-bottom: 18px;
         }
 
         .button {
             display: inline-block;
             background: #111827;
             color: white;
-            padding: 11px 18px;
+            padding: 10px 16px;
             border-radius: 8px;
-            text-decoration: none;
+            font-size: 13px;
             font-weight: bold;
         }
 
-        .info {
+        /* PRICE SECTIONS */
+
+        .price-boxes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .price-box {
             background: white;
-            margin-top: 55px;
+            border-radius: 15px;
             padding: 30px;
-            border-radius: 14px;
+            border: 1px solid #eaecf0;
         }
 
-        footer {
-            background: #111827;
-            color: #d1d5db;
-            text-align: center;
-            padding: 35px 20px;
-            margin-top: 70px;
+        .price-box .emoji {
+            font-size: 35px;
+            margin-bottom: 12px;
         }
 
-        footer a {
-            color: #d1d5db;
-            margin: 0 8px;
+        .price-box h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
         }
 
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            nav a {
-                margin-left: 8px;
-                font-size: 13px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-<header>
-    <div class="nav">
-        <div class="logo">Produktfinder</div>
-
-        <nav>
-            <a href="#">Startseite</a>
-            <a href="#kategorien">Kategorien</a>
-            <a href="#empfehlungen">Empfehlungen</a>
-        </nav>
-    </div>
-</header>
-
-<section class="hero">
-    <h1>Finde das passende Produkt</h1>
-
-    <p>
-        Wir helfen dir dabei, interessante Produkte zu entdecken,
-        miteinander zu vergleichen und die passende Entscheidung zu treffen.
-    </p>
-</section>
-
-<main class="container">
-
-    <section id="kategorien">
-        <h2 class="section-title">Kategorien</h2>
-
-        <div class="categories">
-
-            <a class="category" href="#">
-                <div class="category-icon">💻</div>
-                Technik
-            </a>
-
-            <a class="category" href="#">
-                <div class="category-icon">🎮</div>
-                Gaming
-            </a>
-
-            <a class="category" href="#">
-                <div class="category-icon">🏠</div>
-                Haushalt
-            </a>
-
-            <a class="category" href="#">
-                <div class="category-icon">🍳</div>
-                Küche
-            </a>
-
-            <a class="category" href="#">
-                <div class="category-icon">🚗</div>
-                Auto
-            </a>
-
-            <a class="category" href="#">
-                <div class="category-icon">🏋️</div>
-                Fitness
-            </a>
-
-        </div>
-    </section>
-
-
-    <section id="empfehlungen">
-
-        <h2 class="section-title">Unsere Empfehlungen</h2>
-
-        <div class="products">
-
-            <article class="product">
-
-                <div class="product-image">
-                    🎧
-                </div>
-
-                <h3>Gaming-Headsets</h3>
-
-                <div class="rating">
-                    ⭐⭐⭐⭐⭐
-                </div>
-
-                <p>
-                    Entdecke interessante Gaming-Headsets
-                    für verschiedene Ansprüche und Budgets.
-                </p>
-
-                <a class="button" href="#">
-                    Empfehlungen ansehen
-                </a>
-
-            </article>
-
-
-            <article class="product">
-
-                <div class="product-image">
-                    🔧
-                </div>
-
-                <h3>Akkuschrauber</h3>
-
-                <div class="rating">
-                    ⭐⭐⭐⭐⭐
-                </div>
-
-                <p>
-                    Welche Akkuschrauber eignen sich für
-                    Heimwerker und welche Modelle sind besonders interessant?
-                </p>
-
-                <a class="button" href="#">
-                    Empfehlungen ansehen
-                </a>
-
-            </article>
-
-
-            <article class="product">
-
-                <div class="product-image">
-                    ☕
-                </div>
-
-                <h3>Kaffeemaschinen</h3>
-
-                <div class="rating">
-                    ⭐⭐⭐⭐⭐
-                </div>
-
-                <p>
-                    Vergleiche verschiedene Kaffeemaschinen
-                    und finde ein Modell passend zu deinen Bedürfnissen.
-                </p>
-
-                <a class="button" href="#">
-                    Empfehlungen ansehen
-                </a>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <section class="info">
-
-        <h2>Warum Produktfinder?</h2>
-
-        <p>
-            Die Auswahl an Produkten im Internet kann schnell
-            unübersichtlich werden. Produktfinder soll dir dabei
-            helfen, verschiedene Produkte übersichtlich zu entdecken
-            und wichtige Eigenschaften miteinander zu vergleichen.
-        </p>
-
-    </section>
-
-</main>
-
-
-<footer>
-
-    <p>© 2026 Produktfinder</p>
-
-    <p>
-        <a href="#">Impressum</a>
-        |
-        <a href="#">Datenschutz</a>
-    </p>
-
-</footer>
-
-</body>
-  </html>
+        .price-box p {
+            color: #667085;
+            margin-bottom:
