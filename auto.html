@@ -1,187 +1,920 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Auto – Gadgets & Zubehör | Produktfinder</title>
+<title>Auto Finds – Praktische Auto-Gadgets | Produktfinder</title>
 
-<meta name="description" content="Praktische Auto-Gadgets, Zubehör, Organizer und clevere Helfer für dein Fahrzeug.">
+<meta name="description"
+content="Virale Auto-Gadgets entdecken, vergleichen und herausfinden, ob sie wirklich sinnvoll sind.">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:#f6f7f9;color:#17202a;line-height:1.6}
-a{text-decoration:none;color:inherit}
 
-header{background:#111827;color:white;position:sticky;top:0;z-index:100}
+/* ==================================================
+   GRUNDLAGEN
+================================================== */
 
-.back{
-max-width:1150px;
-margin:auto;
-padding:14px 20px;
-background:#111827
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.back a{color:#d1d5db;font-size:14px;font-weight:bold}
-
-.header-inner{
-max-width:1150px;
-margin:auto;
-padding:16px 20px;
-display:flex;
-justify-content:space-between;
-align-items:center
+html {
+    scroll-behavior: smooth;
 }
 
-.logo{font-size:24px;font-weight:800}
-.logo span{color:#f59e0b}
-
-nav{display:flex;gap:20px}
-nav a{color:white;font-size:14px}
-
-.hero{
-background:white;
-padding:65px 20px;
-text-align:center
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f7f9;
+    color: #17202a;
+    line-height: 1.6;
 }
 
-.hero-content{max-width:800px;margin:auto}
-
-.icon{font-size:55px;margin-bottom:15px}
-
-.hero h1{font-size:44px;margin-bottom:15px}
-.hero h1 span{color:#f59e0b}
-
-.hero p{
-max-width:650px;
-margin:auto;
-color:#667085;
-font-size:18px
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-.container{
-max-width:1150px;
-margin:auto;
-padding:55px 20px
+
+/* ==================================================
+   SCROLL-ANIMATION
+================================================== */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
 }
 
-.section{margin-bottom:65px}
-.title{margin-bottom:25px}
-.title h2{font-size:30px}
-.title p{color:#667085}
-
-.products{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.card{
-background:white;
-border:1px solid #eaecf0;
-border-radius:16px;
-overflow:hidden;
-transition:.3s
+
+/* ==================================================
+   HEADER
+================================================== */
+
+header {
+    background: #111827;
+    color: white;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
 }
 
-.card:hover{
-transform:translateY(-7px);
-box-shadow:0 15px 35px rgba(0,0,0,.1)
+.back {
+    max-width: 1150px;
+    margin: auto;
+
+    padding: 9px 20px;
 }
 
-.image{
-height:190px;
-background:#eef0f3;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:70px
+.back a {
+    color: #d1d5db;
+
+    font-size: 13px;
+    font-weight: bold;
 }
 
-.content{padding:22px}
-
-.tag{
-display:inline-block;
-background:#f2f4f7;
-padding:5px 9px;
-border-radius:5px;
-font-size:11px;
-font-weight:bold;
-margin-bottom:10px
+.back a:hover {
+    color: white;
 }
 
-.card h3{font-size:20px;margin-bottom:8px}
+.header-inner {
+    max-width: 1150px;
+    margin: auto;
 
-.card p{
-color:#667085;
-font-size:14px;
-margin-bottom:18px
+    padding: 14px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.button{
-display:inline-block;
-background:#111827;
-color:white;
-padding:10px 16px;
-border-radius:8px;
-font-size:13px;
-font-weight:bold
+.logo {
+    font-size: 24px;
+    font-weight: 800;
 }
 
-.info{
-background:#111827;
-color:white;
-padding:40px;
-border-radius:18px;
-text-align:center
+.logo span {
+    color: #f59e0b;
 }
 
-.info p{
-color:#d1d5db;
-max-width:700px;
-margin:10px auto 0
+nav {
+    display: flex;
+    gap: 22px;
 }
 
-footer{
-background:#0b1120;
-color:#9ca3af;
-text-align:center;
-padding:35px 20px
+nav a {
+    color: white;
+    font-size: 14px;
+    opacity: 0.9;
 }
 
-footer a{color:#d1d5db;margin:0 8px}
-
-@media(max-width:800px){
-.products{grid-template-columns:repeat(2,1fr)}
-nav{display:none}
+nav a:hover {
+    opacity: 1;
 }
 
-@media(max-width:600px){
-.products{grid-template-columns:1fr}
-.hero h1{font-size:34px}
-.hero p{font-size:16px}
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+    background: #111827;
+    color: white;
+
+    padding: 62px 20px;
+
+    text-align: center;
 }
+
+.hero-content {
+    max-width: 820px;
+    margin: auto;
+}
+
+.hero-label {
+    display: inline-block;
+
+    background: #f59e0b;
+    color: #111827;
+
+    padding: 6px 13px;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    margin-bottom: 16px;
+}
+
+.hero h1 {
+    font-size: 44px;
+
+    line-height: 1.15;
+
+    margin-bottom: 16px;
+}
+
+.hero h1 span {
+    color: #f59e0b;
+}
+
+.hero p {
+    max-width: 720px;
+
+    margin: auto;
+
+    color: #d1d5db;
+
+    font-size: 17px;
+}
+
+
+/* ==================================================
+   CONTAINER
+================================================== */
+
+.container {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 50px 20px;
+}
+
+.section {
+    margin-bottom: 65px;
+}
+
+.section-header {
+    margin-bottom: 22px;
+}
+
+.section-header h2 {
+    font-size: 29px;
+
+    margin-bottom: 5px;
+}
+
+.section-header p {
+    color: #667085;
+
+    font-size: 14px;
+}
+
+
+/* ==================================================
+   NAVIGATION
+================================================== */
+
+.category-navigation {
+    display: flex;
+
+    gap: 10px;
+
+    overflow-x: auto;
+
+    padding-bottom: 7px;
+
+    scrollbar-width: none;
+}
+
+.category-navigation::-webkit-scrollbar {
+    display: none;
+}
+
+.category-button {
+    flex-shrink: 0;
+
+    background: white;
+
+    border: 1px solid #e1e4e8;
+
+    padding: 9px 15px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.category-button:hover {
+    transform: translateY(-2px);
+}
+
+.category-button.active {
+    background: #111827;
+
+    color: white;
+
+    border-color: #111827;
+}
+
+
+/* ==================================================
+   PRODUKTGRUPPE
+================================================== */
+
+.product-group {
+    margin-bottom: 75px;
+}
+
+.group-title {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 20px;
+}
+
+.group-title h2 {
+    font-size: 29px;
+
+    line-height: 1.2;
+}
+
+.group-title p {
+    color: #667085;
+
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   KARUSSELL
+================================================== */
+
+.product-carousel {
+    display: flex;
+
+    gap: 20px;
+
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+
+    padding: 5px 5px 18px;
+
+    scrollbar-width: thin;
+}
+
+.product-card {
+    flex: 0 0 calc(33.333% - 14px);
+
+    scroll-snap-align: start;
+
+    background: white;
+
+    border: 1px solid #eaecf0;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.04);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,0.09);
+}
+
+
+/* ==================================================
+   PRODUKTBILD
+================================================== */
+
+.product-image {
+    height: 190px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef0f3,
+            #f8f9fa
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 75px;
+}
+
+
+/* ==================================================
+   PRODUKTINHALT
+================================================== */
+
+.product-content {
+    padding: 23px;
+}
+
+.tag {
+    display: inline-block;
+
+    background: #fff3d6;
+
+    color: #9a6700;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    margin-bottom: 9px;
+}
+
+.product-content h3 {
+    font-size: 20px;
+
+    line-height: 1.3;
+
+    margin-bottom: 8px;
+}
+
+.description {
+    color: #667085;
+
+    font-size: 13px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ==================================================
+   PREIS
+================================================== */
+
+.price {
+    font-size: 21px;
+
+    font-weight: 800;
+
+    margin-bottom: 3px;
+}
+
+.price-note {
+    color: #98a2b3;
+
+    font-size: 10px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ==================================================
+   BEWERTUNG
+================================================== */
+
+.rating {
+    margin-bottom: 15px;
+
+    font-size: 13px;
+}
+
+
+/* ==================================================
+   PROS / CONS
+================================================== */
+
+.pros-cons {
+    margin-bottom: 17px;
+}
+
+.pros-cons strong {
+    display: block;
+
+    font-size: 12px;
+
+    margin-bottom: 4px;
+}
+
+.pros {
+    color: #217a3b;
+
+    font-size: 12px;
+
+    margin-bottom: 10px;
+}
+
+.cons {
+    color: #a33a3a;
+
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   FAZIT
+================================================== */
+
+.verdict {
+    background: #f7f8fa;
+
+    border-radius: 10px;
+
+    padding: 12px;
+
+    margin-bottom: 17px;
+
+    font-size: 12px;
+}
+
+.verdict strong {
+    display: block;
+
+    margin-bottom: 4px;
+}
+
+
+/* ==================================================
+   AMAZON BUTTON
+================================================== */
+
+.amazon-button {
+    display: block;
+
+    width: 100%;
+
+    background: #111827;
+
+    color: white;
+
+    padding: 11px 15px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.amazon-button:hover {
+    background: #1f2937;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   SWIPE
+================================================== */
+
+.swipe-hint {
+    text-align: center;
+
+    color: #98a2b3;
+
+    font-size: 11px;
+
+    margin-top: 6px;
+}
+
+
+/* ==================================================
+   VERGLEICH
+================================================== */
+
+.compare-box {
+    background: #111827;
+
+    color: white;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    margin-top: 25px;
+}
+
+.compare-box h3 {
+    font-size: 24px;
+
+    margin-bottom: 8px;
+}
+
+.compare-box > p {
+    color: #d1d5db;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: white;
+
+    color: #17202a;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 12px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #eaecf0;
+
+    font-size: 12px;
+}
+
+th {
+    background: #f2f4f7;
+}
+
+
+/* ==================================================
+   QUELLEN
+================================================== */
+
+.sources {
+    background: white;
+
+    border: 1px solid #eaecf0;
+
+    border-radius: 18px;
+
+    padding: 27px;
+
+    margin-top: 25px;
+}
+
+.sources h3 {
+    font-size: 22px;
+
+    margin-bottom: 7px;
+}
+
+.sources-intro {
+    color: #667085;
+
+    font-size: 12px;
+
+    margin-bottom: 20px;
+
+    max-width: 750px;
+}
+
+.source-group {
+    margin-bottom: 22px;
+}
+
+.source-group:last-child {
+    margin-bottom: 0;
+}
+
+.source-group h4 {
+    font-size: 14px;
+
+    margin-bottom: 9px;
+}
+
+.source-links {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.source-link {
+    display: inline-block;
+
+    background: #f7f8fa;
+
+    border: 1px solid #eaecf0;
+
+    border-radius: 9px;
+
+    padding: 9px 12px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.source-link:hover {
+    background: #eef0f3;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   TRANSPARENZ
+================================================== */
+
+.transparency {
+    background: #fff8e7;
+
+    border: 1px solid #f2dfad;
+
+    border-radius: 12px;
+
+    padding: 14px 16px;
+
+    margin-top: 20px;
+
+    color: #6b5500;
+
+    font-size: 11px;
+}
+
+
+/* ==================================================
+   INFO
+================================================== */
+
+.info {
+    background: #111827;
+
+    color: white;
+
+    padding: 38px;
+
+    border-radius: 18px;
+
+    text-align: center;
+}
+
+.info h2 {
+    font-size: 27px;
+
+    margin-bottom: 12px;
+}
+
+.info p {
+    max-width: 760px;
+
+    margin: auto;
+
+    color: #d1d5db;
+
+    font-size: 14px;
+}
+
+.affiliate-note {
+    max-width: 800px;
+
+    margin: 25px auto 0;
+
+    color: #98a2b3;
+
+    font-size: 10px;
+
+    text-align: center;
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+    background: #0b1120;
+
+    color: #9ca3af;
+
+    text-align: center;
+
+    padding: 32px 20px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #d1d5db;
+
+    margin: 0 7px;
+
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+    .product-card {
+        flex: 0 0 48%;
+    }
+
+    nav {
+        display: none;
+    }
+
+}
+
+
+/* ==================================================
+   HANDY
+================================================== */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 48px 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 40px 18px;
+    }
+
+    .product-card {
+        flex: 0 0 88%;
+    }
+
+    .group-title {
+        display: block;
+    }
+
+    .group-title p {
+        margin-top: 5px;
+    }
+
+    .compare-box {
+        padding: 23px 17px;
+    }
+
+    .sources {
+        padding: 22px;
+    }
+
+    .source-links {
+        display: grid;
+
+        grid-template-columns: 1fr;
+    }
+
+    .source-link {
+        width: 100%;
+    }
+
+    .info {
+        padding: 28px 20px;
+    }
+
+}
+
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- ==================================================
+     HEADER
+================================================== -->
 
 <header>
 
 <div class="back">
-<a href="index.html">← Zurück zu Produktfinder</a>
+
+<a href="index.html">
+← Zurück zu Produktfinder
+</a>
+
 </div>
+
 
 <div class="header-inner">
 
-<a href="index.html" class="logo">Produkt<span>finder</span></a>
+<a href="index.html" class="logo">
+Produkt<span>finder</span>
+</a>
+
 
 <nav>
-<a href="index.html">Startseite</a>
-<a href="tiktok-finds.html">TikTok Finds</a>
-<a href="technik.html">Technik</a>
-<a href="zuhause.html">Zuhause</a>
+
+<a href="index.html">
+Startseite
+</a>
+
+<a href="tiktok-finds.html">
+TikTok Finds
+</a>
+
+<a href="technik.html">
+Technik
+</a>
+
+<a href="zuhause.html">
+Zuhause
+</a>
+
+<a href="unterwegs.html">
+Unterwegs
+</a>
+
+<a href="auto.html">
+Auto
+</a>
+
 </nav>
 
 </div>
@@ -189,147 +922,1915 @@ nav{display:none}
 </header>
 
 
+
+<!-- ==================================================
+     HERO
+================================================== -->
+
 <section class="hero">
 
 <div class="hero-content">
 
-<div class="icon">🚗</div>
+<div class="hero-label">
+🚗 AUTO FINDS
+</div>
 
 <h1>
-Praktische <span>Auto-Gadgets</span>
+Kleine Auto-Gadgets,
+die deinen <span>Alltag besser machen.</span>
 </h1>
 
 <p>
-Cleveres Zubehör, praktische Helfer und kleine
-Gadgets, die Autofahren angenehmer machen können.
+Von cleveren Parkhelfern bis zu mobilen
+Kompressoren und praktischen Reinigungs-Gadgets:
+Wir schauen genauer hin, vergleichen Produkte
+und suchen nach sinnvollen Alternativen.
 </p>
 
 </div>
 
 </section>
+
 
 
 <main class="container">
 
 
-<section class="section">
+<!-- ==================================================
+     NAVIGATION
+================================================== -->
 
-<div class="title">
-<h2>🚗 Praktisches fürs Auto</h2>
-<p>Gadgets für Ordnung, Komfort und Alltag.</p>
-</div>
+<section class="section fade-in">
 
-<div class="products">
+<div class="section-header">
 
-<article class="card">
-<div class="image">🧳</div>
-<div class="content">
-<span class="tag">ORDNUNG</span>
-<h3>Auto-Organizer</h3>
-<p>Praktische Lösungen für mehr Ordnung im Fahrzeug.</p>
-<a href="#" class="button">Produkte entdecken</a>
-</div>
-</article>
-
-<article class="card">
-<div class="image">🔌</div>
-<div class="content">
-<span class="tag">TECHNIK</span>
-<h3>Auto-Ladegeräte</h3>
-<p>Praktische Lade-Lösungen für unterwegs.</p>
-<a href="#" class="button">Produkte entdecken</a>
-</div>
-</article>
-
-<article class="card">
-<div class="image">🧽</div>
-<div class="content">
-<span class="tag">PFLEGE</span>
-<h3>Reinigungs-Gadgets</h3>
-<p>Kleine Helfer für die Fahrzeugpflege.</p>
-<a href="#" class="button">Produkte entdecken</a>
-</div>
-</article>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<div class="title">
-<h2>🔥 Kleine Auto-Helfer</h2>
-<p>Produkte, die man im Alltag überraschend oft gebrauchen kann.</p>
-</div>
-
-<div class="products">
-
-<article class="card">
-<div class="image">📱</div>
-<div class="content">
-<span class="tag">SMARTPHONE</span>
-<h3>Handyhalterungen</h3>
-<p>Praktische Lösungen für Navigation und Telefon.</p>
-<a href="#" class="button">Mehr erfahren</a>
-</div>
-</article>
-
-<article class="card">
-<div class="image">🧰</div>
-<div class="content">
-<span class="tag">NOTFALL</span>
-<h3>Praktische Notfall-Helfer</h3>
-<p>Kleine Dinge, die man besser im Auto dabeihat.</p>
-<a href="#" class="button">Mehr erfahren</a>
-</div>
-</article>
-
-<article class="card">
-<div class="image">🧹</div>
-<div class="content">
-<span class="tag">PFLEGE</span>
-<h3>Innenraum-Gadgets</h3>
-<p>Praktische Helfer für einen sauberen Innenraum.</p>
-<a href="#" class="button">Mehr erfahren</a>
-</div>
-</article>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<div class="info">
-
-<h2>Auto-Gadgets müssen praktisch sein</h2>
+<h2>
+Auto & unterwegs
+</h2>
 
 <p>
-Wir wollen nicht einfach möglichst viel Zubehör zeigen.
-Wir suchen Produkte, die im Fahrzeug einen echten Nutzen
-haben und regelmäßig verwendet werden können.
+Produkte für Komfort, Sicherheit,
+Ordnung und schnelle Problemlösungen.
 </p>
 
 </div>
 
+
+<div class="category-navigation">
+
+<a
+href="#parken"
+class="category-button active">
+
+🅿️ Parken
+
+</a>
+
+<a
+href="#reifen"
+class="category-button">
+
+🛞 Reifen
+
+</a>
+
+<a
+href="#reinigung"
+class="category-button">
+
+🧹 Reinigung
+
+</a>
+
+<a
+href="#quellen"
+class="category-button">
+
+📚 Quellen
+
+</a>
+
+</div>
+
 </section>
+
+
+
+<!-- ==================================================
+     OOONO P-DISC
+================================================== -->
+
+<section
+class="product-group fade-in"
+id="parken"
+>
+
+
+<div class="group-title">
+
+<div>
+
+<h2>
+🅿️ Elektronische Parkscheiben
+</h2>
+
+<p>
+Nie wieder die Parkzeit manuell einstellen
+</p>
+
+</div>
+
+<p>
+← Auf dem Handy wischen →
+</p>
+
+</div>
+
+
+
+<div class="product-carousel">
+
+
+<!-- P-DISC 3 -->
+
+<article class="product-card">
+
+<div class="product-image">
+☀️
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+🔥 AUTO FIND
+</span>
+
+<h3>
+OOONO P-DISC 3 Solar
+</h3>
+
+<p class="description">
+
+Elektronische Parkscheibe mit automatischer
+Zeiteinstellung und Solarbetrieb. Die P-DISC 3
+ist für Fahrer interessant, die eine automatische
+Lösung ohne regelmäßigen Batteriewechsel suchen.
+
+</p>
+
+
+<div class="price">
+ca. 24,95 €
+</div>
+
+<div class="price-note">
+Amazon-Angebot zum Recherchezeitpunkt
+</div>
+
+
+<div class="rating">
+⭐ <strong>4,5 / 5 · ca. 6.870 Bewertungen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Automatische Zeiteinstellung<br>
+✓ Solarbetrieb<br>
+✓ Bis zu 5 Jahre längere Batterielaufzeit laut Anbieter<br>
+✓ Für den deutschen Straßenverkehr zugelassen
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Teurer als ältere Modelle<br>
+✕ Solar-Funktion ist nicht für jeden notwendig<br>
+✕ Display bleibt ein zusätzliches Gerät an der Scheibe
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+🤔 Ist das wirklich sinnvoll?
+</strong>
+
+Das Prinzip ist tatsächlich praktisch:
+Nach dem Parken muss die Zeit nicht
+mehr manuell eingestellt werden.
+
+Der größte Vorteil der P-DISC 3 gegenüber
+älteren Varianten ist die Solarunterstützung.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=OOONO+P-DISC+3"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+OOONO P-DISC 3 bei Amazon ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- P-DISC NO2 -->
+
+<article class="product-card">
+
+<div class="product-image">
+🅿️
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+💰 GÜNSTIGER
+</span>
+
+<h3>
+OOONO P-DISC NO2
+</h3>
+
+<p class="description">
+
+Die ältere OOONO-Generation bietet
+ebenfalls eine automatische Parkzeit-
+Einstellung und ist deutlich günstiger
+als die neue Solar-Variante.
+
+</p>
+
+
+<div class="price">
+17,45 €
+</div>
+
+<div class="price-note">
+Amazon-Preis zum Recherchezeitpunkt
+</div>
+
+
+<div class="rating">
+⭐ <strong>4,5 / 5 · 5.038 Bewertungen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Automatische Zeiteinstellung<br>
+✓ StVO-/KBA-Zulassung<br>
+✓ Nacht-Park-Funktion<br>
+✓ Sehr günstiger Preis<br>
+✓ Magnetische Befestigung
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Keine Solarunterstützung<br>
+✕ Älteres Modell<br>
+✕ Batterielaufzeit abhängig von Nutzung
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+💰 Braucht man die P-DISC 3?
+</strong>
+
+Nicht unbedingt.
+
+Wenn dir die automatische Einstellung
+wichtig ist und du möglichst wenig
+ausgeben möchtest, ist die NO2
+eine sehr interessante Alternative.
+
+Die P-DISC 3 ist vor allem dann
+interessanter, wenn du die Solar-
+Unterstützung möchtest.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/dp/B0DJBQ15RZ"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+OOONO P-DISC NO2 bei Amazon →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- P-DISC NO1 -->
+
+<article class="product-card">
+
+<div class="product-image">
+💰
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+💰 PREIS-TIPP
+</span>
+
+<h3>
+OOONO P-DISC NO1
+</h3>
+
+<p class="description">
+
+Die ursprüngliche P-DISC-Generation
+ist ebenfalls weiterhin erhältlich
+und kann eine noch günstigere Option
+für die automatische Parkzeit sein.
+
+</p>
+
+
+<div class="price">
+ca. 15,95 €
+</div>
+
+<div class="price-note">
+Amazon-Angebot zum Recherchezeitpunkt
+</div>
+
+
+<div class="rating">
+⭐ <strong>4,4 / 5 · ca. 28.235 Bewertungen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Sehr günstig<br>
+✓ Automatische Parkzeit<br>
+✓ Große Bewertungsbasis<br>
+✓ Einfaches Konzept
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Älteste Generation<br>
+✕ Keine Solar-Funktion<br>
+✕ Weniger moderne Ausstattung
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+💡 Wann reicht die NO1?
+</strong>
+
+Wenn du einfach nur eine automatische
+Parkscheibe möchtest und möglichst
+wenig ausgeben willst, kann die NO1
+bereits ausreichen.
+
+Für den kleinen Preis ist das Konzept
+bemerkenswert simpel.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=OOONO+P-DISC+NO1"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+OOONO P-DISC NO1 ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+
+<div class="swipe-hint">
+👆 Nach links oder rechts wischen
+</div>
+
+
+
+<div class="compare-box">
+
+<h3>
+⚖️ Welche OOONO P-DISC?
+</h3>
+
+<p>
+Hier ist der eigentliche Unterschied:
+Nicht jede neue Generation ist automatisch
+den Aufpreis wert.
+</p>
+
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+
+<th>
+Modell
+</th>
+
+<th>
+Preis
+</th>
+
+<th>
+Solar
+</th>
+
+<th>
+Für wen?
+</th>
+
+</tr>
+
+<tr>
+
+<td>
+P-DISC 3
+</td>
+
+<td>
+ca. 24,95 €
+</td>
+
+<td>
+☀️ Ja
+</td>
+
+<td>
+Komfort & wenig Batteriewechsel
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+P-DISC NO2
+</td>
+
+<td>
+17,45 €
+</td>
+
+<td>
+❌
+</td>
+
+<td>
+Preis-Leistung
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+P-DISC NO1
+</td>
+
+<td>
+ca. 15,95 €
+</td>
+
+<td>
+❌
+</td>
+
+<td>
+Maximal günstig
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     KOMPRESSOR
+================================================== -->
+
+<section
+class="product-group fade-in"
+id="reifen"
+>
+
+
+<div class="group-title">
+
+<div>
+
+<h2>
+🛞 Mini-Kompressoren
+</h2>
+
+<p>
+Reifendruck unterwegs selbst kontrollieren
+</p>
+
+</div>
+
+<p>
+← Auf dem Handy wischen →
+</p>
+
+</div>
+
+
+
+<div class="product-carousel">
+
+
+<!-- XIAOMI -->
+
+<article class="product-card">
+
+<div class="product-image">
+🛞
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+🔥 VIRAL
+</span>
+
+<h3>
+Xiaomi Portable Electric Air Compressor 2
+</h3>
+
+<p class="description">
+
+Kompakter Akku-Kompressor für Auto,
+Motorrad, Fahrrad und Bälle. Der digitale
+Druckmesser und die automatische Abschaltung
+machen das Nachfüllen besonders einfach.
+
+</p>
+
+
+<div class="price">
+ca. 35,99 €
+</div>
+
+<div class="price-note">
+Amazon-Preis zum Recherchezeitpunkt
+</div>
+
+
+<div class="rating">
+⭐ <strong>4,6 / 5 · 8.670 Amazon-Meinungen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Bis 10,3 bar / 150 PSI<br>
+✓ Automatische Abschaltung<br>
+✓ Digitales Manometer<br>
+✓ 6 voreingestellte Modi<br>
+✓ USB-C<br>
+✓ Sehr kompakt
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Bei komplett leerem Autoreifen relativ langsam<br>
+✕ Akku muss geladen sein<br>
+✕ Für häufiges Aufpumpen großer Reifen nicht ideal
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+🤔 Ist das wirklich besser als eine normale Pumpe?
+</strong>
+
+Für unterwegs definitiv komfortabler.
+
+Der eigentliche Vorteil ist nicht,
+dass der Kompressor einen Reifen
+in Sekunden füllt, sondern dass du
+Reifendruck unabhängig von Tankstellen
+oder Werkstätten nachfüllen kannst.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Xiaomi+Portable+Electric+Air+Compressor+2"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Xiaomi Kompressor bei Amazon →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- ASTROAI -->
+
+<article class="product-card">
+
+<div class="product-image">
+💨
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+💰 GÜNSTIGER
+</span>
+
+<h3>
+AstroAI Kabellose Elektrische Luftpumpe
+</h3>
+
+<p class="description">
+
+Kompakte Akku-Luftpumpe mit digitalem
+Drucksensor, automatischer Abschaltung
+und 4.000-mAh-Akku.
+
+</p>
+
+
+<div class="price">
+ca. 22,97 €
+</div>
+
+<div class="price-note">
+Amazon-Preis aus der aktuellen Recherche
+</div>
+
+
+<div class="rating">
+⭐ <strong>4,5 / 5 · über 14.000 Bewertungen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Günstiger als Xiaomi<br>
+✓ 4.000-mAh-Akku<br>
+✓ Automatische Abschaltung<br>
+✓ Digitaler Drucksensor<br>
+✓ LED-Licht<br>
+✓ USB-Ausgang
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Ebenfalls kein Hochleistungs-Kompressor<br>
+✕ Modellvarianten beachten<br>
+✕ Etwas größer als manche Mini-Pumpen
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+💰 Xiaomi oder AstroAI?
+</strong>
+
+Wenn du möglichst wenig ausgeben möchtest,
+ist AstroAI besonders interessant.
+
+Xiaomi punktet dagegen mit einer sehr großen
+Bewertungsbasis und einem etablierten
+Produktkonzept.
+
+Der Preisunterschied ist klein genug,
+dass beide interessant bleiben.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=AstroAI+Kabellose+Elektrische+Luftpumpe"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+AstroAI bei Amazon ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- BOSCH -->
+
+<article class="product-card">
+
+<div class="product-image">
+🔋
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+⭐ MARKEN-OPTION
+</span>
+
+<h3>
+Bosch EasyPump
+</h3>
+
+<p class="description">
+
+Kompakte Akku-Luftpumpe von Bosch
+mit digitaler Druckmessung und
+automatischer Abschaltung.
+
+</p>
+
+
+<div class="price">
+ca. 54,79 €
+</div>
+
+<div class="price-note">
+Amazon-Preis aus der aktuellen Recherche
+</div>
+
+
+<div class="rating">
+⭐ <strong>4,5 / 5 · fast 25.000 Bewertungen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Bekannte Marke<br>
+✓ Bis 10,3 bar<br>
+✓ Echtzeit-Druckmessung<br>
+✓ Automatische Abschaltung<br>
+✓ Gute Zubehör-Aufbewahrung
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Teurer<br>
+✕ Nicht schneller als große Kompressoren
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+⭐ Wann lohnt sich Bosch?
+</strong>
+
+Bosch ist nicht die günstigste Variante.
+
+Wer aber Wert auf eine etablierte Marke,
+gute Bedienung und ein ausgereiftes
+Gesamtpaket legt, kann den Aufpreis
+gegenüber den günstigen Modellen
+bewusst in Kauf nehmen.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Bosch+EasyPump"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Bosch EasyPump bei Amazon →
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+
+<div class="swipe-hint">
+👆 Nach links oder rechts wischen
+</div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     AUTOSAUGER
+================================================== -->
+
+<section
+class="product-group fade-in"
+id="reinigung"
+>
+
+
+<div class="group-title">
+
+<div>
+
+<h2>
+🧹 Autostaubsauger
+</h2>
+
+<p>
+Schnell Krümel, Staub und Schmutz entfernen
+</p>
+
+</div>
+
+<p>
+← Auf dem Handy wischen →
+</p>
+
+</div>
+
+
+
+<div class="product-carousel">
+
+
+<!-- FANTTIK -->
+
+<article class="product-card">
+
+<div class="product-image">
+🧹
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+🔥 VIRAL
+</span>
+
+<h3>
+Fanttik Slim V8 Apex
+</h3>
+
+<p class="description">
+
+Kompakter Akku-Handstaubsauger mit
+bis zu 19.000 Pa Saugleistung, HEPA-Filter
+und umfangreichem Zubehör. Zusätzlich
+kann das Gerät als Gebläse eingesetzt werden.
+
+</p>
+
+
+<div class="price">
+ca. 63,64 €
+</div>
+
+<div class="price-note">
+Amazon-Preis aus der aktuellen Recherche
+</div>
+
+
+<div class="rating">
+⭐ <strong>4,3 / 5 · über 6.700 Bewertungen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Bis zu 19.000 Pa<br>
+✓ Bis zu 40 Minuten Laufzeit<br>
+✓ Nur ca. 500 g<br>
+✓ HEPA-Filter<br>
+✓ 10 Aufsätze<br>
+✓ Saug- und Blasfunktion
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Deutlich teurer als einfache 12V-Sauger<br>
+✕ Akku muss geladen werden<br>
+✕ Für große Flächen nicht gedacht
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+🤔 Braucht man wirklich so viel Leistung?
+</strong>
+
+Für schnelle Reinigung im Auto ist
+ein kabelloser Sauger sehr praktisch.
+
+Der Fanttik ist besonders interessant,
+wenn du zusätzlich die Blasfunktion
+und das umfangreiche Zubehör nutzen möchtest.
+
+Für einfache Krümel gibt es aber
+deutlich günstigere Lösungen.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Fanttik+Slim+V8+Apex"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Fanttik bei Amazon ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- THISWORX -->
+
+<article class="product-card">
+
+<div class="product-image">
+🔌
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+💰 GÜNSTIGER
+</span>
+
+<h3>
+ThisWorx for TWC-01
+</h3>
+
+<p class="description">
+
+Kompakter 12V-Autostaubsauger,
+der direkt über die Fahrzeugsteckdose
+betrieben wird.
+
+Eine einfache Alternative für alle,
+die hauptsächlich Krümel und leichten
+Schmutz entfernen möchten.
+
+</p>
+
+
+<div class="price">
+ca. 25 €
+</div>
+
+<div class="price-note">
+Amazon-Preis kann je nach Angebot variieren
+</div>
+
+
+<div class="rating">
+⭐ <strong>ca. 4,3 / 5 · 2.341 Bewertungen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Sehr günstig<br>
+✓ 12V-Betrieb<br>
+✓ HEPA-Filter<br>
+✓ Kompakt<br>
+✓ Zubehör inklusive
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Kabel statt Akku<br>
+✕ Weniger Leistung als Fanttik<br>
+✕ Für sehr starken Schmutz weniger geeignet
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+💰 Fanttik oder ThisWorx?
+</strong>
+
+Wenn du einfach einen günstigen
+Sauger für Krümel, Staub und kleinere
+Verschmutzungen suchst, reicht
+ThisWorx wahrscheinlich aus.
+
+Der Fanttik rechtfertigt seinen höheren
+Preis vor allem durch Akku-Betrieb,
+mehr Leistung und zusätzliche Funktionen.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=ThisWorx+TWC-01"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+ThisWorx bei Amazon ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- SEVERIN -->
+
+<article class="product-card">
+
+<div class="product-image">
+🚗
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+⚖️ ALTERNATIVE
+</span>
+
+<h3>
+Severin HV 7146
+</h3>
+
+<p class="description">
+
+Kompakter Handstaubsauger als
+weitere Alternative für den
+Fahrzeuginnenraum.
+
+</p>
+
+
+<div class="price">
+ca. 30–40 €
+</div>
+
+<div class="price-note">
+Preis abhängig vom Amazon-Angebot
+</div>
+
+
+<div class="rating">
+⭐ <strong>Amazon-Bewertung je nach Angebot prüfen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Kompakt<br>
+✓ Bekannte deutsche Marke<br>
+✓ Für Auto und kleinere Aufgaben<br>
+✓ Preislich zwischen den Modellen
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Nicht so leistungsstark wie Fanttik<br>
+✕ Ausstattung abhängig von Variante
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+⚖️ Wann ist Severin interessant?
+</strong>
+
+Eine sinnvolle Zwischenlösung für alle,
+die nicht das günstigste Modell möchten,
+aber auch nicht so viel wie für einen
+leistungsstarken Akku-Sauger ausgeben wollen.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Severin+HV+7146"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Severin bei Amazon ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+
+<div class="swipe-hint">
+👆 Nach links oder rechts wischen
+</div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     GESAMTVERGLEICH
+================================================== -->
+
+<section class="section fade-in">
+
+<div class="compare-box">
+
+<h3>
+🚗 Welches Auto-Gadget lohnt sich?
+</h3>
+
+<p>
+Unsere Auswahl zeigt gut, dass der teuerste
+Artikel nicht automatisch die beste Wahl ist.
+</p>
+
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+
+<th>
+Produkt
+</th>
+
+<th>
+Preisniveau
+</th>
+
+<th>
+Stärke
+</th>
+
+<th>
+Unsere Einschätzung
+</th>
+
+</tr>
+
+
+<tr>
+
+<td>
+OOONO P-DISC 3
+</td>
+
+<td>
+💰💰
+</td>
+
+<td>
+Solar + automatisch
+</td>
+
+<td>
+⭐ Komfort
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+OOONO P-DISC NO2
+</td>
+
+<td>
+💰
+</td>
+
+<td>
+Automatische Parkzeit
+</td>
+
+<td>
+⭐ Preis-Leistung
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Xiaomi Compressor 2
+</td>
+
+<td>
+💰💰
+</td>
+
+<td>
+Kompakter Akku-Kompressor
+</td>
+
+<td>
+⭐ Sehr praktisch
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+AstroAI Luftpumpe
+</td>
+
+<td>
+💰
+</td>
+
+<td>
+Günstiger Akku-Kompressor
+</td>
+
+<td>
+⭐ Preis-Tipp
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Fanttik V8 Apex
+</td>
+
+<td>
+💰💰💰
+</td>
+
+<td>
+Leistung + Akku + Blasfunktion
+</td>
+
+<td>
+⭐ Für Vielnutzer
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+ThisWorx TWC-01
+</td>
+
+<td>
+💰
+</td>
+
+<td>
+Einfacher 12V-Sauger
+</td>
+
+<td>
+⭐ Für gelegentliche Reinigung
+</td>
+
+</tr>
+
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     QUELLEN
+================================================== -->
+
+<section
+class="section fade-in"
+id="quellen"
+>
+
+<div class="sources">
+
+<h3>
+📚 Quellen & Tests
+</h3>
+
+
+<p class="sources-intro">
+
+Hier findest du die Quellen, die wir für
+Produktdaten, Preisrecherche, Bewertungen
+und unsere Einschätzungen verwendet haben.
+
+Wir übernehmen keine fremden Testtexte
+oder Bilder.
+
+</p>
+
+
+
+<!-- OOONO -->
+
+<div class="source-group">
+
+<h4>
+🅿️ OOONO P-DISC
+</h4>
+
+
+<div class="source-links">
+
+<a
+href="https://www.testberichte.de/wirtschaft-industrie/ooono-p-disc-no2.html"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Testberichte.de – P-DISC NO2 →
+
+</a>
+
+
+<a
+href="https://www.testberichte.de/wirtschaft-industrie/ooono-p-disc-no1.html"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Testberichte.de – P-DISC NO1 →
+
+</a>
+
+
+<a
+href="https://www.amazon.de/s?k=OOONO+P-DISC+3"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – P-DISC 3 →
+
+</a>
+
+
+<a
+href="https://www.amazon.de/dp/B0DJBQ15RZ"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – P-DISC NO2 →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- XIAOMI -->
+
+<div class="source-group">
+
+<h4>
+🛞 Xiaomi Portable Electric Air Compressor 2
+</h4>
+
+
+<div class="source-links">
+
+<a
+href="https://www.testberichte.de/p/xiaomi-tests/portable-electric-air-compressor-2-testbericht.html"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Testberichte.de – Test →
+
+</a>
+
+
+<a
+href="https://preisvergleich.heise.de/xiaomi-portable-electric-air-compressor-2-minipumpe-mjcqb06qw-a3168497.html"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Heise Preisvergleich →
+
+</a>
+
+
+<a
+href="https://www.amazon.de/s?k=Xiaomi+Portable+Electric+Air+Compressor+2"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – Preis & Bewertungen →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- ASTROAI -->
+
+<div class="source-group">
+
+<h4>
+💨 AstroAI Luftpumpe
+</h4>
+
+
+<div class="source-links">
+
+<a
+href="https://www.golem.de/news/anzeige-bestseller-luftpumpe-mit-akku-jetzt-zum-bestpreis-23-euro-2606-210355.html"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Golem – Recherche →
+
+</a>
+
+
+<a
+href="https://www.amazon.de/s?k=AstroAI+Kabellose+Elektrische+Luftpumpe"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – Preis & Bewertungen →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- FANTTIK -->
+
+<div class="source-group">
+
+<h4>
+🧹 Fanttik Slim V8 Apex
+</h4>
+
+
+<div class="source-links">
+
+<a
+href="https://www.golem.de/news/anzeige-autostaubsauger-mit-akku-und-zubehoer-jetzt-fuer-nur-rund-64-euro-2605-209066.html"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Golem – Produktrecherche →
+
+</a>
+
+
+<a
+href="https://www.n-tv.de/shopping-und-service/Autoreinigung-leicht-gemacht-Akku-Autostaubsauger-bei-Amazon-zum-Sparpreis-id30700464.html"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+n-tv – Recherche →
+
+</a>
+
+
+<a
+href="https://www.amazon.de/s?k=Fanttik+Slim+V8+Apex"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – Preis & Bewertungen →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- THISWORX -->
+
+<div class="source-group">
+
+<h4>
+🔌 ThisWorx TWC-01
+</h4>
+
+
+<div class="source-links">
+
+<a
+href="https://horsthilft.de/bestenlisten/autostaubsauger"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Produktvergleich →
+
+</a>
+
+
+<a
+href="https://www.amazon.de/s?k=ThisWorx+TWC-01"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – Preis & Verfügbarkeit →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="transparency">
+
+<strong>
+💡 Transparenz:
+</strong>
+
+Preise und Amazon-Bewertungen sind
+Momentaufnahmen und können sich jederzeit
+ändern.
+
+Vor einem Kauf sollte deshalb immer das
+aktuelle Amazon-Angebot geprüft werden.
+
+Bei der P-DISC haben wir außerdem darauf
+geachtet, nur Modelle zu verwenden, die für
+den deutschen Straßenverkehr vorgesehen
+bzw. entsprechend zugelassen sind.
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     FAZIT
+================================================== -->
+
+<section class="section fade-in">
+
+<div class="info">
+
+<h2>
+🚗 Braucht man diese Auto-Gadgets wirklich?
+</h2>
+
+<p>
+
+Genau das ist die Frage.
+
+Eine automatische Parkscheibe kann einen
+kleinen, aber nervigen Handgriff abnehmen.
+
+Ein Akku-Kompressor kann im Notfall sehr
+praktisch sein.
+
+Ein kleiner Autostaubsauger kann die
+Fahrt zur Tankstelle oder Waschanlage
+für kleine Verschmutzungen ersparen.
+
+Aber:
+
+<br><br>
+
+<strong>
+Nicht jedes teure Gadget ist automatisch
+die bessere Wahl.
+
+</strong>
+
+<br><br>
+
+Deshalb vergleichen wir bei Produktfinder
+nicht nur den viralen Artikel, sondern
+zeigen auch günstigere Möglichkeiten.
+
+</p>
+
+
+<div class="affiliate-note">
+
+Hinweis: Einige Links auf dieser Seite können
+Affiliate-Links sein. Wenn über einen solchen
+Link ein Kauf erfolgt, kann Produktfinder eine
+Provision erhalten. Für dich entstehen dadurch
+keine zusätzlichen Kosten.
+
+</div>
+
+</div>
+
+</section>
+
 
 </main>
 
 
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
 <footer>
 
-<p>© 2026 Produktfinder</p>
+<p>
+© 2026 Produktfinder
+</p>
+
 
 <p>
-<a href="index.html">Startseite</a>
-<a href="tiktok-finds.html">TikTok Finds</a>
-<a href="technik.html">Technik</a>
+
+<a href="index.html">
+Startseite
+</a>
+
+<a href="tiktok-finds.html">
+TikTok Finds
+</a>
+
+<a href="technik.html">
+Technik
+</a>
+
+<a href="zuhause.html">
+Zuhause
+</a>
+
+<a href="unterwegs.html">
+Unterwegs
+</a>
+
+<a href="auto.html">
+Auto
+</a>
+
+<a href="heimwerken.html">
+Heimwerken
+</a>
+
+<a href="geschenke.html">
+Geschenke
+</a>
+
 </p>
 
 </footer>
 
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script>
+
+const observer =
+new IntersectionObserver(
+
+(entries) => {
+
+entries.forEach(
+(entry) => {
+
+if (entry.isIntersecting) {
+
+entry.target.classList.add(
+"visible"
+);
+
+observer.unobserve(
+entry.target
+);
+
+}
+
+});
+
+},
+
+{
+threshold: 0.12
+}
+
+);
+
+
+document
+.querySelectorAll(".fade-in")
+.forEach(
+(element) => {
+
+observer.observe(element);
+
+}
+);
+
+</script>
+
+
 </body>
+
 </html>
