@@ -1,1627 +1,1640 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Produktfinder – Praktische Produkte, Gadgets & TikTok Finds</title>
-
-    <meta name="description"
-          content="Produktfinder entdeckt praktische Produkte, Gadgets, virale TikTok Finds und clevere Helfer für den Alltag.">
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f6f7f9;
-            color: #17202a;
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-
-        /* ==============================
-           HEADER
-        ============================== */
-
-        header {
-            background: #111827;
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-inner {
-            max-width: 1150px;
-            margin: auto;
-            padding: 16px 20px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-        }
-
-        .logo span {
-            color: #f59e0b;
-        }
-
-        nav {
-            display: flex;
-            gap: 22px;
-        }
-
-        nav a {
-            color: white;
-            font-size: 14px;
-            opacity: 0.9;
-            transition: opacity 0.2s ease;
-        }
-
-        nav a:hover {
-            opacity: 1;
-        }
-
-
-        /* ==============================
-           HERO
-        ============================== */
-
-        .hero {
-            background: white;
-            padding: 75px 20px 65px;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: auto;
-        }
-
-        .hero-label {
-            display: inline-block;
-            background: #fff3d6;
-            color: #9a6700;
-            padding: 7px 14px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 18px;
-
-            animation: heroFade 0.8s ease forwards;
-        }
-
-        .hero h1 {
-            font-size: 46px;
-            line-height: 1.15;
-            margin-bottom: 20px;
-
-            animation: heroUp 0.9s ease 0.1s both;
-        }
-
-        .hero h1 span {
-            color: #f59e0b;
-        }
-
-        .hero p {
-            max-width: 650px;
-            margin: auto;
-            color: #667085;
-            font-size: 18px;
-
-            animation: heroUp 0.9s ease 0.2s both;
-        }
-
-
-        /* ==============================
-           SUCHE
-        ============================== */
-
-        .search-box {
-            max-width: 650px;
-            margin: 30px auto 0;
-
-            display: flex;
-            background: white;
-            border: 1px solid #d9dde3;
-            border-radius: 12px;
-            padding: 5px;
-
-            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-
-            animation: heroUp 0.9s ease 0.3s both;
-        }
-
-        .search-box input {
-            flex: 1;
-            border: none;
-            outline: none;
-            padding: 13px;
-            font-size: 15px;
-            min-width: 0;
-        }
-
-        .search-box button {
-            border: none;
-            background: #111827;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-
-            transition: transform 0.2s ease;
-        }
-
-        .search-box button:hover {
-            transform: translateY(-2px);
-        }
-
-
-        /* ==============================
-           CONTAINER
-        ============================== */
-
-        .container {
-            max-width: 1150px;
-            margin: auto;
-            padding: 55px 20px;
-        }
-
-        .section {
-            margin-bottom: 70px;
-        }
-
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-            margin-bottom: 25px;
-        }
-
-        .section-header h2 {
-            font-size: 30px;
-        }
-
-        .section-header p {
-            color: #667085;
-            font-size: 14px;
-        }
-
-
-        /* ==============================
-           SCROLL ANIMATION
-        ============================== */
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(45px);
-
-            transition:
-                opacity 0.8s ease,
-                transform 0.8s ease;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .delay-1 {
-            transition-delay: 0.1s;
-        }
-
-        .delay-2 {
-            transition-delay: 0.2s;
-        }
-
-        .delay-3 {
-            transition-delay: 0.3s;
-        }
-
-        .delay-4 {
-            transition-delay: 0.4s;
-        }
-
-        .delay-5 {
-            transition-delay: 0.5s;
-        }
-
-        .delay-6 {
-            transition-delay: 0.6s;
-        }
-
-
-        /* ==============================
-           KATEGORIEN
-        ============================== */
-
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 12px;
-        }
-
-        .category {
-            background: white;
-            border-radius: 14px;
-            padding: 22px 10px;
-            text-align: center;
-            border: 1px solid #eaecf0;
-
-            transition:
-                transform 0.25s ease,
-                box-shadow 0.25s ease;
-        }
-
-        .category:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.10);
-        }
-
-        .category-icon {
-            font-size: 34px;
-            margin-bottom: 8px;
-
-            transition: transform 0.25s ease;
-        }
-
-        .category:hover .category-icon {
-            transform: scale(1.12);
-        }
-
-        .category strong {
-            display: block;
-            font-size: 14px;
-        }
-
-        .category small {
-            color: #667085;
-            font-size: 11px;
-        }
-
-        .category.tiktok {
-            border: 2px solid #111827;
-            background: linear-gradient(145deg, #ffffff, #f4f4f5);
-        }
-
-        .category.tiktok strong {
-            color: #111827;
-        }
-
-
-        /* ==============================
-           TIKTOK FINDS
-        ============================== */
-
-        .tiktok-section {
-            background: #111827;
-            color: white;
-            border-radius: 20px;
-            padding: 40px;
-            overflow: hidden;
-        }
-
-        .tiktok-section .section-header p {
-            color: #cbd5e1;
-        }
-
-        .tiktok-badge {
-            display: inline-block;
-            background: white;
-            color: #111827;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .tiktok-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .tiktok-card {
-            background: #1f2937;
-            border: 1px solid #374151;
-            border-radius: 15px;
-            padding: 24px;
-
-            transition:
-                transform 0.3s ease,
-                background 0.3s ease;
-        }
-
-        .tiktok-card:hover {
-            transform: translateY(-7px);
-            background: #273449;
-        }
-
-        .tiktok-icon {
-            font-size: 40px;
-            margin-bottom: 12px;
-        }
-
-        .tiktok-card h3 {
-            margin-bottom: 8px;
-        }
-
-        .tiktok-card p {
-            color: #cbd5e1;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-
-        .tiktok-card a {
-            color: #fbbf24;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-
-        /* ==============================
-           PRODUKTKARTEN
-        ============================== */
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            border: 1px solid #eaecf0;
-
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.10);
-        }
-
-        .product-image {
-            height: 180px;
-            background: #eef0f3;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            font-size: 65px;
-        }
-
-        .product-content {
-            padding: 22px;
-        }
-
-        .tag {
-            display: inline-block;
-            background: #f2f4f7;
-            padding: 5px 9px;
-            border-radius: 5px;
-            font-size: 11px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .product-content h3 {
-            font-size: 20px;
-            margin-bottom: 8px;
-        }
-
-        .product-content p {
-            color: #667085;
-            font-size: 14px;
-            margin-bottom: 18px;
-        }
-
-        .button {
-            display: inline-block;
-            background: #111827;
-            color: white;
-            padding: 10px 16px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: bold;
-
-            transition: transform 0.2s ease;
-        }
-
-        .button:hover {
-            transform: translateY(-2px);
-        }
-
-
-        /* ==============================
-           PREISBEREICHE
-        ============================== */
-
-        .price-boxes {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .price-box {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            border: 1px solid #eaecf0;
-
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
-        }
-
-        .price-box:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.09);
-        }
-
-        .price-box .emoji {
-            font-size: 35px;
-            margin-bottom: 12px;
-        }
-
-        .price-box h3 {
-            font-size: 21px;
-            margin-bottom: 8px;
-        }
-
-        .price-box p {
-            color: #667085;
-            margin-bottom: 18px;
-        }
-
-        .link {
-            font-weight: bold;
-            color: #9a6700;
-            font-size: 14px;
-
-            transition:
-                color 0.2s ease,
-                padding-left 0.2s ease;
-        }
-
-        .link:hover {
-            color: #d18b00;
-            padding-left: 4px;
-        }
-
-
-        /* ==============================
-           RATGEBER
-        ============================== */
-
-        .guides {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .guide {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            border: 1px solid #eaecf0;
-
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
-        }
-
-        .guide:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.09);
-        }
-
-        .guide-category {
-            color: #9a6700;
-            font-size: 12px;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        .guide h3 {
-            font-size: 19px;
-            margin-bottom: 10px;
-        }
-
-        .guide p {
-            color: #667085;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-
-
-        /* ==============================
-           INFO
-        ============================== */
-
-        .info {
-            background: #111827;
-            color: white;
-            padding: 45px;
-            border-radius: 18px;
-            text-align: center;
-        }
-
-        .info h2 {
-            font-size: 28px;
-            margin-bottom: 12px;
-        }
-
-        .info p {
-            max-width: 700px;
-            margin: auto;
-            color: #d1d5db;
-        }
-
-
-        /* ==============================
-           FOOTER
-        ============================== */
-
-        footer {
-            background: #0b1120;
-            color: #9ca3af;
-            text-align: center;
-            padding: 35px 20px;
-        }
-
-        footer p {
-            margin-bottom: 10px;
-        }
-
-        footer a {
-            color: #d1d5db;
-            margin: 0 8px;
-            font-size: 13px;
-        }
-
-
-        /* ==============================
-           HERO ANIMATION
-        ============================== */
-
-        @keyframes heroFade {
-
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-
-        }
-
-        @keyframes heroUp {
-
-            from {
-                opacity: 0;
-                transform: translateY(25px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-        }
-
-
-        /* ==============================
-           TABLET
-        ============================== */
-
-        @media (max-width: 950px) {
-
-            .categories {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .products,
-            .guides,
-            .tiktok-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .price-boxes {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .hero h1 {
-                font-size: 40px;
-            }
-
-        }
-
-
-        /* ==============================
-           HANDY
-        ============================== */
-
-        @media (max-width: 600px) {
-
-            nav {
-                display: none;
-            }
-
-            .hero {
-                padding: 55px 20px;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .search-box {
-                display: block;
-                border: none;
-                box-shadow: none;
-            }
-
-            .search-box input {
-                width: 100%;
-                border: 1px solid #d9dde3;
-                border-radius: 8px;
-                margin-bottom: 8px;
-            }
-
-            .search-box button {
-                width: 100%;
-            }
-
-            .categories {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .products,
-            .guides,
-            .tiktok-grid,
-            .price-boxes {
-                grid-template-columns: 1fr;
-            }
-
-            .section-header {
-                display: block;
-            }
-
-            .section-header p {
-                margin-top: 5px;
-            }
-
-            .tiktok-section {
-                padding: 25px;
-            }
-
-            .info {
-                padding: 30px 20px;
-            }
-
-        }
-
-
-        /* ==============================
-           REDUZIERTE BEWEGUNG
-        ============================== */
-
-        @media (prefers-reduced-motion: reduce) {
-
-            html {
-                scroll-behavior: auto;
-            }
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-
-            .reveal {
-                opacity: 1;
-                transform: none;
-            }
-
-        }
-
-    </style>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Produktfinder – Praktische Produkte & Gadgets entdecken</title>
+
+<meta name="description"
+content="Produktfinder entdeckt praktische Gadgets, nützliche Produkte und clevere Helfer für den Alltag.">
+
+
+<style>
+
+/* =========================
+   GRUNDLAGEN
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f7f9;
+    color: #17202a;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   SCROLL-ANIMATIONEN
+========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 {
+    transition-delay: 0.1s;
+}
+
+.delay-2 {
+    transition-delay: 0.2s;
+}
+
+.delay-3 {
+    transition-delay: 0.3s;
+}
+
+.delay-4 {
+    transition-delay: 0.4s;
+}
+
+.delay-5 {
+    transition-delay: 0.5s;
+}
+
+.delay-6 {
+    transition-delay: 0.6s;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: #111827;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    max-width: 1150px;
+    margin: auto;
+    padding: 16px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #f59e0b;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: white;
+    font-size: 14px;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+    opacity: 1;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    background: #ffffff;
+    padding: 75px 20px 65px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.hero-label {
+    display: inline-block;
+
+    background: #fff3d6;
+    color: #9a6700;
+
+    padding: 7px 14px;
+    border-radius: 30px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: 46px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #f59e0b;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+
+    color: #667085;
+    font-size: 18px;
+}
+
+
+/* =========================
+   SUCHE
+========================= */
+
+.search-box {
+    max-width: 650px;
+    margin: 30px auto 0;
+
+    display: flex;
+
+    background: white;
+    border: 1px solid #d9dde3;
+    border-radius: 12px;
+
+    padding: 5px;
+}
+
+.search-box input {
+    flex: 1;
+
+    border: none;
+    outline: none;
+
+    padding: 13px;
+
+    font-size: 15px;
+    min-width: 0;
+}
+
+.search-box button {
+    border: none;
+
+    background: #111827;
+    color: white;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.search-box button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 55px 20px;
+}
+
+.section {
+    margin-bottom: 65px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    margin-bottom: 25px;
+}
+
+.section-header h2 {
+    font-size: 30px;
+}
+
+.section-header p {
+    color: #667085;
+    font-size: 14px;
+}
+
+
+/* =========================
+   KATEGORIEN
+========================= */
+
+.categories {
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+
+    gap: 15px;
+}
+
+.category {
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 22px 12px;
+
+    text-align: center;
+
+    border: 1px solid #eaecf0;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.category:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.09);
+}
+
+.category-icon {
+    font-size: 35px;
+
+    margin-bottom: 8px;
+}
+
+.category strong {
+    display: block;
+
+    font-size: 15px;
+}
+
+.category small {
+    color: #667085;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   TIKTOK FINDS
+========================= */
+
+.tiktok-card {
+    background: linear-gradient(
+        135deg,
+        #111827,
+        #1f2937
+    );
+
+    color: white;
+
+    border-radius: 18px;
+
+    padding: 35px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.tiktok-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.15);
+}
+
+.tiktok-content {
+    max-width: 700px;
+}
+
+.tiktok-label {
+    color: #f59e0b;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+.tiktok-card h2 {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+.tiktok-card p {
+    color: #d1d5db;
+
+    font-size: 15px;
+}
+
+.tiktok-button {
+    background: #f59e0b;
+
+    color: #111827;
+
+    padding: 12px 18px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.tiktok-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   PRODUKT-BEREICHE
+========================= */
+
+.products {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.product-card {
+    background: white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    border: 1px solid #eaecf0;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.10);
+}
+
+.product-image {
+    height: 180px;
+
+    background: #eef0f3;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 65px;
+}
+
+.product-content {
+    padding: 22px;
+}
+
+.tag {
+    display: inline-block;
+
+    background: #f2f4f7;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.product-content h3 {
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+.product-content p {
+    color: #667085;
+
+    font-size: 14px;
+
+    margin-bottom: 18px;
+}
+
+.button {
+    display: inline-block;
+
+    background: #111827;
+
+    color: white;
+
+    padding: 10px 16px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   PREISBEREICHE
+========================= */
+
+.price-boxes {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.price-box {
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    border: 1px solid #eaecf0;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.price-box:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.08);
+}
+
+.price-box .emoji {
+    font-size: 35px;
+
+    margin-bottom: 12px;
+}
+
+.price-box h3 {
+    font-size: 22px;
+
+    margin-bottom: 8px;
+}
+
+.price-box p {
+    color: #667085;
+
+    margin-bottom: 18px;
+}
+
+.link {
+    font-weight: bold;
+
+    color: #9a6700;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   RATGEBER
+========================= */
+
+.guides {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.guide {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    border: 1px solid #eaecf0;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.guide:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.08);
+}
+
+.guide-category {
+    color: #9a6700;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+.guide h3 {
+    font-size: 19px;
+
+    margin-bottom: 10px;
+}
+
+.guide p {
+    color: #667085;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   INFO
+========================= */
+
+.info {
+    background: #111827;
+
+    color: white;
+
+    padding: 45px;
+
+    border-radius: 18px;
+
+    text-align: center;
+}
+
+.info h2 {
+    font-size: 28px;
+
+    margin-bottom: 12px;
+}
+
+.info p {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #d1d5db;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #0b1120;
+
+    color: #9ca3af;
+
+    text-align: center;
+
+    padding: 35px 20px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #d1d5db;
+
+    margin: 0 8px;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 850px) {
+
+    .categories {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .products,
+    .guides {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+}
+
+
+/* =========================
+   HANDY
+========================= */
+
+@media (max-width: 600px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 55px 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .search-box {
+        display: block;
+
+        border: none;
+    }
+
+    .search-box input {
+        width: 100%;
+
+        border: 1px solid #d9dde3;
+
+        border-radius: 8px;
+
+        margin-bottom: 8px;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .products,
+    .guides,
+    .price-boxes {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header {
+        display: block;
+    }
+
+    .section-header p {
+        margin-top: 5px;
+    }
+
+    .tiktok-card {
+        display: block;
+
+        padding: 30px 22px;
+    }
+
+    .tiktok-button {
+        display: inline-block;
+
+        margin-top: 20px;
+    }
+
+    .info {
+        padding: 30px 20px;
+    }
+
+}
+
+
+/* =========================
+   WENN ANIMATIONEN DEAKTIVIERT
+   WERDEN SOLLEN
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+}
+
+</style>
+
 </head>
 
 
 <body>
 
 
-<!-- =========================================
+<!-- =========================
      HEADER
-========================================= -->
+========================= -->
 
 <header>
 
-    <div class="header-inner">
+<div class="header-inner">
 
-        <a href="#" class="logo">
-            Produkt<span>finder</span>
-        </a>
+<a href="index.html" class="logo">
+Produkt<span>finder</span>
+</a>
 
-        <nav>
+<nav>
 
-            <a href="#kategorien">
-                Kategorien
-            </a>
+<a href="tiktok-finds.html">
+TikTok Finds
+</a>
 
-            <a href="#tiktok-finds">
-                TikTok Finds
-            </a>
+<a href="#kategorien">
+Kategorien
+</a>
 
-            <a href="#ratgeber">
-                Ratgeber
-            </a>
+<a href="#gadgets">
+Gadgets
+</a>
 
-        </nav>
+<a href="#ratgeber">
+Ratgeber
+</a>
 
-    </div>
+</nav>
+
+</div>
 
 </header>
 
 
-
-<!-- =========================================
+<!-- =========================
      HERO
-========================================= -->
+========================= -->
 
 <section class="hero">
 
-    <div class="hero-content">
+<div class="hero-content reveal">
 
-        <div class="hero-label">
-            🔥 Praktische & virale Produkte entdecken
-        </div>
+<div class="hero-label">
+💡 Praktische Produkte entdecken
+</div>
 
-        <h1>
-            Produkte, die deinen
-            <span>Alltag einfacher</span>
-            machen.
-        </h1>
+<h1>
+Produkte, die deinen
+<span>Alltag einfacher</span>
+machen.
+</h1>
 
-        <p>
-            Von kleinen Alltagshelfern bis zu viralen TikTok Finds:
-            Wir entdecken interessante Produkte und zeigen dir,
-            welche davon wirklich einen Blick wert sind.
-        </p>
+<p>
+Wir entdecken praktische Gadgets, clevere Helfer
+und interessante Produkte und zeigen dir,
+welche davon wirklich einen Blick wert sind.
+</p>
 
-        <div class="search-box">
 
-            <input
-                type="text"
-                placeholder="Wonach suchst du?"
-                aria-label="Produktsuche">
+<div class="search-box">
 
-            <button>
-                Suchen
-            </button>
+<input
+type="text"
+placeholder="Wonach suchst du?"
+aria-label="Produktsuche"
+id="searchInput">
 
-        </div>
+<button onclick="searchProducts()">
+Suchen
+</button>
 
-    </div>
+</div>
+
+</div>
 
 </section>
-
 
 
 <main class="container">
 
 
-    <!-- =========================================
-         KATEGORIEN
-    ========================================= -->
+<!-- =========================
+     KATEGORIEN
+========================= -->
 
-    <section class="section" id="kategorien">
+<section class="section" id="kategorien">
 
-        <div class="section-header reveal">
+<div class="section-header reveal">
 
-            <div>
+<div>
 
-                <h2>
-                    Entdecke unsere Kategorien
-                </h2>
+<h2>
+Entdecke unsere Kategorien
+</h2>
 
-                <p>
-                    Klicke auf eine Kategorie und entdecke
-                    passende Produkte und Empfehlungen.
-                </p>
+<p>
+Praktische Produkte für verschiedene Bereiche des Alltags.
+</p>
 
-            </div>
+</div>
 
-        </div>
+</div>
 
 
-        <div class="categories">
+<div class="categories">
 
 
-            <a href="#zuhause" class="category reveal delay-1">
+<a href="zuhause.html"
+class="category reveal delay-1">
 
-                <div class="category-icon">
-                    🏠
-                </div>
+<div class="category-icon">
+🏠
+</div>
 
-                <strong>
-                    Zuhause
-                </strong>
+<strong>
+Zuhause
+</strong>
 
-                <small>
-                    Alltagshelfer
-                </small>
+<small>
+Alltagshelfer
+</small>
 
-            </a>
+</a>
 
 
-            <a href="#technik" class="category reveal delay-2">
+<a href="technik.html"
+class="category reveal delay-2">
 
-                <div class="category-icon">
-                    📱
-                </div>
+<div class="category-icon">
+📱
+</div>
 
-                <strong>
-                    Technik
-                </strong>
+<strong>
+Technik
+</strong>
 
-                <small>
-                    Smart & praktisch
-                </small>
+<small>
+Smart & praktisch
+</small>
 
-            </a>
+</a>
 
 
-            <a href="#auto" class="category reveal delay-3">
+<a href="auto.html"
+class="category reveal delay-3">
 
-                <div class="category-icon">
-                    🚗
-                </div>
+<div class="category-icon">
+🚗
+</div>
 
-                <strong>
-                    Auto
-                </strong>
+<strong>
+Auto
+</strong>
 
-                <small>
-                    Zubehör & Helfer
-                </small>
+<small>
+Praktisches Zubehör
+</small>
 
-            </a>
+</a>
 
 
-            <a href="#unterwegs" class="category reveal delay-4">
+<a href="unterwegs.html"
+class="category reveal delay-4">
 
-                <div class="category-icon">
-                    🎒
-                </div>
+<div class="category-icon">
+🎒
+</div>
 
-                <strong>
-                    Unterwegs
-                </strong>
+<strong>
+Unterwegs
+</strong>
 
-                <small>
-                    Reise & Freizeit
-                </small>
+<small>
+Reise & Freizeit
+</small>
 
-            </a>
+</a>
 
 
-            <a href="#heimwerken" class="category reveal delay-5">
+<a href="heimwerken.html"
+class="category reveal delay-5">
 
-                <div class="category-icon">
-                    🔧
-                </div>
+<div class="category-icon">
+🔧
+</div>
 
-                <strong>
-                    Heimwerken
-                </strong>
+<strong>
+Heimwerken
+</strong>
 
-                <small>
-                    Werkzeug & Helfer
-                </small>
+<small>
+Werkzeug & Helfer
+</small>
 
-            </a>
+</a>
 
 
-            <a href="#geschenke" class="category reveal delay-6">
+<a href="geschenke.html"
+class="category reveal delay-6">
 
-                <div class="category-icon">
-                    🎁
-                </div>
+<div class="category-icon">
+🎁
+</div>
 
-                <strong>
-                    Geschenke
-                </strong>
+<strong>
+Geschenke
+</strong>
 
-                <small>
-                    Ideen & Gadgets
-                </small>
+<small>
+Ideen & Gadgets
+</small>
 
-            </a>
+</a>
 
 
-            <a href="tiktok-finds.html"
-               class="category tiktok reveal delay-6">
+</div>
 
-                <div class="category-icon">
-                    🔥
-                </div>
+</section>
 
-                <strong>
-                    TikTok Finds
-                </strong>
 
-                <small>
-                    Viral & angesagt
-                </small>
+<!-- =========================
+     TIKTOK FINDS
+========================= -->
 
-            </a>
+<section class="section">
 
+<a href="tiktok-finds.html"
+class="tiktok-card reveal">
 
-        </div>
+<div class="tiktok-content">
 
-    </section>
+<div class="tiktok-label">
+🔥 TIKTOK FINDS
+</div>
 
+<h2>
+Was geht gerade viral?
+</h2>
 
+<p>
+Entdecke virale Produkte, angesagte Gadgets
+und interessante TikTok Finds.
+Wir schauen genauer hin und zeigen dir,
+was wirklich interessant ist.
+</p>
 
-    <!-- =========================================
-         TIKTOK FINDS
-    ========================================= -->
+</div>
 
-    <section class="section tiktok-section"
-             id="tiktok-finds">
 
-        <div class="section-header reveal">
+<div class="tiktok-button">
+TikTok Finds entdecken →
+</div>
 
-            <div>
+</a>
 
-                <span class="tiktok-badge">
-                    🔥 TIKTOK FINDS
-                </span>
+</section>
 
-                <h2>
-                    Was gerade viral geht
-                </h2>
 
-                <p>
-                    Virale Produkte, Gadgets & Trends aus
-                    dem Social Web.
-                </p>
+<!-- =========================
+     GADGETS
+========================= -->
 
-            </div>
+<section class="section" id="gadgets">
 
-        </div>
+<div class="section-header reveal">
 
+<div>
 
-        <div class="tiktok-grid">
+<h2>
+Interessante Gadgets
+</h2>
 
+<p>
+Kleine Produkte, die überraschend praktisch sein können.
+</p>
 
-            <article class="tiktok-card reveal delay-1">
+</div>
 
-                <div class="tiktok-icon">
-                    🚀
-                </div>
+</div>
 
-                <h3>
-                    Heute viral
-                </h3>
 
-                <p>
-                    Produkte, die gerade besonders viel
-                    Aufmerksamkeit bekommen.
-                </p>
+<div class="products">
 
-                <a href="#">
-                    Viral Finds entdecken →
-                </a>
 
-            </article>
+<article class="product-card reveal delay-1">
 
+<div class="product-image">
+🔌
+</div>
 
+<div class="product-content">
 
-            <article class="tiktok-card reveal delay-2">
+<span class="tag">
+TECHNIK
+</span>
 
-                <div class="tiktok-icon">
-                    📈
-                </div>
+<h3>
+Praktische Lade-Gadgets
+</h3>
 
-                <h3>
-                    Diese Woche beliebt
-                </h3>
+<p>
+Kleine Helfer rund ums Laden von Smartphone,
+Kopfhörern und anderen Geräten.
+</p>
 
-                <p>
-                    Trends, die sich gerade zu echten
-                    Verkaufsschlagern entwickeln.
-                </p>
+<a href="technik.html" class="button">
+Technik entdecken
+</a>
 
-                <a href="#">
-                    Trends ansehen →
-                </a>
+</div>
 
-            </article>
+</article>
 
 
+<article class="product-card reveal delay-2">
 
-            <article class="tiktok-card reveal delay-3">
+<div class="product-image">
+🚗
+</div>
 
-                <div class="tiktok-icon">
-                    ⭐
-                </div>
+<div class="product-content">
 
-                <h3>
-                    Dauerbrenner
-                </h3>
+<span class="tag">
+AUTO
+</span>
 
-                <p>
-                    Virale Produkte, die auch nach dem
-                    Hype weiterhin interessant bleiben.
-                </p>
+<h3>
+Nützliche Auto-Gadgets
+</h3>
 
-                <a href="#">
-                    Dauerbrenner ansehen →
-                </a>
+<p>
+Kleine Helfer, die Ordnung, Komfort
+und Alltag im Auto verbessern können.
+</p>
 
-            </article>
+<a href="auto.html" class="button">
+Auto-Gadgets entdecken
+</a>
 
+</div>
 
-        </div>
+</article>
 
-    </section>
 
+<article class="product-card reveal delay-3">
 
+<div class="product-image">
+🍳
+</div>
 
-    <!-- =========================================
-         BELIEBTE GADGETS
-    ========================================= -->
+<div class="product-content">
 
-    <section class="section">
+<span class="tag">
+ZUHAUSE
+</span>
 
-        <div class="section-header reveal">
+<h3>
+Clevere Küchenhelfer
+</h3>
 
-            <div>
+<p>
+Praktische kleine Helfer für Küche,
+Haushalt und Alltag.
+</p>
 
-                <h2>
-                    Praktische Gadgets
-                </h2>
+<a href="zuhause.html" class="button">
+Haushaltshelfer entdecken
+</a>
 
-                <p>
-                    Kleine Produkte, die den Alltag
-                    einfacher machen können.
-                </p>
+</div>
 
-            </div>
+</article>
 
-        </div>
 
+</div>
 
-        <div class="products">
+</section>
 
 
-            <article class="product-card reveal delay-1"
-                     id="technik">
+<!-- =========================
+     PREISBEREICHE
+========================= -->
 
-                <div class="product-image">
-                    🔌
-                </div>
+<section class="section">
 
-                <div class="product-content">
+<div class="section-header reveal">
 
-                    <span class="tag">
-                        TECHNIK
-                    </span>
+<div>
 
-                    <h3>
-                        Praktische Lade-Gadgets
-                    </h3>
+<h2>
+Gadgets nach Budget
+</h2>
 
-                    <p>
-                        Kleine Helfer rund ums Laden von
-                        Smartphone, Kopfhörern und anderen Geräten.
-                    </p>
+<p>
+Interessante Produkte für unterschiedliche Budgets.
+</p>
 
-                    <a href="#" class="button">
-                        Mehr erfahren
-                    </a>
+</div>
 
-                </div>
+</div>
 
-            </article>
 
+<div class="price-boxes">
 
 
-            <article class="product-card reveal delay-2"
-                     id="auto">
+<div class="price-box reveal delay-1">
 
-                <div class="product-image">
-                    🚗
-                </div>
+<div class="emoji">
+💰
+</div>
 
-                <div class="product-content">
+<h3>
+Gadgets unter 20 €
+</h3>
 
-                    <span class="tag">
-                        AUTO
-                    </span>
+<p>
+Kleine Produkte und praktische Helfer,
+bei denen die Kaufentscheidung leichter fällt.
+</p>
 
-                    <h3>
-                        Nützliche Auto-Gadgets
-                    </h3>
+<a href="tiktok-finds.html"
+class="link">
+Empfehlungen entdecken →
+</a>
 
-                    <p>
-                        Kleine Helfer, die Ordnung, Komfort
-                        und Alltag im Auto verbessern können.
-                    </p>
+</div>
 
-                    <a href="#" class="button">
-                        Mehr erfahren
-                    </a>
 
-                </div>
+<div class="price-box reveal delay-2">
 
-            </article>
+<div class="emoji">
+🔥
+</div>
 
+<h3>
+Gadgets unter 50 €
+</h3>
 
+<p>
+Interessante Produkte mit etwas mehr
+Möglichkeiten und Ausstattung.
+</p>
 
-            <article class="product-card reveal delay-3"
-                     id="zuhause">
+<a href="tiktok-finds.html"
+class="link">
+Empfehlungen entdecken →
+</a>
 
-                <div class="product-image">
-                    🍳
-                </div>
+</div>
 
-                <div class="product-content">
 
-                    <span class="tag">
-                        ZUHAUSE
-                    </span>
+</div>
 
-                    <h3>
-                        Clevere Küchenhelfer
-                    </h3>
+</section>
 
-                    <p>
-                        Praktische kleine Helfer für Küche,
-                        Haushalt und Alltag.
-                    </p>
 
-                    <a href="#" class="button">
-                        Mehr erfahren
-                    </a>
+<!-- =========================
+     RATGEBER
+========================= -->
 
-                </div>
+<section class="section" id="ratgeber">
 
-            </article>
+<div class="section-header reveal">
 
+<div>
 
-        </div>
+<h2>
+Aus unserem Ratgeber
+</h2>
 
-    </section>
+<p>
+Hilfreiche Informationen statt einfacher Produktlisten.
+</p>
 
+</div>
 
+</div>
 
-    <!-- =========================================
-         WEITERE KATEGORIEN
-    ========================================= -->
 
-    <section class="section">
+<div class="guides">
 
-        <div class="price-boxes">
 
+<article class="guide reveal delay-1">
 
-            <div class="price-box reveal delay-1"
-                 id="unterwegs">
+<div class="guide-category">
+GADGETS
+</div>
 
-                <div class="emoji">
-                    🎒
-                </div>
+<h3>
+15 kleine Gadgets, die den Alltag einfacher machen
+</h3>
 
-                <h3>
-                    Unterwegs
-                </h3>
+<p>
+Welche kleinen Helfer sind tatsächlich
+nützlich und welche kann man sich sparen?
+</p>
 
-                <p>
-                    Praktische Reise-Gadgets und kleine
-                    Helfer für unterwegs.
-                </p>
+<a href="tiktok-finds.html"
+class="link">
+Artikel entdecken →
+</a>
 
-                <a href="#" class="link">
-                    Empfehlungen entdecken →
-                </a>
+</article>
 
-            </div>
 
+<article class="guide reveal delay-2">
 
+<div class="guide-category">
+AUTO
+</div>
 
-            <div class="price-box reveal delay-2"
-                 id="heimwerken">
+<h3>
+Nützliche Auto-Gadgets, die man wirklich gebrauchen kann
+</h3>
 
-                <div class="emoji">
-                    🔧
-                </div>
+<p>
+Von Ordnung im Fahrzeug bis zu praktischen
+Helfern für unterwegs.
+</p>
 
-                <h3>
-                    Heimwerken
-                </h3>
+<a href="auto.html"
+class="link">
+Auto-Gadgets entdecken →
+</a>
 
-                <p>
-                    Nützliche Werkzeuge, clevere Helfer
-                    und praktische Werkstatt-Gadgets.
-                </p>
+</article>
 
-                <a href="#" class="link">
-                    Empfehlungen entdecken →
-                </a>
 
-            </div>
+<article class="guide reveal delay-3">
 
+<div class="guide-category">
+TECHNIK
+</div>
 
+<h3>
+Worauf sollte man bei einem Ladegerät achten?
+</h3>
 
-            <div class="price-box reveal delay-3"
-                 id="geschenke">
+<p>
+Leistung, Anschlüsse, Standards und weitere
+Punkte einfach erklärt.
+</p>
 
-                <div class="emoji">
-                    🎁
-                </div>
+<a href="technik.html"
+class="link">
+Technik entdecken →
+</a>
 
-                <h3>
-                    Geschenkideen
-                </h3>
+</article>
 
-                <p>
-                    Interessante Gadgets und praktische
-                    Geschenkideen für verschiedene Budgets.
-                </p>
 
-                <a href="#" class="link">
-                    Empfehlungen entdecken →
-                </a>
+</div>
 
-            </div>
+</section>
 
 
-        </div>
+<!-- =========================
+     INFO
+========================= -->
 
-    </section>
+<section class="section">
 
+<div class="info reveal">
 
+<h2>
+Warum Produktfinder?
+</h2>
 
-    <!-- =========================================
-         BUDGET
-    ========================================= -->
+<p>
+Im Internet gibt es unzählige Produkte.
+Wir möchten dir dabei helfen, interessante
+Produkte schneller zu entdecken und
+wichtige Unterschiede verständlich zu erklären.
+</p>
 
-    <section class="section">
+</div>
 
-        <div class="section-header reveal">
-
-            <div>
-
-                <h2>
-                    Gadgets nach Budget
-                </h2>
-
-                <p>
-                    Praktische Produkte für verschiedene
-                    Budgets.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="price-boxes">
-
-
-            <div class="price-box reveal delay-1">
-
-                <div class="emoji">
-                    💰
-                </div>
-
-                <h3>
-                    Gadgets unter 20 €
-                </h3>
-
-                <p>
-                    Kleine Produkte und praktische Helfer,
-                    die sich gut für spontane Käufe eignen.
-                </p>
-
-                <a href="#" class="link">
-                    Empfehlungen entdecken →
-                </a>
-
-            </div>
-
-
-
-            <div class="price-box reveal delay-2">
-
-                <div class="emoji">
-                    🔥
-                </div>
-
-                <h3>
-                    Gadgets unter 50 €
-                </h3>
-
-                <p>
-                    Interessante Produkte mit etwas mehr
-                    Ausstattung und Möglichkeiten.
-                </p>
-
-                <a href="#" class="link">
-                    Empfehlungen entdecken →
-                </a>
-
-            </div>
-
-
-
-            <div class="price-box reveal delay-3">
-
-                <div class="emoji">
-                    💎
-                </div>
-
-                <h3>
-                    Premium Finds
-                </h3>
-
-                <p>
-                    Hochwertigere Produkte, bei denen sich
-                    ein genauer Vergleich besonders lohnt.
-                </p>
-
-                <a href="#" class="link">
-                    Empfehlungen entdecken →
-                </a>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================
-         RATGEBER
-    ========================================= -->
-
-    <section class="section"
-             id="ratgeber">
-
-        <div class="section-header reveal">
-
-            <div>
-
-                <h2>
-                    Aus unserem Ratgeber
-                </h2>
-
-                <p>
-                    Hilfreiche Informationen statt
-                    einfacher Produktlisten.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="guides">
-
-
-            <article class="guide reveal delay-1">
-
-                <div class="guide-category">
-                    TIKTOK FINDS
-                </div>
-
-                <h3>
-                    15 virale Gadgets, die wirklich
-                    interessant sind
-                </h3>
-
-                <p>
-                    Welche TikTok-Produkte sind tatsächlich
-                    nützlich und welche sind nur ein kurzer Hype?
-                </p>
-
-                <a href="#" class="link">
-                    Artikel lesen →
-                </a>
-
-            </article>
-
-
-
-            <article class="guide reveal delay-2">
-
-                <div class="guide-category">
-                    AUTO
-                </div>
-
-                <h3>
-                    Nützliche Auto-Gadgets, die man
-                    wirklich gebrauchen kann
-                </h3>
-
-                <p>
-                    Von Ordnung im Fahrzeug bis zu
-                    praktischen Helfern für unterwegs.
-                </p>
-
-                <a href="#" class="link">
-                    Artikel lesen →
-                </a>
-
-            </article>
-
-
-
-            <article class="guide reveal delay-3">
-
-                <div class="guide-category">
-                    TECHNIK
-                </div>
-
-                <h3>
-                    Worauf sollte man bei einem
-                    Ladegerät achten?
-                </h3>
-
-                <p>
-                    Leistung, Anschlüsse, Standards und
-                    weitere Punkte einfach erklärt.
-                </p>
-
-                <a href="#" class="link">
-                    Artikel lesen →
-                </a>
-
-            </article>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================
-         INFO
-    ========================================= -->
-
-    <section class="section">
-
-        <div class="info reveal">
-
-            <h2>
-                Warum Produktfinder?
-            </h2>
-
-            <p>
-                Im Internet gibt es unzählige Produkte.
-                Wir möchten dir dabei helfen, interessante
-                Produkte schneller zu entdecken und wichtige
-                Unterschiede verständlich zu erklären.
-            </p>
-
-        </div>
-
-    </section>
+</section>
 
 
 </main>
 
 
-
-<!-- =========================================
+<!-- =========================
      FOOTER
-========================================= -->
+========================= -->
 
 <footer>
 
-    <p>
-        © 2026 Produktfinder
-    </p>
+<p>
+© 2026 Produktfinder
+</p>
 
-    <p>
+<p>
 
-        <a href="#">
-            Impressum
-        </a>
+<a href="index.html">
+Startseite
+</a>
 
-        |
+<a href="tiktok-finds.html">
+TikTok Finds
+</a>
 
-        <a href="#">
-            Datenschutz
-        </a>
+<a href="zuhause.html">
+Zuhause
+</a>
 
-    </p>
+<a href="technik.html">
+Technik
+</a>
+
+<a href="auto.html">
+Auto
+</a>
+
+<a href="unterwegs.html">
+Unterwegs
+</a>
+
+<a href="heimwerken.html">
+Heimwerken
+</a>
+
+<a href="geschenke.html">
+Geschenke
+</a>
+
+</p>
 
 </footer>
 
 
-
-<!-- =========================================
-     SCROLL JAVASCRIPT
-========================================= -->
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
-    const observer = new IntersectionObserver(
+/* =========================
+   SCROLL-ANIMATIONEN
+========================= */
 
-        (entries) => {
+const observer =
+new IntersectionObserver(
+(entries) => {
 
-            entries.forEach((entry) => {
+entries.forEach(
+(entry) => {
 
-                if (entry.isIntersecting) {
+if (entry.isIntersecting) {
 
-                    entry.target.classList.add("visible");
+entry.target.classList.add("visible");
 
-                    observer.unobserve(entry.target);
+}
 
-                }
+}
+);
 
-            });
-
-        },
-
-        {
-            threshold: 0.15
-        }
-
-    );
+},
+{
+threshold: 0.12
+}
+);
 
 
-    document
-        .querySelectorAll(".reveal")
-        .forEach((element) => {
+document
+.querySelectorAll(".reveal")
+.forEach(
+(element) => {
 
-            observer.observe(element);
+observer.observe(element);
 
-        });
+}
+);
+
+
+/* =========================
+   SUCHE
+========================= */
+
+function searchProducts() {
+
+const input =
+document
+.getElementById("searchInput")
+.value
+.toLowerCase()
+.trim();
+
+
+if (!input) {
+
+alert("Bitte gib einen Suchbegriff ein.");
+
+return;
+
+}
+
+
+if (
+input.includes("auto") ||
+input.includes("wagen") ||
+input.includes("fahrzeug")
+) {
+
+window.location.href = "auto.html";
+
+return;
+
+}
+
+
+if (
+input.includes("technik") ||
+input.includes("handy") ||
+input.includes("lade") ||
+input.includes("kopfhörer") ||
+input.includes("powerbank")
+) {
+
+window.location.href = "technik.html";
+
+return;
+
+}
+
+
+if (
+input.includes("haus") ||
+input.includes("küche") ||
+input.includes("haushalt") ||
+input.includes("ordnung")
+) {
+
+window.location.href = "zuhause.html";
+
+return;
+
+}
+
+
+if (
+input.includes("reise") ||
+input.includes("urlaub") ||
+input.includes("unterwegs")
+) {
+
+window.location.href = "unterwegs.html";
+
+return;
+
+}
+
+
+if (
+input.includes("werkzeug") ||
+input.includes("heimwerken") ||
+input.includes("werkstatt")
+) {
+
+window.location.href = "heimwerken.html";
+
+return;
+
+}
+
+
+if (
+input.includes("geschenk") ||
+input.includes("geschenke")
+) {
+
+window.location.href = "geschenke.html";
+
+return;
+
+}
+
+
+if (
+input.includes("tiktok") ||
+input.includes("viral") ||
+input.includes("find")
+) {
+
+window.location.href = "tiktok-finds.html";
+
+return;
+
+}
+
+
+alert(
+"Wir haben dafür aktuell noch keine eigene Kategorie. Diese Suche bauen wir später weiter aus."
+);
+
+}
+
+
+/* ENTER-TASTE IN DER SUCHE */
+
+document
+.getElementById("searchInput")
+.addEventListener(
+"keydown",
+function(event) {
+
+if (event.key === "Enter") {
+
+searchProducts();
+
+}
+
+}
+);
 
 </script>
 
 
 </body>
+
 </html>
