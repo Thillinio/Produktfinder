@@ -10,10 +10,19 @@
           content="Produktfinder entdeckt praktische Gadgets, nützliche Produkte und clevere Helfer für den Alltag.">
 
     <style>
+
+        /* =========================================
+           GRUNDLAGEN
+        ========================================= */
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -28,7 +37,10 @@
             color: inherit;
         }
 
-        /* HEADER */
+
+        /* =========================================
+           HEADER
+        ========================================= */
 
         header {
             background: #111827;
@@ -66,13 +78,17 @@
             color: #ffffff;
             font-size: 14px;
             opacity: 0.9;
+            transition: opacity 0.2s ease;
         }
 
         nav a:hover {
             opacity: 1;
         }
 
-        /* HERO */
+
+        /* =========================================
+           HERO
+        ========================================= */
 
         .hero {
             background: #ffffff;
@@ -94,12 +110,16 @@
             font-size: 14px;
             font-weight: bold;
             margin-bottom: 18px;
+
+            animation: heroFade 0.8s ease forwards;
         }
 
         .hero h1 {
             font-size: 46px;
             line-height: 1.15;
             margin-bottom: 20px;
+
+            animation: heroUp 0.9s ease 0.1s both;
         }
 
         .hero h1 span {
@@ -111,9 +131,14 @@
             margin: auto;
             color: #667085;
             font-size: 18px;
+
+            animation: heroUp 0.9s ease 0.2s both;
         }
 
-        /* SEARCH */
+
+        /* =========================================
+           HERO SUCHFELD
+        ========================================= */
 
         .search-box {
             max-width: 650px;
@@ -124,6 +149,10 @@
             border: 1px solid #d9dde3;
             border-radius: 12px;
             padding: 5px;
+
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+
+            animation: heroUp 0.9s ease 0.3s both;
         }
 
         .search-box input {
@@ -143,9 +172,21 @@
             border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
         }
 
-        /* MAIN */
+        .search-box button:hover {
+            transform: translateY(-2px);
+            background: #1f2937;
+        }
+
+
+        /* =========================================
+           HAUPTBEREICH
+        ========================================= */
 
         .container {
             max-width: 1150px;
@@ -173,7 +214,56 @@
             font-size: 14px;
         }
 
-        /* CATEGORIES */
+
+        /* =========================================
+           SCROLL-ANIMATION
+        ========================================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(45px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* Zeitversetzte Animationen */
+
+        .delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        .delay-5 {
+            transition-delay: 0.5s;
+        }
+
+        .delay-6 {
+            transition-delay: 0.6s;
+        }
+
+
+        /* =========================================
+           KATEGORIEN
+        ========================================= */
 
         .categories {
             display: grid;
@@ -187,17 +277,26 @@
             padding: 22px 12px;
             text-align: center;
             border: 1px solid #eaecf0;
-            transition: transform 0.2s, box-shadow 0.2s;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
         .category:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transform: translateY(-7px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
         }
 
         .category-icon {
             font-size: 35px;
             margin-bottom: 8px;
+
+            transition: transform 0.25s ease;
+        }
+
+        .category:hover .category-icon {
+            transform: scale(1.12);
         }
 
         .category strong {
@@ -210,7 +309,10 @@
             font-size: 12px;
         }
 
-        /* PRODUCT CARDS */
+
+        /* =========================================
+           PRODUKTKARTEN
+        ========================================= */
 
         .products {
             display: grid;
@@ -223,6 +325,15 @@
             border-radius: 15px;
             overflow: hidden;
             border: 1px solid #eaecf0;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
         }
 
         .product-image {
@@ -234,6 +345,12 @@
             justify-content: center;
 
             font-size: 65px;
+
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.03);
         }
 
         .product-content {
@@ -269,9 +386,21 @@
             border-radius: 8px;
             font-size: 13px;
             font-weight: bold;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
         }
 
-        /* PRICE SECTIONS */
+        .button:hover {
+            transform: translateY(-2px);
+            background: #1f2937;
+        }
+
+
+        /* =========================================
+           PREISBEREICHE
+        ========================================= */
 
         .price-boxes {
             display: grid;
@@ -284,6 +413,15 @@
             border-radius: 15px;
             padding: 30px;
             border: 1px solid #eaecf0;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .price-box:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
         }
 
         .price-box .emoji {
@@ -305,9 +443,21 @@
             font-weight: bold;
             color: #9a6700;
             font-size: 14px;
+
+            transition:
+                color 0.2s ease,
+                padding-left 0.2s ease;
         }
 
-        /* GUIDES */
+        .link:hover {
+            color: #d18b00;
+            padding-left: 4px;
+        }
+
+
+        /* =========================================
+           RATGEBER
+        ========================================= */
 
         .guides {
             display: grid;
@@ -320,6 +470,15 @@
             padding: 25px;
             border-radius: 15px;
             border: 1px solid #eaecf0;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .guide:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
         }
 
         .guide-category {
@@ -340,7 +499,10 @@
             margin-bottom: 15px;
         }
 
-        /* INFO */
+
+        /* =========================================
+           INFO-BEREICH
+        ========================================= */
 
         .info {
             background: #111827;
@@ -348,6 +510,15 @@
             padding: 45px;
             border-radius: 18px;
             text-align: center;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
         }
 
         .info h2 {
@@ -361,7 +532,10 @@
             color: #d1d5db;
         }
 
-        /* FOOTER */
+
+        /* =========================================
+           FOOTER
+        ========================================= */
 
         footer {
             background: #0b1120;
@@ -378,9 +552,45 @@
             color: #d1d5db;
             margin: 0 8px;
             font-size: 13px;
+
+            transition: color 0.2s ease;
         }
 
-        /* MOBILE */
+        footer a:hover {
+            color: white;
+        }
+
+
+        /* =========================================
+           HERO ANIMATIONEN
+        ========================================= */
+
+        @keyframes heroFade {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes heroUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
 
         @media (max-width: 850px) {
 
@@ -397,6 +607,7 @@
                 font-size: 38px;
             }
         }
+
 
         @media (max-width: 600px) {
 
@@ -419,6 +630,7 @@
             .search-box {
                 display: block;
                 border: none;
+                box-shadow: none;
             }
 
             .search-box input {
@@ -454,10 +666,38 @@
                 padding: 30px 20px;
             }
         }
+
+
+        /* =========================================
+           REDUZIERTE BEWEGUNG
+        ========================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
     </style>
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -468,15 +708,30 @@
         </a>
 
         <nav>
-            <a href="#kategorien">Kategorien</a>
-            <a href="#gadgets">Gadgets</a>
-            <a href="#ratgeber">Ratgeber</a>
+
+            <a href="#kategorien">
+                Kategorien
+            </a>
+
+            <a href="#gadgets">
+                Gadgets
+            </a>
+
+            <a href="#ratgeber">
+                Ratgeber
+            </a>
+
         </nav>
 
     </div>
 
 </header>
 
+
+
+<!-- =========================================
+     HERO
+========================================= -->
 
 <section class="hero">
 
@@ -487,7 +742,9 @@
         </div>
 
         <h1>
-            Produkte, die deinen <span>Alltag einfacher</span> machen.
+            Produkte, die deinen
+            <span>Alltag einfacher</span>
+            machen.
         </h1>
 
         <p>
@@ -514,18 +771,29 @@
 </section>
 
 
+
 <main class="container">
 
 
-    <!-- KATEGORIEN -->
+    <!-- =========================================
+         KATEGORIEN
+    ========================================= -->
 
     <section class="section" id="kategorien">
 
-        <div class="section-header">
+        <div class="section-header reveal">
 
             <div>
-                <h2>Entdecke unsere Kategorien</h2>
-                <p>Praktische Produkte für verschiedene Bereiche des Alltags.</p>
+
+                <h2>
+                    Entdecke unsere Kategorien
+                </h2>
+
+                <p>
+                    Praktische Produkte für verschiedene
+                    Bereiche des Alltags.
+                </p>
+
             </div>
 
         </div>
@@ -533,56 +801,134 @@
 
         <div class="categories">
 
-            <a href="#" class="category">
-                <div class="category-icon">🏠</div>
-                <strong>Zuhause</strong>
-                <small>Alltagshelfer</small>
+
+            <a href="#" class="category reveal delay-1">
+
+                <div class="category-icon">
+                    🏠
+                </div>
+
+                <strong>
+                    Zuhause
+                </strong>
+
+                <small>
+                    Alltagshelfer
+                </small>
+
             </a>
 
-            <a href="#" class="category">
-                <div class="category-icon">📱</div>
-                <strong>Technik</strong>
-                <small>Smart & praktisch</small>
+
+            <a href="#" class="category reveal delay-2">
+
+                <div class="category-icon">
+                    📱
+                </div>
+
+                <strong>
+                    Technik
+                </strong>
+
+                <small>
+                    Smart & praktisch
+                </small>
+
             </a>
 
-            <a href="#" class="category">
-                <div class="category-icon">🚗</div>
-                <strong>Auto</strong>
-                <small>Praktisches Zubehör</small>
+
+            <a href="#" class="category reveal delay-3">
+
+                <div class="category-icon">
+                    🚗
+                </div>
+
+                <strong>
+                    Auto
+                </strong>
+
+                <small>
+                    Praktisches Zubehör
+                </small>
+
             </a>
 
-            <a href="#" class="category">
-                <div class="category-icon">🎒</div>
-                <strong>Unterwegs</strong>
-                <small>Reise & Freizeit</small>
+
+            <a href="#" class="category reveal delay-4">
+
+                <div class="category-icon">
+                    🎒
+                </div>
+
+                <strong>
+                    Unterwegs
+                </strong>
+
+                <small>
+                    Reise & Freizeit
+                </small>
+
             </a>
 
-            <a href="#" class="category">
-                <div class="category-icon">🔧</div>
-                <strong>Heimwerken</strong>
-                <small>Werkzeug & Helfer</small>
+
+            <a href="#" class="category reveal delay-5">
+
+                <div class="category-icon">
+                    🔧
+                </div>
+
+                <strong>
+                    Heimwerken
+                </strong>
+
+                <small>
+                    Werkzeug & Helfer
+                </small>
+
             </a>
 
-            <a href="#" class="category">
-                <div class="category-icon">🎁</div>
-                <strong>Geschenke</strong>
-                <small>Ideen & Gadgets</small>
+
+            <a href="#" class="category reveal delay-6">
+
+                <div class="category-icon">
+                    🎁
+                </div>
+
+                <strong>
+                    Geschenke
+                </strong>
+
+                <small>
+                    Ideen & Gadgets
+                </small>
+
             </a>
+
 
         </div>
 
     </section>
 
 
-    <!-- GADGETS -->
+
+    <!-- =========================================
+         GADGETS
+    ========================================= -->
 
     <section class="section" id="gadgets">
 
-        <div class="section-header">
+        <div class="section-header reveal">
 
             <div>
-                <h2>Interessante Gadgets</h2>
-                <p>Kleine Produkte, die überraschend praktisch sein können.</p>
+
+                <h2>
+                    Interessante Gadgets
+                </h2>
+
+                <p>
+                    Kleine Produkte, die überraschend
+                    praktisch sein können.
+                </p>
+
             </div>
 
         </div>
@@ -591,7 +937,7 @@
         <div class="products">
 
 
-            <article class="product-card">
+            <article class="product-card reveal delay-1">
 
                 <div class="product-image">
                     🔌
@@ -599,13 +945,17 @@
 
                 <div class="product-content">
 
-                    <span class="tag">TECHNIK</span>
+                    <span class="tag">
+                        TECHNIK
+                    </span>
 
-                    <h3>Praktische Lade-Gadgets</h3>
+                    <h3>
+                        Praktische Lade-Gadgets
+                    </h3>
 
                     <p>
-                        Kleine Helfer rund ums Laden von Smartphone,
-                        Kopfhörern und anderen Geräten.
+                        Kleine Helfer rund ums Laden von
+                        Smartphone, Kopfhörern und anderen Geräten.
                     </p>
 
                     <a href="#" class="button">
@@ -617,7 +967,8 @@
             </article>
 
 
-            <article class="product-card">
+
+            <article class="product-card reveal delay-2">
 
                 <div class="product-image">
                     🚗
@@ -625,9 +976,13 @@
 
                 <div class="product-content">
 
-                    <span class="tag">AUTO</span>
+                    <span class="tag">
+                        AUTO
+                    </span>
 
-                    <h3>Nützliche Auto-Gadgets</h3>
+                    <h3>
+                        Nützliche Auto-Gadgets
+                    </h3>
 
                     <p>
                         Kleine Helfer, die Ordnung, Komfort
@@ -643,7 +998,8 @@
             </article>
 
 
-            <article class="product-card">
+
+            <article class="product-card reveal delay-3">
 
                 <div class="product-image">
                     🍳
@@ -651,9 +1007,13 @@
 
                 <div class="product-content">
 
-                    <span class="tag">ZUHAUSE</span>
+                    <span class="tag">
+                        ZUHAUSE
+                    </span>
 
-                    <h3>Clevere Küchenhelfer</h3>
+                    <h3>
+                        Clevere Küchenhelfer
+                    </h3>
 
                     <p>
                         Praktische kleine Helfer für Küche,
@@ -668,20 +1028,32 @@
 
             </article>
 
+
         </div>
 
     </section>
 
 
-    <!-- PREISBEREICHE -->
+
+    <!-- =========================================
+         PREISBEREICHE
+    ========================================= -->
 
     <section class="section">
 
-        <div class="section-header">
+        <div class="section-header reveal">
 
             <div>
-                <h2>Gadgets nach Budget</h2>
-                <p>Interessante Produkte für unterschiedliche Budgets.</p>
+
+                <h2>
+                    Gadgets nach Budget
+                </h2>
+
+                <p>
+                    Interessante Produkte für
+                    unterschiedliche Budgets.
+                </p>
+
             </div>
 
         </div>
@@ -689,11 +1061,16 @@
 
         <div class="price-boxes">
 
-            <div class="price-box">
 
-                <div class="emoji">💰</div>
+            <div class="price-box reveal delay-1">
 
-                <h3>Gadgets unter 20 €</h3>
+                <div class="emoji">
+                    💰
+                </div>
+
+                <h3>
+                    Gadgets unter 20 €
+                </h3>
 
                 <p>
                     Kleine Produkte und praktische Helfer,
@@ -707,11 +1084,16 @@
             </div>
 
 
-            <div class="price-box">
 
-                <div class="emoji">🔥</div>
+            <div class="price-box reveal delay-2">
 
-                <h3>Gadgets unter 50 €</h3>
+                <div class="emoji">
+                    🔥
+                </div>
+
+                <h3>
+                    Gadgets unter 50 €
+                </h3>
 
                 <p>
                     Interessante Produkte mit etwas mehr
@@ -724,20 +1106,32 @@
 
             </div>
 
+
         </div>
 
     </section>
 
 
-    <!-- RATGEBER -->
+
+    <!-- =========================================
+         RATGEBER
+    ========================================= -->
 
     <section class="section" id="ratgeber">
 
-        <div class="section-header">
+        <div class="section-header reveal">
 
             <div>
-                <h2>Aus unserem Ratgeber</h2>
-                <p>Hilfreiche Informationen statt einfacher Produktlisten.</p>
+
+                <h2>
+                    Aus unserem Ratgeber
+                </h2>
+
+                <p>
+                    Hilfreiche Informationen statt
+                    einfacher Produktlisten.
+                </p>
+
             </div>
 
         </div>
@@ -746,14 +1140,15 @@
         <div class="guides">
 
 
-            <article class="guide">
+            <article class="guide reveal delay-1">
 
                 <div class="guide-category">
                     GADGETS
                 </div>
 
                 <h3>
-                    15 kleine Gadgets, die den Alltag einfacher machen
+                    15 kleine Gadgets, die den Alltag
+                    einfacher machen
                 </h3>
 
                 <p>
@@ -768,19 +1163,21 @@
             </article>
 
 
-            <article class="guide">
+
+            <article class="guide reveal delay-2">
 
                 <div class="guide-category">
                     AUTO
                 </div>
 
                 <h3>
-                    Nützliche Auto-Gadgets, die man wirklich gebrauchen kann
+                    Nützliche Auto-Gadgets, die man
+                    wirklich gebrauchen kann
                 </h3>
 
                 <p>
-                    Von Ordnung im Fahrzeug bis zu praktischen
-                    Helfern für unterwegs.
+                    Von Ordnung im Fahrzeug bis zu
+                    praktischen Helfern für unterwegs.
                 </p>
 
                 <a href="#" class="link">
@@ -790,19 +1187,21 @@
             </article>
 
 
-            <article class="guide">
+
+            <article class="guide reveal delay-3">
 
                 <div class="guide-category">
                     TECHNIK
                 </div>
 
                 <h3>
-                    Worauf sollte man bei einem Ladegerät achten?
+                    Worauf sollte man bei einem
+                    Ladegerät achten?
                 </h3>
 
                 <p>
-                    Leistung, Anschlüsse, Standards und weitere
-                    Punkte einfach erklärt.
+                    Leistung, Anschlüsse, Standards und
+                    weitere Punkte einfach erklärt.
                 </p>
 
                 <a href="#" class="link">
@@ -811,18 +1210,24 @@
 
             </article>
 
+
         </div>
 
     </section>
 
 
-    <!-- INFO -->
+
+    <!-- =========================================
+         INFO
+    ========================================= -->
 
     <section class="section">
 
-        <div class="info">
+        <div class="info reveal">
 
-            <h2>Warum Produktfinder?</h2>
+            <h2>
+                Warum Produktfinder?
+            </h2>
 
             <p>
                 Im Internet gibt es unzählige Produkte.
@@ -835,8 +1240,14 @@
 
     </section>
 
+
 </main>
 
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
 
 <footer>
 
@@ -845,12 +1256,64 @@
     </p>
 
     <p>
-        <a href="#">Impressum</a>
+
+        <a href="#">
+            Impressum
+        </a>
+
         |
-        <a href="#">Datenschutz</a>
+
+        <a href="#">
+            Datenschutz
+        </a>
+
     </p>
 
 </footer>
 
+
+
+<!-- =========================================
+     SCROLL-JAVASCRIPT
+========================================= -->
+
+<script>
+
+    const observer = new IntersectionObserver(
+
+        (entries) => {
+
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("visible");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.15
+        }
+
+    );
+
+
+    document
+        .querySelectorAll(".reveal")
+        .forEach((element) => {
+
+            observer.observe(element);
+
+        });
+
+</script>
+
+
 </body>
-    </html>
+</html>
