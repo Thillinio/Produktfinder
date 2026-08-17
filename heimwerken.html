@@ -1,187 +1,920 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Heimwerken – Werkzeug & Helfer | Produktfinder</title>
+<title>Heimwerken Finds – Praktische Werkzeuge | Produktfinder</title>
 
-<meta name="description" content="Praktische Werkzeuge, Werkstatt-Gadgets und clevere Helfer für Heimwerker.">
+<meta name="description"
+content="Praktische Heimwerker-Gadgets und Werkzeuge entdecken, vergleichen und günstige Alternativen finden.">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:#f6f7f9;color:#17202a;line-height:1.6}
-a{text-decoration:none;color:inherit}
 
-header{background:#111827;color:white;position:sticky;top:0;z-index:100}
+/* ==================================================
+   GRUNDLAGEN
+================================================== */
 
-.back{
-max-width:1150px;
-margin:auto;
-padding:14px 20px;
-background:#111827
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.back a{color:#d1d5db;font-size:14px;font-weight:bold}
-
-.header-inner{
-max-width:1150px;
-margin:auto;
-padding:16px 20px;
-display:flex;
-justify-content:space-between;
-align-items:center
+html {
+    scroll-behavior: smooth;
 }
 
-.logo{font-size:24px;font-weight:800}
-.logo span{color:#f59e0b}
-
-nav{display:flex;gap:20px}
-nav a{color:white;font-size:14px}
-
-.hero{
-background:white;
-padding:65px 20px;
-text-align:center
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f7f9;
+    color: #17202a;
+    line-height: 1.6;
 }
 
-.hero-content{max-width:800px;margin:auto}
-
-.icon{font-size:55px;margin-bottom:15px}
-
-.hero h1{font-size:44px;margin-bottom:15px}
-.hero h1 span{color:#f59e0b}
-
-.hero p{
-max-width:650px;
-margin:auto;
-color:#667085;
-font-size:18px
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-.container{
-max-width:1150px;
-margin:auto;
-padding:55px 20px
+
+/* ==================================================
+   SCROLL-ANIMATION
+================================================== */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
 }
 
-.section{margin-bottom:65px}
-.title{margin-bottom:25px}
-.title h2{font-size:30px}
-.title p{color:#667085}
-
-.products{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.card{
-background:white;
-border:1px solid #eaecf0;
-border-radius:16px;
-overflow:hidden;
-transition:.3s
+
+/* ==================================================
+   HEADER
+================================================== */
+
+header {
+    background: #111827;
+    color: white;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
 }
 
-.card:hover{
-transform:translateY(-7px);
-box-shadow:0 15px 35px rgba(0,0,0,.1)
+.back {
+    max-width: 1150px;
+    margin: auto;
+
+    padding: 9px 20px;
 }
 
-.image{
-height:190px;
-background:#eef0f3;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:70px
+.back a {
+    color: #d1d5db;
+
+    font-size: 13px;
+    font-weight: bold;
 }
 
-.content{padding:22px}
-
-.tag{
-display:inline-block;
-background:#f2f4f7;
-padding:5px 9px;
-border-radius:5px;
-font-size:11px;
-font-weight:bold;
-margin-bottom:10px
+.back a:hover {
+    color: white;
 }
 
-.card h3{font-size:20px;margin-bottom:8px}
+.header-inner {
+    max-width: 1150px;
+    margin: auto;
 
-.card p{
-color:#667085;
-font-size:14px;
-margin-bottom:18px
+    padding: 14px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.button{
-display:inline-block;
-background:#111827;
-color:white;
-padding:10px 16px;
-border-radius:8px;
-font-size:13px;
-font-weight:bold
+.logo {
+    font-size: 24px;
+    font-weight: 800;
 }
 
-.info{
-background:#111827;
-color:white;
-padding:40px;
-border-radius:18px;
-text-align:center
+.logo span {
+    color: #f59e0b;
 }
 
-.info p{
-color:#d1d5db;
-max-width:700px;
-margin:10px auto 0
+nav {
+    display: flex;
+    gap: 18px;
 }
 
-footer{
-background:#0b1120;
-color:#9ca3af;
-text-align:center;
-padding:35px 20px
+nav a {
+    color: white;
+    font-size: 13px;
+    opacity: 0.9;
 }
 
-footer a{color:#d1d5db;margin:0 8px}
-
-@media(max-width:800px){
-.products{grid-template-columns:repeat(2,1fr)}
-nav{display:none}
+nav a:hover {
+    opacity: 1;
 }
 
-@media(max-width:600px){
-.products{grid-template-columns:1fr}
-.hero h1{font-size:34px}
-.hero p{font-size:16px}
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+    background: #111827;
+    color: white;
+
+    padding: 62px 20px;
+
+    text-align: center;
 }
+
+.hero-content {
+    max-width: 820px;
+    margin: auto;
+}
+
+.hero-label {
+    display: inline-block;
+
+    background: #f59e0b;
+    color: #111827;
+
+    padding: 6px 13px;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    margin-bottom: 16px;
+}
+
+.hero h1 {
+    font-size: 44px;
+
+    line-height: 1.15;
+
+    margin-bottom: 16px;
+}
+
+.hero h1 span {
+    color: #f59e0b;
+}
+
+.hero p {
+    max-width: 720px;
+
+    margin: auto;
+
+    color: #d1d5db;
+
+    font-size: 17px;
+}
+
+
+/* ==================================================
+   CONTAINER
+================================================== */
+
+.container {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 50px 20px;
+}
+
+.section {
+    margin-bottom: 65px;
+}
+
+.section-header {
+    margin-bottom: 22px;
+}
+
+.section-header h2 {
+    font-size: 29px;
+    margin-bottom: 5px;
+}
+
+.section-header p {
+    color: #667085;
+    font-size: 14px;
+}
+
+
+/* ==================================================
+   KATEGORIE NAVIGATION
+================================================== */
+
+.category-navigation {
+    display: flex;
+
+    gap: 10px;
+
+    overflow-x: auto;
+
+    padding-bottom: 7px;
+
+    scrollbar-width: none;
+}
+
+.category-navigation::-webkit-scrollbar {
+    display: none;
+}
+
+.category-button {
+    flex-shrink: 0;
+
+    background: white;
+
+    border: 1px solid #e1e4e8;
+
+    padding: 9px 15px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.category-button:hover {
+    transform: translateY(-2px);
+}
+
+.category-button.active {
+    background: #111827;
+
+    color: white;
+
+    border-color: #111827;
+}
+
+
+/* ==================================================
+   PRODUKTGRUPPE
+================================================== */
+
+.product-group {
+    margin-bottom: 75px;
+}
+
+.group-title {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 20px;
+}
+
+.group-title h2 {
+    font-size: 29px;
+    line-height: 1.2;
+}
+
+.group-title p {
+    color: #667085;
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   PRODUKT KARUSSELL
+================================================== */
+
+.product-carousel {
+    display: flex;
+
+    gap: 20px;
+
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+
+    padding: 5px 5px 18px;
+
+    scrollbar-width: thin;
+}
+
+.product-card {
+    flex: 0 0 calc(33.333% - 14px);
+
+    scroll-snap-align: start;
+
+    background: white;
+
+    border: 1px solid #eaecf0;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.04);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,0.09);
+}
+
+
+/* ==================================================
+   PRODUKTBILD
+================================================== */
+
+.product-image {
+    height: 190px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef0f3,
+            #f8f9fa
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 75px;
+}
+
+
+/* ==================================================
+   PRODUKTINHALT
+================================================== */
+
+.product-content {
+    padding: 23px;
+}
+
+.tag {
+    display: inline-block;
+
+    background: #fff3d6;
+
+    color: #9a6700;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    margin-bottom: 9px;
+}
+
+.product-content h3 {
+    font-size: 20px;
+
+    line-height: 1.3;
+
+    margin-bottom: 8px;
+}
+
+.description {
+    color: #667085;
+
+    font-size: 13px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ==================================================
+   PREIS
+================================================== */
+
+.price {
+    font-size: 21px;
+
+    font-weight: 800;
+
+    margin-bottom: 3px;
+}
+
+.price-note {
+    color: #98a2b3;
+
+    font-size: 10px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ==================================================
+   BEWERTUNG
+================================================== */
+
+.rating {
+    margin-bottom: 15px;
+
+    font-size: 13px;
+}
+
+
+/* ==================================================
+   PROS / CONS
+================================================== */
+
+.pros-cons {
+    margin-bottom: 17px;
+}
+
+.pros-cons strong {
+    display: block;
+
+    font-size: 12px;
+
+    margin-bottom: 4px;
+}
+
+.pros {
+    color: #217a3b;
+
+    font-size: 12px;
+
+    margin-bottom: 10px;
+}
+
+.cons {
+    color: #a33a3a;
+
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   FAZIT
+================================================== */
+
+.verdict {
+    background: #f7f8fa;
+
+    border-radius: 10px;
+
+    padding: 12px;
+
+    margin-bottom: 17px;
+
+    font-size: 12px;
+}
+
+.verdict strong {
+    display: block;
+
+    margin-bottom: 4px;
+}
+
+
+/* ==================================================
+   AMAZON BUTTON
+================================================== */
+
+.amazon-button {
+    display: block;
+
+    width: 100%;
+
+    background: #111827;
+
+    color: white;
+
+    padding: 11px 15px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.amazon-button:hover {
+    background: #1f2937;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   SWIPE
+================================================== */
+
+.swipe-hint {
+    text-align: center;
+
+    color: #98a2b3;
+
+    font-size: 11px;
+
+    margin-top: 6px;
+}
+
+
+/* ==================================================
+   VERGLEICHSBOX
+================================================== */
+
+.compare-box {
+    background: #111827;
+
+    color: white;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    margin-top: 25px;
+}
+
+.compare-box h3 {
+    font-size: 24px;
+
+    margin-bottom: 8px;
+}
+
+.compare-box > p {
+    color: #d1d5db;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: white;
+
+    color: #17202a;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 12px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #eaecf0;
+
+    font-size: 12px;
+}
+
+th {
+    background: #f2f4f7;
+}
+
+
+/* ==================================================
+   QUELLEN
+================================================== */
+
+.sources {
+    background: white;
+
+    border: 1px solid #eaecf0;
+
+    border-radius: 18px;
+
+    padding: 27px;
+
+    margin-top: 25px;
+}
+
+.sources h3 {
+    font-size: 22px;
+
+    margin-bottom: 7px;
+}
+
+.sources-intro {
+    color: #667085;
+
+    font-size: 12px;
+
+    margin-bottom: 20px;
+
+    max-width: 750px;
+}
+
+.source-group {
+    margin-bottom: 22px;
+}
+
+.source-group:last-child {
+    margin-bottom: 0;
+}
+
+.source-group h4 {
+    font-size: 14px;
+
+    margin-bottom: 9px;
+}
+
+.source-links {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.source-link {
+    display: inline-block;
+
+    background: #f7f8fa;
+
+    border: 1px solid #eaecf0;
+
+    border-radius: 9px;
+
+    padding: 9px 12px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.source-link:hover {
+    background: #eef0f3;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   TRANSPARENZ
+================================================== */
+
+.transparency {
+    background: #fff8e7;
+
+    border: 1px solid #f2dfad;
+
+    border-radius: 12px;
+
+    padding: 14px 16px;
+
+    margin-top: 20px;
+
+    color: #6b5500;
+
+    font-size: 11px;
+}
+
+
+/* ==================================================
+   INFO
+================================================== */
+
+.info {
+    background: #111827;
+
+    color: white;
+
+    padding: 38px;
+
+    border-radius: 18px;
+
+    text-align: center;
+}
+
+.info h2 {
+    font-size: 27px;
+
+    margin-bottom: 12px;
+}
+
+.info p {
+    max-width: 760px;
+
+    margin: auto;
+
+    color: #d1d5db;
+
+    font-size: 14px;
+}
+
+.affiliate-note {
+    max-width: 800px;
+
+    margin: 25px auto 0;
+
+    color: #98a2b3;
+
+    font-size: 10px;
+
+    text-align: center;
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+    background: #0b1120;
+
+    color: #9ca3af;
+
+    text-align: center;
+
+    padding: 32px 20px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #d1d5db;
+
+    margin: 0 7px;
+
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+    .product-card {
+        flex: 0 0 48%;
+    }
+
+    nav {
+        display: none;
+    }
+
+}
+
+
+/* ==================================================
+   HANDY
+================================================== */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 48px 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 40px 18px;
+    }
+
+    .product-card {
+        flex: 0 0 88%;
+    }
+
+    .group-title {
+        display: block;
+    }
+
+    .group-title p {
+        margin-top: 5px;
+    }
+
+    .compare-box {
+        padding: 23px 17px;
+    }
+
+    .sources {
+        padding: 22px;
+    }
+
+    .source-links {
+        display: grid;
+
+        grid-template-columns: 1fr;
+    }
+
+    .source-link {
+        width: 100%;
+    }
+
+    .info {
+        padding: 28px 20px;
+    }
+
+}
+
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- ==================================================
+     HEADER
+================================================== -->
 
 <header>
 
 <div class="back">
-<a href="index.html">← Zurück zu Produktfinder</a>
+
+<a href="index.html">
+← Zurück zu Produktfinder
+</a>
+
 </div>
+
 
 <div class="header-inner">
 
-<a href="index.html" class="logo">Produkt<span>finder</span></a>
+<a href="index.html" class="logo">
+Produkt<span>finder</span>
+</a>
+
 
 <nav>
-<a href="index.html">Startseite</a>
-<a href="tiktok-finds.html">TikTok Finds</a>
-<a href="technik.html">Technik</a>
-<a href="auto.html">Auto</a>
+
+<a href="index.html">
+Startseite
+</a>
+
+<a href="tiktok-finds.html">
+TikTok Finds
+</a>
+
+<a href="technik.html">
+Technik
+</a>
+
+<a href="zuhause.html">
+Zuhause
+</a>
+
+<a href="unterwegs.html">
+Unterwegs
+</a>
+
+<a href="auto.html">
+Auto
+</a>
+
+<a href="heimwerken.html">
+Heimwerken
+</a>
+
 </nav>
 
 </div>
@@ -189,146 +922,1878 @@ nav{display:none}
 </header>
 
 
+
+<!-- ==================================================
+     HERO
+================================================== -->
+
 <section class="hero">
 
 <div class="hero-content">
 
-<div class="icon">🔧</div>
+<div class="hero-label">
+🔧 HEIMWERKEN FINDS
+</div>
 
 <h1>
-Clever <span>heimwerken</span>
+Werkzeuge, die dein
+<span>Projekt einfacher machen.</span>
 </h1>
 
 <p>
-Praktische Werkzeuge, kleine Helfer und clevere Gadgets
-für Werkstatt, Garage und Zuhause.
+Ob Renovieren, Möbel aufbauen oder kleine Reparaturen:
+Wir schauen uns praktische Werkzeuge genauer an,
+vergleichen Modelle und suchen nach Alternativen,
+die weniger kosten.
 </p>
 
 </div>
 
 </section>
+
 
 
 <main class="container">
 
 
-<section class="section">
+<!-- ==================================================
+     NAVIGATION
+================================================== -->
 
-<div class="title">
-<h2>🔧 Praktische Helfer für Heimwerker</h2>
-<p>Werkzeuge, Werkstatt-Gadgets und clevere Lösungen.</p>
-</div>
+<section class="section fade-in">
 
-<div class="products">
+<div class="section-header">
 
-<article class="card">
-<div class="image">🔨</div>
-<div class="content">
-<span class="tag">WERKZEUG</span>
-<h3>Praktische Werkzeuge</h3>
-<p>Werkzeuge, die bei kleinen und großen Projekten helfen können.</p>
-<a href="#" class="button">Produkte entdecken</a>
-</div>
-</article>
-
-<article class="card">
-<div class="image">🛠️</div>
-<div class="content">
-<span class="tag">WERKSTATT</span>
-<h3>Werkstatt-Gadgets</h3>
-<p>Cleveres Zubehör für Werkbank und Garage.</p>
-<a href="#" class="button">Produkte entdecken</a>
-</div>
-</article>
-
-<article class="card">
-<div class="image">🧰</div>
-<div class="content">
-<span class="tag">ORDNUNG</span>
-<h3>Werkzeug-Organisation</h3>
-<p>Praktische Lösungen für mehr Ordnung in der Werkstatt.</p>
-<a href="#" class="button">Produkte entdecken</a>
-</div>
-</article>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<div class="title">
-<h2>🔥 Kleine Helfer mit großem Nutzen</h2>
-<p>Produkte, die Heimwerken einfacher machen können.</p>
-</div>
-
-<div class="products">
-
-<article class="card">
-<div class="image">📏</div>
-<div class="content">
-<span class="tag">MESSEN</span>
-<h3>Messwerkzeuge</h3>
-<p>Praktische Helfer für genaues Arbeiten.</p>
-<a href="#" class="button">Mehr erfahren</a>
-</div>
-</article>
-
-<article class="card">
-<div class="image">🧲</div>
-<div class="content">
-<span class="tag">HELFER</span>
-<h3>Magnetische Gadgets</h3>
-<p>Kleine Helfer für Werkstatt und Montage.</p>
-<a href="#" class="button">Mehr erfahren</a>
-</div>
-</article>
-
-<article class="card">
-<div class="image">🔩</div>
-<div class="content">
-<span class="tag">ZUBEHÖR</span>
-<h3>Praktisches Zubehör</h3>
-<p>Nützliches Zubehör für verschiedene Projekte.</p>
-<a href="#" class="button">Mehr erfahren</a>
-</div>
-</article>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<div class="info">
-
-<h2>Werkzeug muss nicht kompliziert sein</h2>
+<h2>
+Heimwerken & Werkzeuge
+</h2>
 
 <p>
-Wir wollen praktische Produkte zeigen, die einen echten
-Nutzen haben und auch für normale Heimwerker interessant sind.
+Praktische Helfer für Renovierung,
+Montage und Reparaturen.
 </p>
 
 </div>
 
+
+<div class="category-navigation">
+
+<a
+href="#messen"
+class="category-button active">
+
+📏 Messen
+
+</a>
+
+<a
+href="#multitools"
+class="category-button">
+
+🛠️ Multitools
+
+</a>
+
+<a
+href="#wand"
+class="category-button">
+
+🧱 Wände
+
+</a>
+
+<a
+href="#quellen"
+class="category-button">
+
+📚 Quellen
+
+</a>
+
+</div>
+
 </section>
+
+
+
+<!-- ==================================================
+     LASER-ENTFERNUNGSMESSER
+================================================== -->
+
+<section
+class="product-group fade-in"
+id="messen"
+>
+
+
+<div class="group-title">
+
+<div>
+
+<h2>
+📏 Laser-Entfernungsmesser
+</h2>
+
+<p>
+Schneller messen als mit dem Zollstock
+</p>
+
+</div>
+
+<p>
+← Auf dem Handy wischen →
+</p>
+
+</div>
+
+
+
+<div class="product-carousel">
+
+
+<!-- ADVANCED DISTANCE -->
+
+<article class="product-card">
+
+<div class="product-image">
+📐
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+🏆 TOP-EMPFEHLUNG
+</span>
+
+<h3>
+Bosch AdvancedDistance 50C
+</h3>
+
+<p class="description">
+
+Digitaler Laser-Entfernungsmesser mit
+bis zu 50 Metern Reichweite, Touch-Display,
+Messfunktionen und Bluetooth-Anbindung.
+Besonders interessant für Renovierungen
+und genaues Ausmessen von Räumen.
+
+</p>
+
+
+<div class="price">
+ca. 75–80 €
+</div>
+
+<div class="price-note">
+Amazon-Preis zum Recherchezeitpunkt
+</div>
+
+
+<div class="rating">
+⭐ <strong>4,7 / 5 · 1.211 Amazon-Meinungen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Bis 50 m Reichweite<br>
+✓ Touch-Display<br>
+✓ Bluetooth<br>
+✓ Flächen- und Volumenberechnung<br>
+✓ Messwertübertragung<br>
+✓ Gute Bedienung
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Teurer als einfache Laser-Messer<br>
+✕ Für gelegentliche Messungen eventuell überdimensioniert<br>
+✕ Batteriebetrieb
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+🤔 Braucht man wirklich die Advanced-Version?
+</strong>
+
+Für Renovierungen und regelmäßiges
+Heimwerken kann sich der Komfort lohnen.
+
+Wer nur gelegentlich einen Raum
+ausmessen möchte, kann allerdings
+deutlich günstiger einsteigen.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Bosch+AdvancedDistance+50C"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Bosch AdvancedDistance bei Amazon →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- UNIVERSAL 40C -->
+
+<article class="product-card">
+
+<div class="product-image">
+📏
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+💰 GÜNSTIGERE ALTERNATIVE
+</span>
+
+<h3>
+Bosch UniversalDistance 40C
+</h3>
+
+<p class="description">
+
+Etwas einfachere Bosch-Variante mit
+bis zu 40 Metern Reichweite, Bluetooth
+und Flächen-/Volumenberechnung.
+
+Für die meisten normalen Heimwerker-
+Aufgaben bereits vollkommen ausreichend.
+
+</p>
+
+
+<div class="price">
+ca. 60–67 €
+</div>
+
+<div class="price-note">
+Amazon-Preis zum Recherchezeitpunkt
+</div>
+
+
+<div class="rating">
+⭐ <strong>4,5 / 5 · 330 Amazon-Meinungen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Bis 40 m<br>
+✓ Bluetooth<br>
+✓ Flächenberechnung<br>
+✓ Volumenberechnung<br>
+✓ Kompakt<br>
+✓ Deutlich günstiger
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Kürzere Reichweite<br>
+✕ Weniger Komfortfunktionen<br>
+✕ Für professionelle Anwendungen begrenzter
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+💰 Wann reicht der günstigere Bosch?
+</strong>
+
+Für eine Wohnung renovieren,
+Möbel planen oder Räume ausmessen?
+
+Dann dürfte der UniversalDistance
+für die meisten Nutzer bereits reichen.
+
+Der AdvancedDistance lohnt sich eher,
+wenn du die zusätzlichen Funktionen
+wirklich nutzt.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Bosch+UniversalDistance+40C"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+UniversalDistance bei Amazon →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- UNIVERSAL 50C -->
+
+<article class="product-card">
+
+<div class="product-image">
+📐
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+⚖️ MITTELWEG
+</span>
+
+<h3>
+Bosch UniversalDistance 50C
+</h3>
+
+<p class="description">
+
+Eine interessante Zwischenlösung:
+50 Meter Reichweite ohne den vollständigen
+Funktionsumfang des AdvancedDistance.
+
+</p>
+
+
+<div class="price">
+ca. 73 €
+</div>
+
+<div class="price-note">
+Amazon-Preis zum Recherchezeitpunkt
+</div>
+
+
+<div class="rating">
+⭐ <strong>4,5 / 5 · 89 Amazon-Meinungen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ 50 m Reichweite<br>
+✓ Bluetooth<br>
+✓ Flächen- und Volumenberechnung<br>
+✓ Abschaltautomatik<br>
+✓ Bosch-Ökosystem
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Preis näher am AdvancedDistance<br>
+✕ Weniger Komfortfunktionen
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+⚖️ Für wen interessant?
+</strong>
+
+Wenn dir die 50 Meter Reichweite
+wichtiger sind als das Touch-Display
+und die zusätzlichen Komfortfunktionen
+des AdvancedDistance, ist diese
+Zwischenlösung interessant.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Bosch+UniversalDistance+50C"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+UniversalDistance 50C ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+
+<div class="swipe-hint">
+👆 Nach links oder rechts wischen
+</div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     MULTITOOLS
+================================================== -->
+
+<section
+class="product-group fade-in"
+id="multitools"
+>
+
+
+<div class="group-title">
+
+<div>
+
+<h2>
+🛠️ Multitools
+</h2>
+
+<p>
+Ein Werkzeug – viele Anwendungen
+</p>
+
+</div>
+
+<p>
+← Auf dem Handy wischen →
+</p>
+
+</div>
+
+
+
+<div class="product-carousel">
+
+
+<!-- BOSCH / PREMIUM -->
+
+<article class="product-card">
+
+<div class="product-image">
+🛠️
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+⭐ PREMIUM
+</span>
+
+<h3>
+Bosch Professional GOP 40-30
+</h3>
+
+<p class="description">
+
+Professionelles oszillierendes
+Multifunktionswerkzeug für Sägen,
+Schneiden, Schleifen und Schaben.
+
+Interessant für anspruchsvollere
+Heimwerker und regelmäßige Projekte.
+
+</p>
+
+
+<div class="price">
+ca. 150–200 €
+</div>
+
+<div class="price-note">
+Preis abhängig von Set und Angebot
+</div>
+
+
+<div class="rating">
+⭐ <strong>Bewertungen je nach Set prüfen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Professionelles Werkzeug<br>
+✓ Vielseitige Anwendungen<br>
+✓ Starlock-Aufnahme<br>
+✓ Gute Ergonomie<br>
+✓ Für regelmäßige Nutzung
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Deutlich teurer<br>
+✕ Kabelgebunden<br>
+✕ Für gelegentliche Arbeiten überdimensioniert
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+⭐ Wann lohnt sich Profi?
+</strong>
+
+Wer regelmäßig renoviert oder viele
+unterschiedliche Arbeiten erledigt,
+kann von einem besseren Multitool
+profitieren.
+
+Für ein einmaliges Projekt wäre
+der Kaufpreis dagegen schwerer
+zu rechtfertigen.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Bosch+Professional+GOP+40-30"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Bosch GOP bei Amazon ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- EINHELL TE-MG -->
+
+<article class="product-card">
+
+<div class="product-image">
+🔧
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+💰 PREIS-LEISTUNG
+</span>
+
+<h3>
+Einhell TE-MG 350 EQ
+</h3>
+
+<p class="description">
+
+Kabelgebundenes Multifunktionswerkzeug
+mit 350 Watt, Schnellspannverschluss
+und Zubehör.
+
+Eine deutlich günstigere Möglichkeit,
+in die Multitool-Welt einzusteigen.
+
+</p>
+
+
+<div class="price">
+ca. 80 €
+</div>
+
+<div class="price-note">
+Amazon-Preis zum Recherchezeitpunkt
+</div>
+
+
+<div class="rating">
+⭐ <strong>Bewertung je nach Amazon-Angebot prüfen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ 350 W<br>
+✓ Schnellspannsystem<br>
+✓ Koffer + Zubehör<br>
+✓ Viele Anwendungen<br>
+✓ Deutlich günstiger als Profi-Modelle
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Kabelgebunden<br>
+✕ Nicht auf Profi-Niveau<br>
+✕ Für große Projekte weniger komfortabel
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+💰 Preis-Leistungs-Tipp?
+</strong>
+
+Für klassische Heimwerkerarbeiten
+ist das TE-MG 350 EQ interessant.
+
+Wenn du nur einige Male im Jahr
+etwas sägen, schleifen oder schaben
+möchtest, ist ein teures Profi-Gerät
+nicht zwingend notwendig.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Einhell+TE-MG+350+EQ"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Einhell TE-MG bei Amazon →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- VARRITO -->
+
+<article class="product-card">
+
+<div class="product-image">
+🔋
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+🔋 AKKU-OPTION
+</span>
+
+<h3>
+Einhell VARRITO 18V
+</h3>
+
+<p class="description">
+
+Kabelloses Multifunktionswerkzeug aus
+dem Einhell Power X-Change System.
+
+Besonders interessant, wenn bereits
+Einhell-18V-Akkus vorhanden sind.
+
+</p>
+
+
+<div class="price">
+ab ca. 64 €
+</div>
+
+<div class="price-note">
+Solo-Version ohne Akku und Ladegerät
+</div>
+
+
+<div class="rating">
+⭐ <strong>4,2 / 5 · 270 zusammengeführte Meinungen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Kabellos<br>
+✓ 18-V-System<br>
+✓ Werkzeugloser Wechsel<br>
+✓ Bis 40.000 Schwingungen/min<br>
+✓ Viele Anwendungen<br>
+✓ Besonders interessant für Einhell-Nutzer
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Akku und Ladegerät nicht enthalten<br>
+✕ Zubehör kann zusätzliche Kosten verursachen<br>
+✕ Solo-Preis ist nicht der Gesamtpreis
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+🔋 VARRITO oder Kabel?
+</strong>
+
+Wenn du bereits Einhell-Akkus besitzt,
+ist das VARRITO besonders interessant.
+
+Wer noch kein Power-X-Change-System
+besitzt, sollte den Akku- und Ladegerät-
+Preis in die Gesamtkosten einrechnen.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Einhell+VARRITO+18V+Solo"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Einhell VARRITO bei Amazon →
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+
+<div class="swipe-hint">
+👆 Nach links oder rechts wischen
+</div>
+
+
+
+<div class="compare-box">
+
+<h3>
+⚖️ Welches Multitool passt?
+</h3>
+
+<p>
+Der größte Unterschied ist nicht nur
+die Leistung, sondern auch die Frage:
+Kabel oder Akku?
+</p>
+
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+
+<th>
+Modell
+</th>
+
+<th>
+Preisniveau
+</th>
+
+<th>
+Stromversorgung
+</th>
+
+<th>
+Für wen?
+</th>
+
+</tr>
+
+<tr>
+
+<td>
+Bosch GOP 40-30
+</td>
+
+<td>
+💰💰💰
+</td>
+
+<td>
+Kabel
+</td>
+
+<td>
+Anspruchsvolle Heimwerker
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Einhell TE-MG 350 EQ
+</td>
+
+<td>
+💰💰
+</td>
+
+<td>
+Kabel
+</td>
+
+<td>
+Preisbewusste Heimwerker
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Einhell VARRITO
+</td>
+
+<td>
+💰💰
+</td>
+
+<td>
+Akku
+</td>
+
+<td>
+Einhell-Akku-Besitzer
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     WANDSCANNER
+================================================== -->
+
+<section
+class="product-group fade-in"
+id="wand"
+>
+
+
+<div class="group-title">
+
+<div>
+
+<h2>
+🧱 Wandscanner & Ortung
+</h2>
+
+<p>
+Vor dem Bohren wissen, was in der Wand steckt
+</p>
+
+</div>
+
+<p>
+← Auf dem Handy wischen →
+</p>
+
+</div>
+
+
+
+<div class="product-carousel">
+
+
+<!-- BOSCH UNIVERSALDETECT -->
+
+<article class="product-card">
+
+<div class="product-image">
+🧱
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+🔎 WERKZEUG-FIND
+</span>
+
+<h3>
+Bosch UniversalDetect
+</h3>
+
+<p class="description">
+
+Digitaler Ortungshelfer zum Auffinden
+von Metall, spannungsführenden Leitungen
+und Holzunterkonstruktionen.
+
+Besonders praktisch beim Aufhängen
+von Regalen, Lampen und Schränken.
+
+</p>
+
+
+<div class="price">
+ca. 60–90 €
+</div>
+
+<div class="price-note">
+Preis abhängig von Angebot
+</div>
+
+
+<div class="rating">
+⭐ <strong>Aktuelle Amazon-Bewertung vor Kauf prüfen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Mehrere Materialarten<br>
+✓ LCD-Anzeige<br>
+✓ Für Renovierung geeignet<br>
+✓ Einfache Bedienung<br>
+✓ Markenprodukt
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Ortungsgeräte sind nicht unfehlbar<br>
+✕ Falsche Anzeigen je nach Wandaufbau möglich<br>
+✕ Für einfache Bilder eventuell unnötig
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+⚠️ Wichtig:
+</strong>
+
+Ein Wandscanner ist eine Hilfe,
+aber keine Garantie dafür, dass eine
+Wand an einer bestimmten Stelle
+sicher gebohrt werden kann.
+
+Bei unbekannter Leitungsführung
+sollte man entsprechend vorsichtig
+vorgehen.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Bosch+UniversalDetect"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Bosch UniversalDetect ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- PREXISO -->
+
+<article class="product-card">
+
+<div class="product-image">
+📡
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+💰 GÜNSTIGERE ALTERNATIVE
+</span>
+
+<h3>
+PREXISO 2-in-1 Stud Finder
+</h3>
+
+<p class="description">
+
+Kombiniert Wandortung mit
+Laser-/Ausrichtungsfunktion und
+ist besonders für einfache
+Montagearbeiten interessant.
+
+</p>
+
+
+<div class="price">
+ca. 25–40 €
+</div>
+
+<div class="price-note">
+Preis abhängig von Variante
+</div>
+
+
+<div class="rating">
+⭐ <strong>Bewertung je nach Variante prüfen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Günstiger Einstieg<br>
+✓ Mehrere Funktionen kombiniert<br>
+✓ Für Bilder und einfache Montage<br>
+✓ Kompakte Bauweise
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Modellvarianten unterscheiden sich<br>
+✕ Weniger etabliertes System<br>
+✕ Ortung nicht mit professioneller Messtechnik verwechseln
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+💰 Wann reicht die günstige Variante?
+</strong>
+
+Für einfache Montagearbeiten kann ein
+günstiger Scanner interessant sein.
+
+Wenn du allerdings regelmäßig renovierst
+oder möglichst zuverlässige Messungen
+benötigst, würde ich eher zu einem
+etablierten Markenmodell greifen.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=PREXISO+2+in+1+Stud+Finder+Laser"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+PREXISO bei Amazon ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- GÜNSTIGE VARIANTE -->
+
+<article class="product-card">
+
+<div class="product-image">
+🔍
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+💡 EINFACHER EINSTIEG
+</span>
+
+<h3>
+Magnetischer Stud Finder
+</h3>
+
+<p class="description">
+
+Die einfachste Variante:
+Statt Elektronik wird ein Magnet
+verwendet, um beispielsweise
+Schrauben oder Nägel hinter
+Gipskarton zu finden.
+
+</p>
+
+
+<div class="price">
+ca. 10–20 €
+</div>
+
+<div class="price-note">
+Preis abhängig vom Modell
+</div>
+
+
+<div class="rating">
+⭐ <strong>Bewertung beim jeweiligen Amazon-Angebot prüfen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Sehr günstig<br>
+✓ Keine Batterien<br>
+✓ Einfaches Prinzip<br>
+✓ Kaum Platzbedarf
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Erkennt keine Leitungen zuverlässig<br>
+✕ Keine Tiefenmessung<br>
+✕ Nicht mit elektronischen Scannern vergleichbar
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+💡 Für wen sinnvoll?
+</strong>
+
+Wenn du lediglich wissen möchtest,
+wo sich magnetische Schrauben oder
+Nägel befinden, kann das ausreichen.
+
+Als Ersatz für einen elektronischen
+Wandscanner sollte man ihn aber
+nicht betrachten.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=magnetischer+Stud+Finder+Wand"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Magnetische Finder ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+
+<div class="swipe-hint">
+👆 Nach links oder rechts wischen
+</div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     GESAMTVERGLEICH
+================================================== -->
+
+<section class="section fade-in">
+
+<div class="compare-box">
+
+<h3>
+🔧 Was lohnt sich beim Heimwerken?
+</h3>
+
+<p>
+Das richtige Werkzeug muss nicht immer
+das teuerste Werkzeug sein.
+</p>
+
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+
+<th>
+Produkt
+</th>
+
+<th>
+Preisniveau
+</th>
+
+<th>
+Stärke
+</th>
+
+<th>
+Unsere Einschätzung
+</th>
+
+</tr>
+
+
+<tr>
+
+<td>
+Bosch AdvancedDistance 50C
+</td>
+
+<td>
+💰💰
+</td>
+
+<td>
+Komfort + 50 m
+</td>
+
+<td>
+⭐ Sehr gut für Renovierung
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Bosch UniversalDistance 40C
+</td>
+
+<td>
+💰💰
+</td>
+
+<td>
+Preis-Leistung
+</td>
+
+<td>
+⭐ Für die meisten Heimwerker
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Bosch GOP 40-30
+</td>
+
+<td>
+💰💰💰
+</td>
+
+<td>
+Profi-Multitool
+</td>
+
+<td>
+⭐ Für regelmäßige Nutzung
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Einhell TE-MG 350 EQ
+</td>
+
+<td>
+💰💰
+</td>
+
+<td>
+350 W + Zubehör
+</td>
+
+<td>
+⭐ Preis-Leistung
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Einhell VARRITO
+</td>
+
+<td>
+💰💰
+</td>
+
+<td>
+Akku + Flexibilität
+</td>
+
+<td>
+⭐ Für Einhell-Nutzer
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+PREXISO Stud Finder
+</td>
+
+<td>
+💰
+</td>
+
+<td>
+Günstiger Wandscanner
+</td>
+
+<td>
+⭐ Für einfache Projekte
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     QUELLEN
+================================================== -->
+
+<section
+class="section fade-in"
+id="quellen"
+>
+
+<div class="sources">
+
+<h3>
+📚 Quellen & Tests
+</h3>
+
+
+<p class="sources-intro">
+
+Hier findest du die Quellen, die wir für
+Produktdaten, Preise, Bewertungen und
+unsere Einschätzungen verwendet haben.
+
+Wir übernehmen keine fremden Testtexte
+oder Bilder.
+
+</p>
+
+
+
+<!-- LASER -->
+
+<div class="source-group">
+
+<h4>
+📏 Laser-Entfernungsmesser
+</h4>
+
+
+<div class="source-links">
+
+<a
+href="https://www.faz.net/kaufkompass/test/der-beste-laserentfernungsmesser/"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+F.A.Z. Kaufkompass – Laser-Test 2026 →
+
+</a>
+
+
+<a
+href="https://www.testberichte.de/p/bosch-tests/advanceddistance-50c-testbericht.html"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Testberichte.de – AdvancedDistance 50C →
+
+</a>
+
+
+<a
+href="https://www.testberichte.de/p/bosch-tests/universaldistance-40c-testbericht.html"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Testberichte.de – UniversalDistance 40C →
+
+</a>
+
+
+<a
+href="https://www.amazon.de/s?k=Bosch+AdvancedDistance+50C"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – AdvancedDistance →
+
+</a>
+
+
+<a
+href="https://www.amazon.de/s?k=Bosch+UniversalDistance+40C"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – UniversalDistance →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- MULTITOOL -->
+
+<div class="source-group">
+
+<h4>
+🛠️ Multitools
+</h4>
+
+
+<div class="source-links">
+
+<a
+href="https://www.autobild.de/produkttests/multifunktionswerkzeuge-im-test-25847389.html"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+AUTO BILD – Multitool-Test 2026 →
+
+</a>
+
+
+<a
+href="https://machneuwerkstatt.de/multitool-vergleich-2026/"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Multitool-Vergleich 2026 →
+
+</a>
+
+
+<a
+href="https://www.amazon.de/s?k=Einhell+TE-MG+350+EQ"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – Einhell TE-MG 350 EQ →
+
+</a>
+
+
+<a
+href="https://www.amazon.de/s?k=Einhell+VARRITO+18V+Solo"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – Einhell VARRITO →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- WANDSCANNER -->
+
+<div class="source-group">
+
+<h4>
+🧱 Wandscanner
+</h4>
+
+
+<div class="source-links">
+
+<a
+href="https://www.amazon.de/s?k=Bosch+UniversalDetect"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – Bosch UniversalDetect →
+
+</a>
+
+
+<a
+href="https://www.amazon.de/s?k=PREXISO+2+in+1+Stud+Finder+Laser"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – PREXISO →
+
+</a>
+
+
+<a
+href="https://shop.tiktok.com/us/k/stud-finder-with-laser-level"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+TikTok – aktuelle Stud-Finder-Trends →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="transparency">
+
+<strong>
+💡 Transparenz:
+</strong>
+
+Preise, Verfügbarkeit und Bewertungen
+können sich jederzeit ändern.
+
+Die Angaben auf dieser Seite sind deshalb
+eine Momentaufnahme der Recherche.
+
+Bei Werkzeugen gilt außerdem:
+Eine hohe Kundenbewertung bedeutet nicht
+automatisch, dass das Produkt für jedes
+Projekt geeignet ist.
+
+Gerade bei Mess- und Ortungsgeräten
+sollten die Herstellerangaben und
+Anwendungsgrenzen beachtet werden.
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     FAZIT
+================================================== -->
+
+<section class="section fade-in">
+
+<div class="info">
+
+<h2>
+🔧 Muss gutes Werkzeug teuer sein?
+</h2>
+
+<p>
+
+Genau das wollen wir bei Produktfinder
+herausfinden.
+
+Ein Profi-Werkzeug kann seinen höheren
+Preis durchaus rechtfertigen – besonders
+wenn es regelmäßig eingesetzt wird.
+
+Aber:
+
+<br><br>
+
+<strong>
+Für ein Regal, eine Renovierung oder
+ein einzelnes DIY-Projekt brauchst du
+nicht automatisch Profi-Equipment.
+
+</strong>
+
+<br><br>
+
+Deshalb zeigen wir neben bekannten
+Marken auch günstigere Alternativen
+und erklären, wo tatsächlich ein
+Unterschied besteht.
+
+<br><br>
+
+<strong>
+Nicht „teuer = gut“ und nicht
+„billig = schlecht“.
+
+Sondern: Was bekommst du für dein Geld?
+
+</strong>
+
+</p>
+
+
+<div class="affiliate-note">
+
+Hinweis: Einige Links auf dieser Seite können
+Affiliate-Links sein. Wenn über einen solchen
+Link ein Kauf erfolgt, kann Produktfinder eine
+Provision erhalten. Für dich entstehen dadurch
+keine zusätzlichen Kosten.
+
+</div>
+
+</div>
+
+</section>
+
 
 </main>
 
 
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
 <footer>
 
-<p>© 2026 Produktfinder</p>
+<p>
+© 2026 Produktfinder
+</p>
+
 
 <p>
-<a href="index.html">Startseite</a>
-<a href="tiktok-finds.html">TikTok Finds</a>
-<a href="technik.html">Technik</a>
+
+<a href="index.html">
+Startseite
+</a>
+
+<a href="tiktok-finds.html">
+TikTok Finds
+</a>
+
+<a href="technik.html">
+Technik
+</a>
+
+<a href="zuhause.html">
+Zuhause
+</a>
+
+<a href="unterwegs.html">
+Unterwegs
+</a>
+
+<a href="auto.html">
+Auto
+</a>
+
+<a href="heimwerken.html">
+Heimwerken
+</a>
+
+<a href="geschenke.html">
+Geschenke
+</a>
+
 </p>
 
 </footer>
 
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script>
+
+const observer =
+new IntersectionObserver(
+
+(entries) => {
+
+entries.forEach(
+(entry) => {
+
+if (entry.isIntersecting) {
+
+entry.target.classList.add(
+"visible"
+);
+
+observer.unobserve(
+entry.target
+);
+
+}
+
+});
+
+},
+
+{
+threshold: 0.12
+}
+
+);
+
+
+document
+.querySelectorAll(".fade-in")
+.forEach(
+(element) => {
+
+observer.observe(element);
+
+}
+);
+
+</script>
+
+
 </body>
+
 </html>
