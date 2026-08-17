@@ -5,18 +5,19 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-<title>Produktfinder – Virale Produkte entdecken & vergleichen</title>
+<title>Produktfinder – Virale Produkte, Gadgets & Empfehlungen</title>
 
 <meta name="description"
-content="Produktfinder entdeckt virale Produkte, vergleicht verschiedene Modelle und findet interessante günstigere Alternativen.">
+      content="Produktfinder entdeckt virale Produkte, praktische Gadgets und clevere Alternativen. Finden, vergleichen und sparen.">
 
 <style>
 
-/* =========================
+/* ==================================================
    GRUNDLAGEN
-========================= */
+================================================== */
 
 * {
     box-sizing: border-box;
@@ -40,10 +41,15 @@ a {
     color: inherit;
 }
 
+button,
+input {
+    font-family: inherit;
+}
 
-/* =========================
-   SCROLL-ANIMATION
-========================= */
+
+/* ==================================================
+   SCROLL ANIMATION
+================================================== */
 
 .fade-in {
     opacity: 0;
@@ -60,9 +66,9 @@ a {
 }
 
 
-/* =========================
+/* ==================================================
    HEADER
-========================= */
+================================================== */
 
 header {
     background: #111827;
@@ -71,22 +77,29 @@ header {
     position: sticky;
     top: 0;
 
-    z-index: 100;
+    z-index: 1000;
+
+    box-shadow:
+        0 2px 12px rgba(0,0,0,0.12);
 }
 
 .header-inner {
     max-width: 1150px;
+
     margin: auto;
 
     padding: 15px 20px;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 }
 
 .logo {
     font-size: 24px;
+
     font-weight: 800;
 }
 
@@ -96,34 +109,42 @@ header {
 
 nav {
     display: flex;
-    gap: 22px;
+
+    gap: 20px;
 }
 
 nav a {
     color: white;
-    font-size: 14px;
+
+    font-size: 13px;
+
     opacity: 0.9;
+
+    transition: 0.2s ease;
 }
 
 nav a:hover {
     opacity: 1;
+
+    color: #f59e0b;
 }
 
 
-/* =========================
+/* ==================================================
    HERO
-========================= */
+================================================== */
 
 .hero {
     background: white;
 
-    padding: 58px 20px 48px;
+    padding: 70px 20px 55px;
 
     text-align: center;
 }
 
 .hero-content {
-    max-width: 820px;
+    max-width: 850px;
+
     margin: auto;
 }
 
@@ -131,23 +152,26 @@ nav a:hover {
     display: inline-block;
 
     background: #fff3d6;
+
     color: #9a6700;
 
-    padding: 6px 13px;
+    padding: 7px 14px;
 
     border-radius: 30px;
 
     font-size: 12px;
+
     font-weight: bold;
 
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 .hero h1 {
-    font-size: 45px;
-    line-height: 1.13;
+    font-size: 46px;
 
-    margin-bottom: 16px;
+    line-height: 1.15;
+
+    margin-bottom: 18px;
 }
 
 .hero h1 span {
@@ -165,124 +189,150 @@ nav a:hover {
 }
 
 
-/* =========================
-   SUCHFELD
-========================= */
+/* ==================================================
+   SUCHMASCHINE
+================================================== */
+
+.search-wrapper {
+    max-width: 700px;
+
+    margin: 30px auto 0;
+
+    position: relative;
+}
 
 .search-box {
-    max-width: 620px;
-
-    margin: 24px auto 0;
-
     display: flex;
 
     background: white;
 
     border: 1px solid #d9dde3;
 
-    border-radius: 11px;
+    border-radius: 14px;
 
     padding: 5px;
 
     box-shadow:
-        0 7px 22px rgba(0,0,0,0.05);
+        0 8px 25px rgba(0,0,0,0.07);
 }
 
 .search-box input {
     flex: 1;
 
+    min-width: 0;
+
     border: none;
+
     outline: none;
 
-    padding: 12px;
+    padding: 14px;
 
     font-size: 15px;
 
-    min-width: 0;
+    color: #17202a;
 }
 
 .search-box button {
     border: none;
 
     background: #111827;
+
     color: white;
 
-    padding: 11px 19px;
+    padding: 12px 22px;
 
-    border-radius: 8px;
+    border-radius: 9px;
 
     font-weight: bold;
 
     cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.search-box button:hover {
+    background: #1f2937;
+
+    transform: translateY(-1px);
 }
 
 
-/* =========================
-   KOMPAKTE LEISTE
-========================= */
+/* ==================================================
+   SUCHERGEBNIS
+================================================== */
 
-.value-bar {
-    max-width: 850px;
+.search-result {
+    display: none;
 
-    margin: 28px auto 0;
+    margin-top: 12px;
 
-    display: flex;
+    background: white;
 
-    justify-content: center;
-    align-items: center;
+    border: 1px solid #eaecf0;
 
-    gap: 0;
+    border-radius: 12px;
 
-    color: #667085;
+    padding: 14px 17px;
+
+    text-align: left;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.08);
 
     font-size: 13px;
-
-    font-weight: 600;
 }
 
-.value-item {
-    padding: 0 18px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 6px;
+.search-result.show {
+    display: block;
 }
 
-.value-item + .value-item {
-    border-left: 1px solid #d9dde3;
+.search-result.success {
+    border-left: 4px solid #22c55e;
 }
 
-.value-item strong {
-    color: #17202a;
+.search-result.warning {
+    border-left: 4px solid #f59e0b;
+}
+
+.search-result strong {
+    display: block;
+
+    margin-bottom: 3px;
+}
+
+.search-result span {
+    color: #667085;
 }
 
 
-/* =========================
+/* ==================================================
    CONTAINER
-========================= */
+================================================== */
 
 .container {
     max-width: 1150px;
 
     margin: auto;
 
-    padding: 45px 20px;
+    padding: 50px 20px;
 }
 
 .section {
-    margin-bottom: 55px;
+    margin-bottom: 65px;
 }
 
 .section-header {
-    margin-bottom: 20px;
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 23px;
 }
 
 .section-header h2 {
     font-size: 29px;
-
-    margin-bottom: 4px;
 }
 
 .section-header p {
@@ -292,118 +342,15 @@ nav a:hover {
 }
 
 
-/* =========================
-   TIKTOK FINDS
-========================= */
-
-.featured {
-    background: #111827;
-
-    color: white;
-
-    border-radius: 20px;
-
-    padding: 30px 35px;
-
-    display: grid;
-
-    grid-template-columns: 1.45fr 0.75fr;
-
-    gap: 25px;
-
-    align-items: center;
-
-    overflow: hidden;
-}
-
-.featured-label {
-    display: inline-block;
-
-    background: #f59e0b;
-
-    color: #111827;
-
-    padding: 5px 10px;
-
-    border-radius: 6px;
-
-    font-size: 10px;
-
-    font-weight: bold;
-
-    margin-bottom: 10px;
-}
-
-.featured h2 {
-    font-size: 29px;
-
-    line-height: 1.2;
-
-    margin-bottom: 10px;
-}
-
-.featured p {
-    color: #d1d5db;
-
-    font-size: 14px;
-
-    margin-bottom: 16px;
-
-    max-width: 650px;
-}
-
-.featured-button {
-    display: inline-block;
-
-    background: #f59e0b;
-
-    color: #111827;
-
-    padding: 10px 16px;
-
-    border-radius: 8px;
-
-    font-size: 13px;
-
-    font-weight: bold;
-
-    transition: transform 0.2s ease;
-}
-
-.featured-button:hover {
-    transform: translateY(-2px);
-}
-
-.featured-visual {
-    min-height: 175px;
-
-    border-radius: 15px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #1f2937,
-            #374151
-        );
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 78px;
-}
-
-
-/* =========================
+/* ==================================================
    KATEGORIEN
-========================= */
+================================================== */
 
 .categories {
     display: grid;
 
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns:
+        repeat(7, 1fr);
 
     gap: 13px;
 }
@@ -411,96 +358,250 @@ nav a:hover {
 .category {
     background: white;
 
-    border-radius: 13px;
+    border: 1px solid #eaecf0;
 
-    padding: 18px 10px;
+    border-radius: 15px;
+
+    padding: 20px 10px;
 
     text-align: center;
 
-    border: 1px solid #eaecf0;
-
     transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .category:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
 
     box-shadow:
-        0 8px 22px rgba(0,0,0,0.07);
+        0 12px 25px rgba(0,0,0,0.08);
 }
 
 .category-icon {
-    font-size: 31px;
+    font-size: 32px;
 
-    margin-bottom: 6px;
+    margin-bottom: 7px;
 }
 
 .category strong {
     display: block;
 
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .category small {
     color: #667085;
 
-    font-size: 11px;
+    font-size: 10px;
 }
 
 
-/* =========================
-   PRODUKTARTEN
-========================= */
+/* ==================================================
+   HIGHLIGHTS
+================================================== */
 
-.product-types {
+.products {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
-    gap: 18px;
+    gap: 20px;
 }
 
-.product-type {
+.product-card {
     background: white;
 
     border: 1px solid #eaecf0;
 
-    border-radius: 15px;
+    border-radius: 16px;
 
-    padding: 22px;
+    overflow: hidden;
 
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
 }
 
-.product-type:hover {
-    transform: translateY(-4px);
+.product-card:hover {
+    transform: translateY(-5px);
 
     box-shadow:
-        0 10px 25px rgba(0,0,0,0.07);
+        0 14px 30px rgba(0,0,0,0.09);
 }
 
-.product-type-icon {
-    font-size: 31px;
+.product-image {
+    height: 190px;
 
-    margin-bottom: 7px;
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 72px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef0f3,
+            #f8f9fa
+        );
 }
 
-.product-type h3 {
-    font-size: 18px;
-
-    margin-bottom: 5px;
+.product-content {
+    padding: 22px;
 }
 
-.product-type p {
+.tag {
+    display: inline-block;
+
+    background: #fff3d6;
+
+    color: #9a6700;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    margin-bottom: 9px;
+}
+
+.product-content h3 {
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+.product-content p {
     color: #667085;
 
     font-size: 13px;
 
-    margin-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+.button {
+    display: inline-block;
+
+    background: #111827;
+
+    color: white;
+
+    padding: 10px 15px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+
+    background: #1f2937;
+}
+
+
+/* ==================================================
+   FINDEN VERGLEICHEN SPAREN
+================================================== */
+
+.three-points {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.point {
+    background: white;
+
+    border: 1px solid #eaecf0;
+
+    border-radius: 13px;
+
+    padding: 18px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.point-icon {
+    font-size: 25px;
+}
+
+.point strong {
+    display: block;
+
+    font-size: 14px;
+}
+
+.point span {
+    color: #667085;
+
+    font-size: 11px;
+}
+
+
+/* ==================================================
+   RATGEBER
+================================================== */
+
+.guides {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.guide {
+    background: white;
+
+    border: 1px solid #eaecf0;
+
+    border-radius: 15px;
+
+    padding: 24px;
+}
+
+.guide-category {
+    color: #9a6700;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+.guide h3 {
+    font-size: 18px;
+
+    margin-bottom: 9px;
+}
+
+.guide p {
+    color: #667085;
+
+    font-size: 13px;
+
+    margin-bottom: 14px;
 }
 
 .link {
@@ -512,81 +613,26 @@ nav a:hover {
 }
 
 
-/* =========================
-   SO FUNKTIONIERT ES
-========================= */
-
-.steps {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 18px;
-}
-
-.step {
-    background: white;
-
-    border: 1px solid #eaecf0;
-
-    border-radius: 15px;
-
-    padding: 22px;
-}
-
-.step-number {
-    width: 34px;
-    height: 34px;
-
-    border-radius: 50%;
-
-    background: #111827;
-
-    color: white;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    font-weight: bold;
-
-    margin-bottom: 11px;
-}
-
-.step h3 {
-    font-size: 18px;
-
-    margin-bottom: 5px;
-}
-
-.step p {
-    color: #667085;
-
-    font-size: 13px;
-}
-
-
-/* =========================
+/* ==================================================
    INFO
-========================= */
+================================================== */
 
 .info {
     background: #111827;
 
     color: white;
 
-    padding: 35px;
-
     border-radius: 18px;
+
+    padding: 38px;
 
     text-align: center;
 }
 
 .info h2 {
-    font-size: 26px;
+    font-size: 27px;
 
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .info p {
@@ -600,9 +646,9 @@ nav a:hover {
 }
 
 
-/* =========================
+/* ==================================================
    FOOTER
-========================= */
+================================================== */
 
 footer {
     background: #0b1120;
@@ -611,11 +657,11 @@ footer {
 
     text-align: center;
 
-    padding: 30px 20px;
+    padding: 35px 20px;
 }
 
 footer p {
-    margin-bottom: 9px;
+    margin-bottom: 10px;
 }
 
 footer a {
@@ -627,44 +673,38 @@ footer a {
 }
 
 
-/* =========================
+/* ==================================================
    TABLET
-========================= */
+================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
 
     .categories {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns:
+            repeat(4, 1fr);
     }
 
-    .featured {
-        grid-template-columns: 1fr;
+    .products,
+    .guides {
+        grid-template-columns:
+            repeat(2, 1fr);
     }
-
-    .featured-visual {
-        min-height: 120px;
-    }
-
-    .product-types,
-    .steps {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-
-/* =========================
-   HANDY
-========================= */
-
-@media (max-width: 600px) {
 
     nav {
         display: none;
     }
 
+}
+
+
+/* ==================================================
+   HANDY
+================================================== */
+
+@media (max-width: 600px) {
+
     .hero {
-        padding: 45px 18px 35px;
+        padding: 50px 18px 40px;
     }
 
     .hero h1 {
@@ -676,80 +716,43 @@ footer a {
     }
 
     .search-box {
-        display: block;
-
-        border: none;
-
-        box-shadow: none;
-
-        padding: 0;
+        display: flex;
     }
 
     .search-box input {
-        width: 100%;
+        padding: 12px 9px;
 
-        border: 1px solid #d9dde3;
-
-        border-radius: 8px;
-
-        margin-bottom: 7px;
+        font-size: 14px;
     }
 
     .search-box button {
-        width: 100%;
-    }
-
-    .value-bar {
-        margin-top: 22px;
-
-        flex-wrap: wrap;
-
-        row-gap: 8px;
-
-        font-size: 12px;
-    }
-
-    .value-item {
-        padding: 0 10px;
-    }
-
-    .value-item + .value-item {
-        border-left: 1px solid #d9dde3;
+        padding: 11px 14px;
     }
 
     .container {
-        padding: 35px 18px;
-    }
-
-    .section {
-        margin-bottom: 45px;
-    }
-
-    .featured {
-        padding: 24px 20px;
-    }
-
-    .featured h2 {
-        font-size: 25px;
-    }
-
-    .featured p {
-        font-size: 13px;
-    }
-
-    .featured-visual {
-        min-height: 100px;
-
-        font-size: 60px;
+        padding: 40px 18px;
     }
 
     .categories {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
-    .product-types,
-    .steps {
+    .products,
+    .guides {
         grid-template-columns: 1fr;
+    }
+
+    .three-points {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header {
+        display: block;
+    }
+
+    .section-header p {
+        margin-top: 5px;
     }
 
     .info {
@@ -766,15 +769,15 @@ footer a {
 <body>
 
 
-<!-- =========================
+<!-- ==================================================
      HEADER
-========================= -->
+================================================== -->
 
 <header>
 
 <div class="header-inner">
 
-<a href="#" class="logo">
+<a href="index.html" class="logo">
 Produkt<span>finder</span>
 </a>
 
@@ -789,8 +792,12 @@ Kategorien
 TikTok Finds
 </a>
 
-<a href="#so-funktioniert-es">
-So funktioniert's
+<a href="#highlights">
+Highlights
+</a>
+
+<a href="#ratgeber">
+Ratgeber
 </a>
 
 </nav>
@@ -801,9 +808,9 @@ So funktioniert's
 
 
 
-<!-- =========================
+<!-- ==================================================
      HERO
-========================= -->
+================================================== -->
 
 <section class="hero">
 
@@ -811,55 +818,69 @@ So funktioniert's
 
 
 <div class="hero-label">
-🔥 PRODUKTE & TRENDS ENTDECKEN
+💡 PRODUKTFINDER
 </div>
 
 
 <h1>
-Entdecke virale Produkte –
-und finde heraus, ob sie den
-<span>Hype wirklich wert sind.</span>
+
+Wir finden Produkte,
+die deinen
+<span>Alltag besser machen.</span>
+
 </h1>
 
 
 <p>
-Wir entdecken interessante Produkte, vergleichen
-verschiedene Modelle und zeigen dir auch
-günstigere Alternativen, wenn sie sinnvoll sind.
+
+Wir entdecken virale Produkte,
+praktische Gadgets und clevere Alternativen
+und schauen genauer hin:
+
+<br>
+
+<strong>
+Ist es wirklich so gut – oder gibt es
+eine bessere Möglichkeit?
+</strong>
+
 </p>
 
 
-<div class="search-box">
+
+<!-- ==================================================
+     SUCHMASCHINE
+================================================== -->
+
+<div class="search-wrapper">
+
+
+<form
+class="search-box"
+id="productSearch"
+autocomplete="off">
+
 
 <input
 type="text"
 id="searchInput"
-placeholder="Wonach suchst du?"
-aria-label="Produktsuche"
->
+placeholder="Was suchst du? z. B. Kopfhörer, Auto, Geschenk..."
+aria-label="Produktsuche">
 
-<button onclick="searchProducts()">
+
+<button type="submit">
 Suchen
 </button>
 
+
+</form>
+
+
+<div
+class="search-result"
+id="searchResult">
 </div>
 
-
-<!-- KOMPAKTE LEISTE -->
-
-<div class="value-bar">
-
-<div class="value-item">
-🔎 <strong>Finden</strong>
-</div>
-
-<div class="value-item">
-⚖️ <strong>Vergleichen</strong>
-</div>
-
-<div class="value-item">
-💰 <strong>Sparen</strong>
-</div>
 
 </div>
 
@@ -873,55 +894,78 @@ Suchen
 <main class="container">
 
 
-<!-- =========================
-     TIKTOK FINDS
-========================= -->
+<!-- ==================================================
+     FINDEN VERGLEICHEN SPAREN
+================================================== -->
 
 <section class="section fade-in">
 
 
-<div class="featured">
+<div class="three-points">
 
+
+<div class="point">
+
+<div class="point-icon">
+🔎
+</div>
 
 <div>
 
-<div class="featured-label">
-🔥 TIKTOK FINDS
+<strong>
+Finden
+</strong>
+
+<span>
+Interessante Produkte entdecken
+</span>
+
 </div>
-
-
-<h2>
-Was gerade viral geht –
-und ob es den Hype wirklich wert ist.
-</h2>
-
-
-<p>
-Wir vergleichen beliebte TikTok-Produkte,
-verschiedene Modelle und interessante
-günstigere Alternativen.
-
-Nicht nur:
-„Dieses Produkt ist viral.“
-
-Sondern:
-„Welches Modell passt wirklich zu dir?“
-</p>
-
-
-<a
-href="tiktok-finds.html"
-class="featured-button">
-
-TikTok Finds entdecken →
-
-</a>
 
 </div>
 
 
-<div class="featured-visual">
-📱🔥
+
+<div class="point">
+
+<div class="point-icon">
+⚖️
+</div>
+
+<div>
+
+<strong>
+Vergleichen
+</strong>
+
+<span>
+Modelle und Preise vergleichen
+</span>
+
+</div>
+
+</div>
+
+
+
+<div class="point">
+
+<div class="point-icon">
+💰
+</div>
+
+<div>
+
+<strong>
+Sparen
+</strong>
+
+<span>
+Günstige Alternativen entdecken
+</span>
+
+</div>
+
 </div>
 
 
@@ -931,27 +975,33 @@ TikTok Finds entdecken →
 
 
 
-<!-- =========================
+<!-- ==================================================
      KATEGORIEN
-========================= -->
+================================================== -->
 
 <section
 class="section fade-in"
-id="kategorien"
->
+id="kategorien">
 
 
 <div class="section-header">
+
+
+<div>
 
 <h2>
 Entdecke unsere Kategorien
 </h2>
 
 <p>
-Von kleinen Gadgets bis zu praktischen Helfern.
+Was suchst du heute?
 </p>
 
 </div>
+
+
+</div>
+
 
 
 <div class="categories">
@@ -970,10 +1020,11 @@ Zuhause
 </strong>
 
 <small>
-Alltagshelfer
+Haushalt & Alltag
 </small>
 
 </a>
+
 
 
 <a
@@ -989,10 +1040,11 @@ Technik
 </strong>
 
 <small>
-Smart & praktisch
+Gadgets & Elektronik
 </small>
 
 </a>
+
 
 
 <a
@@ -1008,10 +1060,11 @@ Auto
 </strong>
 
 <small>
-Praktisches Zubehör
+Zubehör & Helfer
 </small>
 
 </a>
+
 
 
 <a
@@ -1033,6 +1086,7 @@ Reise & Freizeit
 </a>
 
 
+
 <a
 href="heimwerken.html"
 class="category">
@@ -1046,10 +1100,11 @@ Heimwerken
 </strong>
 
 <small>
-Werkzeug & Helfer
+Werkzeug & DIY
 </small>
 
 </a>
+
 
 
 <a
@@ -1065,7 +1120,27 @@ Geschenke
 </strong>
 
 <small>
-Ideen & Gadgets
+Ideen & Inspiration
+</small>
+
+</a>
+
+
+
+<a
+href="tiktok-finds.html"
+class="category">
+
+<div class="category-icon">
+🔥
+</div>
+
+<strong>
+TikTok Finds
+</strong>
+
+<small>
+Viral & Trending
 </small>
 
 </a>
@@ -1077,73 +1152,111 @@ Ideen & Gadgets
 
 
 
-<!-- =========================
-     PRODUKTARTEN
-========================= -->
+<!-- ==================================================
+     HIGHLIGHTS
+================================================== -->
 
-<section class="section fade-in">
+<section
+class="section fade-in"
+id="highlights">
 
 
 <div class="section-header">
 
+
+<div>
+
 <h2>
-Wonach suchst du?
+🔥 Aktuelle Highlights
 </h2>
 
 <p>
-Ein paar Beispiele, womit wir uns beschäftigen.
+Eine kleine Auswahl aus unseren Kategorien.
 </p>
 
 </div>
 
 
-<div class="product-types">
-
-
-<div class="product-type">
-
-<div class="product-type-icon">
-🔥
 </div>
 
+
+
+<div class="products">
+
+
+<!-- NINJA -->
+
+<article class="product-card">
+
+<div class="product-image">
+🍦
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+TIKTOK FIND
+</span>
+
 <h3>
-TikTok-Gadgets
+Ninja CREAMi
 </h3>
 
 <p>
-Produkte, die gerade auf TikTok
-und Social Media Aufmerksamkeit bekommen.
+
+Viral gewordenes Eisgerät,
+mit dem sich gefrorene Zutaten
+in cremige Desserts verwandeln lassen.
+
 </p>
+
 
 <a
 href="tiktok-finds.html"
-class="link">
+class="button">
 
-TikTok Finds ansehen →
+Ninja CREAMi entdecken →
 
 </a>
 
 </div>
 
+</article>
 
-<div class="product-type">
 
-<div class="product-type-icon">
-🔌
+
+<!-- JBL -->
+
+<article class="product-card">
+
+<div class="product-image">
+🔊
 </div>
 
+
+<div class="product-content">
+
+<span class="tag">
+TECHNIK
+</span>
+
 <h3>
-Technik-Gadgets
+JBL Go 4
 </h3>
 
 <p>
-Ladegeräte, Powerbanks, Handy-Zubehör
-und andere praktische Technik.
+
+Kleiner Bluetooth-Lautsprecher
+für unterwegs, zuhause oder
+als Geschenk.
+
 </p>
+
 
 <a
 href="technik.html"
-class="link">
+class="button">
 
 Technik entdecken →
 
@@ -1151,113 +1264,49 @@ Technik entdecken →
 
 </div>
 
+</article>
 
-<div class="product-type">
 
-<div class="product-type-icon">
-🏠
+
+<!-- LEGO -->
+
+<article class="product-card">
+
+<div class="product-image">
+🌸
 </div>
 
+
+<div class="product-content">
+
+<span class="tag">
+GESCHENKE
+</span>
+
 <h3>
-Haushaltshelfer
+LEGO Botanicals
 </h3>
 
 <p>
-Kleine Produkte, die Ordnung,
-Reinigung und Alltag erleichtern.
+
+Kreative Geschenkideen,
+die nach dem Aufbau gleichzeitig
+als Dekoration dienen können.
+
 </p>
 
-<a
-href="zuhause.html"
-class="link">
 
-Haushalt entdecken →
+<a
+href="geschenke.html"
+class="button">
+
+Geschenke entdecken →
 
 </a>
 
-
 </div>
 
-
-<div class="product-type">
-
-<div class="product-type-icon">
-🚗
-</div>
-
-<h3>
-Auto-Gadgets
-</h3>
-
-<p>
-Praktisches Zubehör für mehr
-Komfort und Ordnung im Auto.
-</p>
-
-<a
-href="auto.html"
-class="link">
-
-Auto entdecken →
-
-</a>
-
-
-</div>
-
-
-<div class="product-type">
-
-<div class="product-type-icon">
-🔧
-</div>
-
-<h3>
-Werkzeug
-</h3>
-
-<p>
-Kleine Werkzeuge und praktische
-Helfer für Heimwerker.
-</p>
-
-<a
-href="heimwerken.html"
-class="link">
-
-Werkzeuge entdecken →
-
-</a>
-
-
-</div>
-
-
-<div class="product-type">
-
-<div class="product-type-icon">
-💰
-</div>
-
-<h3>
-Günstige Alternativen
-</h3>
-
-<p>
-Gute Produkte müssen nicht immer
-die teuersten sein.
-</p>
-
-<a
-href="tiktok-finds.html"
-class="link">
-
-Alternativen entdecken →
-
-</a>
-
-
-</div>
+</article>
 
 
 </div>
@@ -1266,98 +1315,9 @@ Alternativen entdecken →
 
 
 
-<!-- =========================
-     SO FUNKTIONIERT ES
-========================= -->
-
-<section
-class="section fade-in"
-id="so-funktioniert-es"
->
-
-
-<div class="section-header">
-
-<h2>
-So funktioniert Produktfinder
-</h2>
-
-<p>
-Von der ersten Entdeckung bis zur Kaufentscheidung.
-</p>
-
-</div>
-
-
-<div class="steps">
-
-
-<div class="step">
-
-<div class="step-number">
-1
-</div>
-
-<h3>
-Produkt entdecken
-</h3>
-
-<p>
-Wir suchen interessante Produkte,
-Trends und praktische Gadgets,
-die einen genaueren Blick wert sind.
-</p>
-
-</div>
-
-
-<div class="step">
-
-<div class="step-number">
-2
-</div>
-
-<h3>
-Modelle vergleichen
-</h3>
-
-<p>
-Wir stellen verschiedene Varianten
-gegenüber und zeigen, welche
-Unterschiede wirklich wichtig sind.
-</p>
-
-</div>
-
-
-<div class="step">
-
-<div class="step-number">
-3
-</div>
-
-<h3>
-Die richtige Wahl treffen
-</h3>
-
-<p>
-Du entscheidest selbst, welches
-Produkt am besten zu deinen
-Bedürfnissen und deinem Budget passt.
-</p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     ABSCHLUSS
-========================= -->
+<!-- ==================================================
+     TIKTOK FIND
+================================================== -->
 
 <section class="section fade-in">
 
@@ -1365,17 +1325,222 @@ Bedürfnissen und deinem Budget passt.
 <div class="info">
 
 <h2>
-💡 Nicht das teuerste – sondern das passende Produkt
+🔥 Was ist wirklich viral – und was ist wirklich gut?
+</h2>
+
+
+<p>
+
+Auf TikTok, Instagram und Pinterest
+werden ständig neue Produkte gezeigt.
+
+Aber viral bedeutet nicht automatisch
+gut.
+
+Deshalb schauen wir genauer hin,
+vergleichen Alternativen und fragen:
+
+<br><br>
+
+<strong>
+Lohnt sich der Hype wirklich?
+
+</strong>
+
+<br><br>
+
+Oder gibt es ein günstigeres Produkt,
+das fast dasselbe kann?
+
+</p>
+
+
+<br>
+
+
+<a
+href="tiktok-finds.html"
+class="button">
+
+TikTok Finds entdecken →
+
+</a>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     RATGEBER
+================================================== -->
+
+<section
+class="section fade-in"
+id="ratgeber">
+
+
+<div class="section-header">
+
+<div>
+
+<h2>
+📚 Aus unserem Ratgeber
 </h2>
 
 <p>
-Ein günstiges Produkt kann völlig ausreichen.
-Manchmal lohnt sich aber auch der Aufpreis für
-mehr Funktionen oder bessere Ausstattung.
-
-Deshalb vergleichen wir beides und erklären
-die Unterschiede verständlich.
+Nicht nur Produkte – sondern Entscheidungen verständlich machen.
 </p>
+
+</div>
+
+</div>
+
+
+
+<div class="guides">
+
+
+<article class="guide">
+
+<div class="guide-category">
+GADGETS
+</div>
+
+<h3>
+Sind virale TikTok-Produkte wirklich ihr Geld wert?
+</h3>
+
+<p>
+
+Wir zeigen, warum manche Produkte
+viral gehen und worauf man beim
+Kauf achten sollte.
+
+</p>
+
+<a
+href="tiktok-finds.html"
+class="link">
+
+Mehr entdecken →
+
+</a>
+
+</article>
+
+
+
+<article class="guide">
+
+<div class="guide-category">
+TECHNIK
+</div>
+
+<h3>
+Teuer oder günstig?
+</h3>
+
+<p>
+
+Wann lohnt sich ein Markenprodukt
+und wann reicht eine günstigere
+Alternative?
+
+</p>
+
+<a
+href="technik.html"
+class="link">
+
+Technik vergleichen →
+
+</a>
+
+</article>
+
+
+
+<article class="guide">
+
+<div class="guide-category">
+GESCHENKE
+</div>
+
+<h3>
+Gute Geschenke müssen nicht teuer sein
+</h3>
+
+<p>
+
+Von kleinen Aufmerksamkeiten bis
+zu besonderen Geschenken:
+passende Ideen für jedes Budget.
+
+</p>
+
+<a
+href="geschenke.html"
+class="link">
+
+Geschenkideen →
+
+</a>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     TRANSPARENZ
+================================================== -->
+
+<section class="section fade-in">
+
+
+<div class="info">
+
+<h2>
+🔎 Transparenz statt Kaufdruck
+</h2>
+
+
+<p>
+
+Wir wollen dir nicht einfach irgendein
+Produkt verkaufen.
+
+Wir zeigen bekannte Produkte,
+vergleichen sie mit Alternativen und
+verlinken – soweit vorhanden –
+auch externe Tests und Quellen.
+
+<br><br>
+
+So kannst du selbst entscheiden,
+welches Produkt zu dir passt.
+
+</p>
+
+
+<br>
+
+
+<a
+href="quellen.html"
+class="button">
+
+Quellen & Tests ansehen →
+
+</a>
+
 
 </div>
 
@@ -1386,15 +1551,17 @@ die Unterschiede verständlich.
 
 
 
-<!-- =========================
+<!-- ==================================================
      FOOTER
-========================= -->
+================================================== -->
 
 <footer>
+
 
 <p>
 © 2026 Produktfinder
 </p>
+
 
 <p>
 
@@ -1406,20 +1573,20 @@ Startseite
 TikTok Finds
 </a>
 
-<a href="zuhause.html">
-Zuhause
-</a>
-
 <a href="technik.html">
 Technik
 </a>
 
-<a href="auto.html">
-Auto
+<a href="zuhause.html">
+Zuhause
 </a>
 
 <a href="unterwegs.html">
 Unterwegs
+</a>
+
+<a href="auto.html">
+Auto
 </a>
 
 <a href="heimwerken.html">
@@ -1432,201 +1599,918 @@ Geschenke
 
 </p>
 
+
 </footer>
 
 
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
+<!-- ==================================================
+     SUCHMASCHINE JAVASCRIPT
+================================================== -->
 
 <script>
 
 
-/* =========================
-   SCROLL-ANIMATION
-========================= */
+/*
+======================================================
+ PRODUKTFINDER SUCHSYSTEM
+======================================================
+
+Hier werden Suchbegriffe den Kategorien zugeordnet.
+
+Du kannst später jederzeit weitere Begriffe hinzufügen.
+
+======================================================
+*/
+
+
+const categoryKeywords = {
+
+
+    "tiktok-finds.html": [
+
+        "tiktok",
+        "viral",
+        "viral gegangen",
+        "viralprodukt",
+        "viral produkt",
+        "trend",
+        "trending",
+        "hype",
+        "instagram",
+        "instagram reels",
+        "reels",
+        "pinterest",
+        "youtube shorts",
+        "shorts",
+        "gesehen",
+        "social media",
+        "socialmedia",
+        "internet trend",
+        "internettrend",
+        "lifehack",
+        "life hack",
+        "must have",
+        "must-have",
+        "hype produkt",
+        "gehyped",
+        "gehyped produkt",
+        "trend produkt",
+        "trending produkt"
+
+    ],
+
+
+
+    "technik.html": [
+
+        "technik",
+        "elektronik",
+        "elektronisch",
+        "smartphone",
+        "handy",
+        "iphone",
+        "android",
+        "samsung",
+        "tablet",
+        "ipad",
+        "computer",
+        "pc",
+        "laptop",
+        "macbook",
+        "monitor",
+        "gaming",
+        "playstation",
+        "ps5",
+        "ps4",
+        "xbox",
+        "switch",
+        "nintendo",
+        "kopfhörer",
+        "kopfhoerer",
+        "earbuds",
+        "in ear",
+        "bluetooth",
+        "lautsprecher",
+        "box",
+        "soundbox",
+        "musik",
+        "audio",
+        "mikrofon",
+        "microfon",
+        "kamera",
+        "cam",
+        "powerbank",
+        "ladegerät",
+        "ladegeraet",
+        "laden",
+        "usb",
+        "usb c",
+        "usb-c",
+        "kabel",
+        "stecker",
+        "netzteil",
+        "smartwatch",
+        "uhr",
+        "fitness tracker",
+        "tracker",
+        "smart home",
+        "echo",
+        "alexa",
+        "led",
+        "licht",
+        "beamer",
+        "projektor",
+        "drucker",
+        "ssd",
+        "festplatte",
+        "speicher",
+        "wifi",
+        "wlan",
+        "router",
+        "technik gadget",
+        "technik gadget"
+        
+    ],
+
+
+
+    "zuhause.html": [
+
+        "zuhause",
+        "haus",
+        "wohnung",
+        "haushalt",
+        "haushaltshelfer",
+        "haushaltsgerät",
+        "haushaltsgeraet",
+        "küche",
+        "kueche",
+        "kochen",
+        "koch",
+        "backen",
+        "back",
+        "backofen",
+        "ofen",
+        "pfanne",
+        "topf",
+        "messer",
+        "küchenhelfer",
+        "kuechenhelfer",
+        "küchengadget",
+        "kuechengadget",
+        "küche gadget",
+        "kueche gadget",
+        "kaffee",
+        "kaffeemaschine",
+        "espresso",
+        "milchaufschäumer",
+        "milchaufschaeumer",
+        "airfryer",
+        "air fryer",
+        "heißluftfritteuse",
+        "heissluftfritteuse",
+        "fritteuse",
+        "eismaschine",
+        "eis",
+        "ninja creami",
+        "creami",
+        "mixen",
+        "mixer",
+        "pürierstab",
+        "puerierstab",
+        "staubsauger",
+        "saugen",
+        "wischen",
+        "wischmopp",
+        "reinigung",
+        "putzen",
+        "putzhilfe",
+        "wäsche",
+        "waesche",
+        "bügeln",
+        "buegeln",
+        "organisieren",
+        "ordnung",
+        "aufbewahrung",
+        "bad",
+        "badezimmer",
+        "schlafzimmer",
+        "wohnzimmer",
+        "garten",
+        "pflanzen",
+        "pflanze",
+        "deko",
+        "dekoration",
+        "alltag",
+        "alltagshelfer",
+        "leben leichter",
+        "praktisch zuhause"
+
+    ],
+
+
+
+    "auto.html": [
+
+        "auto",
+        "wagen",
+        "fahrzeug",
+        "kfz",
+        "pkw",
+        "car",
+        "autozubehör",
+        "autozubehoer",
+        "auto gadget",
+        "autogadget",
+        "autogadgets",
+        "autopflege",
+        "auto pflege",
+        "waschen",
+        "autowäsche",
+        "autowaesche",
+        "reinigung auto",
+        "innenraum",
+        "autoinnenraum",
+        "kofferraum",
+        "kofferraum",
+        "halterung",
+        "handyhalterung",
+        "handyhalter",
+        "autohalterung",
+        "dashcam",
+        "kamera auto",
+        "reifen",
+        "reifendruck",
+        "luftpumpe",
+        "kompressor",
+        "starthilfe",
+        "starter",
+        "batterie",
+        "akku auto",
+        "ladegerät auto",
+        "ladegeraet auto",
+        "usb auto",
+        "zigarettenanzünder",
+        "zigarettenanzuender",
+        "12v",
+        "carplay",
+        "android auto",
+        "navigation auto",
+        "sitz",
+        "autositz",
+        "kindersitz",
+        "dachbox",
+        "dachträger",
+        "dachtraeger",
+        "werkzeug auto",
+        "notfall",
+        "pannenhilfe",
+        "abschleppen",
+        "parkhilfe",
+        "parken",
+        "auto camping",
+        "roadtrip",
+        "fahrer",
+        "fahrradträger",
+        "fahrradtraeger"
+
+    ],
+
+
+
+    "unterwegs.html": [
+
+        "unterwegs",
+        "reise",
+        "reisen",
+        "urlaub",
+        "ferien",
+        "camping",
+        "zelt",
+        "wohnmobil",
+        "camper",
+        "vanlife",
+        "rucksack",
+        "rucksack reise",
+        "koffer",
+        "handgepäck",
+        "handgepaeck",
+        "reisetasche",
+        "tasche",
+        "strand",
+        "wandern",
+        "wanderung",
+        "outdoor",
+        "outdoor gadget",
+        "freizeit",
+        "sport",
+        "fitness",
+        "fahrrad",
+        "fahrradtour",
+        "picknick",
+        "festival",
+        "festival gadget",
+        "fliegen",
+        "flug",
+        "flughafen",
+        "hotel",
+        "airbnb",
+        "reise gadget",
+        "reisegadget",
+        "travel",
+        "travel gadget",
+        "nackenkissen",
+        "reisekissen",
+        "trinkflasche",
+        "thermosflasche",
+        "isolierflasche",
+        "powerbank reise",
+        "organizer",
+        "koffer organizer",
+        "packing",
+        "packen"
+
+    ],
+
+
+
+    "heimwerken.html": [
+
+        "heimwerken",
+        "heimwerker",
+        "werkzeug",
+        "werkzeuge",
+        "werkstatt",
+        "werkbank",
+        "diy",
+        "do it yourself",
+        "renovieren",
+        "renovierung",
+        "reparieren",
+        "reparatur",
+        "bauen",
+        "bauen zuhause",
+        "bohren",
+        "bohrer",
+        "bohrmaschine",
+        "akkuschrauber",
+        "schrauber",
+        "schrauben",
+        "schraubendreher",
+        "schraubenzieher",
+        "säge",
+        "saege",
+        "stichsäge",
+        "stichsaege",
+        "kappsäge",
+        "kappsaege",
+        "multitool",
+        "multifunktionswerkzeug",
+        "werkzeugset",
+        "werkzeugkasten",
+        "zollstock",
+        "laser",
+        "lasermessgerät",
+        "lasermessgeraet",
+        "entfernungsmesser",
+        "messen",
+        "wandscanner",
+        "wandscanner",
+        "leitungssucher",
+        "stud finder",
+        "dübel",
+        "duebel",
+        "nageln",
+        "nagel",
+        "hammer",
+        "zange",
+        "schleifen",
+        "schleifmaschine",
+        "lackieren",
+        "streichen",
+        "farbe",
+        "renovieren",
+        "möbel bauen",
+        "moebel bauen",
+        "ikea aufbauen",
+        "montage",
+        "handwerk",
+        "handwerker",
+        "garage",
+        "keller"
+
+    ],
+
+
+
+    "geschenke.html": [
+
+        "geschenk",
+        "geschenke",
+        "geschenkidee",
+        "geschenkideen",
+        "geschenk ideen",
+        "geburtstag",
+        "geburtstagsgeschenk",
+        "geburtstagsgeschenke",
+        "weihnachten",
+        "weihnachtsgeschenk",
+        "weihnachtsgeschenke",
+        "weihnachtsidee",
+        "valentinstag",
+        "valentinstag geschenk",
+        "muttertag",
+        "muttertagsgeschenk",
+        "vatertag",
+        "vatertagsgeschenk",
+        "mama",
+        "mutter",
+        "papa",
+        "vater",
+        "freundin",
+        "freund",
+        "partner",
+        "partnerin",
+        "ehefrau",
+        "ehemann",
+        "frau",
+        "mann",
+        "bruder",
+        "schwester",
+        "tochter",
+        "sohn",
+        "kind",
+        "kinder",
+        "teenager",
+        "jugendliche",
+        "baby",
+        "hochzeit",
+        "hochzeitsgeschenk",
+        "jahrestag",
+        "anniversary",
+        "kleines geschenk",
+        "kleine aufmerksamkeit",
+        "mitbringsel",
+        "party",
+        "gastgeschenk",
+        "romantisch",
+        "romantisches geschenk",
+        "lustiges geschenk",
+        "lustig",
+        "besonderes geschenk",
+        "originell",
+        "originelles geschenk",
+        "weihnachtsidee",
+        "geschenk unter 20",
+        "geschenk unter 50",
+        "geschenk unter 100"
+
+    ]
+
+};
+
+
+
+/*
+======================================================
+ NORMALISIERUNG
+
+Entfernt Groß-/Kleinschreibung und vereinheitlicht
+einige deutsche Schreibweisen.
+======================================================
+*/
+
+function normalizeText(text) {
+
+    return text
+        .toLowerCase()
+        .trim()
+        .replace(/ä/g, "ae")
+        .replace(/ö/g, "oe")
+        .replace(/ü/g, "ue")
+        .replace(/ß/g, "ss")
+        .replace(/[.,!?;:()[\]{}"'`]/g, " ")
+        .replace(/\s+/g, " ");
+
+}
+
+
+
+/*
+======================================================
+ SUCHFUNKTION
+======================================================
+*/
+
+function findCategory(searchText) {
+
+    const query = normalizeText(searchText);
+
+    if (!query) {
+        return null;
+    }
+
+
+    let scores = {};
+
+
+    for (
+        const category in categoryKeywords
+    ) {
+
+        scores[category] = 0;
+
+
+        categoryKeywords[category]
+        .forEach(keyword => {
+
+            const normalizedKeyword =
+                normalizeText(keyword);
+
+
+            /*
+            Exakte Übereinstimmung bekommt
+            besonders viele Punkte.
+            */
+
+            if (
+                query === normalizedKeyword
+            ) {
+
+                scores[category] += 10;
+
+            }
+
+
+            /*
+            Normales Vorkommen im Suchtext.
+            */
+
+            else if (
+                query.includes(normalizedKeyword)
+            ) {
+
+                scores[category] += 5;
+
+            }
+
+
+            /*
+            Einzelne Wörter der Suchanfrage
+            können ebenfalls Treffer erzeugen.
+            */
+
+            else {
+
+                const words =
+                    query.split(" ");
+
+                words.forEach(word => {
+
+                    if (
+                        word.length >= 3 &&
+                        normalizedKeyword.includes(word)
+                    ) {
+
+                        scores[category] += 2;
+
+                    }
+
+                });
+
+            }
+
+        });
+
+    }
+
+
+    /*
+    Höchsten Score finden.
+    */
+
+    let bestCategory = null;
+
+    let bestScore = 0;
+
+
+    for (
+        const category in scores
+    ) {
+
+        if (
+            scores[category] > bestScore
+        ) {
+
+            bestScore =
+                scores[category];
+
+            bestCategory =
+                category;
+
+        }
+
+    }
+
+
+    if (bestScore === 0) {
+        return null;
+    }
+
+
+    return bestCategory;
+
+}
+
+
+
+/*
+======================================================
+ SCHÖNERE KATEGORIE-NAMEN
+======================================================
+*/
+
+const categoryNames = {
+
+    "tiktok-finds.html":
+        "TikTok Finds",
+
+    "technik.html":
+        "Technik",
+
+    "zuhause.html":
+        "Zuhause",
+
+    "auto.html":
+        "Auto",
+
+    "unterwegs.html":
+        "Unterwegs",
+
+    "heimwerken.html":
+        "Heimwerken",
+
+    "geschenke.html":
+        "Geschenke"
+
+};
+
+
+
+/*
+======================================================
+ SUCHFORMULAR
+======================================================
+*/
+
+const searchForm =
+document.getElementById(
+    "productSearch"
+);
+
+const searchInput =
+document.getElementById(
+    "searchInput"
+);
+
+const searchResult =
+document.getElementById(
+    "searchResult"
+);
+
+
+searchForm.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        const searchText =
+            searchInput.value.trim();
+
+
+        if (!searchText) {
+
+            searchResult.className =
+                "search-result show warning";
+
+
+            searchResult.innerHTML = `
+
+                <strong>
+                    🔎 Gib zuerst etwas ein.
+                </strong>
+
+                <span>
+                    Zum Beispiel „Kopfhörer“,
+                    „Auto“, „Geschenk“,
+                    „Werkzeug“ oder „Küche“.
+                </span>
+
+            `;
+
+            return;
+
+        }
+
+
+        const category =
+            findCategory(searchText);
+
+
+        if (category) {
+
+            const categoryName =
+                categoryNames[category];
+
+
+            searchResult.className =
+                "search-result show success";
+
+
+            searchResult.innerHTML = `
+
+                <strong>
+                    ✓ Wir haben etwas gefunden:
+                </strong>
+
+                <span>
+                    „${searchText}“ passt zu
+                    <strong>${categoryName}</strong>.
+                    Du wirst weitergeleitet …
+                </span>
+
+            `;
+
+
+            /*
+            Kleine Verzögerung, damit der Nutzer
+            das Suchergebnis kurz sehen kann.
+            */
+
+            setTimeout(
+                function() {
+
+                    window.location.href =
+                        category;
+
+                },
+                650
+            );
+
+
+        }
+
+        else {
+
+            searchResult.className =
+                "search-result show warning";
+
+
+            searchResult.innerHTML = `
+
+                <strong>
+                    🤔 Dafür haben wir noch keine eigene Kategorie.
+                </strong>
+
+                <span>
+                    Versuch es zum Beispiel mit
+                    „Technik“, „Küche“, „Auto“,
+                    „Werkzeug“, „Reise“,
+                    „Geschenk“ oder „viral“.
+                </span>
+
+            `;
+
+        }
+
+    }
+);
+
+
+
+/*
+======================================================
+ ENTER / AUTOCOMPLETE-ARTIGES VERHALTEN
+
+Wenn der Nutzer während des Tippens bereits
+einen eindeutigen Begriff verwendet, zeigen wir
+eine kleine Empfehlung.
+======================================================
+*/
+
+searchInput.addEventListener(
+    "input",
+    function() {
+
+        const value =
+            searchInput.value.trim();
+
+
+        if (
+            value.length < 3
+        ) {
+
+            searchResult.className =
+                "search-result";
+
+            return;
+
+        }
+
+
+        const category =
+            findCategory(value);
+
+
+        if (category) {
+
+            const categoryName =
+                categoryNames[category];
+
+
+            searchResult.className =
+                "search-result show";
+
+
+            searchResult.innerHTML = `
+
+                <strong>
+                    💡 Meinst du ${categoryName}?
+                </strong>
+
+                <span>
+                    Drücke „Suchen“, um dorthin zu gelangen.
+                </span>
+
+            `;
+
+        }
+
+        else {
+
+            searchResult.className =
+                "search-result";
+
+        }
+
+    }
+);
+
+
+
+/*
+======================================================
+ SCROLL ANIMATION
+======================================================
+*/
 
 const observer =
 new IntersectionObserver(
-(entries) => {
 
-entries.forEach(
-(entry) => {
+    (entries) => {
 
-if (entry.isIntersecting) {
+        entries.forEach(
+            entry => {
 
-entry.target.classList.add(
-"visible"
-);
+                if (
+                    entry.isIntersecting
+                ) {
 
-observer.unobserve(
-entry.target
-);
+                    entry.target.classList.add(
+                        "visible"
+                    );
 
-}
+                    observer.unobserve(
+                        entry.target
+                    );
 
-});
+                }
 
-},
-{
-threshold: 0.12
-}
+            }
+        );
+
+    },
+
+    {
+        threshold: 0.12
+    }
+
 );
 
 
 document
 .querySelectorAll(".fade-in")
 .forEach(
-(element) => {
+    element => {
 
-observer.observe(element);
+        observer.observe(element);
 
-}
+    }
 );
 
-
-/* =========================
-   SUCHFUNKTION
-========================= */
-
-function searchProducts() {
-
-const input =
-document
-.getElementById("searchInput")
-.value
-.toLowerCase()
-.trim();
-
-
-if (!input) {
-return;
-}
-
-
-/* TikTok */
-
-if (
-input.includes("tiktok") ||
-input.includes("viral") ||
-input.includes("gadget")
-) {
-
-window.location.href =
-"tiktok-finds.html";
-
-return;
-}
-
-
-/* Technik */
-
-if (
-input.includes("technik") ||
-input.includes("ladegerät") ||
-input.includes("ladegeraet") ||
-input.includes("powerbank") ||
-input.includes("handy") ||
-input.includes("kopfhörer") ||
-input.includes("kopfhoerer")
-) {
-
-window.location.href =
-"technik.html";
-
-return;
-}
-
-
-/* Zuhause */
-
-if (
-input.includes("haus") ||
-input.includes("haushalt") ||
-input.includes("küche") ||
-input.includes("kueche") ||
-input.includes("küchen") ||
-input.includes("kuechen")
-) {
-
-window.location.href =
-"zuhause.html";
-
-return;
-}
-
-
-/* Auto */
-
-if (
-input.includes("auto") ||
-input.includes("fahrzeug") ||
-input.includes("wagen")
-) {
-
-window.location.href =
-"auto.html";
-
-return;
-}
-
-
-/* Heimwerken */
-
-if (
-input.includes("werkzeug") ||
-input.includes("heimwerken") ||
-input.includes("schrauben")
-) {
-
-window.location.href =
-"heimwerken.html";
-
-return;
-}
-
-
-/* Geschenke */
-
-if (
-input.includes("geschenk") ||
-input.includes("geschenke")
-) {
-
-window.location.href =
-"geschenke.html";
-
-return;
-}
-
-
-/* Keine Kategorie gefunden */
-
-alert(
-"Wir haben dafür momentan noch keine passende Kategorie. Weitere Produkte und Kategorien kommen bald!"
-);
-
-}
-
-
-/* =========================
-   ENTER-TASTE
-========================= */
-
-document
-.getElementById("searchInput")
-.addEventListener(
-"keydown",
-function(event) {
-
-if (event.key === "Enter") {
-
-searchProducts();
-
-}
-
-});
 
 </script>
 
