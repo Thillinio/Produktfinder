@@ -1,187 +1,927 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Unterwegs – Reise-Gadgets | Produktfinder</title>
+<title>Unterwegs Finds – Reise-Gadgets & Reiseprodukte | Produktfinder</title>
 
-<meta name="description" content="Praktische Reise-Gadgets, Organizer und clevere Helfer für Urlaub, Freizeit und unterwegs.">
+<meta name="description"
+content="Virale Reiseprodukte, praktische Reise-Gadgets und günstige Alternativen entdecken, vergleichen und bewerten.">
+
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:#f6f7f9;color:#17202a;line-height:1.6}
-a{text-decoration:none;color:inherit}
 
-header{background:#111827;color:white;position:sticky;top:0;z-index:100}
+/* ==================================================
+   GRUNDLAGEN
+================================================== */
 
-.back{
-max-width:1150px;
-margin:auto;
-padding:14px 20px;
-background:#111827
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.back a{color:#d1d5db;font-size:14px;font-weight:bold}
-
-.header-inner{
-max-width:1150px;
-margin:auto;
-padding:16px 20px;
-display:flex;
-justify-content:space-between;
-align-items:center
+html {
+    scroll-behavior: smooth;
 }
 
-.logo{font-size:24px;font-weight:800}
-.logo span{color:#f59e0b}
-
-nav{display:flex;gap:20px}
-nav a{color:white;font-size:14px}
-
-.hero{
-background:white;
-padding:65px 20px;
-text-align:center
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f7f9;
+    color: #17202a;
+    line-height: 1.6;
 }
 
-.hero-content{max-width:800px;margin:auto}
-
-.icon{font-size:55px;margin-bottom:15px}
-
-.hero h1{font-size:44px;margin-bottom:15px}
-.hero h1 span{color:#f59e0b}
-
-.hero p{
-max-width:650px;
-margin:auto;
-color:#667085;
-font-size:18px
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-.container{
-max-width:1150px;
-margin:auto;
-padding:55px 20px
+
+/* ==================================================
+   SCROLL-ANIMATION
+================================================== */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
 }
 
-.section{margin-bottom:65px}
-.title{margin-bottom:25px}
-.title h2{font-size:30px}
-.title p{color:#667085}
-
-.products{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.card{
-background:white;
-border:1px solid #eaecf0;
-border-radius:16px;
-overflow:hidden;
-transition:.3s
+
+/* ==================================================
+   HEADER
+================================================== */
+
+header {
+    background: #111827;
+    color: white;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
 }
 
-.card:hover{
-transform:translateY(-7px);
-box-shadow:0 15px 35px rgba(0,0,0,.1)
+.back {
+    max-width: 1150px;
+    margin: auto;
+
+    padding: 9px 20px;
 }
 
-.image{
-height:190px;
-background:#eef0f3;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:70px
+.back a {
+    color: #d1d5db;
+
+    font-size: 13px;
+    font-weight: bold;
 }
 
-.content{padding:22px}
-
-.tag{
-display:inline-block;
-background:#f2f4f7;
-padding:5px 9px;
-border-radius:5px;
-font-size:11px;
-font-weight:bold;
-margin-bottom:10px
+.back a:hover {
+    color: white;
 }
 
-.card h3{font-size:20px;margin-bottom:8px}
+.header-inner {
+    max-width: 1150px;
+    margin: auto;
 
-.card p{
-color:#667085;
-font-size:14px;
-margin-bottom:18px
+    padding: 14px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.button{
-display:inline-block;
-background:#111827;
-color:white;
-padding:10px 16px;
-border-radius:8px;
-font-size:13px;
-font-weight:bold
+.logo {
+    font-size: 24px;
+    font-weight: 800;
 }
 
-.info{
-background:#111827;
-color:white;
-padding:40px;
-border-radius:18px;
-text-align:center
+.logo span {
+    color: #f59e0b;
 }
 
-.info p{
-color:#d1d5db;
-max-width:700px;
-margin:10px auto 0
+nav {
+    display: flex;
+    gap: 22px;
 }
 
-footer{
-background:#0b1120;
-color:#9ca3af;
-text-align:center;
-padding:35px 20px
+nav a {
+    color: white;
+
+    font-size: 14px;
+
+    opacity: 0.9;
 }
 
-footer a{color:#d1d5db;margin:0 8px}
-
-@media(max-width:800px){
-.products{grid-template-columns:repeat(2,1fr)}
-nav{display:none}
+nav a:hover {
+    opacity: 1;
 }
 
-@media(max-width:600px){
-.products{grid-template-columns:1fr}
-.hero h1{font-size:34px}
-.hero p{font-size:16px}
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+    background: #111827;
+
+    color: white;
+
+    padding: 62px 20px;
+
+    text-align: center;
 }
+
+.hero-content {
+    max-width: 820px;
+    margin: auto;
+}
+
+.hero-label {
+    display: inline-block;
+
+    background: #f59e0b;
+
+    color: #111827;
+
+    padding: 6px 13px;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    margin-bottom: 16px;
+}
+
+.hero h1 {
+    font-size: 44px;
+
+    line-height: 1.15;
+
+    margin-bottom: 16px;
+}
+
+.hero h1 span {
+    color: #f59e0b;
+}
+
+.hero p {
+    max-width: 720px;
+
+    margin: auto;
+
+    color: #d1d5db;
+
+    font-size: 17px;
+}
+
+
+/* ==================================================
+   CONTAINER
+================================================== */
+
+.container {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 50px 20px;
+}
+
+.section {
+    margin-bottom: 65px;
+}
+
+.section-header {
+    margin-bottom: 22px;
+}
+
+.section-header h2 {
+    font-size: 29px;
+
+    margin-bottom: 5px;
+}
+
+.section-header p {
+    color: #667085;
+
+    font-size: 14px;
+}
+
+
+/* ==================================================
+   KATEGORIEN
+================================================== */
+
+.category-navigation {
+    display: flex;
+
+    gap: 10px;
+
+    overflow-x: auto;
+
+    padding-bottom: 7px;
+
+    scrollbar-width: none;
+}
+
+.category-navigation::-webkit-scrollbar {
+    display: none;
+}
+
+.category-button {
+    flex-shrink: 0;
+
+    background: white;
+
+    border: 1px solid #e1e4e8;
+
+    padding: 9px 15px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.category-button:hover {
+    transform: translateY(-2px);
+}
+
+.category-button.active {
+    background: #111827;
+
+    color: white;
+
+    border-color: #111827;
+}
+
+
+/* ==================================================
+   PRODUKTGRUPPE
+================================================== */
+
+.product-group {
+    margin-bottom: 75px;
+}
+
+.group-title {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 20px;
+}
+
+.group-title h2 {
+    font-size: 29px;
+
+    line-height: 1.2;
+}
+
+.group-title p {
+    color: #667085;
+
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   PRODUKT-KARUSSELL
+================================================== */
+
+.product-carousel {
+    display: flex;
+
+    gap: 20px;
+
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+
+    padding: 5px 5px 18px;
+
+    scrollbar-width: thin;
+}
+
+.product-card {
+    flex: 0 0 calc(33.333% - 14px);
+
+    scroll-snap-align: start;
+
+    background: white;
+
+    border: 1px solid #eaecf0;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.04);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,0.09);
+}
+
+
+/* ==================================================
+   PRODUKTBILD
+================================================== */
+
+.product-image {
+    height: 190px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef0f3,
+            #f8f9fa
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 75px;
+}
+
+
+/* ==================================================
+   PRODUKTINHALT
+================================================== */
+
+.product-content {
+    padding: 23px;
+}
+
+.tag {
+    display: inline-block;
+
+    background: #fff3d6;
+
+    color: #9a6700;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    margin-bottom: 9px;
+}
+
+.product-content h3 {
+    font-size: 20px;
+
+    line-height: 1.3;
+
+    margin-bottom: 8px;
+}
+
+.description {
+    color: #667085;
+
+    font-size: 13px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ==================================================
+   PREIS
+================================================== */
+
+.price {
+    font-size: 21px;
+
+    font-weight: 800;
+
+    margin-bottom: 3px;
+}
+
+.price-note {
+    color: #98a2b3;
+
+    font-size: 10px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ==================================================
+   BEWERTUNG
+================================================== */
+
+.rating {
+    margin-bottom: 15px;
+
+    font-size: 13px;
+}
+
+
+/* ==================================================
+   PROS / CONS
+================================================== */
+
+.pros-cons {
+    margin-bottom: 17px;
+}
+
+.pros-cons strong {
+    display: block;
+
+    font-size: 12px;
+
+    margin-bottom: 4px;
+}
+
+.pros {
+    color: #217a3b;
+
+    font-size: 12px;
+
+    margin-bottom: 10px;
+}
+
+.cons {
+    color: #a33a3a;
+
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   FAZIT
+================================================== */
+
+.verdict {
+    background: #f7f8fa;
+
+    border-radius: 10px;
+
+    padding: 12px;
+
+    margin-bottom: 17px;
+
+    font-size: 12px;
+}
+
+.verdict strong {
+    display: block;
+
+    margin-bottom: 4px;
+}
+
+
+/* ==================================================
+   AMAZON BUTTON
+================================================== */
+
+.amazon-button {
+    display: block;
+
+    width: 100%;
+
+    background: #111827;
+
+    color: white;
+
+    padding: 11px 15px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.amazon-button:hover {
+    background: #1f2937;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   SWIPE
+================================================== */
+
+.swipe-hint {
+    text-align: center;
+
+    color: #98a2b3;
+
+    font-size: 11px;
+
+    margin-top: 6px;
+}
+
+
+/* ==================================================
+   VERGLEICHSBOX
+================================================== */
+
+.compare-box {
+    background: #111827;
+
+    color: white;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    margin-top: 25px;
+}
+
+.compare-box h3 {
+    font-size: 24px;
+
+    margin-bottom: 8px;
+}
+
+.compare-box > p {
+    color: #d1d5db;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: white;
+
+    color: #17202a;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 12px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #eaecf0;
+
+    font-size: 12px;
+}
+
+th {
+    background: #f2f4f7;
+}
+
+
+/* ==================================================
+   QUELLEN
+================================================== */
+
+.sources {
+    background: white;
+
+    border: 1px solid #eaecf0;
+
+    border-radius: 18px;
+
+    padding: 27px;
+
+    margin-top: 25px;
+}
+
+.sources h3 {
+    font-size: 22px;
+
+    margin-bottom: 7px;
+}
+
+.sources-intro {
+    color: #667085;
+
+    font-size: 12px;
+
+    margin-bottom: 20px;
+
+    max-width: 750px;
+}
+
+.source-group {
+    margin-bottom: 22px;
+}
+
+.source-group:last-child {
+    margin-bottom: 0;
+}
+
+.source-group h4 {
+    font-size: 14px;
+
+    margin-bottom: 9px;
+}
+
+.source-links {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.source-link {
+    display: inline-block;
+
+    background: #f7f8fa;
+
+    border: 1px solid #eaecf0;
+
+    border-radius: 9px;
+
+    padding: 9px 12px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.source-link:hover {
+    background: #eef0f3;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   TRANSPARENZ
+================================================== */
+
+.transparency {
+    background: #fff8e7;
+
+    border: 1px solid #f2dfad;
+
+    border-radius: 12px;
+
+    padding: 14px 16px;
+
+    margin-top: 20px;
+
+    color: #6b5500;
+
+    font-size: 11px;
+}
+
+
+/* ==================================================
+   INFO
+================================================== */
+
+.info {
+    background: #111827;
+
+    color: white;
+
+    padding: 38px;
+
+    border-radius: 18px;
+
+    text-align: center;
+}
+
+.info h2 {
+    font-size: 27px;
+
+    margin-bottom: 12px;
+}
+
+.info p {
+    max-width: 760px;
+
+    margin: auto;
+
+    color: #d1d5db;
+
+    font-size: 14px;
+}
+
+
+/* ==================================================
+   AFFILIATE-HINWEIS
+================================================== */
+
+.affiliate-note {
+    max-width: 800px;
+
+    margin: 25px auto 0;
+
+    color: #98a2b3;
+
+    font-size: 10px;
+
+    text-align: center;
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+    background: #0b1120;
+
+    color: #9ca3af;
+
+    text-align: center;
+
+    padding: 32px 20px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #d1d5db;
+
+    margin: 0 7px;
+
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+    .product-card {
+        flex: 0 0 48%;
+    }
+
+    nav {
+        display: none;
+    }
+
+}
+
+
+/* ==================================================
+   HANDY
+================================================== */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 48px 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 40px 18px;
+    }
+
+    .product-card {
+        flex: 0 0 88%;
+    }
+
+    .group-title {
+        display: block;
+    }
+
+    .group-title p {
+        margin-top: 5px;
+    }
+
+    .compare-box {
+        padding: 23px 17px;
+    }
+
+    .sources {
+        padding: 22px;
+    }
+
+    .source-links {
+        display: grid;
+
+        grid-template-columns: 1fr;
+    }
+
+    .source-link {
+        width: 100%;
+    }
+
+    .info {
+        padding: 28px 20px;
+    }
+
+}
+
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- ==================================================
+     HEADER
+================================================== -->
 
 <header>
 
 <div class="back">
-<a href="index.html">← Zurück zu Produktfinder</a>
+
+<a href="index.html">
+← Zurück zu Produktfinder
+</a>
+
 </div>
+
 
 <div class="header-inner">
 
-<a href="index.html" class="logo">Produkt<span>finder</span></a>
+<a href="index.html" class="logo">
+Produkt<span>finder</span>
+</a>
+
 
 <nav>
-<a href="index.html">Startseite</a>
-<a href="tiktok-finds.html">TikTok Finds</a>
-<a href="zuhause.html">Zuhause</a>
-<a href="technik.html">Technik</a>
+
+<a href="index.html">
+Startseite
+</a>
+
+<a href="tiktok-finds.html">
+TikTok Finds
+</a>
+
+<a href="technik.html">
+Technik
+</a>
+
+<a href="zuhause.html">
+Zuhause
+</a>
+
+<a href="unterwegs.html">
+Unterwegs
+</a>
+
 </nav>
 
 </div>
@@ -189,146 +929,1915 @@ nav{display:none}
 </header>
 
 
+
+<!-- ==================================================
+     HERO
+================================================== -->
+
 <section class="hero">
 
 <div class="hero-content">
 
-<div class="icon">🎒</div>
+<div class="hero-label">
+🎒 UNTERWEGS FINDS
+</div>
 
 <h1>
-Clever unterwegs mit <span>praktischen Helfern</span>
+Reise-Gadgets, die deinen
+<span>Trip einfacher machen.</span>
 </h1>
 
 <p>
-Reise-Gadgets, praktische Organizer und kleine Helfer
-für Urlaub, Freizeit und unterwegs.
+Von viralen Trinkflaschen bis zu cleveren
+Reisehelfern: Wir schauen genauer hin,
+vergleichen Produkte und suchen nach
+sinnvollen Alternativen.
 </p>
 
 </div>
 
 </section>
+
 
 
 <main class="container">
 
 
-<section class="section">
+<!-- ==================================================
+     NAVIGATION
+================================================== -->
 
-<div class="title">
-<h2>🎒 Praktisches für unterwegs</h2>
-<p>Gadgets für Reisen, Freizeit und Alltag.</p>
-</div>
+<section class="section fade-in">
 
-<div class="products">
+<div class="section-header">
 
-<article class="card">
-<div class="image">✈️</div>
-<div class="content">
-<span class="tag">REISE</span>
-<h3>Praktische Reise-Gadgets</h3>
-<p>Kleine Helfer, die Reisen angenehmer machen können.</p>
-<a href="#" class="button">Produkte entdecken</a>
-</div>
-</article>
-
-<article class="card">
-<div class="image">🧳</div>
-<div class="content">
-<span class="tag">ORGANISATION</span>
-<h3>Reise-Organizer</h3>
-<p>Mehr Ordnung im Koffer und unterwegs.</p>
-<a href="#" class="button">Produkte entdecken</a>
-</div>
-</article>
-
-<article class="card">
-<div class="image">🏕️</div>
-<div class="content">
-<span class="tag">FREIZEIT</span>
-<h3>Gadgets für unterwegs</h3>
-<p>Praktische Produkte für Freizeit und Abenteuer.</p>
-<a href="#" class="button">Produkte entdecken</a>
-</div>
-</article>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<div class="title">
-<h2>🔥 Kleine Reisehelfer</h2>
-<p>Produkte, die unterwegs besonders praktisch sein können.</p>
-</div>
-
-<div class="products">
-
-<article class="card">
-<div class="image">🔋</div>
-<div class="content">
-<span class="tag">TECHNIK</span>
-<h3>Powerbanks</h3>
-<p>Energie für Smartphone und andere Geräte.</p>
-<a href="#" class="button">Mehr erfahren</a>
-</div>
-</article>
-
-<article class="card">
-<div class="image">🧴</div>
-<div class="content">
-<span class="tag">REISE</span>
-<h3>Reise-Organizer</h3>
-<p>Praktische Aufbewahrung für unterwegs.</p>
-<a href="#" class="button">Mehr erfahren</a>
-</div>
-</article>
-
-<article class="card">
-<div class="image">😴</div>
-<div class="content">
-<span class="tag">KOMFORT</span>
-<h3>Reise-Komfort</h3>
-<p>Kleine Helfer für lange Fahrten und Flüge.</p>
-<a href="#" class="button">Mehr erfahren</a>
-</div>
-</article>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<div class="info">
-
-<h2>Weniger Stress unterwegs</h2>
+<h2>
+Reisen & Unterwegs
+</h2>
 
 <p>
-Die besten Reise-Gadgets sind oft die kleinen Dinge,
-die man erst vermisst, wenn man sie nicht dabei hat.
+Praktische Produkte für Urlaub, Roadtrips,
+Flüge und den Alltag unterwegs.
 </p>
 
 </div>
 
+
+<div class="category-navigation">
+
+<a
+href="#trinken"
+class="category-button active">
+
+🥤 Trinken
+
+</a>
+
+<a
+href="#packen"
+class="category-button">
+
+🧳 Packen
+
+</a>
+
+<a
+href="#komfort"
+class="category-button">
+
+😴 Komfort
+
+</a>
+
+<a
+href="#quellen"
+class="category-button">
+
+📚 Quellen
+
+</a>
+
+</div>
+
 </section>
+
+
+
+<!-- ==================================================
+     OWALA
+================================================== -->
+
+<section
+class="product-group fade-in"
+id="trinken"
+>
+
+
+<div class="group-title">
+
+<div>
+
+<h2>
+🥤 Owala FreeSip
+</h2>
+
+<p>
+Die virale Wasserflasche mit zwei Trinkmöglichkeiten
+</p>
+
+</div>
+
+<p>
+← Auf dem Handy wischen →
+</p>
+
+</div>
+
+
+
+<div class="product-carousel">
+
+
+<!-- OWALA -->
+
+<article class="product-card">
+
+<div class="product-image">
+🥤
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+🔥 VIRAL
+</span>
+
+<h3>
+Owala FreeSip 24 oz / 710 ml
+</h3>
+
+<p class="description">
+
+Die FreeSip kombiniert einen integrierten
+Trinkhalm mit einer größeren Öffnung.
+Dazu kommen Vakuumisolierung und
+ein auslaufsicherer Verschluss.
+
+</p>
+
+
+<div class="price">
+36,99 €
+</div>
+
+<div class="price-note">
+Herstellerpreis für 24 oz zum Recherchezeitpunkt
+</div>
+
+
+<div class="rating">
+⭐ <strong>4,7 / 5 · 37.595 Bewertungen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Trinkhalm und normale Trinköffnung<br>
+✓ Auslaufsicherer Verschluss<br>
+✓ Vakuumisoliert<br>
+✓ 24 Stunden kalt laut Hersteller<br>
+✓ BPA-, bleifrei und phthalatfrei
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Teurer als einfache Edelstahlflaschen<br>
+✕ Deckelmechanik benötigt etwas mehr Reinigung<br>
+✕ Für heiße Getränke nicht vorgesehen
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+🤔 Ist der Hype berechtigt?
+</strong>
+
+Die Besonderheit ist tatsächlich
+nicht nur das Design.
+
+Der FreeSip-Ausgießer erlaubt sowohl
+Trinken durch den integrierten Strohhalm
+als auch direkt aus der größeren Öffnung.
+
+Für Reisen ist vor allem die Kombination
+aus Auslaufschutz, Isolation und kompakter
+Form interessant.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Owala+FreeSip+24+oz+710+ml"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Owala bei Amazon ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- SIMPLE MODERN -->
+
+<article class="product-card">
+
+<div class="product-image">
+💧
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+💰 GÜNSTIGERE ALTERNATIVE
+</span>
+
+<h3>
+Simple Modern Summit 650 ml
+</h3>
+
+<p class="description">
+
+Isolierte Edelstahlflasche mit Trinkhalm.
+Eine deutlich günstigere Alternative,
+wenn dir vor allem Isolation und
+Strohhalm wichtig sind.
+
+</p>
+
+
+<div class="price">
+ca. 24,50–25 €
+</div>
+
+<div class="price-note">
+Amazon.de-Angebot; Farbe und Variante beeinflussen den Preis
+</div>
+
+
+<div class="rating">
+⭐ <strong>ca. 4,5 / 5 bei verfügbaren Varianten</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Deutlich günstiger<br>
+✓ Edelstahl<br>
+✓ Isoliert<br>
+✓ Trinkhalm<br>
+✓ Viele Farben
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Andere Deckelkonstruktion<br>
+✕ Nicht dieselbe FreeSip-Funktion<br>
+✕ Modellabhängige Unterschiede
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+💰 Owala oder günstiger?
+</strong>
+
+Wenn dir die spezielle FreeSip-Funktion
+wichtig ist, bleibt Owala interessanter.
+
+Wenn du hauptsächlich eine isolierte
+Flasche mit Trinkhalm möchtest, kann
+Simple Modern deutlich günstiger sein.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Simple+Modern+Summit+650ml"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Simple Modern bei Amazon ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- STANLEY -->
+
+<article class="product-card">
+
+<div class="product-image">
+🥤
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+🔥 SOCIAL-MEDIA-IKONE
+</span>
+
+<h3>
+Stanley Quencher H2.0
+</h3>
+
+<p class="description">
+
+Der große Thermobecher mit Henkel,
+Trinkhalm und FlowState-Deckel wurde
+zu einem der bekanntesten Social-Media-
+Trinkgefäße überhaupt.
+
+</p>
+
+
+<div class="price">
+60,27 €
+</div>
+
+<div class="price-note">
+Amazon-Angebot zum Recherchezeitpunkt
+</div>
+
+
+<div class="rating">
+⭐ <strong>4,3 / 5 · 933 Bewertungen beim geprüften Amazon-Angebot</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Große Kapazität<br>
+✓ Henkel<br>
+✓ Trinkhalm<br>
+✓ Vakuumisoliert<br>
+✓ Für viele Getränke unterwegs
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Deutlich größer als Owala<br>
+✕ Nicht vollständig auslaufsicher in jeder Deckelstellung<br>
+✕ Hoher Preis
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+⚖️ Stanley oder Owala?
+</strong>
+
+Der Stanley ist eher der große
+Alltags-Thermobecher.
+
+Owala ist kompakter und beim
+Auslaufschutz sowie bei den zwei
+Trinkarten auf Reisen interessanter.
+
+Hier gibt es deshalb keinen eindeutigen
+Sieger – es kommt darauf an, wie du
+deine Flasche verwenden möchtest.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Stanley+Quencher+H2.0+FlowState"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Stanley bei Amazon ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+
+<div class="swipe-hint">
+👆 Nach links oder rechts wischen
+</div>
+
+
+
+<!-- VERGLEICH -->
+
+<div class="compare-box">
+
+<h3>
+⚖️ Owala vs. Stanley vs. günstige Alternative
+</h3>
+
+<p>
+Alle drei lösen dasselbe Grundproblem –
+aber auf unterschiedliche Weise.
+</p>
+
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+
+<th>
+Eigenschaft
+</th>
+
+<th>
+Owala
+</th>
+
+<th>
+Stanley
+</th>
+
+<th>
+Simple Modern
+</th>
+
+</tr>
+
+<tr>
+
+<td>
+Trinksystem
+</td>
+
+<td>
+FreeSip
+</td>
+
+<td>
+Trinkhalm
+</td>
+
+<td>
+Trinkhalm
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Auslaufschutz
+</td>
+
+<td>
+⭐ Sehr gut
+</td>
+
+<td>
+⚠️ Deckelabhängig
+</td>
+
+<td>
+⚠️ Modellabhängig
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Preisniveau
+</td>
+
+<td>
+💰💰
+</td>
+
+<td>
+💰💰💰
+</td>
+
+<td>
+💰
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Reisegeeignet
+</td>
+
+<td>
+⭐ Sehr gut
+</td>
+
+<td>
+⭐ Gut
+</td>
+
+<td>
+⭐ Gut
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     PACKWÜRFEL
+================================================== -->
+
+<section
+class="product-group fade-in"
+id="packen"
+>
+
+
+<div class="group-title">
+
+<div>
+
+<h2>
+🧳 Packwürfel
+</h2>
+
+<p>
+Mehr Ordnung im Koffer
+</p>
+
+</div>
+
+<p>
+← Auf dem Handy wischen →
+</p>
+
+</div>
+
+
+
+<div class="product-carousel">
+
+
+<!-- BAGAIL -->
+
+<article class="product-card">
+
+<div class="product-image">
+🧳
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+🔥 REISE-FIND
+</span>
+
+<h3>
+BAGAIL 8-teiliges Packwürfel-Set
+</h3>
+
+<p class="description">
+
+Mehrere unterschiedlich große Taschen
+helfen dabei, Kleidung und andere
+Reiseutensilien im Koffer zu sortieren.
+
+</p>
+
+
+<div class="price">
+25,99 €
+</div>
+
+<div class="price-note">
+Amazon.de-Angebot zum Recherchezeitpunkt
+</div>
+
+
+<div class="rating">
+⭐ Bewertung je nach Variante prüfen
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ 8 verschiedene Taschen<br>
+✓ Mehr Ordnung im Koffer<br>
+✓ Unterschiedliche Größen<br>
+✓ Günstiger als viele Premium-Systeme
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Nimmt selbst etwas Gewicht ein<br>
+✕ Kompressionswirkung abhängig von Variante<br>
+✕ Qualität kann je nach Modell variieren
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+🤔 Braucht man wirklich Packwürfel?
+</strong>
+
+Sie vergrößern den Koffer nicht magisch.
+Ihr großer Vorteil ist Organisation:
+
+Kleidung bleibt sortiert und beim
+Umsteigen oder Auspacken muss man
+nicht den kompletten Koffer durchsuchen.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=BAGAIL+8+Packw%C3%BCrfel"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+BAGAIL bei Amazon ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- AMAZON ESSENTIALS -->
+
+<article class="product-card">
+
+<div class="product-image">
+📦
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+💰 GÜNSTIGER
+</span>
+
+<h3>
+Amazon Essentials 8-tlg. Packwürfel-Set
+</h3>
+
+<p class="description">
+
+Eine einfache Alternative für alle,
+die hauptsächlich Ordnung im Gepäck
+möchten und nicht unbedingt ein
+Premium-System benötigen.
+
+</p>
+
+
+<div class="price">
+23,99 €
+</div>
+
+<div class="price-note">
+Amazon.de-Angebot zum Recherchezeitpunkt
+</div>
+
+
+<div class="rating">
+⭐ <strong>Produktbewertung beim aktuellen Angebot prüfen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Günstiger Einstieg<br>
+✓ 8-teilig<br>
+✓ Unterschiedliche Größen<br>
+✓ Amazon-Marke
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Weniger Premium-Anmutung<br>
+✕ Keine außergewöhnliche Funktion
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+💰 Wann reicht die günstige Variante?
+</strong>
+
+Wenn du nur Ordnung im Koffer schaffen
+möchtest, brauchst du nicht zwingend
+ein teures Premium-System.
+
+Für gelegentliche Urlaubsreisen kann
+eine einfache Variante vollkommen
+ausreichen.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Amazon+Essentials+8+Packw%C3%BCrfel"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Günstige Alternative ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- PREMIUM -->
+
+<article class="product-card">
+
+<div class="product-image">
+🎒
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+⭐ PREMIUM
+</span>
+
+<h3>
+Eagle Creek Pack-It Reveal
+</h3>
+
+<p class="description">
+
+Ein hochwertigeres Packwürfel-System,
+das besonders für Menschen interessant
+ist, die häufig reisen und Wert auf
+Material und Haltbarkeit legen.
+
+</p>
+
+
+<div class="price">
+Preis bei Amazon prüfen
+</div>
+
+<div class="price-note">
+Je nach Größe und Set
+</div>
+
+
+<div class="rating">
+⭐ Bewertung abhängig von Variante
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Hochwertigeres Reisesystem<br>
+✓ Für Vielreisende interessant<br>
+✓ Gute Organisation<br>
+✓ Premium-Alternative
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Höherer Preis<br>
+✕ Für gelegentliche Reisen möglicherweise unnötig
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+⭐ Lohnt sich Premium?
+</strong>
+
+Für jemanden, der zwei Wochen Urlaub
+im Jahr macht, wahrscheinlich nicht
+zwingend.
+
+Wer dagegen regelmäßig reist,
+kann von hochwertigerem Material
+und einem durchdachteren System
+profitieren.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Eagle+Creek+Pack-It+Reveal"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Eagle Creek bei Amazon ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+
+<div class="swipe-hint">
+👆 Nach links oder rechts wischen
+</div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     TRTL
+================================================== -->
+
+<section
+class="product-group fade-in"
+id="komfort"
+>
+
+
+<div class="group-title">
+
+<div>
+
+<h2>
+😴 Reisekissen
+</h2>
+
+<p>
+Wenn Schlafen im Flugzeug schwierig wird
+</p>
+
+</div>
+
+<p>
+← Auf dem Handy wischen →
+</p>
+
+</div>
+
+
+
+<div class="product-carousel">
+
+
+<!-- TRTL -->
+
+<article class="product-card">
+
+<div class="product-image">
+😴
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+🔥 VIRAL
+</span>
+
+<h3>
+Trtl Pillow Original
+</h3>
+
+<p class="description">
+
+Das ungewöhnliche Reisekissen
+verzichtet auf die klassische U-Form
+und stabilisiert den Kopf über eine
+integrierte Stützstruktur.
+
+</p>
+
+
+<div class="price">
+70,00 €
+</div>
+
+<div class="price-note">
+Amazon.de-Angebot zum Recherchezeitpunkt
+</div>
+
+
+<div class="rating">
+⭐ <strong>4,7 / 5 · 2.912 Bewertungen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Sehr kompakt<br>
+✓ Interne Nackenstütze<br>
+✓ Leichter als viele klassische Reisekissen<br>
+✓ Waschbarer Bezug<br>
+✓ Für Flugzeug und Roadtrips
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Teurer als einfache U-Kissen<br>
+✕ Gewöhnungsbedürftige Form<br>
+✕ Nicht für jeden Schlafstil ideal
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+🤔 Ist das wirklich besser?
+</strong>
+
+Das Trtl verfolgt einen komplett anderen
+Ansatz als ein klassisches U-Kissen.
+
+Die Konstruktion ist interessant, weil
+der Kopf gezielter gestützt wird.
+
+Ob das angenehmer ist, bleibt allerdings
+stärker eine persönliche Frage als bei
+einem einfachen Koffer-Organizer.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Trtl+Pillow+Original"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Trtl bei Amazon ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- GÜNSTIGE ALTERNATIVE -->
+
+<article class="product-card">
+
+<div class="product-image">
+🛫
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+💰 GÜNSTIGER
+</span>
+
+<h3>
+Klassisches Reise-Nackenkissen
+</h3>
+
+<p class="description">
+
+Ein klassisches U-förmiges Reisekissen
+ist die einfache und deutlich günstigere
+Lösung für gelegentliche Reisen.
+
+</p>
+
+
+<div class="price">
+ab ca. 10–20 €
+</div>
+
+<div class="price-note">
+Preis abhängig von Material und Modell
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Sehr günstig<br>
+✓ Sofort verständliches Konzept<br>
+✓ Viele Varianten<br>
+✓ Einfach zu verstauen
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Weniger gezielte Nackenstütze<br>
+✕ Kann sperriger sein<br>
+✕ Qualität stark modellabhängig
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+💰 Muss es Trtl sein?
+</strong>
+
+Nein.
+
+Wenn du nur gelegentlich auf einer Reise
+ein Nackenkissen verwenden möchtest,
+kann ein günstiges U-Kissen vollkommen
+ausreichen.
+
+Der Mehrpreis des Trtl richtet sich vor
+allem an Menschen, die häufiger reisen
+und das spezielle Stützkonzept mögen.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Reise+Nackenkissen+U+Form"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Günstige Kissen ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- TRTL ALTERNATIVE -->
+
+<article class="product-card">
+
+<div class="product-image">
+🛏️
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+⚖️ ALTERNATIVE
+</span>
+
+<h3>
+Cabeau Evolution Classic
+</h3>
+
+<p class="description">
+
+Ein klassisches Memory-Foam-Reisekissen
+als Alternative für Reisende, die eine
+stärkere Polsterung bevorzugen.
+
+</p>
+
+
+<div class="price">
+Preis bei Amazon prüfen
+</div>
+
+<div class="price-note">
+Verfügbarkeit und Variante prüfen
+</div>
+
+
+<div class="rating">
+⭐ <strong>ca. 4,4 / 5 bei verfügbaren Produktdaten</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Memory-Foam-Konzept<br>
+✓ Klassischere Form<br>
+✓ Gute Polsterung<br>
+✓ Alternative zum Trtl-System
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Größer als Trtl<br>
+✕ Weniger kompakt
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+⚖️ Trtl oder Cabeau?
+</strong>
+
+Wenn du maximale Kompaktheit möchtest,
+ist Trtl interessanter.
+
+Wenn du ein klassisches, stärker gepolstertes
+Reisekissen bevorzugst, kann Cabeau
+die bessere Richtung sein.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Cabeau+Evolution+Classic+Reisekissen"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Cabeau bei Amazon suchen →
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+
+<div class="swipe-hint">
+👆 Nach links oder rechts wischen
+</div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     GESAMTVERGLEICH
+================================================== -->
+
+<section class="section fade-in">
+
+
+<div class="compare-box">
+
+<h3>
+🎒 Was lohnt sich für deine Reise?
+</h3>
+
+<p>
+Nicht jedes Premium-Produkt ist automatisch
+die bessere Wahl. Entscheidend ist,
+wie häufig und wie du reist.
+</p>
+
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+
+<th>
+Produkt
+</th>
+
+<th>
+Besonders gut für
+</th>
+
+<th>
+Preisniveau
+</th>
+
+<th>
+Unsere Einschätzung
+</th>
+
+</tr>
+
+
+<tr>
+
+<td>
+Owala FreeSip
+</td>
+
+<td>
+Aktive Reisen / Alltag
+</td>
+
+<td>
+💰💰
+</td>
+
+<td>
+⭐ Sehr interessant
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Simple Modern
+</td>
+
+<td>
+Günstige Trinkflasche
+</td>
+
+<td>
+💰
+</td>
+
+<td>
+⭐ Preis-Leistung
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+BAGAIL Packwürfel
+</td>
+
+<td>
+Kofferorganisation
+</td>
+
+<td>
+💰💰
+</td>
+
+<td>
+⭐ Praktisch
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Trtl Original
+</td>
+
+<td>
+Flugzeug / lange Reisen
+</td>
+
+<td>
+💰💰💰
+</td>
+
+<td>
+⭐ Für Vielreisende
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Günstiges U-Kissen
+</td>
+
+<td>
+Gelegentliche Reisen
+</td>
+
+<td>
+💰
+</td>
+
+<td>
+⭐ Vernünftig
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     QUELLEN
+================================================== -->
+
+<section
+class="section fade-in"
+id="quellen"
+>
+
+
+<div class="sources">
+
+<h3>
+📚 Quellen & Tests
+</h3>
+
+
+<p class="sources-intro">
+
+Wir verlinken hier die Quellen, die wir für
+Produktinformationen, Herstellerangaben,
+Preisrecherche und Vergleiche verwendet haben.
+
+Wir übernehmen keine fremden Testtexte
+oder Bilder. Die jeweiligen Inhalte bleiben
+bei ihren ursprünglichen Anbietern.
+
+</p>
+
+
+
+<!-- OWALA -->
+
+<div class="source-group">
+
+<h4>
+🥤 Owala FreeSip
+</h4>
+
+
+<div class="source-links">
+
+<a
+href="https://owalalife.com/de-de/products/freesip"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Herstellerinformationen →
+
+</a>
+
+
+<a
+href="https://owalalife.com/de-de/pages/faq"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Owala FAQ →
+
+</a>
+
+
+<a
+href="https://www.amazon.de/s?k=Owala+FreeSip+24+oz+710+ml"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – Preis & Bewertungen →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- STANLEY -->
+
+<div class="source-group">
+
+<h4>
+🥤 Stanley Quencher
+</h4>
+
+
+<div class="source-links">
+
+<a
+href="https://eu.stanley1913.com/de/products/quencher-h2-0-flowstate-tumbler-0-6l"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Stanley – Produktdaten →
+
+</a>
+
+
+<a
+href="https://www.amazon.de/s?k=Stanley+Quencher+H2.0+FlowState"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – Preis & Bewertungen →
+
+</a>
+
+
+<a
+href="https://www.n-tv.de/shopping-und-service/Amazon-verkauft-Stanley-Cup-fuer-29-99-Euro-Immer-noch-im-Hype-article25883549.html"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Bericht zum Social-Media-Hype →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- PACKWÜRFEL -->
+
+<div class="source-group">
+
+<h4>
+🧳 Packwürfel
+</h4>
+
+
+<div class="source-links">
+
+<a
+href="https://de.euronews.com/reise/2026/04/19/smart-reisen-die-besten-gadgets-und-extras-fur-sommerurlaub-2026"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Euronews – Reise-Gadgets 2026 →
+
+</a>
+
+
+<a
+href="https://www.amazon.de/s?k=BAGAIL+8+Packw%C3%BCrfel"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – BAGAIL →
+
+</a>
+
+
+<a
+href="https://www.amazon.de/s?k=Amazon+Essentials+8+Packw%C3%BCrfel"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – günstige Alternative →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- TRTL -->
+
+<div class="source-group">
+
+<h4>
+😴 Trtl Reisekissen
+</h4>
+
+
+<div class="source-links">
+
+<a
+href="https://eu.trtltravel.com/de/products/trtl-travel-pillow"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Trtl – Herstellerinformationen →
+
+</a>
+
+
+<a
+href="https://eu.trtltravel.com/de/pages/faqs"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Trtl – FAQ →
+
+</a>
+
+
+<a
+href="https://www.amazon.de/s?k=Trtl+Pillow+Original"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – Preis & Bewertungen →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- SIMPLE MODERN -->
+
+<div class="source-group">
+
+<h4>
+💧 Simple Modern
+</h4>
+
+
+<div class="source-links">
+
+<a
+href="https://www.amazon.de/s?k=Simple+Modern+Summit+650ml"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – Summit →
+
+</a>
+
+
+<a
+href="https://de.which.one/p/B0BNW6VBQR"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Preisvergleich / Produktdaten →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="transparency">
+
+<strong>
+💡 Transparenz:
+</strong>
+
+Preise, Verfügbarkeit und Bewertungen
+können sich bei Amazon jederzeit ändern.
+
+Die Angaben auf dieser Seite sind deshalb
+eine Momentaufnahme unserer Recherche.
+Vor einem Kauf sollte der aktuelle Preis
+und die aktuelle Bewertung beim Händler
+geprüft werden.
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     FAZIT
+================================================== -->
+
+<section class="section fade-in">
+
+
+<div class="info">
+
+<h2>
+🎒 Was braucht man wirklich auf Reisen?
+</h2>
+
+
+<p>
+
+Nicht jedes Produkt, das auf TikTok,
+Instagram oder Pinterest auftaucht,
+muss automatisch mit in den Koffer.
+
+Wir schauen deshalb auf die Frage:
+
+<br><br>
+
+<strong>
+Was macht die Reise tatsächlich einfacher?
+</strong>
+
+<br><br>
+
+Eine Owala kann sinnvoll sein,
+wenn du eine auslaufsichere Flasche
+für unterwegs möchtest.
+
+Packwürfel können Ordnung schaffen.
+
+Ein Trtl kann für Vielreisende interessant sein.
+
+Und bei vielen anderen Produkten reicht
+möglicherweise die deutlich günstigere
+Alternative.
+
+<br><br>
+
+<strong>
+Der teuerste Artikel ist nicht automatisch
+der beste – und der virale Artikel nicht
+automatisch unnötig.
+
+</strong>
+
+</p>
+
+
+<div class="affiliate-note">
+
+Hinweis: Einige Links auf dieser Seite können
+Affiliate-Links sein. Wenn über einen solchen
+Link ein Kauf erfolgt, kann Produktfinder eine
+Provision erhalten. Für dich entstehen dadurch
+keine zusätzlichen Kosten.
+
+</div>
+
+</div>
+
+</section>
+
 
 </main>
 
 
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
 <footer>
 
-<p>© 2026 Produktfinder</p>
+<p>
+© 2026 Produktfinder
+</p>
+
 
 <p>
-<a href="index.html">Startseite</a>
-<a href="tiktok-finds.html">TikTok Finds</a>
-<a href="technik.html">Technik</a>
+
+<a href="index.html">
+Startseite
+</a>
+
+<a href="tiktok-finds.html">
+TikTok Finds
+</a>
+
+<a href="technik.html">
+Technik
+</a>
+
+<a href="zuhause.html">
+Zuhause
+</a>
+
+<a href="unterwegs.html">
+Unterwegs
+</a>
+
+<a href="auto.html">
+Auto
+</a>
+
+<a href="heimwerken.html">
+Heimwerken
+</a>
+
+<a href="geschenke.html">
+Geschenke
+</a>
+
 </p>
 
 </footer>
 
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script>
+
+const observer =
+new IntersectionObserver(
+
+(entries) => {
+
+entries.forEach(
+(entry) => {
+
+if (entry.isIntersecting) {
+
+entry.target.classList.add(
+"visible"
+);
+
+observer.unobserve(
+entry.target
+);
+
+}
+
+});
+
+},
+
+{
+threshold: 0.12
+}
+
+);
+
+
+document
+.querySelectorAll(".fade-in")
+.forEach(
+(element) => {
+
+observer.observe(element);
+
+}
+);
+
+</script>
+
+
 </body>
+
 </html>
