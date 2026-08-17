@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TikTok Finds – Virale Produkte & Gadgets | Produktfinder</title>
+
+    <meta name="description"
+          content="Entdecke virale TikTok Finds, angesagte Gadgets und praktische Produkte, die gerade im Trend liegen.">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f6f7f9;
+            color: #17202a;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1150px;
+            margin: auto;
+            padding: 16px 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #f59e0b;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            font-size: 14px;
+            opacity: .9;
+        }
+
+        .hero {
+            background: #111827;
+            color: white;
+            padding: 75px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: white;
+            color: #111827;
+            padding: 7px 15px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #f59e0b;
+        }
+
+        .hero p {
+            color: #d1d5db;
+            max-width: 650px;
+            margin: auto;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 55px 20px;
+        }
+
+        .section {
+            margin-bottom: 65px;
+        }
+
+        .section-title {
+            margin-bottom: 25px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+        }
+
+        .section-title p {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        .filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .filter {
+            background: white;
+            border: 1px solid #d9dde3;
+            padding: 9px 15px;
+            border-radius: 30px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .filter.active {
+            background: #111827;
+            color: white;
+            border-color: #111827;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .product {
+            background: white;
+            border: 1px solid #eaecf0;
+            border-radius: 16px;
+            overflow: hidden;
+
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(0,0,0,.10);
+        }
+
+        .product-image {
+            height: 210px;
+            background: #eef0f3;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 75px;
+        }
+
+        .product-content {
+            padding: 22px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #f2f4f7;
+            padding: 5px 9px;
+            border-radius: 5px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .product p {
+            color: #667085;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .rating {
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #111827;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .info {
+            background: white;
+            border: 1px solid #eaecf0;
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .info h2 {
+            margin-bottom: 10px;
+        }
+
+        .info p {
+            color: #667085;
+        }
+
+        footer {
+            background: #0b1120;
+            color: #9ca3af;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer a {
+            color: #d1d5db;
+            margin: 0 8px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 800px) {
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                padding: 55px 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-inner">
+
+        <a href="index.html" class="logo">
+            Produkt<span>finder</span>
+        </a>
+
+        <nav>
+
+            <a href="index.html">
+                Startseite
+            </a>
+
+            <a href="tiktok-finds.html">
+                TikTok Finds
+            </a>
+
+            <a href="index.html#ratgeber">
+                Ratgeber
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            🔥 TIKTOK FINDS
+        </div>
+
+        <h1>
+            Was gerade
+            <span>viral geht.</span>
+        </h1>
+
+        <p>
+            Entdecke Produkte und Gadgets, die gerade auf
+            TikTok und Social Media für Aufmerksamkeit sorgen.
+            Wir schauen genauer hin und unterscheiden
+            echte Empfehlungen vom kurzen Hype.
+        </p>
+
+    </div>
+
+</section>
+
+
+<main class="container">
+
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <h2>
+                TikTok Finds entdecken
+            </h2>
+
+            <p>
+                Durchsuche unsere verschiedenen Trend-Kategorien.
+            </p>
+
+        </div>
+
+
+        <div class="filters">
+
+            <a href="#heute" class="filter active">
+                🔥 Heute viral
+            </a>
+
+            <a href="#woche" class="filter">
+                📈 Diese Woche
+            </a>
+
+            <a href="#dauerbrenner" class="filter">
+                ⭐ Dauerbrenner
+            </a>
+
+            <a href="#unter20" class="filter">
+                💰 Unter 20 €
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="section" id="heute">
+
+        <div class="section-title">
+
+            <h2>
+                🔥 Heute viral
+            </h2>
+
+            <p>
+                Produkte, die gerade besonders viel
+                Aufmerksamkeit bekommen.
+            </p>
+
+        </div>
+
+
+        <div class="products">
+
+
+            <article class="product">
+
+                <div class="product-image">
+                    📱
+                </div>
+
+                <div class="product-content">
+
+                    <span class="tag">
+                        VIRAL
+                    </span>
+
+                    <h3>
+                        Viral Gadget #1
+                    </h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <p>
+                        Hier kommt später eine echte
+                        Produktbeschreibung mit unserer
+                        Einschätzung hin.
+                    </p>
+
+                    <a href="#" class="button">
+                        Produkt ansehen
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="product">
+
+                <div class="product-image">
+                    🏠
+                </div>
+
+                <div class="product-content">
+
+                    <span class="tag">
+                        VIRAL
+                    </span>
+
+                    <h3>
+                        Viral Gadget #2
+                    </h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐☆
+                    </div>
+
+                    <p>
+                        Hier kommt später eine echte
+                        Produktbeschreibung mit unserer
+                        Einschätzung hin.
+                    </p>
+
+                    <a href="#" class="button">
+                        Produkt ansehen
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="product">
+
+                <div class="product-image">
+                    🚗
+                </div>
+
+                <div class="product-content">
+
+                    <span class="tag">
+                        VIRAL
+                    </span>
+
+                    <h3>
+                        Viral Gadget #3
+                    </h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <p>
+                        Hier kommt später eine echte
+                        Produktbeschreibung mit unserer
+                        Einschätzung hin.
+                    </p>
+
+                    <a href="#" class="button">
+                        Produkt ansehen
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <section class="section" id="woche">
+
+        <div class="section-title">
+
+            <h2>
+                📈 Diese Woche beliebt
+            </h2>
+
+            <p>
+                Trends, die sich gerade besonders stark
+                entwickeln.
+            </p>
+
+        </div>
+
+
+        <div class="products">
+
+
+            <article class="product">
+
+                <div class="product-image">
+                    🎧
+                </div>
+
+                <div class="product-content">
+
+                    <span class="tag">
+                        TREND
+                    </span>
+
+                    <h3>
+                        Trend Gadget #1
+                    </h3>
+
+                    <p>
+                        Produktbeschreibung folgt.
+                    </p>
+
+                    <a href="#" class="button">
+                        Produkt ansehen
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="product">
+
+                <div class="product-image">
+                    🔌
+                </div>
+
+                <div class="product-content">
+
+                    <span class="tag">
+                        TREND
+                    </span>
+
+                    <h3>
+                        Trend Gadget #2
+                    </h3>
+
+                    <p>
+                        Produktbeschreibung folgt.
+                    </p>
+
+                    <a href="#" class="button">
+                        Produkt ansehen
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="product">
+
+                <div class="product-image">
+                    🍳
+                </div>
+
+                <div class="product-content">
+
+                    <span class="tag">
+                        TREND
+                    </span>
+
+                    <h3>
+                        Trend Gadget #3
+                    </h3>
+
+                    <p>
+                        Produktbeschreibung folgt.
+                    </p>
+
+                    <a href="#" class="button">
+                        Produkt ansehen
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <section class="section" id="dauerbrenner">
+
+        <div class="section-title">
+
+            <h2>
+                ⭐ TikTok-Dauerbrenner
+            </h2>
+
+            <p>
+                Produkte, die nicht nur kurz viral waren,
+                sondern dauerhaft interessant bleiben.
+            </p>
+
+        </div>
+
+
+        <div class="products">
+
+
+            <article class="product">
+
+                <div class="product-image">
+                    ✨
+                </div>
+
+                <div class="product-content">
+
+                    <span class="tag">
+                        DAUERBRENNER
+                    </span>
+
+                    <h3>
+                        Dauerbrenner #1
+                    </h3>
+
+                    <p>
+                        Produktbeschreibung folgt.
+                    </p>
+
+                    <a href="#" class="button">
+                        Produkt ansehen
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="product">
+
+                <div class="product-image">
+                    🔥
+                </div>
+
+                <div class="product-content">
+
+                    <span class="tag">
+                        DAUERBRENNER
+                    </span>
+
+                    <h3>
+                        Dauerbrenner #2
+                    </h3>
+
+                    <p>
+                        Produktbeschreibung folgt.
+                    </p>
+
+                    <a href="#" class="button">
+                        Produkt ansehen
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="product">
+
+                <div class="product-image">
+                    💡
+                </div>
+
+                <div class="product-content">
+
+                    <span class="tag">
+                        DAUERBRENNER
+                    </span>
+
+                    <h3>
+                        Dauerbrenner #3
+                    </h3>
+
+                    <p>
+                        Produktbeschreibung folgt.
+                    </p>
+
+                    <a href="#" class="button">
+                        Produkt ansehen
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <section class="section" id="unter20">
+
+        <div class="section-title">
+
+            <h2>
+                💰 TikTok Finds unter 20 €
+            </h2>
+
+            <p>
+                Kleine virale Produkte mit niedriger
+                Einstiegshürde.
+            </p>
+
+        </div>
+
+
+        <div class="info">
+
+            <h2>
+                Bald hier: echte Empfehlungen
+            </h2>
+
+            <p>
+                Wir füllen diesen Bereich anschließend
+                mit echten Produkten, aktuellen Preisen,
+                Bewertungen und ausführlichen Einschätzungen.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="section">
+
+        <div class="info">
+
+            <h2>
+                🔎 Mehr als nur ein viraler Hype
+            </h2>
+
+            <p>
+                Nicht jedes Produkt, das auf TikTok viral geht,
+                ist automatisch gut. Deshalb wollen wir bei
+                Produktfinder nicht einfach Trends kopieren,
+                sondern erklären, ob ein Produkt tatsächlich
+                sinnvoll ist und für wen es sich lohnt.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 Produktfinder
+    </p>
+
+    <p>
+
+        <a href="index.html">
+            Startseite
+        </a>
+
+        |
+
+        <a href="#">
+            Impressum
+        </a>
+
+        |
+
+        <a href="#">
+            Datenschutz
+        </a>
+
+    </p>
+
+</footer>
+
+
+</body>
+      </html>
