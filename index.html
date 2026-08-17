@@ -298,4 +298,559 @@
 
         .price-box p {
             color: #667085;
-            margin-bottom:
+            margin-bottom: 18px;
+        }
+
+        .link {
+            font-weight: bold;
+            color: #9a6700;
+            font-size: 14px;
+        }
+
+        /* GUIDES */
+
+        .guides {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .guide {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #eaecf0;
+        }
+
+        .guide-category {
+            color: #9a6700;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .guide h3 {
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .guide p {
+            color: #667085;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        /* INFO */
+
+        .info {
+            background: #111827;
+            color: white;
+            padding: 45px;
+            border-radius: 18px;
+            text-align: center;
+        }
+
+        .info h2 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .info p {
+            max-width: 700px;
+            margin: auto;
+            color: #d1d5db;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #0b1120;
+            color: #9ca3af;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #d1d5db;
+            margin: 0 8px;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .categories {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .products,
+            .guides {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                padding: 55px 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .search-box {
+                display: block;
+                border: none;
+            }
+
+            .search-box input {
+                width: 100%;
+                border: 1px solid #d9dde3;
+                border-radius: 8px;
+                margin-bottom: 8px;
+            }
+
+            .search-box button {
+                width: 100%;
+            }
+
+            .categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .products,
+            .guides,
+            .price-boxes {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header {
+                display: block;
+            }
+
+            .section-header p {
+                margin-top: 5px;
+            }
+
+            .info {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-inner">
+
+        <a href="#" class="logo">
+            Produkt<span>finder</span>
+        </a>
+
+        <nav>
+            <a href="#kategorien">Kategorien</a>
+            <a href="#gadgets">Gadgets</a>
+            <a href="#ratgeber">Ratgeber</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            💡 Praktische Produkte entdecken
+        </div>
+
+        <h1>
+            Produkte, die deinen <span>Alltag einfacher</span> machen.
+        </h1>
+
+        <p>
+            Wir entdecken praktische Gadgets, clevere Helfer
+            und interessante Produkte und zeigen dir,
+            welche davon wirklich einen Blick wert sind.
+        </p>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                placeholder="Wonach suchst du?"
+                aria-label="Produktsuche">
+
+            <button>
+                Suchen
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<main class="container">
+
+
+    <!-- KATEGORIEN -->
+
+    <section class="section" id="kategorien">
+
+        <div class="section-header">
+
+            <div>
+                <h2>Entdecke unsere Kategorien</h2>
+                <p>Praktische Produkte für verschiedene Bereiche des Alltags.</p>
+            </div>
+
+        </div>
+
+
+        <div class="categories">
+
+            <a href="#" class="category">
+                <div class="category-icon">🏠</div>
+                <strong>Zuhause</strong>
+                <small>Alltagshelfer</small>
+            </a>
+
+            <a href="#" class="category">
+                <div class="category-icon">📱</div>
+                <strong>Technik</strong>
+                <small>Smart & praktisch</small>
+            </a>
+
+            <a href="#" class="category">
+                <div class="category-icon">🚗</div>
+                <strong>Auto</strong>
+                <small>Praktisches Zubehör</small>
+            </a>
+
+            <a href="#" class="category">
+                <div class="category-icon">🎒</div>
+                <strong>Unterwegs</strong>
+                <small>Reise & Freizeit</small>
+            </a>
+
+            <a href="#" class="category">
+                <div class="category-icon">🔧</div>
+                <strong>Heimwerken</strong>
+                <small>Werkzeug & Helfer</small>
+            </a>
+
+            <a href="#" class="category">
+                <div class="category-icon">🎁</div>
+                <strong>Geschenke</strong>
+                <small>Ideen & Gadgets</small>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- GADGETS -->
+
+    <section class="section" id="gadgets">
+
+        <div class="section-header">
+
+            <div>
+                <h2>Interessante Gadgets</h2>
+                <p>Kleine Produkte, die überraschend praktisch sein können.</p>
+            </div>
+
+        </div>
+
+
+        <div class="products">
+
+
+            <article class="product-card">
+
+                <div class="product-image">
+                    🔌
+                </div>
+
+                <div class="product-content">
+
+                    <span class="tag">TECHNIK</span>
+
+                    <h3>Praktische Lade-Gadgets</h3>
+
+                    <p>
+                        Kleine Helfer rund ums Laden von Smartphone,
+                        Kopfhörern und anderen Geräten.
+                    </p>
+
+                    <a href="#" class="button">
+                        Mehr erfahren
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card">
+
+                <div class="product-image">
+                    🚗
+                </div>
+
+                <div class="product-content">
+
+                    <span class="tag">AUTO</span>
+
+                    <h3>Nützliche Auto-Gadgets</h3>
+
+                    <p>
+                        Kleine Helfer, die Ordnung, Komfort
+                        und Alltag im Auto verbessern können.
+                    </p>
+
+                    <a href="#" class="button">
+                        Mehr erfahren
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card">
+
+                <div class="product-image">
+                    🍳
+                </div>
+
+                <div class="product-content">
+
+                    <span class="tag">ZUHAUSE</span>
+
+                    <h3>Clevere Küchenhelfer</h3>
+
+                    <p>
+                        Praktische kleine Helfer für Küche,
+                        Haushalt und Alltag.
+                    </p>
+
+                    <a href="#" class="button">
+                        Mehr erfahren
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- PREISBEREICHE -->
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <div>
+                <h2>Gadgets nach Budget</h2>
+                <p>Interessante Produkte für unterschiedliche Budgets.</p>
+            </div>
+
+        </div>
+
+
+        <div class="price-boxes">
+
+            <div class="price-box">
+
+                <div class="emoji">💰</div>
+
+                <h3>Gadgets unter 20 €</h3>
+
+                <p>
+                    Kleine Produkte und praktische Helfer,
+                    bei denen die Kaufentscheidung leichter fällt.
+                </p>
+
+                <a href="#" class="link">
+                    Empfehlungen entdecken →
+                </a>
+
+            </div>
+
+
+            <div class="price-box">
+
+                <div class="emoji">🔥</div>
+
+                <h3>Gadgets unter 50 €</h3>
+
+                <p>
+                    Interessante Produkte mit etwas mehr
+                    Möglichkeiten und Ausstattung.
+                </p>
+
+                <a href="#" class="link">
+                    Empfehlungen entdecken →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RATGEBER -->
+
+    <section class="section" id="ratgeber">
+
+        <div class="section-header">
+
+            <div>
+                <h2>Aus unserem Ratgeber</h2>
+                <p>Hilfreiche Informationen statt einfacher Produktlisten.</p>
+            </div>
+
+        </div>
+
+
+        <div class="guides">
+
+
+            <article class="guide">
+
+                <div class="guide-category">
+                    GADGETS
+                </div>
+
+                <h3>
+                    15 kleine Gadgets, die den Alltag einfacher machen
+                </h3>
+
+                <p>
+                    Welche kleinen Helfer sind tatsächlich
+                    nützlich und welche kann man sich sparen?
+                </p>
+
+                <a href="#" class="link">
+                    Artikel lesen →
+                </a>
+
+            </article>
+
+
+            <article class="guide">
+
+                <div class="guide-category">
+                    AUTO
+                </div>
+
+                <h3>
+                    Nützliche Auto-Gadgets, die man wirklich gebrauchen kann
+                </h3>
+
+                <p>
+                    Von Ordnung im Fahrzeug bis zu praktischen
+                    Helfern für unterwegs.
+                </p>
+
+                <a href="#" class="link">
+                    Artikel lesen →
+                </a>
+
+            </article>
+
+
+            <article class="guide">
+
+                <div class="guide-category">
+                    TECHNIK
+                </div>
+
+                <h3>
+                    Worauf sollte man bei einem Ladegerät achten?
+                </h3>
+
+                <p>
+                    Leistung, Anschlüsse, Standards und weitere
+                    Punkte einfach erklärt.
+                </p>
+
+                <a href="#" class="link">
+                    Artikel lesen →
+                </a>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- INFO -->
+
+    <section class="section">
+
+        <div class="info">
+
+            <h2>Warum Produktfinder?</h2>
+
+            <p>
+                Im Internet gibt es unzählige Produkte.
+                Wir möchten dir dabei helfen, interessante
+                Produkte schneller zu entdecken und
+                wichtige Unterschiede verständlich zu erklären.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 Produktfinder
+    </p>
+
+    <p>
+        <a href="#">Impressum</a>
+        |
+        <a href="#">Datenschutz</a>
+    </p>
+
+</footer>
+
+</body>
+    </html>
