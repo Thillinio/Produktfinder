@@ -1,187 +1,924 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Geschenkideen & Gadgets | Produktfinder</title>
+<title>Geschenke Finds – Geschenkideen für jeden | Produktfinder</title>
 
-<meta name="description" content="Praktische Gadgets und Geschenkideen für verschiedene Menschen und Budgets.">
+<meta name="description"
+content="Geschenkideen entdecken, vergleichen und passende Alternativen finden – von kleinen Geschenken bis zu Technik-Gadgets.">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:#f6f7f9;color:#17202a;line-height:1.6}
-a{text-decoration:none;color:inherit}
 
-header{background:#111827;color:white;position:sticky;top:0;z-index:100}
+/* ==================================================
+   GRUNDLAGEN
+================================================== */
 
-.back{
-max-width:1150px;
-margin:auto;
-padding:14px 20px;
-background:#111827
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.back a{color:#d1d5db;font-size:14px;font-weight:bold}
-
-.header-inner{
-max-width:1150px;
-margin:auto;
-padding:16px 20px;
-display:flex;
-justify-content:space-between;
-align-items:center
+html {
+    scroll-behavior: smooth;
 }
 
-.logo{font-size:24px;font-weight:800}
-.logo span{color:#f59e0b}
-
-nav{display:flex;gap:20px}
-nav a{color:white;font-size:14px}
-
-.hero{
-background:white;
-padding:65px 20px;
-text-align:center
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f7f9;
+    color: #17202a;
+    line-height: 1.6;
 }
 
-.hero-content{max-width:800px;margin:auto}
-
-.icon{font-size:55px;margin-bottom:15px}
-
-.hero h1{font-size:44px;margin-bottom:15px}
-.hero h1 span{color:#f59e0b}
-
-.hero p{
-max-width:650px;
-margin:auto;
-color:#667085;
-font-size:18px
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-.container{
-max-width:1150px;
-margin:auto;
-padding:55px 20px
+
+/* ==================================================
+   SCROLL-ANIMATION
+================================================== */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
 }
 
-.section{margin-bottom:65px}
-.title{margin-bottom:25px}
-.title h2{font-size:30px}
-.title p{color:#667085}
-
-.products{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.card{
-background:white;
-border:1px solid #eaecf0;
-border-radius:16px;
-overflow:hidden;
-transition:.3s
+
+/* ==================================================
+   HEADER
+================================================== */
+
+header {
+    background: #111827;
+    color: white;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
 }
 
-.card:hover{
-transform:translateY(-7px);
-box-shadow:0 15px 35px rgba(0,0,0,.1)
+.back {
+    max-width: 1150px;
+    margin: auto;
+
+    padding: 9px 20px;
 }
 
-.image{
-height:190px;
-background:#eef0f3;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:70px
+.back a {
+    color: #d1d5db;
+
+    font-size: 13px;
+    font-weight: bold;
 }
 
-.content{padding:22px}
-
-.tag{
-display:inline-block;
-background:#f2f4f7;
-padding:5px 9px;
-border-radius:5px;
-font-size:11px;
-font-weight:bold;
-margin-bottom:10px
+.back a:hover {
+    color: white;
 }
 
-.card h3{font-size:20px;margin-bottom:8px}
+.header-inner {
+    max-width: 1150px;
+    margin: auto;
 
-.card p{
-color:#667085;
-font-size:14px;
-margin-bottom:18px
+    padding: 14px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.button{
-display:inline-block;
-background:#111827;
-color:white;
-padding:10px 16px;
-border-radius:8px;
-font-size:13px;
-font-weight:bold
+.logo {
+    font-size: 24px;
+    font-weight: 800;
 }
 
-.info{
-background:#111827;
-color:white;
-padding:40px;
-border-radius:18px;
-text-align:center
+.logo span {
+    color: #f59e0b;
 }
 
-.info p{
-color:#d1d5db;
-max-width:700px;
-margin:10px auto 0
+nav {
+    display: flex;
+    gap: 18px;
 }
 
-footer{
-background:#0b1120;
-color:#9ca3af;
-text-align:center;
-padding:35px 20px
+nav a {
+    color: white;
+    font-size: 13px;
+    opacity: 0.9;
 }
 
-footer a{color:#d1d5db;margin:0 8px}
-
-@media(max-width:800px){
-.products{grid-template-columns:repeat(2,1fr)}
-nav{display:none}
+nav a:hover {
+    opacity: 1;
 }
 
-@media(max-width:600px){
-.products{grid-template-columns:1fr}
-.hero h1{font-size:34px}
-.hero p{font-size:16px}
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+    background: #111827;
+    color: white;
+
+    padding: 62px 20px;
+
+    text-align: center;
 }
+
+.hero-content {
+    max-width: 820px;
+    margin: auto;
+}
+
+.hero-label {
+    display: inline-block;
+
+    background: #f59e0b;
+    color: #111827;
+
+    padding: 6px 13px;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    margin-bottom: 16px;
+}
+
+.hero h1 {
+    font-size: 44px;
+
+    line-height: 1.15;
+
+    margin-bottom: 16px;
+}
+
+.hero h1 span {
+    color: #f59e0b;
+}
+
+.hero p {
+    max-width: 720px;
+
+    margin: auto;
+
+    color: #d1d5db;
+
+    font-size: 17px;
+}
+
+
+/* ==================================================
+   CONTAINER
+================================================== */
+
+.container {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 50px 20px;
+}
+
+.section {
+    margin-bottom: 65px;
+}
+
+.section-header {
+    margin-bottom: 22px;
+}
+
+.section-header h2 {
+    font-size: 29px;
+    margin-bottom: 5px;
+}
+
+.section-header p {
+    color: #667085;
+    font-size: 14px;
+}
+
+
+/* ==================================================
+   KATEGORIE NAVIGATION
+================================================== */
+
+.category-navigation {
+    display: flex;
+
+    gap: 10px;
+
+    overflow-x: auto;
+
+    padding-bottom: 7px;
+
+    scrollbar-width: none;
+}
+
+.category-navigation::-webkit-scrollbar {
+    display: none;
+}
+
+.category-button {
+    flex-shrink: 0;
+
+    background: white;
+
+    border: 1px solid #e1e4e8;
+
+    padding: 9px 15px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.category-button:hover {
+    transform: translateY(-2px);
+}
+
+.category-button.active {
+    background: #111827;
+
+    color: white;
+
+    border-color: #111827;
+}
+
+
+/* ==================================================
+   PRODUKTGRUPPE
+================================================== */
+
+.product-group {
+    margin-bottom: 75px;
+}
+
+.group-title {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 20px;
+}
+
+.group-title h2 {
+    font-size: 29px;
+    line-height: 1.2;
+}
+
+.group-title p {
+    color: #667085;
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   PRODUKT KARUSSELL
+================================================== */
+
+.product-carousel {
+    display: flex;
+
+    gap: 20px;
+
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+
+    padding: 5px 5px 18px;
+
+    scrollbar-width: thin;
+}
+
+.product-card {
+    flex: 0 0 calc(33.333% - 14px);
+
+    scroll-snap-align: start;
+
+    background: white;
+
+    border: 1px solid #eaecf0;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.04);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,0.09);
+}
+
+
+/* ==================================================
+   PRODUKTBILD
+================================================== */
+
+.product-image {
+    height: 190px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef0f3,
+            #f8f9fa
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 75px;
+}
+
+
+/* ==================================================
+   PRODUKTINHALT
+================================================== */
+
+.product-content {
+    padding: 23px;
+}
+
+.tag {
+    display: inline-block;
+
+    background: #fff3d6;
+
+    color: #9a6700;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    margin-bottom: 9px;
+}
+
+.product-content h3 {
+    font-size: 20px;
+
+    line-height: 1.3;
+
+    margin-bottom: 8px;
+}
+
+.description {
+    color: #667085;
+
+    font-size: 13px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ==================================================
+   PREIS
+================================================== */
+
+.price {
+    font-size: 21px;
+
+    font-weight: 800;
+
+    margin-bottom: 3px;
+}
+
+.price-note {
+    color: #98a2b3;
+
+    font-size: 10px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ==================================================
+   BEWERTUNG
+================================================== */
+
+.rating {
+    margin-bottom: 15px;
+
+    font-size: 13px;
+}
+
+
+/* ==================================================
+   PROS / CONS
+================================================== */
+
+.pros-cons {
+    margin-bottom: 17px;
+}
+
+.pros-cons strong {
+    display: block;
+
+    font-size: 12px;
+
+    margin-bottom: 4px;
+}
+
+.pros {
+    color: #217a3b;
+
+    font-size: 12px;
+
+    margin-bottom: 10px;
+}
+
+.cons {
+    color: #a33a3a;
+
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   FAZIT
+================================================== */
+
+.verdict {
+    background: #f7f8fa;
+
+    border-radius: 10px;
+
+    padding: 12px;
+
+    margin-bottom: 17px;
+
+    font-size: 12px;
+}
+
+.verdict strong {
+    display: block;
+
+    margin-bottom: 4px;
+}
+
+
+/* ==================================================
+   AMAZON BUTTON
+================================================== */
+
+.amazon-button {
+    display: block;
+
+    width: 100%;
+
+    background: #111827;
+
+    color: white;
+
+    padding: 11px 15px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.amazon-button:hover {
+    background: #1f2937;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   SWIPE
+================================================== */
+
+.swipe-hint {
+    text-align: center;
+
+    color: #98a2b3;
+
+    font-size: 11px;
+
+    margin-top: 6px;
+}
+
+
+/* ==================================================
+   VERGLEICH
+================================================== */
+
+.compare-box {
+    background: #111827;
+
+    color: white;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    margin-top: 25px;
+}
+
+.compare-box h3 {
+    font-size: 24px;
+
+    margin-bottom: 8px;
+}
+
+.compare-box > p {
+    color: #d1d5db;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: white;
+
+    color: #17202a;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 12px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #eaecf0;
+
+    font-size: 12px;
+}
+
+th {
+    background: #f2f4f7;
+}
+
+
+/* ==================================================
+   QUELLEN
+================================================== */
+
+.sources {
+    background: white;
+
+    border: 1px solid #eaecf0;
+
+    border-radius: 18px;
+
+    padding: 27px;
+
+    margin-top: 25px;
+}
+
+.sources h3 {
+    font-size: 22px;
+
+    margin-bottom: 7px;
+}
+
+.sources-intro {
+    color: #667085;
+
+    font-size: 12px;
+
+    margin-bottom: 20px;
+
+    max-width: 750px;
+}
+
+.source-group {
+    margin-bottom: 22px;
+}
+
+.source-group:last-child {
+    margin-bottom: 0;
+}
+
+.source-group h4 {
+    font-size: 14px;
+
+    margin-bottom: 9px;
+}
+
+.source-links {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.source-link {
+    display: inline-block;
+
+    background: #f7f8fa;
+
+    border: 1px solid #eaecf0;
+
+    border-radius: 9px;
+
+    padding: 9px 12px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.source-link:hover {
+    background: #eef0f3;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   TRANSPARENZ
+================================================== */
+
+.transparency {
+    background: #fff8e7;
+
+    border: 1px solid #f2dfad;
+
+    border-radius: 12px;
+
+    padding: 14px 16px;
+
+    margin-top: 20px;
+
+    color: #6b5500;
+
+    font-size: 11px;
+}
+
+
+/* ==================================================
+   INFO
+================================================== */
+
+.info {
+    background: #111827;
+
+    color: white;
+
+    padding: 38px;
+
+    border-radius: 18px;
+
+    text-align: center;
+}
+
+.info h2 {
+    font-size: 27px;
+
+    margin-bottom: 12px;
+}
+
+.info p {
+    max-width: 760px;
+
+    margin: auto;
+
+    color: #d1d5db;
+
+    font-size: 14px;
+}
+
+.affiliate-note {
+    max-width: 800px;
+
+    margin: 25px auto 0;
+
+    color: #98a2b3;
+
+    font-size: 10px;
+
+    text-align: center;
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+    background: #0b1120;
+
+    color: #9ca3af;
+
+    text-align: center;
+
+    padding: 32px 20px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #d1d5db;
+
+    margin: 0 7px;
+
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+    .product-card {
+        flex: 0 0 48%;
+    }
+
+    nav {
+        display: none;
+    }
+
+}
+
+
+/* ==================================================
+   HANDY
+================================================== */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 48px 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 40px 18px;
+    }
+
+    .product-card {
+        flex: 0 0 88%;
+    }
+
+    .group-title {
+        display: block;
+    }
+
+    .group-title p {
+        margin-top: 5px;
+    }
+
+    .compare-box {
+        padding: 23px 17px;
+    }
+
+    .sources {
+        padding: 22px;
+    }
+
+    .source-links {
+        display: grid;
+
+        grid-template-columns: 1fr;
+    }
+
+    .source-link {
+        width: 100%;
+    }
+
+    .info {
+        padding: 28px 20px;
+    }
+
+}
+
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- ==================================================
+     HEADER
+================================================== -->
 
 <header>
 
 <div class="back">
-<a href="index.html">← Zurück zu Produktfinder</a>
+
+<a href="index.html">
+← Zurück zu Produktfinder
+</a>
+
 </div>
+
 
 <div class="header-inner">
 
-<a href="index.html" class="logo">Produkt<span>finder</span></a>
+<a href="index.html" class="logo">
+Produkt<span>finder</span>
+</a>
+
 
 <nav>
-<a href="index.html">Startseite</a>
-<a href="tiktok-finds.html">TikTok Finds</a>
-<a href="zuhause.html">Zuhause</a>
-<a href="technik.html">Technik</a>
+
+<a href="index.html">
+Startseite
+</a>
+
+<a href="tiktok-finds.html">
+TikTok Finds
+</a>
+
+<a href="technik.html">
+Technik
+</a>
+
+<a href="zuhause.html">
+Zuhause
+</a>
+
+<a href="unterwegs.html">
+Unterwegs
+</a>
+
+<a href="auto.html">
+Auto
+</a>
+
+<a href="heimwerken.html">
+Heimwerken
+</a>
+
+<a href="geschenke.html">
+Geschenke
+</a>
+
 </nav>
 
 </div>
@@ -189,146 +926,1904 @@ nav{display:none}
 </header>
 
 
+
+<!-- ==================================================
+     HERO
+================================================== -->
+
 <section class="hero">
 
 <div class="hero-content">
 
-<div class="icon">🎁</div>
+<div class="hero-label">
+🎁 GESCHENKE FINDS
+</div>
 
 <h1>
-Geschenke, die <span>in Erinnerung bleiben</span>
+Geschenke, bei denen man
+<span>nicht lange überlegen muss.</span>
 </h1>
 
 <p>
-Praktische Gadgets, interessante Produkte und
-Geschenkideen für unterschiedliche Menschen und Budgets.
+Ob kleines Geschenk unter 20 €, Technik für
+Gadget-Fans oder etwas Besonderes für
+Familie und Freunde – wir suchen Ideen,
+vergleichen sie und zeigen, wann sich
+der Aufpreis wirklich lohnt.
 </p>
 
 </div>
 
 </section>
+
 
 
 <main class="container">
 
 
-<section class="section">
+<!-- ==================================================
+     NAVIGATION
+================================================== -->
 
-<div class="title">
-<h2>🎁 Geschenkideen entdecken</h2>
-<p>Ideen für verschiedene Budgets und Geschmäcker.</p>
-</div>
+<section class="section fade-in">
 
-<div class="products">
+<div class="section-header">
 
-<article class="card">
-<div class="image">🎁</div>
-<div class="content">
-<span class="tag">UNTER 20 €</span>
-<h3>Kleine Geschenkideen</h3>
-<p>Interessante kleine Produkte für kleines Budget.</p>
-<a href="#" class="button">Ideen entdecken</a>
-</div>
-</article>
-
-<article class="card">
-<div class="image">✨</div>
-<div class="content">
-<span class="tag">UNTER 50 €</span>
-<h3>Besondere Gadgets</h3>
-<p>Praktische und außergewöhnliche Geschenkideen.</p>
-<a href="#" class="button">Ideen entdecken</a>
-</div>
-</article>
-
-<article class="card">
-<div class="image">💎</div>
-<div class="content">
-<span class="tag">PREMIUM</span>
-<h3>Hochwertige Geschenkideen</h3>
-<p>Besondere Produkte für besondere Anlässe.</p>
-<a href="#" class="button">Ideen entdecken</a>
-</div>
-</article>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<div class="title">
-<h2>🔥 Geschenke, die überraschen</h2>
-<p>Kleine Gadgets, bei denen man denkt: „Das brauche ich!“</p>
-</div>
-
-<div class="products">
-
-<article class="card">
-<div class="image">💡</div>
-<div class="content">
-<span class="tag">GADGET</span>
-<h3>Praktische Alltagshelfer</h3>
-<p>Geschenke, die tatsächlich im Alltag verwendet werden.</p>
-<a href="#" class="button">Mehr erfahren</a>
-</div>
-</article>
-
-<article class="card">
-<div class="image">🎮</div>
-<div class="content">
-<span class="tag">TECHNIK</span>
-<h3>Technik-Geschenke</h3>
-<p>Interessante Gadgets für Technik-Fans.</p>
-<a href="#" class="button">Mehr erfahren</a>
-</div>
-</article>
-
-<article class="card">
-<div class="image">🔥</div>
-<div class="content">
-<span class="tag">TREND</span>
-<h3>Virale Geschenkideen</h3>
-<p>Produkte, die gerade besonders angesagt sind.</p>
-<a href="#" class="button">Mehr erfahren</a>
-</div>
-</article>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<div class="info">
-
-<h2>Das perfekte Geschenk muss nicht teuer sein</h2>
+<h2>
+Geschenke nach Anlass & Budget
+</h2>
 
 <p>
-Manchmal sind gerade kleine, praktische Produkte die
-Geschenke, über die man sich am längsten freut.
+Von kleinen Aufmerksamkeiten bis zu
+besonderen Geschenken.
 </p>
 
 </div>
 
+
+<div class="category-navigation">
+
+<a
+href="#klein"
+class="category-button active">
+
+💰 Unter 20 €
+
+</a>
+
+<a
+href="#technik"
+class="category-button">
+
+📱 Technik
+
+</a>
+
+<a
+href="#kreativ"
+class="category-button">
+
+🌿 Kreativ
+
+</a>
+
+<a
+href="#quellen"
+class="category-button">
+
+📚 Quellen
+
+</a>
+
+</div>
+
 </section>
+
+
+
+<!-- ==================================================
+     GESCHENKE UNTER 20 EURO
+================================================== -->
+
+<section
+class="product-group fade-in"
+id="klein"
+>
+
+
+<div class="group-title">
+
+<div>
+
+<h2>
+💰 Kleine Geschenke unter 20 €
+</h2>
+
+<p>
+Kleine Überraschungen, die trotzdem etwas hermachen
+</p>
+
+</div>
+
+<p>
+← Auf dem Handy wischen →
+</p>
+
+</div>
+
+
+
+<div class="product-carousel">
+
+
+<!-- LEGO ORCHID -->
+
+<article class="product-card">
+
+<div class="product-image">
+🌸
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+🔥 GESCHENK-FIND
+</span>
+
+<h3>
+LEGO Botanicals Mini-Orchidee
+</h3>
+
+<p class="description">
+
+Die Mini-Orchidee verbindet
+Bauspaß und Dekoration.
+Nach dem Aufbau bleibt sie als
+dauerhafte Pflanze im Zimmer stehen –
+ohne Gießen.
+
+</p>
+
+
+<div class="price">
+ca. 19,79 €
+</div>
+
+<div class="price-note">
+Amazon-Preis zum Recherchezeitpunkt
+</div>
+
+
+<div class="rating">
+⭐ <strong>4,7 / 5 · 18.335 Meinungen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Sieht als Dekoration gut aus<br>
+✓ Kein Pflegeaufwand<br>
+✓ Kreatives Geschenk<br>
+✓ Für Erwachsene geeignet<br>
+✓ Sehr große Bewertungsbasis
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Aufbau dauert etwas<br>
+✕ Nicht für jeden LEGO interessant<br>
+✕ Preis schwankt
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+🎁 Für wen passt das?
+</strong>
+
+Eine gute Idee für Menschen,
+bei denen du nicht einfach irgendeinen
+Gegenstand schenken möchtest.
+
+Besonders passend für Blumenfans,
+LEGO-Fans oder als kleines Geschenk
+für Wohnung und Büro.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=LEGO+Botanicals+Mini-Orchidee+10343"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Mini-Orchidee bei Amazon ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- GÄNSEBLÜMCHEN -->
+
+<article class="product-card">
+
+<div class="product-image">
+🌼
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+💰 GÜNSTIGER
+</span>
+
+<h3>
+LEGO Botanicals Gänseblümchen
+</h3>
+
+<p class="description">
+
+Eine kleinere und günstigere
+LEGO-Botanicals-Variante mit
+Gänseblümchen und Lavendel.
+
+Ideal, wenn die Mini-Orchidee
+etwas zu teuer ist.
+
+</p>
+
+
+<div class="price">
+ca. 10–11 €
+</div>
+
+<div class="price-note">
+Amazon-Preis zum Recherchezeitpunkt
+</div>
+
+
+<div class="rating">
+⭐ <strong>hohe Amazon-Bewertungsbasis</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Deutlich günstiger<br>
+✓ Kleine Geschenkgröße<br>
+✓ Dekoration nach dem Aufbau<br>
+✓ Kreative Beschäftigung<br>
+✓ Sehr gutes Preisniveau
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Kleiner als die Orchidee<br>
+✕ Weniger aufwendig<br>
+✕ Nicht für jeden Beschenkten interessant
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+💰 Mini-Orchidee oder Gänseblümchen?
+</strong>
+
+Wenn du unter 15 € bleiben möchtest,
+ist das Gänseblümchen die spannendere
+Option.
+
+Die Orchidee wirkt etwas hochwertiger
+und eignet sich eher als Geschenk,
+bei dem die Dekoration selbst im
+Vordergrund steht.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=LEGO+Botanicals+Gänseblümchen+11508"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Gänseblümchen bei Amazon ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- SOUNDCORE -->
+
+<article class="product-card">
+
+<div class="product-image">
+🎧
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+🎵 TECH-GESCHENK
+</span>
+
+<h3>
+Soundcore P20i
+</h3>
+
+<p class="description">
+
+Kabellose In-Ear-Kopfhörer mit App,
+Equalizer, Bass und bis zu rund
+9 Stunden Laufzeit der Ohrhörer.
+
+Ein günstiges Technikgeschenk,
+das tatsächlich regelmäßig genutzt
+werden kann.
+
+</p>
+
+
+<div class="price">
+ca. 25–30 €
+</div>
+
+<div class="price-note">
+Preis abhängig vom Amazon-Angebot
+</div>
+
+
+<div class="rating">
+⭐ <strong>4,3 / 5 · über 111.000 Meinungen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Sehr viele Bewertungen<br>
+✓ Guter Bass<br>
+✓ Equalizer per App<br>
+✓ IPX5<br>
+✓ Gute Akkulaufzeit<br>
+✓ Günstiger Einstieg
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Kein ANC<br>
+✕ Klang nicht auf Premium-Niveau<br>
+✕ Bedienung teilweise gewöhnungsbedürftig
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+🎧 Für wen geeignet?
+</strong>
+
+Wenn du ein kleines Technikgeschenk
+suchst, das nicht nur herumsteht,
+ist der P20i interessant.
+
+Für anspruchsvolle Musikfans gibt es
+bessere Modelle – für den Preis ist
+das Gesamtpaket aber überzeugend.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Soundcore+P20i"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Soundcore P20i bei Amazon →
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+
+<div class="swipe-hint">
+👆 Nach links oder rechts wischen
+</div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     TECHNIK GESCHENKE
+================================================== -->
+
+<section
+class="product-group fade-in"
+id="technik"
+>
+
+
+<div class="group-title">
+
+<div>
+
+<h2>
+📱 Technik-Geschenke
+</h2>
+
+<p>
+Kleine Gadgets mit echtem Alltagsnutzen
+</p>
+
+</div>
+
+<p>
+← Auf dem Handy wischen →
+</p>
+
+</div>
+
+
+
+<div class="product-carousel">
+
+
+<!-- JBL GO 4 -->
+
+<article class="product-card">
+
+<div class="product-image">
+🔊
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+🔥 BELIEBT
+</span>
+
+<h3>
+JBL Go 4
+</h3>
+
+<p class="description">
+
+Ultra-kompakter Bluetooth-Lautsprecher
+mit bis zu 7 Stunden Wiedergabezeit
+plus Playtime Boost.
+
+Wasser- und staubgeschützt und
+damit auch unterwegs praktisch.
+
+</p>
+
+
+<div class="price">
+ca. 38–50 €
+</div>
+
+<div class="price-note">
+Herstellerpreis/Angebote schwanken
+</div>
+
+
+<div class="rating">
+⭐ <strong>4,7 / 5 · 257 Nutzerbewertungen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Sehr kompakt<br>
+✓ Gute Klangqualität für die Größe<br>
+✓ Wasser- und staubgeschützt<br>
+✓ Bis zu 7 Stunden Wiedergabe<br>
+✓ Viele Farben<br>
+✓ App-Unterstützung
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Kein Ersatz für große Lautsprecher<br>
+✕ Ladegerät nicht enthalten<br>
+✕ Bass naturgemäß begrenzt
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+🔊 Warum ein gutes Geschenk?
+</strong>
+
+Der JBL Go 4 ist klein genug,
+dass man ihn problemlos mitnehmen kann.
+
+Dadurch eignet er sich besonders
+als Geschenk für Jugendliche,
+Freunde oder Menschen, die viel
+unterwegs sind.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=JBL+Go+4"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+JBL Go 4 bei Amazon ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- SOUNCORE 2 -->
+
+<article class="product-card">
+
+<div class="product-image">
+💰
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+💰 ALTERNATIVE
+</span>
+
+<h3>
+Anker Soundcore 2
+</h3>
+
+<p class="description">
+
+Größer als der JBL Go 4, dafür
+mit deutlich längerer Akkulaufzeit
+und kräftigem Klang.
+
+Eine interessante Alternative,
+wenn Kompaktheit nicht an erster
+Stelle steht.
+
+</p>
+
+
+<div class="price">
+ca. 28 €
+</div>
+
+<div class="price-note">
+Amazon-Preis aus der Recherche
+</div>
+
+
+<div class="rating">
+⭐ <strong>Amazon-Bestseller mit großer Bewertungsbasis</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Günstiger<br>
+✓ Bis zu 24 Stunden Akku<br>
+✓ IPX7<br>
+✓ Stereo-Pairing möglich<br>
+✓ Kräftiger Klang
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Größer<br>
+✕ Älteres Modell<br>
+✕ Weniger modern als JBL Go 4
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+💰 JBL oder Soundcore?
+</strong>
+
+Wenn du ein möglichst kleines
+Geschenk möchtest, ist der JBL
+interessanter.
+
+Wenn dir Akkulaufzeit und ein
+größerer Klang wichtiger sind,
+kann Soundcore 2 die bessere
+Preis-Leistungs-Wahl sein.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Anker+Soundcore+2"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Soundcore 2 bei Amazon →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- ECHO POP -->
+
+<article class="product-card">
+
+<div class="product-image">
+🗣️
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+🏠 SMART GIFT
+</span>
+
+<h3>
+Amazon Echo Pop
+</h3>
+
+<p class="description">
+
+Kompakter smarter Lautsprecher
+mit Alexa, Bluetooth und WLAN.
+
+Kann Musik abspielen, Timer setzen,
+Fragen beantworten und kompatible
+Smart-Home-Geräte steuern.
+
+</p>
+
+
+<div class="price">
+ca. 50–55 €
+</div>
+
+<div class="price-note">
+Preis abhängig von Angebot/Farbe
+</div>
+
+
+<div class="rating">
+⭐ <strong>ca. 4,7 / 5 in Produktbewertungen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Alexa integriert<br>
+✓ Kompakt<br>
+✓ WLAN + Bluetooth<br>
+✓ Smart-Home-Steuerung<br>
+✓ Viele Funktionen
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Netzbetrieb<br>
+✕ Datenschutz beachten<br>
+✕ Klang nicht für große Räume gedacht
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+🏠 Für wen geeignet?
+</strong>
+
+Ein gutes Geschenk für Menschen,
+die gerne Technik ausprobieren
+oder bereits Smart-Home-Geräte
+besitzen.
+
+Wer nur Musik hören möchte,
+bekommt mit einem Bluetooth-
+Lautsprecher mehr Mobilität.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=Amazon+Echo+Pop"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Echo Pop bei Amazon ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+
+<div class="swipe-hint">
+👆 Nach links oder rechts wischen
+</div>
+
+
+
+<div class="compare-box">
+
+<h3>
+⚖️ Welches Technik-Geschenk?
+</h3>
+
+<p>
+Hier entscheidet vor allem der Einsatzzweck.
+</p>
+
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+
+<th>
+Produkt
+</th>
+
+<th>
+Preisniveau
+</th>
+
+<th>
+Stärke
+</th>
+
+<th>
+Ideal für
+</th>
+
+</tr>
+
+<tr>
+
+<td>
+JBL Go 4
+</td>
+
+<td>
+💰💰
+</td>
+
+<td>
+Kompakt + mobil
+</td>
+
+<td>
+Unterwegs
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Soundcore 2
+</td>
+
+<td>
+💰
+</td>
+
+<td>
+Akku + Preis
+</td>
+
+<td>
+Zuhause / draußen
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Echo Pop
+</td>
+
+<td>
+💰💰
+</td>
+
+<td>
+Alexa + Smart Home
+</td>
+
+<td>
+Technikfans
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     KREATIVE GESCHENKE
+================================================== -->
+
+<section
+class="product-group fade-in"
+id="kreativ"
+>
+
+
+<div class="group-title">
+
+<div>
+
+<h2>
+🌿 Kreative & besondere Geschenke
+</h2>
+
+<p>
+Geschenke, die nicht einfach nach drei Tagen verschwinden
+</p>
+
+</div>
+
+<p>
+← Auf dem Handy wischen →
+</p>
+
+</div>
+
+
+
+<div class="product-carousel">
+
+
+<!-- ORCHID -->
+
+<article class="product-card">
+
+<div class="product-image">
+🌺
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+🌿 DEKO-GESCHENK
+</span>
+
+<h3>
+LEGO Botanicals Mini-Orchidee
+</h3>
+
+<p class="description">
+
+Eine dekorative Orchidee aus LEGO,
+die gemeinsam aufgebaut werden
+kann und anschließend dauerhaft
+als Zimmerdekoration dient.
+
+</p>
+
+
+<div class="price">
+ca. 19,79 €
+</div>
+
+<div class="price-note">
+Amazon-Preis zum Recherchezeitpunkt
+</div>
+
+
+<div class="rating">
+⭐ <strong>4,7 / 5 · 18.335 Meinungen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Kreativ<br>
+✓ Dauerhafte Dekoration<br>
+✓ Kein Pflegeaufwand<br>
+✓ Für Erwachsene geeignet
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Aufbau benötigt Zeit<br>
+✕ Nicht für jeden Geschenktyp geeignet
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+🌿 Unser Eindruck
+</strong>
+
+Eines dieser Geschenke,
+bei denen der eigentliche Wert
+nicht nur im Gegenstand liegt,
+sondern auch im Aufbau und
+späteren Dekorieren.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=LEGO+10343+Mini-Orchidee"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Mini-Orchidee ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- DAISY -->
+
+<article class="product-card">
+
+<div class="product-image">
+🌼
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+💰 PREIS-TIPP
+</span>
+
+<h3>
+LEGO Botanicals Gänseblümchen
+</h3>
+
+<p class="description">
+
+Kleineres Botanicals-Set mit
+Gänseblümchen und Lavendel.
+
+Eine gute Wahl, wenn du eine
+ähnliche Idee möchtest, aber
+deutlich weniger ausgeben willst.
+
+</p>
+
+
+<div class="price">
+ca. 10–11 €
+</div>
+
+<div class="price-note">
+Amazon-Preis kann schwanken
+</div>
+
+
+<div class="rating">
+⭐ <strong>große Amazon-Bewertungsbasis</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Sehr günstig<br>
+✓ Kreativ<br>
+✓ Dekoration<br>
+✓ Kleine Geschenkgröße
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Weniger umfangreich<br>
+✕ Weniger auffällig als die Orchidee
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+💰 Die bessere Wahl bei kleinem Budget?
+</strong>
+
+Wenn du nur eine kleine Aufmerksamkeit
+suchst, würde ich eher zum
+Gänseblümchen greifen.
+
+Für einen etwas „wertigeren“
+Geschenkeindruck ist die Orchidee
+interessanter.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=LEGO+11508+Gänseblümchen"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Gänseblümchen ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- CREATIVE GENERAL -->
+
+<article class="product-card">
+
+<div class="product-image">
+🎨
+</div>
+
+
+<div class="product-content">
+
+<span class="tag">
+💡 GESCHENK-IDEE
+</span>
+
+<h3>
+Kreative DIY-Geschenke
+</h3>
+
+<p class="description">
+
+Wenn du nicht genau weißt,
+was die Person besitzt, sind
+kreative Sets oft interessanter
+als ein weiterer Gegenstand.
+
+Von Pflanzen-Sets bis zu
+Bastel- und Dekorationsprojekten.
+
+</p>
+
+
+<div class="price">
+ab ca. 10 €
+</div>
+
+<div class="price-note">
+Preis abhängig vom Produkt
+</div>
+
+
+<div class="rating">
+⭐ <strong>Bewertung immer beim konkreten Produkt prüfen</strong>
+</div>
+
+
+<div class="pros-cons">
+
+<strong>
+Vorteile
+</strong>
+
+<div class="pros">
+✓ Persönlicher Eindruck<br>
+✓ Viele Preisklassen<br>
+✓ Beschäftigung + Geschenk<br>
+✓ Für viele Altersgruppen
+</div>
+
+
+<strong>
+Nachteile
+</strong>
+
+<div class="cons">
+✕ Interessen der Person wichtig<br>
+✕ Nicht jeder mag DIY
+</div>
+
+</div>
+
+
+<div class="verdict">
+
+<strong>
+🎁 Unser Tipp
+</strong>
+
+Wenn du die Person nicht besonders
+gut kennst, sind neutrale kreative
+Geschenke oft sicherer als sehr
+spezielle Technikprodukte.
+
+</div>
+
+
+<a
+href="https://www.amazon.de/s?k=DIY+Geschenk+Erwachsene"
+class="amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+DIY-Geschenke bei Amazon →
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+
+<div class="swipe-hint">
+👆 Nach links oder rechts wischen
+</div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     GESAMTVERGLEICH
+================================================== -->
+
+<section class="section fade-in">
+
+<div class="compare-box">
+
+<h3>
+🎁 Was macht ein gutes Geschenk aus?
+</h3>
+
+<p>
+Nicht unbedingt der höchste Preis.
+Entscheidend ist, ob das Geschenk
+zur Person passt.
+</p>
+
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+
+<th>
+Geschenk
+</th>
+
+<th>
+Preis
+</th>
+
+<th>
+Besonderheit
+</th>
+
+<th>
+Ideal für
+</th>
+
+</tr>
+
+
+<tr>
+
+<td>
+LEGO Mini-Orchidee
+</td>
+
+<td>
+💰💰
+</td>
+
+<td>
+Dekoration + Bauspaß
+</td>
+
+<td>
+Blumen-/LEGO-Fans
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+LEGO Gänseblümchen
+</td>
+
+<td>
+💰
+</td>
+
+<td>
+Klein + kreativ
+</td>
+
+<td>
+Kleine Aufmerksamkeit
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Soundcore P20i
+</td>
+
+<td>
+💰
+</td>
+
+<td>
+Technik für wenig Geld
+</td>
+
+<td>
+Musikfans
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+JBL Go 4
+</td>
+
+<td>
+💰💰
+</td>
+
+<td>
+Mobil + kompakt
+</td>
+
+<td>
+Jugendliche / Freunde
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Echo Pop
+</td>
+
+<td>
+💰💰
+</td>
+
+<td>
+Alexa + Smart Home
+</td>
+
+<td>
+Technikfans
+</td>
+
+</tr>
+
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     QUELLEN
+================================================== -->
+
+<section
+class="section fade-in"
+id="quellen"
+>
+
+<div class="sources">
+
+<h3>
+📚 Quellen & Tests
+</h3>
+
+
+<p class="sources-intro">
+
+Hier findest du Quellen für Produktdaten,
+Preise, Bewertungen und Testinformationen.
+
+Wir übernehmen keine fremden Testtexte
+oder Bilder.
+
+</p>
+
+
+
+<!-- LEGO -->
+
+<div class="source-group">
+
+<h4>
+🌿 LEGO Botanicals
+</h4>
+
+
+<div class="source-links">
+
+<a
+href="https://www.testberichte.de/spielzeuge-spiele/lego-icons-mini-orchidee-10343.html"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Testberichte.de – Mini-Orchidee →
+
+</a>
+
+
+<a
+href="https://preisvergleich.heise.de/lego-icons-mini-orchidee-10343-a3363512.html"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Heise Preisvergleich – Mini-Orchidee →
+
+</a>
+
+
+<a
+href="https://www.lego.com/de-de/gifts"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+LEGO – Geschenkideen →
+
+</a>
+
+
+<a
+href="https://www.amazon.de/s?k=LEGO+Botanicals+Mini-Orchidee+10343"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – Mini-Orchidee →
+
+</a>
+
+
+<a
+href="https://www.amazon.de/s?k=LEGO+Botanicals+Gänseblümchen+11508"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – Gänseblümchen →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- JBL -->
+
+<div class="source-group">
+
+<h4>
+🔊 JBL Go 4
+</h4>
+
+
+<div class="source-links">
+
+<a
+href="https://de.jbl.com/JBLGO4BLK.html"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+JBL – offizielles Produkt →
+
+</a>
+
+
+<a
+href="https://www.billiger.de/baseproducts/108408-jbl-go-4"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Preisvergleich & Bewertungen →
+
+</a>
+
+
+<a
+href="https://www.amazon.de/s?k=JBL+Go+4"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – JBL Go 4 →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- ECHO -->
+
+<div class="source-group">
+
+<h4>
+🗣️ Amazon Echo Pop
+</h4>
+
+
+<div class="source-links">
+
+<a
+href="https://www.test.de/Lautsprecher-im-Test-4987334-detail/IC21775-FL%21IC21775-0252-00/"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Stiftung Warentest – Echo Pop →
+
+</a>
+
+
+<a
+href="https://geizhals.de/amazon-echo-pop-v131119.html"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Geizhals – Preis & Tests →
+
+</a>
+
+
+<a
+href="https://www.amazon.de/echo-dot-2022/dp/B09B8X9RGM"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – Echo Geräte →
+
+</a>
+
+
+<a
+href="https://www.amazon.de/s?k=Amazon+Echo+Pop"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – Echo Pop →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- SOUNDCORE -->
+
+<div class="source-group">
+
+<h4>
+🎧 Soundcore P20i
+</h4>
+
+
+<div class="source-links">
+
+<a
+href="https://www.testberichte.de/p/anker-tests/soundcore-p20i-testbericht.html"
+target="_blank"
+rel="nofollow noopener"
+class="source-link">
+
+Testberichte.de – Soundcore P20i →
+
+</a>
+
+
+<a
+href="https://www.amazon.de/s?k=Soundcore+P20i"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="source-link">
+
+Amazon – Soundcore P20i →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="transparency">
+
+<strong>
+💡 Transparenz:
+</strong>
+
+Preise, Verfügbarkeit und Bewertungen
+sind Momentaufnahmen und können sich
+jederzeit ändern.
+
+Besonders bei Amazon können Preise
+je nach Farbe, Verkäufer, Prime-Status
+und Angebot schwanken.
+
+Deshalb sollte vor dem Kauf immer
+der aktuelle Preis beim jeweiligen
+Amazon-Angebot geprüft werden.
+
+Wir wollen nicht behaupten, dass ein
+Geschenk objektiv „das Beste“ ist.
+Unsere Einschätzung soll vielmehr
+dabei helfen, schneller eine passende
+Entscheidung zu treffen.
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     FAZIT
+================================================== -->
+
+<section class="section fade-in">
+
+<div class="info">
+
+<h2>
+🎁 Das perfekte Geschenk muss nicht teuer sein.
+</h2>
+
+<p>
+
+Bei Geschenken zählt nicht unbedingt
+der Preis.
+
+Ein 10-Euro-Geschenk kann wesentlich
+besser passen als ein 100-Euro-Produkt,
+wenn es genau den Geschmack der
+Person trifft.
+
+<br><br>
+
+Deshalb vergleichen wir bei Produktfinder
+nicht einfach nur Preise.
+
+Wir wollen herausfinden:
+
+<br><br>
+
+<strong>
+Was ist wirklich eine gute Geschenkidee?
+
+</strong>
+
+<br><br>
+
+Was lohnt sich für 10 €?
+
+Was lohnt sich für 20 €?
+
+Und wann bringt ein teureres Geschenk
+tatsächlich einen Mehrwert?
+
+<br><br>
+
+<strong>
+Genau das versuchen wir dir möglichst
+einfach zu beantworten.
+
+</strong>
+
+</p>
+
+
+<div class="affiliate-note">
+
+Hinweis: Einige Links auf dieser Seite können
+Affiliate-Links sein. Wenn über einen solchen
+Link ein Kauf erfolgt, kann Produktfinder eine
+Provision erhalten. Für dich entstehen dadurch
+keine zusätzlichen Kosten.
+
+</div>
+
+</div>
+
+</section>
+
 
 </main>
 
 
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
 <footer>
 
-<p>© 2026 Produktfinder</p>
+<p>
+© 2026 Produktfinder
+</p>
+
 
 <p>
-<a href="index.html">Startseite</a>
-<a href="tiktok-finds.html">TikTok Finds</a>
-<a href="zuhause.html">Zuhause</a>
+
+<a href="index.html">
+Startseite
+</a>
+
+<a href="tiktok-finds.html">
+TikTok Finds
+</a>
+
+<a href="technik.html">
+Technik
+</a>
+
+<a href="zuhause.html">
+Zuhause
+</a>
+
+<a href="unterwegs.html">
+Unterwegs
+</a>
+
+<a href="auto.html">
+Auto
+</a>
+
+<a href="heimwerken.html">
+Heimwerken
+</a>
+
+<a href="geschenke.html">
+Geschenke
+</a>
+
 </p>
 
 </footer>
 
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script>
+
+const observer =
+new IntersectionObserver(
+
+(entries) => {
+
+entries.forEach(
+(entry) => {
+
+if (entry.isIntersecting) {
+
+entry.target.classList.add(
+"visible"
+);
+
+observer.unobserve(
+entry.target
+);
+
+}
+
+});
+
+},
+
+{
+threshold: 0.12
+}
+
+);
+
+
+document
+.querySelectorAll(".fade-in")
+.forEach(
+(element) => {
+
+observer.observe(element);
+
+}
+);
+
+</script>
+
+
 </body>
+
 </html>
