@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Produktfinder – Produkte entdecken & vergleichen</title>
+
+    <meta name="description" content="Produktfinder hilft dir dabei, interessante Produkte zu entdecken und miteinander zu vergleichen.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f6f8;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 18px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .nav {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 15px;
+        }
+
+        .hero {
+            background: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #6b7280;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 45px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 55px;
+        }
+
+        .category {
+            background: white;
+            padding: 25px 15px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #111827;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+            transition: transform 0.2s;
+        }
+
+        .category:hover {
+            transform: translateY(-3px);
+        }
+
+        .category-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.07);
+            padding: 22px;
+        }
+
+        .product-image {
+            height: 170px;
+            background: #e5e7eb;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 55px;
+            margin-bottom: 18px;
+        }
+
+        .product h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .rating {
+            margin-bottom: 10px;
+        }
+
+        .product p {
+            color: #6b7280;
+            margin-bottom: 15px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #111827;
+            color: white;
+            padding: 11px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .info {
+            background: white;
+            margin-top: 55px;
+            padding: 30px;
+            border-radius: 14px;
+        }
+
+        footer {
+            background: #111827;
+            color: #d1d5db;
+            text-align: center;
+            padding: 35px 20px;
+            margin-top: 70px;
+        }
+
+        footer a {
+            color: #d1d5db;
+            margin: 0 8px;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            nav a {
+                margin-left: 8px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+        <div class="logo">Produktfinder</div>
+
+        <nav>
+            <a href="#">Startseite</a>
+            <a href="#kategorien">Kategorien</a>
+            <a href="#empfehlungen">Empfehlungen</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>Finde das passende Produkt</h1>
+
+    <p>
+        Wir helfen dir dabei, interessante Produkte zu entdecken,
+        miteinander zu vergleichen und die passende Entscheidung zu treffen.
+    </p>
+</section>
+
+<main class="container">
+
+    <section id="kategorien">
+        <h2 class="section-title">Kategorien</h2>
+
+        <div class="categories">
+
+            <a class="category" href="#">
+                <div class="category-icon">💻</div>
+                Technik
+            </a>
+
+            <a class="category" href="#">
+                <div class="category-icon">🎮</div>
+                Gaming
+            </a>
+
+            <a class="category" href="#">
+                <div class="category-icon">🏠</div>
+                Haushalt
+            </a>
+
+            <a class="category" href="#">
+                <div class="category-icon">🍳</div>
+                Küche
+            </a>
+
+            <a class="category" href="#">
+                <div class="category-icon">🚗</div>
+                Auto
+            </a>
+
+            <a class="category" href="#">
+                <div class="category-icon">🏋️</div>
+                Fitness
+            </a>
+
+        </div>
+    </section>
+
+
+    <section id="empfehlungen">
+
+        <h2 class="section-title">Unsere Empfehlungen</h2>
+
+        <div class="products">
+
+            <article class="product">
+
+                <div class="product-image">
+                    🎧
+                </div>
+
+                <h3>Gaming-Headsets</h3>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <p>
+                    Entdecke interessante Gaming-Headsets
+                    für verschiedene Ansprüche und Budgets.
+                </p>
+
+                <a class="button" href="#">
+                    Empfehlungen ansehen
+                </a>
+
+            </article>
+
+
+            <article class="product">
+
+                <div class="product-image">
+                    🔧
+                </div>
+
+                <h3>Akkuschrauber</h3>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <p>
+                    Welche Akkuschrauber eignen sich für
+                    Heimwerker und welche Modelle sind besonders interessant?
+                </p>
+
+                <a class="button" href="#">
+                    Empfehlungen ansehen
+                </a>
+
+            </article>
+
+
+            <article class="product">
+
+                <div class="product-image">
+                    ☕
+                </div>
+
+                <h3>Kaffeemaschinen</h3>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <p>
+                    Vergleiche verschiedene Kaffeemaschinen
+                    und finde ein Modell passend zu deinen Bedürfnissen.
+                </p>
+
+                <a class="button" href="#">
+                    Empfehlungen ansehen
+                </a>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <section class="info">
+
+        <h2>Warum Produktfinder?</h2>
+
+        <p>
+            Die Auswahl an Produkten im Internet kann schnell
+            unübersichtlich werden. Produktfinder soll dir dabei
+            helfen, verschiedene Produkte übersichtlich zu entdecken
+            und wichtige Eigenschaften miteinander zu vergleichen.
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>© 2026 Produktfinder</p>
+
+    <p>
+        <a href="#">Impressum</a>
+        |
+        <a href="#">Datenschutz</a>
+    </p>
+
+</footer>
+
+</body>
+  </html>
