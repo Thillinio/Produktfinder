@@ -1,900 +1,187 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Technik Finds – Virale Produkte im Test | Produktfinder</title>
+<title>Technik – Gadgets & Zubehör | Produktfinder</title>
 
-<meta name="description"
-content="Virale Technik- und Lifestyle-Produkte entdecken, vergleichen und herausfinden, ob sie den Hype wirklich wert sind.">
-
+<meta name="description" content="Entdecke praktische Technik-Gadgets, Ladegeräte, Powerbanks, Kabel, Kopfhörer und Zubehör.">
 
 <style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#f6f7f9;color:#17202a;line-height:1.6}
+a{text-decoration:none;color:inherit}
 
-/* =========================
-   GRUNDLAGEN
-========================= */
+header{background:#111827;color:white;position:sticky;top:0;z-index:100}
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+.back{
+max-width:1150px;
+margin:auto;
+padding:14px 20px;
+background:#111827
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f6f7f9;
-    color: #17202a;
-    line-height: 1.6;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-
-/* =========================
-   ANIMATION
-========================= */
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(25px);
-
-    transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-header {
-    background: #111827;
-    color: white;
-
-    position: sticky;
-    top: 0;
-
-    z-index: 100;
-}
-
-.back {
-    max-width: 1150px;
-    margin: auto;
-
-    padding: 10px 20px;
-}
-
-.back a {
-    color: #d1d5db;
-
-    font-size: 13px;
-    font-weight: bold;
-}
-
-.back a:hover {
-    color: white;
-}
-
-.header-inner {
-    max-width: 1150px;
-    margin: auto;
-
-    padding: 14px 20px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: 800;
-}
-
-.logo span {
-    color: #f59e0b;
-}
-
-nav {
-    display: flex;
-    gap: 22px;
-}
-
-nav a {
-    color: white;
-
-    font-size: 14px;
-
-    opacity: 0.9;
-}
-
-nav a:hover {
-    opacity: 1;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    background: #111827;
-
-    color: white;
-
-    padding: 60px 20px;
-
-    text-align: center;
-}
-
-.hero-content {
-    max-width: 820px;
-    margin: auto;
-}
-
-.hero-label {
-    display: inline-block;
-
-    background: #f59e0b;
-
-    color: #111827;
-
-    padding: 6px 12px;
-
-    border-radius: 30px;
-
-    font-size: 11px;
-
-    font-weight: bold;
-
-    margin-bottom: 15px;
-}
-
-.hero h1 {
-    font-size: 44px;
-
-    line-height: 1.15;
-
-    margin-bottom: 15px;
-}
-
-.hero h1 span {
-    color: #f59e0b;
-}
-
-.hero p {
-    max-width: 700px;
-
-    margin: auto;
-
-    color: #d1d5db;
-
-    font-size: 17px;
-}
-
-
-/* =========================
-   CONTAINER
-========================= */
-
-.container {
-    max-width: 1150px;
-
-    margin: auto;
-
-    padding: 50px 20px;
-}
-
-.section {
-    margin-bottom: 65px;
-}
-
-.section-header {
-    margin-bottom: 22px;
-}
-
-.section-header h2 {
-    font-size: 29px;
-
-    margin-bottom: 5px;
-}
-
-.section-header p {
-    color: #667085;
-
-    font-size: 14px;
-}
-
-
-/* =========================
-   KATEGORIEN
-========================= */
-
-.category-navigation {
-    display: flex;
-
-    gap: 10px;
-
-    overflow-x: auto;
-
-    padding-bottom: 7px;
-
-    scrollbar-width: none;
-}
-
-.category-navigation::-webkit-scrollbar {
-    display: none;
-}
-
-.category-button {
-    flex-shrink: 0;
-
-    background: white;
-
-    border: 1px solid #e1e4e8;
-
-    padding: 9px 15px;
-
-    border-radius: 30px;
-
-    font-size: 13px;
-
-    font-weight: bold;
-
-    transition: 0.2s ease;
-}
-
-.category-button:hover {
-    transform: translateY(-2px);
-}
-
-.category-button.active {
-    background: #111827;
-
-    color: white;
-
-    border-color: #111827;
-}
-
-
-/* =========================
-   PRODUKTGRUPPE
-========================= */
-
-.product-group {
-    margin-bottom: 75px;
-}
-
-.group-title {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: end;
-
-    margin-bottom: 20px;
-}
-
-.group-title h2 {
-    font-size: 29px;
-
-    line-height: 1.2;
-}
-
-.group-title p {
-    color: #667085;
-
-    font-size: 12px;
-}
-
-
-/* =========================
-   KARUSSELL
-========================= */
-
-.product-carousel {
-    display: flex;
-
-    gap: 20px;
-
-    overflow-x: auto;
-
-    scroll-snap-type: x mandatory;
-
-    padding: 5px 5px 18px;
-
-    scrollbar-width: thin;
-}
-
-.product-card {
-    flex: 0 0 calc(33.333% - 14px);
-
-    scroll-snap-align: start;
-
-    background: white;
-
-    border: 1px solid #eaecf0;
-
-    border-radius: 18px;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 5px 18px rgba(0,0,0,0.04);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
-
-    box-shadow:
-        0 15px 30px rgba(0,0,0,0.09);
-}
-
-
-/* =========================
-   PRODUKTBILD
-========================= */
-
-.product-image {
-    height: 190px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #eef0f3,
-            #f8f9fa
-        );
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 75px;
-}
-
-
-/* =========================
-   PRODUKTINHALT
-========================= */
-
-.product-content {
-    padding: 23px;
-}
-
-.tag {
-    display: inline-block;
-
-    background: #fff3d6;
-
-    color: #9a6700;
-
-    padding: 5px 9px;
-
-    border-radius: 5px;
-
-    font-size: 10px;
+.back a{color:#d1d5db;font-size:14px;font-weight:bold}
 
-    font-weight: bold;
-
-    margin-bottom: 9px;
-}
-
-.product-content h3 {
-    font-size: 20px;
-
-    line-height: 1.3;
-
-    margin-bottom: 8px;
-}
-
-.description {
-    color: #667085;
-
-    font-size: 13px;
-
-    margin-bottom: 15px;
-}
-
-
-/* =========================
-   PREIS
-========================= */
-
-.price {
-    font-size: 22px;
-
-    font-weight: 800;
-
-    margin-bottom: 3px;
-}
-
-.price-note {
-    color: #98a2b3;
-
-    font-size: 10px;
-
-    margin-bottom: 15px;
-}
-
-
-/* =========================
-   BEWERTUNG
-========================= */
-
-.rating {
-    margin-bottom: 15px;
-
-    font-size: 13px;
-}
-
-.rating strong {
-    color: #17202a;
-}
-
-
-/* =========================
-   PROS & CONS
-========================= */
-
-.pros-cons {
-    margin-bottom: 17px;
-}
-
-.pros-cons strong {
-    display: block;
-
-    font-size: 12px;
-
-    margin-bottom: 4px;
-}
-
-.pros {
-    color: #217a3b;
-
-    font-size: 12px;
-
-    margin-bottom: 10px;
-}
-
-.cons {
-    color: #a33a3a;
-
-    font-size: 12px;
-}
-
-
-/* =========================
-   FAZIT BOX
-========================= */
-
-.verdict {
-    background: #f7f8fa;
-
-    border-radius: 10px;
-
-    padding: 12px;
-
-    margin-bottom: 17px;
-
-    font-size: 12px;
-}
-
-.verdict strong {
-    display: block;
-
-    margin-bottom: 4px;
-}
-
-
-/* =========================
-   AMAZON BUTTON
-========================= */
-
-.amazon-button {
-    display: block;
-
-    width: 100%;
-
-    background: #111827;
-
-    color: white;
-
-    padding: 11px 15px;
-
-    border-radius: 8px;
-
-    text-align: center;
-
-    font-size: 12px;
-
-    font-weight: bold;
-
-    transition: 0.2s ease;
-}
-
-.amazon-button:hover {
-    background: #1f2937;
-
-    transform: translateY(-2px);
-}
-
-
-/* =========================
-   SWIPE
-========================= */
-
-.swipe-hint {
-    text-align: center;
-
-    color: #98a2b3;
-
-    font-size: 11px;
-
-    margin-top: 6px;
-}
-
-
-/* =========================
-   ALTERNATIVE
-========================= */
-
-.alternative {
-    margin-top: 25px;
-
-    background: white;
-
-    border: 1px solid #eaecf0;
-
-    border-radius: 18px;
-
-    padding: 28px;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 25px;
-
-    align-items: center;
-}
-
-.alternative-label {
-    color: #9a6700;
-
-    font-size: 11px;
-
-    font-weight: bold;
-
-    margin-bottom: 7px;
-}
-
-.alternative h3 {
-    font-size: 23px;
-
-    margin-bottom: 8px;
-}
-
-.alternative p {
-    color: #667085;
-
-    font-size: 13px;
-
-    margin-bottom: 15px;
-}
-
-.alternative-price {
-    font-size: 23px;
-
-    font-weight: 800;
-
-    margin-bottom: 12px;
-}
-
-.alternative-info {
-    background: #fff8e7;
-
-    border: 1px solid #f2dfad;
-
-    border-radius: 12px;
-
-    padding: 18px;
-
-    font-size: 13px;
+.header-inner{
+max-width:1150px;
+margin:auto;
+padding:16px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center
 }
-
-.alternative-info strong {
-    display: block;
-
-    margin-bottom: 5px;
-}
-
-
-/* =========================
-   VERGLEICHSTABELLE
-========================= */
 
-.compare-box {
-    background: #111827;
+.logo{font-size:24px;font-weight:800}
+.logo span{color:#f59e0b}
 
-    color: white;
+nav{display:flex;gap:20px}
+nav a{color:white;font-size:14px}
 
-    border-radius: 18px;
-
-    padding: 30px;
-
-    margin-top: 25px;
+.hero{
+background:white;
+padding:65px 20px;
+text-align:center
 }
 
-.compare-box h3 {
-    font-size: 24px;
+.hero-content{max-width:800px;margin:auto}
 
-    margin-bottom: 8px;
-}
+.icon{font-size:55px;margin-bottom:15px}
 
-.compare-box > p {
-    color: #d1d5db;
+.hero h1{font-size:44px;margin-bottom:15px}
+.hero h1 span{color:#f59e0b}
 
-    font-size: 13px;
-
-    margin-bottom: 20px;
+.hero p{
+max-width:650px;
+margin:auto;
+color:#667085;
+font-size:18px
 }
 
-.table-wrapper {
-    overflow-x: auto;
+.container{
+max-width:1150px;
+margin:auto;
+padding:55px 20px
 }
-
-table {
-    width: 100%;
 
-    border-collapse: collapse;
+.section{margin-bottom:65px}
+.title{margin-bottom:25px}
+.title h2{font-size:30px}
+.title p{color:#667085}
 
-    background: white;
-
-    color: #17202a;
-
-    border-radius: 10px;
-
-    overflow: hidden;
+.products{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px
 }
-
-th,
-td {
-    padding: 12px;
-
-    text-align: left;
-
-    border-bottom: 1px solid #eaecf0;
 
-    font-size: 12px;
+.card{
+background:white;
+border:1px solid #eaecf0;
+border-radius:16px;
+overflow:hidden;
+transition:.3s
 }
 
-th {
-    background: #f2f4f7;
+.card:hover{
+transform:translateY(-7px);
+box-shadow:0 15px 35px rgba(0,0,0,.1)
 }
 
-
-/* =========================
-   INFO
-========================= */
-
-.info {
-    background: #111827;
-
-    color: white;
-
-    padding: 35px;
-
-    border-radius: 18px;
-
-    text-align: center;
+.image{
+height:190px;
+background:#eef0f3;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:70px
 }
 
-.info h2 {
-    font-size: 27px;
+.content{padding:22px}
 
-    margin-bottom: 10px;
+.tag{
+display:inline-block;
+background:#f2f4f7;
+padding:5px 9px;
+border-radius:5px;
+font-size:11px;
+font-weight:bold;
+margin-bottom:10px
 }
-
-.info p {
-    max-width: 750px;
 
-    margin: auto;
+.card h3{font-size:20px;margin-bottom:8px}
 
-    color: #d1d5db;
-
-    font-size: 14px;
+.card p{
+color:#667085;
+font-size:14px;
+margin-bottom:18px
 }
-
-
-/* =========================
-   AMAZON HINWEIS
-========================= */
 
-.amazon-note {
-    background: #fff8e7;
-
-    border: 1px solid #f2dfad;
-
-    border-radius: 11px;
-
-    padding: 13px 16px;
-
-    margin-top: 18px;
-
-    color: #6b5500;
-
-    font-size: 11px;
+.button{
+display:inline-block;
+background:#111827;
+color:white;
+padding:10px 16px;
+border-radius:8px;
+font-size:13px;
+font-weight:bold
 }
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    background: #0b1120;
-
-    color: #9ca3af;
-
-    text-align: center;
 
-    padding: 30px 20px;
+.info{
+background:#111827;
+color:white;
+padding:40px;
+border-radius:18px;
+text-align:center
 }
 
-footer p {
-    margin-bottom: 9px;
+.info p{
+color:#d1d5db;
+max-width:700px;
+margin:10px auto 0
 }
 
-footer a {
-    color: #d1d5db;
-
-    margin: 0 7px;
-
-    font-size: 12px;
+footer{
+background:#0b1120;
+color:#9ca3af;
+text-align:center;
+padding:35px 20px
 }
-
-
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 900px) {
 
-    .product-card {
-        flex: 0 0 48%;
-    }
+footer a{color:#d1d5db;margin:0 8px}
 
-    .alternative {
-        grid-template-columns: 1fr;
-    }
-
-    nav {
-        display: none;
-    }
-
+@media(max-width:800px){
+.products{grid-template-columns:repeat(2,1fr)}
+nav{display:none}
 }
-
-
-/* =========================
-   HANDY
-========================= */
-
-@media (max-width: 600px) {
 
-    .hero {
-        padding: 48px 20px;
-    }
-
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .hero p {
-        font-size: 15px;
-    }
-
-    .container {
-        padding: 40px 18px;
-    }
-
-    .product-card {
-        flex: 0 0 88%;
-    }
-
-    .group-title {
-        display: block;
-    }
-
-    .group-title p {
-        margin-top: 5px;
-    }
-
-    .alternative {
-        padding: 22px;
-    }
-
-    .compare-box {
-        padding: 23px 17px;
-    }
-
-    .info {
-        padding: 28px 20px;
-    }
-
+@media(max-width:600px){
+.products{grid-template-columns:1fr}
+.hero h1{font-size:34px}
+.hero p{font-size:16px}
 }
-
 </style>
-
 </head>
 
-
 <body>
-
-
-<!-- =========================
-     HEADER
-========================= -->
 
 <header>
 
 <div class="back">
-
-<a href="index.html">
-← Zurück zu Produktfinder
-</a>
-
+<a href="index.html">← Zurück zu Produktfinder</a>
 </div>
-
 
 <div class="header-inner">
 
-<a href="index.html" class="logo">
-Produkt<span>finder</span>
-</a>
-
+<a href="index.html" class="logo">Produkt<span>finder</span></a>
 
 <nav>
-
-<a href="index.html">
-Startseite
-</a>
-
-<a href="tiktok-finds.html">
-TikTok Finds
-</a>
-
-<a href="technik.html">
-Technik
-</a>
-
-<a href="auto.html">
-Auto
-</a>
-
+<a href="index.html">Startseite</a>
+<a href="tiktok-finds.html">TikTok Finds</a>
+<a href="zuhause.html">Zuhause</a>
+<a href="auto.html">Auto</a>
 </nav>
 
 </div>
@@ -902,1441 +189,147 @@ Auto
 </header>
 
 
-
-<!-- =========================
-     HERO
-========================= -->
-
 <section class="hero">
 
 <div class="hero-content">
 
-<div class="hero-label">
-📱 TECHNIK FINDS
-</div>
+<div class="icon">📱</div>
 
 <h1>
-Viral im Netz –
-aber <span>ist es wirklich so gut?</span>
+Praktische <span>Technik</span> entdecken
 </h1>
 
 <p>
-Wir schauen uns Produkte an, die auf TikTok,
-Instagram und anderen Plattformen für Aufsehen sorgen,
-und vergleichen Funktionen, Erfahrungen und Preise.
+Ladegeräte, Powerbanks, Kabel, Kopfhörer und
+kleine Technik-Gadgets, die den Alltag einfacher machen.
 </p>
 
 </div>
 
 </section>
-
 
 
 <main class="container">
 
 
-<!-- =========================
-     KATEGORIEN
-========================= -->
+<section class="section">
 
-<section class="section fade-in">
-
-<div class="section-header">
-
-<h2>
-Technik & Lifestyle Finds
-</h2>
-
-<p>
-Produkte, bei denen sich ein genauerer Blick lohnt.
-</p>
-
+<div class="title">
+<h2>📱 Technik, die wirklich nützlich ist</h2>
+<p>Praktisches Zubehör für Smartphone, Tablet und Alltag.</p>
 </div>
 
+<div class="products">
 
-<div class="category-navigation">
+<article class="card">
+<div class="image">🔌</div>
+<div class="content">
+<span class="tag">LADEGERÄTE</span>
+<h3>Praktische Lade-Gadgets</h3>
+<p>Ladegeräte und Zubehör für Smartphone und andere Geräte.</p>
+<a href="#" class="button">Produkte entdecken</a>
+</div>
+</article>
 
-<a
-href="#trinkflaschen"
-class="category-button active">
+<article class="card">
+<div class="image">🔋</div>
+<div class="content">
+<span class="tag">POWERBANKS</span>
+<h3>Powerbanks für unterwegs</h3>
+<p>Praktische Energie für unterwegs und auf Reisen.</p>
+<a href="#" class="button">Produkte entdecken</a>
+</div>
+</article>
 
-🥤 Trinkflaschen
-
-</a>
-
-<a
-href="#reinigung"
-class="category-button">
-
-🧽 Reinigung
-
-</a>
-
-<a
-href="#beauty"
-class="category-button">
-
-💇 Beauty
-
-</a>
-
-<a
-href="#audio"
-class="category-button">
-
-🎧 Audio
-
-</a>
+<article class="card">
+<div class="image">🎧</div>
+<div class="content">
+<span class="tag">AUDIO</span>
+<h3>Kopfhörer & Audio</h3>
+<p>Interessante Audio-Gadgets für Alltag und Freizeit.</p>
+<a href="#" class="button">Produkte entdecken</a>
+</div>
+</article>
 
 </div>
 
 </section>
 
 
+<section class="section">
 
-<!-- ==================================================
-     GRUPPE 1 – OWALA & STANLEY
-================================================== -->
-
-<section
-class="product-group fade-in"
-id="trinkflaschen"
->
-
-
-<div class="group-title">
-
-<div>
-
-<h2>
-🥤 Owala vs. Stanley
-</h2>
-
-<p>
-Zwei Social-Media-Lieblinge – aber warum?
-</p>
-
+<div class="title">
+<h2>🔌 Kleine Technik-Gadgets</h2>
+<p>Produkte, die überraschend praktisch sein können.</p>
 </div>
 
-<p>
-← Auf dem Handy wischen →
-</p>
+<div class="products">
 
+<article class="card">
+<div class="image">🔗</div>
+<div class="content">
+<span class="tag">KABEL</span>
+<h3>USB-C & Ladekabel</h3>
+<p>Praktisches Zubehör für moderne Geräte.</p>
+<a href="#" class="button">Mehr erfahren</a>
 </div>
-
-
-<div class="product-carousel">
-
-
-<!-- OWALA -->
-
-<article class="product-card">
-
-<div class="product-image">
-🥤
-</div>
-
-
-<div class="product-content">
-
-<span class="tag">
-🔥 VIRAL
-</span>
-
-<h3>
-Owala FreeSip 710 ml
-</h3>
-
-<p class="description">
-
-Eine Trinkflasche mit ungewöhnlichem
-2-in-1-Trinksystem: über den integrierten
-Strohhalm oder direkt über die breite Öffnung.
-
-</p>
-
-
-<div class="price">
-ca. 36,99 €
-</div>
-
-<div class="price-note">
-Aktueller Amazon-Richtwert – je nach Farbe
-</div>
-
-
-<div class="rating">
-⭐ <strong>Sehr gute Nutzerbewertungen</strong>
-</div>
-
-
-<div class="pros-cons">
-
-<strong>
-Vorteile
-</strong>
-
-<div class="pros">
-✓ 2-in-1 Trinksystem<br>
-✓ Auslaufsicher<br>
-✓ Bis zu 24 h kalt<br>
-✓ Vakuumisolierter Edelstahl<br>
-✓ BPA-, blei- und phthalatfrei
-</div>
-
-
-<strong>
-Nachteile
-</strong>
-
-<div class="cons">
-✕ Becher laut Hersteller am besten von Hand reinigen<br>
-✕ Nicht für heiße Getränke
-</div>
-
-</div>
-
-
-<div class="verdict">
-
-<strong>
-🤔 Ist der Hype berechtigt?
-</strong>
-
-Das Besondere ist tatsächlich der Deckel.
-Wer häufig mit Strohhalm trinkt, aber auch
-direkt aus der Flasche trinken möchte,
-bekommt hier eine ungewöhnliche Kombination.
-
-</div>
-
-
-<a
-href="https://www.amazon.de/s?k=Owala+FreeSip+710ml"
-class="amazon-button"
-target="_blank"
-rel="nofollow sponsored noopener">
-
-Owala bei Amazon ansehen →
-
-</a>
-
-</div>
-
 </article>
 
-
-
-<!-- STANLEY -->
-
-<article class="product-card">
-
-<div class="product-image">
-🥤
+<article class="card">
+<div class="image">💻</div>
+<div class="content">
+<span class="tag">ZUBEHÖR</span>
+<h3>Computer-Zubehör</h3>
+<p>Kleine Helfer für Laptop und Arbeitsplatz.</p>
+<a href="#" class="button">Mehr erfahren</a>
 </div>
-
-
-<div class="product-content">
-
-<span class="tag">
-🔥 SOCIAL-MEDIA-KULT
-</span>
-
-<h3>
-Stanley Quencher H2.0 FlowState
-</h3>
-
-<p class="description">
-
-Der XXL-Thermobecher, der TikTok und Instagram
-erobert hat. Große 1,18-l-Kapazität,
-Strohhalm und Vakuumisolierung.
-
-</p>
-
-
-<div class="price">
-ca. 50–55 €
-</div>
-
-<div class="price-note">
-Preis variiert je nach Farbe und Angebot
-</div>
-
-
-<div class="rating">
-⭐ <strong>4,3 / 5 Amazon</strong>
-</div>
-
-
-<div class="pros-cons">
-
-<strong>
-Vorteile
-</strong>
-
-<div class="pros">
-✓ 1,18 l Fassungsvermögen<br>
-✓ Bis zu 11 h kalt<br>
-✓ Bis zu 48 h mit Eis<br>
-✓ Spülmaschinengeeignet<br>
-✓ Strohhalm inklusive
-</div>
-
-
-<strong>
-Nachteile
-</strong>
-
-<div class="cons">
-✕ Sehr groß<br>
-✕ Nicht vollständig auslaufsicher<br>
-✕ Relativ teuer für einen Trinkbecher
-</div>
-
-</div>
-
-
-<div class="verdict">
-
-<strong>
-🤔 Ist der Hype berechtigt?
-</strong>
-
-Die Größe und Isolierung sind tatsächlich
-praktisch. Ein Teil des Hypes ist aber
-zweifellos auch auf Design und Social Media
-zurückzuführen.
-
-</div>
-
-
-<a
-href="https://www.amazon.de/s?k=Stanley+Quencher+H2.0+FlowState+1.2L"
-class="amazon-button"
-target="_blank"
-rel="nofollow sponsored noopener">
-
-Stanley bei Amazon ansehen →
-
-</a>
-
-</div>
-
 </article>
 
-
-
-<!-- GÜNSTIGE ALTERNATIVE -->
-
-<article class="product-card">
-
-<div class="product-image">
-💧
+<article class="card">
+<div class="image">🏠</div>
+<div class="content">
+<span class="tag">SMART HOME</span>
+<h3>Smart-Home-Gadgets</h3>
+<p>Praktische Technik für dein Zuhause.</p>
+<a href="#" class="button">Mehr erfahren</a>
 </div>
-
-
-<div class="product-content">
-
-<span class="tag">
-💰 ALTERNATIVE
-</span>
-
-<h3>
-Günstige Thermo-Trinkflaschen
-</h3>
-
-<p class="description">
-
-Wenn dir die Grundidee wichtig ist, muss es
-nicht unbedingt eine 40–55-€-Marke sein.
-Auf Amazon gibt es zahlreiche Edelstahl-
-Thermoflaschen mit Strohhalm.
-
-</p>
-
-
-<div class="price">
-ab ca. 15–25 €
-</div>
-
-<div class="price-note">
-Preis abhängig von Modell und Marke
-</div>
-
-
-<div class="pros-cons">
-
-<strong>
-Vorteile
-</strong>
-
-<div class="pros">
-✓ Deutlich günstiger<br>
-✓ Viele Größen<br>
-✓ Viele Designs<br>
-✓ Häufig ebenfalls isoliert
-</div>
-
-
-<strong>
-Nachteile
-</strong>
-
-<div class="cons">
-✕ Qualität variiert stark<br>
-✕ Deckel und Dichtungen nicht immer gleich gut<br>
-✕ Weniger etablierte Marken
-</div>
-
-</div>
-
-
-<div class="verdict">
-
-<strong>
-💰 Lohnt sich das Original?
-</strong>
-
-Wenn dir Marke, Verarbeitung und das konkrete
-Design wichtig sind, kann Stanley oder Owala
-sinnvoll sein. Für „einfach Wasser kalt halten“
-reicht häufig auch eine günstigere Flasche.
-
-</div>
-
-
-<a
-href="https://www.amazon.de/s?k=Thermo+Trinkflasche+Strohhalm+Edelstahl"
-class="amazon-button"
-target="_blank"
-rel="nofollow sponsored noopener">
-
-Günstige Alternativen ansehen →
-
-</a>
-
-</div>
-
 </article>
-
-
-</div>
-
-
-<div class="swipe-hint">
-👆 Nach links oder rechts wischen
-</div>
-
-
-
-<!-- VERGLEICH -->
-
-<div class="compare-box">
-
-<h3>
-⚖️ Owala oder Stanley?
-</h3>
-
-<p>
-Beide sind gute Produkte – aber sie lösen das Problem
-auf unterschiedliche Weise.
-</p>
-
-
-<div class="table-wrapper">
-
-<table>
-
-<tr>
-
-<th>
-Eigenschaft
-</th>
-
-<th>
-Owala
-</th>
-
-<th>
-Stanley
-</th>
-
-</tr>
-
-<tr>
-
-<td>
-Trinksystem
-</td>
-
-<td>
-2-in-1
-</td>
-
-<td>
-Strohhalm / Öffnung
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Füllmenge
-</td>
-
-<td>
-710 ml
-</td>
-
-<td>
-1,18 l
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Isolierung
-</td>
-
-<td>
-bis 24 h kalt
-</td>
-
-<td>
-bis 11 h kalt
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Preisniveau
-</td>
-
-<td>
-💰💰
-</td>
-
-<td>
-💰💰💰
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Unsere Wahl
-</td>
-
-<td>
-⭐ Alltag
-</td>
-
-<td>
-🏆 Große Mengen
-</td>
-
-</tr>
-
-</table>
-
-</div>
 
 </div>
 
 </section>
 
 
-
-<!-- ==================================================
-     GRUPPE 2 – BISSELL
-================================================== -->
-
-<section
-class="product-group fade-in"
-id="reinigung"
->
-
-
-<div class="group-title">
-
-<div>
-
-<h2>
-🧽 Bissell Little Green
-</h2>
-
-<p>
-Der virale Fleckenreiniger
-</p>
-
-</div>
-
-</div>
-
-
-<div class="product-carousel">
-
-
-<!-- LITTLE GREEN -->
-
-<article class="product-card">
-
-<div class="product-image">
-🧽
-</div>
-
-
-<div class="product-content">
-
-<span class="tag">
-🔥 VIRAL
-</span>
-
-<h3>
-Bissell Little Green 4098N
-</h3>
-
-<p class="description">
-
-Kompakter Waschsauger für Polster,
-Teppiche, Autositze und andere
-Textiloberflächen.
-
-</p>
-
-
-<div class="price">
-ca. 109,99 €
-</div>
-
-<div class="price-note">
-Aktueller Amazon-Richtwert
-</div>
-
-
-<div class="rating">
-⭐ <strong>4,2 / 5 bei über 92.000 Amazon-Meinungen</strong>
-</div>
-
-
-<div class="pros-cons">
-
-<strong>
-Vorteile
-</strong>
-
-<div class="pros">
-✓ Sprühen + Schrubben + Saugen<br>
-✓ 340 W<br>
-✓ 7.800 Pa Saugkraft<br>
-✓ 1,4-l-Frischwassertank<br>
-✓ Sehr kompakt
-</div>
-
-
-<strong>
-Nachteile
-</strong>
-
-<div class="cons">
-✕ Kurzer Schlauch<br>
-✕ Begrenzte Reinigungsflüssigkeit<br>
-✕ Nicht für jede Teppichart ideal
-</div>
-
-</div>
-
-
-<div class="verdict">
-
-<strong>
-🤔 Ist der virale Hype berechtigt?
-</strong>
-
-Hier steckt tatsächlich mehr dahinter als
-nur Social Media. Der Little Green erzielt
-laut Testquellen gute Ergebnisse besonders
-bei frischen Flecken und Polstern.
-
-</div>
-
-
-<a
-href="https://www.amazon.de/s?k=Bissell+Little+Green+4098N"
-class="amazon-button"
-target="_blank"
-rel="nofollow sponsored noopener">
-
-Bissell bei Amazon ansehen →
-
-</a>
-
-</div>
-
-</article>
-
-
-
-<!-- ALTERNATIVE -->
-
-<article class="product-card">
-
-<div class="product-image">
-🧼
-</div>
-
-
-<div class="product-content">
-
-<span class="tag">
-💰 ALTERNATIVE
-</span>
-
-<h3>
-Günstige Waschsauger
-</h3>
-
-<p class="description">
-
-Wer nur gelegentlich Sofa, Auto oder kleinere
-Flecken reinigen möchte, findet auf Amazon
-auch deutlich günstigere kompakte Geräte.
-
-</p>
-
-
-<div class="price">
-ab ca. 60–80 €
-</div>
-
-<div class="price-note">
-Preis abhängig von Modell und Angebot
-</div>
-
-
-<div class="pros-cons">
-
-<strong>
-Vorteile
-</strong>
-
-<div class="pros">
-✓ Geringerer Anschaffungspreis<br>
-✓ Für gelegentliche Nutzung ausreichend<br>
-✓ Viele Modelle verfügbar
-</div>
-
-
-<strong>
-Nachteile
-</strong>
-
-<div class="cons">
-✕ Qualität stark unterschiedlich<br>
-✕ Weniger etabliertes System<br>
-✕ Zubehör und Ersatzteile beachten
-</div>
-
-</div>
-
-
-<div class="verdict">
-
-<strong>
-💰 Unser Tipp
-</strong>
-
-Wenn du regelmäßig Polster oder Autositze
-reinigen möchtest, kann sich das etablierte
-Bissell-System lohnen. Für gelegentliche
-Flecken kann ein günstigeres Gerät ausreichen.
-
-</div>
-
-
-<a
-href="https://www.amazon.de/s?k=Polsterreiniger+Waschsauger+kompakt"
-class="amazon-button"
-target="_blank"
-rel="nofollow sponsored noopener">
-
-Alternativen bei Amazon ansehen →
-
-</a>
-
-</div>
-
-</article>
-
-
-</div>
-
-
-<div class="swipe-hint">
-👆 Nach links oder rechts wischen
-</div>
-
-</section>
-
-
-
-<!-- ==================================================
-     GRUPPE 3 – REVLON
-================================================== -->
-
-<section
-class="product-group fade-in"
-id="beauty"
->
-
-
-<div class="group-title">
-
-<div>
-
-<h2>
-💇 Revlon One-Step
-</h2>
-
-<p>
-Föhn und Rundbürste in einem Gerät
-</p>
-
-</div>
-
-</div>
-
-
-<div class="product-carousel">
-
-
-<!-- REVLON -->
-
-<article class="product-card">
-
-<div class="product-image">
-💇
-</div>
-
-
-<div class="product-content">
-
-<span class="tag">
-🔥 VIRAL
-</span>
-
-<h3>
-Revlon One-Step Volumiser Plus
-</h3>
-
-<p class="description">
-
-Warmluftbürste, die Trocknen und
-Styling in einem Schritt kombinieren soll.
-Mit Keramikbeschichtung, Ionisierung
-und 4 Temperaturstufen.
-
-</p>
-
-
-<div class="price">
-ca. 32,65 €
-</div>
-
-<div class="price-note">
-Aktueller Amazon-Richtwert
-</div>
-
-
-<div class="rating">
-⭐ <strong>4,3 / 5 bei über 3.400 Amazon-Rezensionen</strong>
-</div>
-
-
-<div class="pros-cons">
-
-<strong>
-Vorteile
-</strong>
-
-<div class="pros">
-✓ Trocknen + Stylen<br>
-✓ 820 W<br>
-✓ 4 Temperaturstufen<br>
-✓ Keramikbeschichtung<br>
-✓ Ionisierung
-</div>
-
-
-<strong>
-Nachteile
-</strong>
-
-<div class="cons">
-✕ Nur ein Bürstenaufsatz<br>
-✕ Temperatur wird teilweise unterschiedlich wahrgenommen<br>
-✕ Nicht für jeden Haartyp gleich gut
-</div>
-
-</div>
-
-
-<div class="verdict">
-
-<strong>
-🤔 Ist der Hype berechtigt?
-</strong>
-
-Das Konzept spart einen Arbeitsschritt:
-Haare trocknen und gleichzeitig formen.
-Genau das macht die One-Step für viele
-Nutzer interessant.
-
-</div>
-
-
-<a
-href="https://www.amazon.de/s?k=Revlon+One+Step+Volumiser+Plus+RVDR5298E"
-class="amazon-button"
-target="_blank"
-rel="nofollow sponsored noopener">
-
-Revlon bei Amazon ansehen →
-
-</a>
-
-</div>
-
-</article>
-
-
-
-<!-- ALTERNATIVE -->
-
-<article class="product-card">
-
-<div class="product-image">
-💇‍♀️
-</div>
-
-
-<div class="product-content">
-
-<span class="tag">
-💰 ALTERNATIVE
-</span>
-
-<h3>
-Günstige Warmluftbürsten
-</h3>
-
-<p class="description">
-
-Das Grundprinzip gibt es inzwischen
-von zahlreichen günstigeren Herstellern.
-Interessant für alle, die das Konzept
-erst einmal ausprobieren möchten.
-
-</p>
-
-
-<div class="price">
-ab ca. 20–30 €
-</div>
-
-<div class="price-note">
-Preis abhängig von Modell und Ausstattung
-</div>
-
-
-<div class="pros-cons">
-
-<strong>
-Vorteile
-</strong>
-
-<div class="pros">
-✓ Günstiger Einstieg<br>
-✓ Ähnliches Grundprinzip<br>
-✓ Viele Varianten
-</div>
-
-
-<strong>
-Nachteile
-</strong>
-
-<div class="cons">
-✕ Qualität variiert<br>
-✕ Temperaturkontrolle unterschiedlich<br>
-✕ Lebensdauer nicht immer vergleichbar
-</div>
-
-</div>
-
-
-<div class="verdict">
-
-<strong>
-💰 Lohnt sich Revlon?
-</strong>
-
-Wenn du eine etablierte Marke mit vielen
-Erfahrungswerten möchtest, ist Revlon
-interessant. Zum Ausprobieren kann aber
-auch ein günstigeres Modell reichen.
-
-</div>
-
-
-<a
-href="https://www.amazon.de/s?k=Warmluftb%C3%BCrste+Heissluftb%C3%BCrste+Volumen"
-class="amazon-button"
-target="_blank"
-rel="nofollow sponsored noopener">
-
-Günstige Alternativen ansehen →
-
-</a>
-
-</div>
-
-</article>
-
-
-</div>
-
-
-<div class="swipe-hint">
-👆 Nach links oder rechts wischen
-</div>
-
-</section>
-
-
-
-<!-- ==================================================
-     GRUPPE 4 – LOOP
-================================================== -->
-
-<section
-class="product-group fade-in"
-id="audio"
->
-
-
-<div class="group-title">
-
-<div>
-
-<h2>
-🎧 Loop Experience 2
-</h2>
-
-<p>
-Gehörschutz, der nicht nach Gehörschutz aussieht
-</p>
-
-</div>
-
-</div>
-
-
-<div class="product-carousel">
-
-
-<!-- LOOP -->
-
-<article class="product-card">
-
-<div class="product-image">
-🎧
-</div>
-
-
-<div class="product-content">
-
-<span class="tag">
-🔥 VIRAL
-</span>
-
-<h3>
-Loop Experience 2
-</h3>
-
-<p class="description">
-
-Wiederverwendbarer Gehörschutz für
-Konzerte, Festivals, Clubs und andere
-laute Veranstaltungen.
-
-</p>
-
-
-<div class="price">
-29,95 €
-</div>
-
-<div class="price-note">
-Aktueller Amazon-Preis
-</div>
-
-
-<div class="rating">
-⭐ <strong>Amazon Marketplace: 29,95 € / auf Lager</strong>
-</div>
-
-
-<div class="pros-cons">
-
-<strong>
-Vorteile
-</strong>
-
-<div class="pros">
-✓ SNR 17 dB<br>
-✓ Für Konzerte & Events<br>
-✓ 4 Silikonaufsätze<br>
-✓ Wiederverwendbar<br>
-✓ Modernes Design
-</div>
-
-
-<strong>
-Nachteile
-</strong>
-
-<div class="cons">
-✕ Geringere Dämmung als klassischer Gehörschutz<br>
-✕ Nicht zum Untertauchen geeignet
-</div>
-
-</div>
-
-
-<div class="verdict">
-
-<strong>
-🤔 Ist der Hype berechtigt?
-</strong>
-
-Der entscheidende Vorteil ist nicht maximale
-Dämmung, sondern ein gefilterter Klang bei
-gleichzeitiger Geräuschreduzierung.
-Genau deshalb ist das Konzept für Konzerte
-interessant.
-
-</div>
-
-
-<a
-href="https://www.amazon.de/s?k=Loop+Experience+2"
-class="amazon-button"
-target="_blank"
-rel="nofollow sponsored noopener">
-
-Loop bei Amazon ansehen →
-
-</a>
-
-</div>
-
-</article>
-
-
-
-<!-- ALPINE -->
-
-<article class="product-card">
-
-<div class="product-image">
-🎵
-</div>
-
-
-<div class="product-content">
-
-<span class="tag">
-💰 GÜNSTIGERE ALTERNATIVE
-</span>
-
-<h3>
-Alpine PartyPlug
-</h3>
-
-<p class="description">
-
-Günstigerer Gehörschutz für Konzerte,
-Festivals und Partys. Eine interessante
-Option für Nutzer, denen das Design der
-Loops weniger wichtig ist.
-
-</p>
-
-
-<div class="price">
-Preis prüfen
-</div>
-
-<div class="price-note">
-Amazon-Preis kann je nach Angebot variieren
-</div>
-
-
-<div class="pros-cons">
-
-<strong>
-Vorteile
-</strong>
-
-<div class="pros">
-✓ Für Musik & Partys<br>
-✓ Wiederverwendbar<br>
-✓ Günstiger als Loop<br>
-✓ Auf Amazon erhältlich
-</div>
-
-
-<strong>
-Nachteile
-</strong>
-
-<div class="cons">
-✕ Weniger Lifestyle-Fokus<br>
-✕ Andere Klangcharakteristik
-</div>
-
-</div>
-
-
-<div class="verdict">
-
-<strong>
-💰 Unsere Einschätzung
-</strong>
-
-Wenn dir vor allem der Schutz wichtig ist,
-kann Alpine eine interessante Alternative
-sein. Wer Wert auf Design und das Loop-Konzept
-legt, bekommt mit Experience 2 das speziellere
-Produkt.
-
-</div>
-
-
-<a
-href="https://www.amazon.de/s?k=Alpine+PartyPlug"
-class="amazon-button"
-target="_blank"
-rel="nofollow sponsored noopener">
-
-Alpine bei Amazon ansehen →
-
-</a>
-
-</div>
-
-</article>
-
-
-</div>
-
-
-<div class="swipe-hint">
-👆 Nach links oder rechts wischen
-</div>
-
-</section>
-
-
-
-<!-- ==================================================
-     GROSSES FAZIT
-================================================== -->
-
-<section class="section fade-in">
-
+<section class="section">
 
 <div class="info">
 
-<h2>
-🔥 Was ist wirklich den Hype wert?
-</h2>
+<h2>Technik muss nicht kompliziert sein</h2>
 
 <p>
-
-Nicht jedes virale Produkt ist automatisch gut.
-
-Bei manchen Produkten steckt tatsächlich eine
-interessante Idee dahinter. Bei anderen ist der
-Social-Media-Hype mindestens genauso wichtig wie
-das eigentliche Produkt.
-
-Genau deshalb vergleichen wir bei Produktfinder
-nicht nur den Preis, sondern fragen:
-
-<br><br>
-
-<strong>
-Was macht das Produkt anders?
-</strong>
-
-<br>
-
-<strong>
-Funktioniert diese Idee tatsächlich sinnvoll?
-</strong>
-
-<br>
-
-<strong>
-Gibt es eine günstigere Alternative?
-</strong>
-
-<br>
-
-<strong>
-Und für wen lohnt sich das Original überhaupt?
-</strong>
-
+Wir suchen Produkte, die einen echten Nutzen bieten,
+verständlich erklärt sind und im Alltag tatsächlich
+praktisch sein können.
 </p>
 
 </div>
 
-
-<div class="amazon-note">
-
-<strong>
-Preis- und Verfügbarkeitshinweis:
-</strong>
-
-Die angegebenen Preise sind recherchierte
-Momentaufnahmen. Amazon-Preise, Angebote,
-Verkäufer und Verfügbarkeit können sich jederzeit
-ändern. Maßgeblich ist der Preis, der beim Öffnen
-der jeweiligen Amazon-Produktseite angezeigt wird.
-
-</div>
-
 </section>
-
 
 </main>
 
 
-
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
-<p>
-© 2026 Produktfinder
-</p>
-
+<p>© 2026 Produktfinder</p>
 
 <p>
-
-<a href="index.html">
-Startseite
-</a>
-
-<a href="tiktok-finds.html">
-TikTok Finds
-</a>
-
-<a href="zuhause.html">
-Zuhause
-</a>
-
-<a href="technik.html">
-Technik
-</a>
-
-<a href="auto.html">
-Auto
-</a>
-
-<a href="unterwegs.html">
-Unterwegs
-</a>
-
-<a href="heimwerken.html">
-Heimwerken
-</a>
-
-<a href="geschenke.html">
-Geschenke
-</a>
-
+<a href="index.html">Startseite</a>
+<a href="tiktok-finds.html">TikTok Finds</a>
+<a href="zuhause.html">Zuhause</a>
 </p>
 
 </footer>
 
-
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
-<script>
-
-
-/* =========================
-   SCROLL ANIMATION
-========================= */
-
-const observer =
-new IntersectionObserver(
-
-(entries) => {
-
-entries.forEach(
-(entry) => {
-
-if (entry.isIntersecting) {
-
-entry.target.classList.add(
-"visible"
-);
-
-observer.unobserve(
-entry.target
-);
-
-}
-
-});
-
-},
-
-{
-threshold: 0.12
-}
-
-);
-
-
-document
-.querySelectorAll(".fade-in")
-.forEach(
-(element) => {
-
-observer.observe(element);
-
-}
-);
-
-</script>
-
 </body>
-
 </html>
