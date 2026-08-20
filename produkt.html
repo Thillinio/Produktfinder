@@ -11,7 +11,7 @@
 
 <meta
 name="description"
-content="Produktfinder – Produkt unter die Lupe genommen. Vorteile, Nachteile, Alternativen und unsere Einschätzung."
+content="Produktfinder – Produkt unter die Lupe genommen. Vorteile, Nachteile und unsere Einschätzung."
 >
 
 
@@ -516,14 +516,14 @@ nav a:hover {
 
 
 /* ==================================================
-   ALTERNATIVEN
+   VERGLEICH-LINK
 ================================================== */
 
-.alternative-section {
+.compare-link-section {
     margin-top: 40px;
 }
 
-.alternative-header {
+.compare-link-box {
     background: #fff8e7;
 
     border: 1px solid #f2dfad;
@@ -531,11 +531,9 @@ nav a:hover {
     border-radius: 18px;
 
     padding: 28px;
-
-    margin-bottom: 20px;
 }
 
-.alternative-label {
+.compare-link-label {
     color: #9a6700;
 
     font-size: 13px;
@@ -545,139 +543,18 @@ nav a:hover {
     margin-bottom: 7px;
 }
 
-.alternative-header h2 {
+.compare-link-box h2 {
     font-size: 27px;
 
     margin-bottom: 8px;
 }
 
-.alternative-header p {
+.compare-link-box p {
     color: #667085;
 
     font-size: 14px;
 
     max-width: 780px;
-}
-
-.alternatives {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 20px;
-}
-
-.alternative-card {
-    background: white;
-
-    border: 1px solid #eaecf0;
-
-    border-radius: 18px;
-
-    overflow: hidden;
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.alternative-card:hover {
-    transform: translateY(-5px);
-
-    box-shadow:
-        0 12px 30px rgba(0,0,0,0.08);
-}
-
-.alternative-image {
-    height: 190px;
-
-    background: #eef0f3;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 70px;
-}
-
-.alternative-content {
-    padding: 24px;
-}
-
-.alternative-content h3 {
-    font-size: 21px;
-
-    margin-bottom: 8px;
-}
-
-.alternative-content p {
-    color: #667085;
-
-    font-size: 14px;
-}
-
-.alternative-price {
-    font-size: 24px;
-
-    font-weight: 800;
-
-    margin: 15px 0;
-}
-
-.price-note {
-    display: block;
-
-    color: #98a2b3;
-
-    font-size: 11px;
-
-    font-weight: normal;
-}
-
-.principle-label {
-    display: inline-block;
-
-    padding: 6px 10px;
-
-    border-radius: 7px;
-
-    font-size: 11px;
-
-    font-weight: bold;
-
-    margin-bottom: 10px;
-}
-
-.same-principle {
-    background: #e9f7ee;
-
-    color: #217a3b;
-}
-
-.different-principle {
-    background: #f2f4f7;
-
-    color: #667085;
-}
-
-.saving {
-    display: inline-block;
-
-    background: #e9f7ee;
-
-    color: #217a3b;
-
-    padding: 5px 9px;
-
-    border-radius: 6px;
-
-    font-size: 12px;
-
-    font-weight: bold;
-
-    margin-bottom: 15px;
 }
 
 
@@ -809,10 +686,6 @@ footer a {
 
     .product-image-large {
         min-height: 300px;
-    }
-
-    .alternatives {
-        grid-template-columns: 1fr;
     }
 
 }
@@ -1268,167 +1141,56 @@ Unsere Einschätzung
 
 
 <!-- ==================================================
-     ALTERNATIVEN
+     VERGLEICH-LINK
 ================================================== -->
 
-<section class="section">
+<section
+class="section"
+id="compareLinkSection">
 
-<div class="alternative-section">
+<div class="compare-link-section">
 
+<div class="compare-link-box">
 
-<div class="alternative-header">
-
-<div class="alternative-label">
-💰 GÜNSTIGERE ALTERNATIVEN
+<div class="compare-link-label">
+🔎 VERGLEICH
 </div>
 
 
-<h2>
-Du möchtest weniger ausgeben?
+<h2 id="compareLinkTitle">
+Du möchtest weitere Modelle vergleichen?
 </h2>
 
 
-<p>
-Nicht jeder braucht das teuerste Produkt.
-Deshalb zeigen wir dir Alternativen mit einem
-anderen Preis-Leistungs-Verhältnis.
+<p id="compareLinkText">
+Du bist noch nicht sicher, welches Produkt zu dir passt?
+Vergleiche mehrere Modelle miteinander und entdecke auch
+günstigere Alternativen.
 </p>
-
-</div>
-
-
-
-<div class="alternatives">
-
-
-<!-- CUISINART -->
-
-<article class="alternative-card">
-
-<div class="alternative-image">
-🍦
-</div>
-
-
-<div class="alternative-content">
-
-<span class="principle-label same-principle">
-✓ ÄHNLICHES FUNKTIONSPRINZIP
-</span>
-
-
-<span class="product-tag">
-💰 PREIS-LEISTUNGS-TIPP
-</span>
-
-
-<h3>
-Cuisinart FreezeWand ICEFD10E
-</h3>
-
-
-<p>
-Der FreezeWand verfolgt ein ähnliches
-Grundprinzip wie die Ninja und ist
-besonders interessant für kleinere Portionen.
-</p>
-
-
-<div class="alternative-price">
-
-ca. 69 €
-
-<span class="price-note">
-Preis kann sich ändern.
-</span>
-
-</div>
-
-
-<div class="saving">
-💰 Deutlich günstiger
-</div>
 
 
 <a
-href="produkt.html?id=cuisinart-freezewand-icefd10e"
+href="tiktok-finds.html"
+id="compareLink"
 class="amazon-button">
 
-Produkt ansehen →
+Modelle vergleichen →
 
 </a>
 
 </div>
 
-</article>
-
-
-
-<!-- WMF -->
-
-<article class="alternative-card">
-
-<div class="alternative-image">
-🍨
 </div>
 
-
-<div class="alternative-content">
-
-<span class="principle-label different-principle">
-ℹ ANDERES FUNKTIONSPRINZIP
-</span>
+</section>
 
 
-<span class="product-tag">
-💰 GÜNSTIGE ALTERNATIVE
-</span>
 
+<!-- ==================================================
+     FAZIT
+================================================== -->
 
-<h3>
-WMF KÜCHENminis 3-in-1
-</h3>
-
-
-<p>
-Eine kompakte klassische Eismaschine,
-die anders funktioniert als die Ninja.
-Interessant für kleinere Portionen.
-</p>
-
-
-<div class="alternative-price">
-
-ca. 54–70 €
-
-<span class="price-note">
-Je nach aktuellem Angebot.
-</span>
-
-</div>
-
-
-<div class="saving">
-💰 Sehr günstiger Einstieg
-</div>
-
-
-<a
-href="produkt.html?id=wmf-kuechenminis-3in1"
-class="amazon-button">
-
-Produkt ansehen →
-
-</a>
-
-</div>
-
-</article>
-
-
-</div>
-
-
+<section class="section">
 
 <div class="final-verdict">
 
@@ -1438,9 +1200,6 @@ Produkt ansehen →
 
 <p id="finalVerdict">
 </p>
-
-</div>
-
 
 </div>
 
@@ -1542,6 +1301,7 @@ Geschenke
 ================================================== */
 
 const products = {
+
 /* --------------------------------------------------
    VIONE CREAMI DELUXE 4ER PACK
 -------------------------------------------------- */
@@ -1648,6 +1408,7 @@ const products = {
 
 },
 
+
 /* --------------------------------------------------
    NINJA CREAMI NC302EU
 -------------------------------------------------- */
@@ -1722,7 +1483,6 @@ const products = {
         "<strong>🏆 Du möchtest das CREAMi-Prinzip ausprobieren?</strong><br><br>Dann ist die NC302EU ein interessanter Einstieg. Sie bietet das bekannte CREAMi-Konzept und mehrere Programme, ohne direkt in die teuerste Variante einzusteigen.<br><br><strong>👉 Wichtig:</strong> Wenn du deutlich mehr Funktionen möchtest, solltest du dir auch die Deluxe und Scoop & Swirl ansehen."
 
 },
-
 
 
 /* --------------------------------------------------
@@ -1801,7 +1561,6 @@ const products = {
 },
 
 
-
 /* --------------------------------------------------
    NINJA SCOOP & SWIRL
 -------------------------------------------------- */
@@ -1815,8 +1574,9 @@ const products = {
     tag: "PREMIUM",
 
     emoji: "🍦",
-image:
-    "Images/ninja-creami-scoop-swirl-werbung.png",
+
+    image:
+        "Images/ninja-creami-scoop-swirl-werbung.png",
 
     heroTitle:
         "Ninja CREAMi Scoop & Swirl – Maximum oder übertrieben?",
@@ -1847,7 +1607,8 @@ image:
         "Mix-In",
 
         "Sehr vielseitig",
-"Mit aufsätzen erweiterbar. Z.B. Spaghetti Eis"
+
+        "Mit Aufsätzen erweiterbar. Z.B. Spaghetti Eis"
 
     ],
 
@@ -1857,9 +1618,9 @@ image:
 
         "Nicht jeder benötigt alle Funktionen",
 
-"Keine Slush Funktion wie beim Creami Deluxe",
+        "Keine Slush Funktion wie beim Creami Deluxe",
 
-"Keine Frappe oder Frozen Drink Funktion wie beim Creami Deluxe"
+        "Keine Frappe oder Frozen Drink Funktion wie beim Creami Deluxe"
 
     ],
 
@@ -1882,10 +1643,9 @@ image:
         "🏆 Maximum",
 
     finalVerdict:
-        "<strong>🏆 Du möchtest möglichst viele Möglichkeiten?</strong><br><br>Dann ist die Scoop & Swirl die umfangreichste Variante der drei Modelle. Sie bietet 13 Programme und zusätzlich eine Softeis-Funktion.<br><br><strong>💰 Aber:</strong> Wenn du diese zusätzlichen Funktionen nicht brauchst,oder unbedingt Frozen Drink Funktionen haben möchtest, können die günstigeren Modelle das bessere Preis-Leistungs-Verhältnis bieten."
+        "<strong>🏆 Du möchtest möglichst viele Möglichkeiten?</strong><br><br>Dann ist die Scoop & Swirl die umfangreichste Variante der drei Modelle. Sie bietet 13 Programme und zusätzlich eine Softeis-Funktion.<br><br><strong>💰 Aber:</strong> Wenn du diese zusätzlichen Funktionen nicht brauchst, oder unbedingt Frozen Drink Funktionen haben möchtest, können die günstigeren Modelle das bessere Preis-Leistungs-Verhältnis bieten."
 
 },
-
 
 
 /* --------------------------------------------------
@@ -1966,7 +1726,6 @@ image:
         "<strong>💰 Du möchtest das Prinzip günstiger ausprobieren?</strong><br><br>Der FreezeWand ist besonders interessant, wenn der Preis eine große Rolle spielt.<br><br>Die Ninja bietet dafür das umfangreichere System und mehr Möglichkeiten."
 
 },
-
 
 
 /* --------------------------------------------------
@@ -2128,6 +1887,18 @@ const comparisonVerdict =
 const finalVerdict =
     document.getElementById("finalVerdict");
 
+const compareLinkSection =
+    document.getElementById("compareLinkSection");
+
+const compareLinkTitle =
+    document.getElementById("compareLinkTitle");
+
+const compareLinkText =
+    document.getElementById("compareLinkText");
+
+const compareLink =
+    document.getElementById("compareLink");
+
 
 
 /* ==================================================
@@ -2175,6 +1946,9 @@ if (!product) {
     document.getElementById("comparisonSection").style.display =
         "none";
 
+    compareLinkSection.style.display =
+        "none";
+
 }
 
 
@@ -2207,27 +1981,27 @@ else {
 
     if (product.image) {
 
-    productImage.innerHTML = `
-        <img
-            src="${product.image}"
-            alt="${product.name}"
-            style="
-                width:100%;
-                height:100%;
-                max-height:430px;
-                object-fit:contain;
-                border-radius:18px;
-                padding:20px;
-            "
-        >
-    `;
+        productImage.innerHTML = `
+            <img
+                src="${product.image}"
+                alt="${product.name}"
+                style="
+                    width:100%;
+                    height:100%;
+                    max-height:430px;
+                    object-fit:contain;
+                    border-radius:18px;
+                    padding:20px;
+                "
+            >
+        `;
 
-} else {
+    } else {
 
-    productImage.textContent =
-        product.emoji;
+        productImage.textContent =
+            product.emoji;
 
-}
+    }
 
 
     productTag.textContent =
@@ -2306,7 +2080,50 @@ else {
     finalVerdict.innerHTML =
         product.finalVerdict;
 
+
+
+    /* ==================================================
+       VERGLEICHS-LINK
+    ================================================== */
+
+    compareLink.href =
+        product.comparisonLink ||
+        "tiktok-finds.html";
+
+
+    compareLinkTitle.textContent =
+        product.comparisonTitle ||
+        "Du möchtest weitere Modelle vergleichen?";
+
+
+    compareLinkText.textContent =
+        product.comparisonText ||
+        "Du bist noch nicht sicher, welches Produkt zu dir passt? Vergleiche mehrere Modelle miteinander und entdecke auch günstigere Alternativen.";
+
+
+
+    /* ==================================================
+       PRODUKTE OHNE SINNVOLLEN VERGLEICH
+    ================================================== */
+
+    if (
+        productId === "vione-creami-deluxe-4pack" ||
+        product.category === "💰 ALTERNATIVE"
+    ) {
+
+        compareLinkSection.style.display =
+            "none";
+
+    }
+
 }
+
+
+
+/* ==================================================
+   PRODUKTE OHNE PRODUKTVERGLEICH
+================================================== */
+
 if (productId === "vione-creami-deluxe-4pack") {
 
     document.getElementById(
@@ -2314,6 +2131,7 @@ if (productId === "vione-creami-deluxe-4pack") {
     ).style.display = "none";
 
 }
+
 </script>
 
 
