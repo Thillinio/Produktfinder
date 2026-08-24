@@ -88,6 +88,10 @@ nav a{
     opacity:.9
 }
 
+nav a:hover{
+    opacity:1
+}
+
 .hero{
     background:#111827;
     color:white;
@@ -221,11 +225,13 @@ nav a{
     text-align:center;
     font-size:13px;
     font-weight:bold;
-    margin-top:22px
+    margin-top:22px;
+    transition:.2s ease
 }
 
 .amazon-button:hover{
-    background:#1f2937
+    background:#1f2937;
+    transform:translateY(-2px)
 }
 
 .amazon-note{
@@ -521,10 +527,10 @@ footer a{
 <div class="back">
 
 <a
-href="tiktok-finds.html"
+href="technik.html"
 id="backLink">
 
-← Zurück zu TikTok Finds
+← Zurück zu Technik
 
 </a>
 
@@ -576,7 +582,7 @@ Auto
 class="hero-label"
 id="heroLabel">
 
-🔥 TIKTOK FIND
+📱 TECHNIK FIND
 
 </div>
 
@@ -813,7 +819,7 @@ auch günstigere Alternativen.
 
 
 <a
-href="tiktok-finds.html"
+href="technik.html"
 id="compareLink"
 class="amazon-button">
 
@@ -949,17 +955,14 @@ const products = {
 
     image:"Images/philips-sth3020-werbung.png",
 
-
     heroTitle:
     "Philips 3000 Series STH3020/10 – lohnt sich der kompakte Steamer?",
 
     heroDescription:
     "Kompakter Dampfglätter für schnelle Faltenkorrekturen – besonders interessant auf Reisen, aber kein vollständiger Ersatz für ein Bügeleisen.",
 
-
     description:
     "Der Philips 3000 Series STH3020/10 ist ein kompakter, zusammenklappbarer Dampfglätter mit 1.000 Watt, 20 g/min Dauerdampf und einem abnehmbaren 120-ml-Wassertank. Laut Hersteller ist das Gerät nach rund 30 Sekunden einsatzbereit und wird mit einer Aufbewahrungstasche geliefert.",
-
 
     price:
     "Preis bei Amazon prüfen",
@@ -969,7 +972,6 @@ const products = {
 
     amazon:
     "https://amzn.to/45HIQi7",
-
 
     advantages:[
 
@@ -991,7 +993,6 @@ const products = {
 
     ],
 
-
     disadvantages:[
 
         "Nur eine Dampf-/Temperaturstufe",
@@ -1010,10 +1011,8 @@ const products = {
 
     ],
 
-
     forWho:
     "Der Philips ist besonders interessant für alle, die Kleidung schnell auffrischen oder leichte bis mittlere Falten entfernen möchten – etwa morgens vor der Arbeit, auf Reisen oder nach dem Kofferpacken. Für dicke Baumwollstoffe, starke Falten oder als vollständigen Ersatz für ein Bügeleisen ist er weniger geeignet.",
-
 
     comparisonTitle:
     "⚖️ Philips 3000 im Vergleich",
@@ -1021,14 +1020,12 @@ const products = {
     comparisonDescription:
     "Der Philips ist vor allem auf kompakte Abmessungen und schnelle Auffrischung ausgelegt. Für stärkere Falten kann ein leistungsfähigeres Modell sinnvoller sein.",
 
-
     comparisonHeaders:[
         "Eigenschaft",
         "Philips 3000",
         "Tefal Access Steam Force",
         "Tefal Access Steam Pocket"
     ],
-
 
     comparisonRows:[
 
@@ -1076,10 +1073,8 @@ const products = {
 
     ],
 
-
     verdict:
     "⭐ Gut für Reisen",
-
 
     finalVerdict:
 
@@ -1092,7 +1087,6 @@ const products = {
         "<strong>⚠️ Der wichtigste Haken:</strong> Bei dicken Stoffen und starken Falten stößt die geringe Dampfleistung an Grenzen. Außerdem fiel das Modell bei Stiftung Warentest in der Dauerprüfung auf und wurde bei der Haltbarkeit abgewertet.<br><br>" +
 
         "<strong>🏆 Unsere Einschätzung:</strong> Ein sinnvoller Reise- und Schnellglätter, aber kein vollwertiger Ersatz für ein gutes Bügeleisen.",
-
 
     sources:[
 
@@ -1109,20 +1103,14 @@ const products = {
         [
             "COMPUTER BILD – Philips Series 3000 Praxistest",
             "https://www.computerbild.de/artikel/Tests-Haushalt-Philips-Series-3000-im-Praxis-Test-So-pustet-der-Steamer-Falten-aus-dem-Stoff-40413103.html"
-        ],
-
-        [
-            "STERN – Steamer-Vergleich",
-            "https://www.stern.de/kaufkosmos/steamer-im-test--fuenf-aktuelle-modelle-im-stern-vergleich-36114056.html"
         ]
 
     ],
 
-
     comparisonLink:
     "technik.html",
 
-    comparisonTitle:
+    comparisonLinkTitle:
     "Weitere Technik Finds entdecken?",
 
     comparisonText:
@@ -1153,17 +1141,14 @@ const products = {
     image:
     "Images/tefal-access-steam-dr8085-werbung.png",
 
-
     heroTitle:
     "Tefal Access Steam DR8085 – ist der kompakte Steamer den Hype wert?",
 
     heroDescription:
     "1.500 Watt, bis zu 24 g/min Dampf und ein 200-ml-Wassertank – ein kompakter Steamer für schnelle Faltenkorrekturen ohne Bügelbrett.",
 
-
     description:
     "Der Tefal Access Steam DR8085 ist ein kompakter Dampfglätter mit 1.500 Watt Leistung und bis zu 24 g/min Dampf. Der abnehmbare 200-ml-Wassertank ermöglicht laut Tefal bis zu 10 Minuten Betrieb. Das Gerät ist nach etwa 45 Sekunden einsatzbereit und besitzt ein 3 Meter langes Netzkabel.",
-
 
     price:
     "Preis bei Amazon prüfen",
@@ -1173,7 +1158,6 @@ const products = {
 
     amazon:
     "https://amzn.to/4gekl22",
-
 
     advantages:[
 
@@ -1199,7 +1183,6 @@ const products = {
 
     ],
 
-
     disadvantages:[
 
         "Nicht so schnell aufgeheizt wie manche moderne Reise-Steamer",
@@ -1216,17 +1199,14 @@ const products = {
 
     ],
 
-
     forWho:
     "Der Tefal Access Steam DR8085 ist besonders interessant für Menschen, die regelmäßig einzelne Kleidungsstücke schnell glätten möchten, ohne dafür ein Bügelbrett aufzubauen. Durch die 1.500 Watt Leistung, bis zu 24 g/min Dampf und den 200-ml-Tank ist er vor allem für Hemden, T-Shirts, Blusen und schnelle Outfit-Korrekturen interessant. Wer hauptsächlich auf Reisen möglichst wenig Platz benötigt, findet bei klappbaren Reise-Modellen kompaktere Alternativen.",
-
 
     comparisonTitle:
     "⚖️ Tefal DR8085 im Vergleich",
 
     comparisonDescription:
-    "Der DR8085 sitzt leistungsmäßig zwischen kompakten Reise-Modellen und größeren leistungsstärkeren Dampfglättern. Besonders interessant sind die Kombination aus 1.500 Watt, 24 g/min Dampf und 200-ml-Tank.",
-
+    "Der DR8085 liegt bei der Dampfleistung zwischen dem Philips 3000 und dem Philips 7000. Interessant sind vor allem die Kombination aus 1.500 Watt, 24 g/min Dampf und dem 200-ml-Tank.",
 
     comparisonHeaders:[
 
@@ -1239,7 +1219,6 @@ const products = {
         "Philips 7000"
 
     ],
-
 
     comparisonRows:[
 
@@ -1317,28 +1296,38 @@ const products = {
 
         [
 
+            "Horizontal",
+
+            "❌",
+
+            "❌",
+
+            "✅"
+
+        ],
+
+        [
+
             "Unsere Einschätzung",
 
             "💰 Reise",
 
             "🔥 Stark & vielseitig",
 
-            "💪 Mehr Leistung"
+            "💪 Mehr Ausstattung"
 
         ]
 
     ],
 
-
     verdict:
     "🔥 Stark für schnelle Outfit-Korrekturen",
-
 
     finalVerdict:
 
         "<strong>🔥 Unser Fazit:</strong><br><br>" +
 
-        "Der Tefal Access Steam DR8085 ist ein interessanter Mittelweg zwischen einem kleinen Reise-Steamer und einem deutlich größeren Dampfbügelsystem.<br><br>" +
+        "Der Tefal Access Steam DR8085 ist ein interessanter Mittelweg zwischen einem kleinen Reise-Steamer und einem leistungsstärkeren Dampfglätter.<br><br>" +
 
         "<strong>👍 Besonders stark:</strong> 1.500 Watt Leistung, bis zu 24 g/min Dampf, 200-ml-Wassertank und das 3 Meter lange Kabel. Dadurch eignet er sich gut für schnelle Faltenkorrekturen im Alltag.<br><br>" +
 
@@ -1346,8 +1335,7 @@ const products = {
 
         "<strong>⚠️ Der wichtigste Punkt:</strong> Mit 45 Sekunden Aufheizzeit ist er nicht der schnellste Reise-Steamer. Außerdem ist das Gerät nicht zusammenklappbar und nimmt dadurch mehr Platz ein.<br><br>" +
 
-        "<strong>🏆 Unsere Einschätzung:</strong> Eine gute Wahl für alle, die häufiger schnell Kleidung glätten möchten und mehr Leistung als bei einem kleinen Reise-Steamer suchen. Als vollständiger Ersatz für ein klassisches Bügeleisen sollte man ihn trotzdem nicht betrachten.",
-
+        "<strong>🏆 Unsere Einschätzung:</strong> Eine gute Wahl für alle, die häufiger schnell Kleidung glätten möchten und mehr Leistung als bei einem kleinen Reise-Steamer suchen.",
 
     sources:[
 
@@ -1361,17 +1349,344 @@ const products = {
 
         [
 
-            "Tefal – technische Daten und Produktvergleich",
+            "Tefal – technische Informationen",
 
             "https://www.tefal.com/Linen-Care/Garment-Steamers/Handheld-Garment-Steamers-/ACCESS-STEAM-/p/1830005800"
+
+        ]
+
+    ],
+
+    comparisonLink:
+    "technik.html",
+
+    comparisonLinkTitle:
+    "Weitere Technik Finds entdecken?",
+
+    comparisonText:
+    "Vergleiche weitere virale Technik- und Lifestyle-Produkte und finde heraus, welches Produkt wirklich zu dir passt."
+
+},
+
+
+
+/* ==================================================
+   PHILIPS STEAMER 7000
+================================================== */
+
+"philips-sth7060-80": {
+
+    name:
+    "Philips 7000 Series STH7060/80",
+
+    category:
+    "📱 TECHNIK FIND",
+
+    tag:
+    "💪 28 g/min & HORIZONTAL",
+
+    emoji:
+    "💨",
+
+    image:
+    "Images/philips-sth7060-80-produktbild.png",
+
+
+    heroTitle:
+    "Philips 7000 Series STH7060/80 – lohnt sich der leistungsstärkere Steamer?",
+
+    heroDescription:
+    "28 g/min Dampf, 1.500 Watt und horizontales sowie vertikales Glätten – aber bringt die zusätzliche Ausstattung auch bessere Ergebnisse?",
+
+
+    description:
+    "Der Philips 7000 Series STH7060/80 ist ein leistungsstärkerer Hand-Dampfglätter mit 1.500 Watt und bis zu 28 g/min konstantem Dampfausstoß. Das Gerät besitzt zwei Dampfeinstellungen, einen verstellbaren Kopf sowie zwei austauschbare Wasserbehälter mit 100 und 200 ml. Zusätzlich kann es sowohl vertikal als auch horizontal eingesetzt werden.",
+
+
+    price:
+    "ca. 85 €",
+
+    priceNote:
+    "Mittlerer Onlinepreis laut Stiftung Warentest: 85 € (Stand 11.08.2026). Der tatsächliche Händlerpreis kann abweichen.",
+
+
+    amazon:
+    "https://amzn.to/4zAnQHt",
+
+
+    advantages:[
+
+        "Bis zu 28 g/min konstanter Dampfausstoß",
+
+        "1.500 Watt Leistung",
+
+        "2 Dampfeinstellungen: ECO und MAX",
+
+        "100-ml- und 200-ml-Wasserbehälter im Lieferumfang",
+
+        "Vertikales und horizontales Glätten",
+
+        "Aufheizzeit von rund 30 Sekunden",
+
+        "Verstellbarer Kopf",
+
+        "Zugespitzte Heizplatte für schwer erreichbare Stellen",
+
+        "OptimalTEMP-Technologie",
+
+        "Handschuh im Lieferumfang",
+
+        "Aufbewahrungsbeutel bzw. Matte im Lieferumfang",
+
+        "Kann laut Hersteller entkalkt werden"
+
+    ],
+
+
+    disadvantages:[
+
+        "Nicht zusammenklappbar",
+
+        "Mit rund 1,3 kg deutlich schwerer als kleine Reise-Steamer",
+
+        "Maximales Tankvolumen beträgt 200 ml",
+
+        "Höherer Preis als der Philips 3000",
+
+        "Größer und weniger reisefreundlich als der Philips 3000",
+
+        "Die höhere Dampfleistung garantiert nicht automatisch ein besseres Glättergebnis",
+
+        "Stiftung Warentest bewertete das Modell insgesamt nur mit 'befriedigend'",
+
+        "Im unabhängigen Test wurde die tatsächliche Glättleistung nicht entsprechend der technischen Daten herausgestellt"
+
+    ],
+
+
+    forWho:
+    "Der Philips 7000 ist interessant für Nutzer, die mehr Ausstattung und Flexibilität als bei einem einfachen Reise-Steamer möchten. Besonders sinnvoll ist er, wenn du sowohl vertikal als auch horizontal arbeiten möchtest und zwei Dampfstufen sowie die höhere Dampfleistung nutzen kannst. Für gelegentliche Reisen ist der kleinere Philips 3000 dagegen praktischer.",
+
+
+    comparisonTitle:
+    "⚖️ Philips 7000 im Vergleich",
+
+    comparisonDescription:
+    "Auf dem Papier bietet der Philips 7000 die höchste Dampfleistung der drei Modelle. Gleichzeitig zeigt der Stiftung-Warentest-Test, dass technische Leistungsdaten allein kein Garant für ein überzeugendes Glättergebnis sind.",
+
+
+    comparisonHeaders:[
+
+        "Eigenschaft",
+
+        "Philips 3000",
+
+        "Tefal DR8085",
+
+        "Philips 7000"
+
+    ],
+
+
+    comparisonRows:[
+
+        [
+
+            "Dampfleistung",
+
+            "20 g/min",
+
+            "24 g/min",
+
+            "28 g/min"
 
         ],
 
         [
 
-            "Testberichte.de – Tefal Access Steam",
+            "Leistung",
 
-            "https://www.testberichte.de/p/tefal-tests/access-steam-testbericht.html"
+            "1.000 W",
+
+            "1.500 W",
+
+            "1.500 W"
+
+        ],
+
+        [
+
+            "Wassertank",
+
+            "120 ml",
+
+            "200 ml",
+
+            "100 + 200 ml"
+
+        ],
+
+        [
+
+            "Aufheizzeit",
+
+            "ca. 30 Sek.",
+
+            "45 Sek.",
+
+            "ca. 30 Sek."
+
+        ],
+
+        [
+
+            "Horizontal",
+
+            "❌",
+
+            "❌",
+
+            "✅"
+
+        ],
+
+        [
+
+            "Vertikal",
+
+            "✅",
+
+            "✅",
+
+            "✅"
+
+        ],
+
+        [
+
+            "Zusammenklappbar",
+
+            "✅",
+
+            "❌",
+
+            "❌"
+
+        ],
+
+        [
+
+            "Dampfstufen",
+
+            "1",
+
+            "1",
+
+            "2: ECO & MAX"
+
+        ],
+
+        [
+
+            "Gewicht",
+
+            "ca. 0,8 kg",
+
+            "ca. 1,1 kg",
+
+            "ca. 1,3 kg"
+
+        ],
+
+        [
+
+            "Besonderheit",
+
+            "💼 Kompakt & faltbar",
+
+            "⚡ 3-m-Kabel",
+
+            "💪 28 g/min + horizontal"
+
+        ],
+
+        [
+
+            "Stiftung Warentest",
+
+            "Getestet",
+
+            "Nicht im Vergleichstest",
+
+            "3,5 – befriedigend"
+
+        ],
+
+        [
+
+            "Unsere Einschätzung",
+
+            "💼 Reise",
+
+            "🔥 Alltag",
+
+            "💪 Ausstattung & Flexibilität"
+
+        ]
+
+    ],
+
+
+    verdict:
+    "💪 Mehr Ausstattung – nicht automatisch besseres Ergebnis",
+
+
+    finalVerdict:
+
+        "<strong>💪 Unser Fazit:</strong><br><br>" +
+
+        "Der Philips 7000 Series STH7060/80 ist auf dem Papier der leistungsstärkste Steamer in unserem Vergleich. Mit 28 g/min Dampf, 1.500 Watt, zwei Dampfstufen und der Möglichkeit zum horizontalen und vertikalen Glätten bietet er deutlich mehr Ausstattung als der Philips 3000.<br><br>" +
+
+        "<strong>👍 Besonders stark:</strong> Die Kombination aus hoher Dampfleistung, zwei austauschbaren Wasserbehältern, verstellbarem Kopf und horizontaler Anwendung macht ihn deutlich flexibler als einen einfachen Reise-Steamer.<br><br>" +
+
+        "<strong>⚠️ Aber:</strong> Mehr Leistung bedeutet nicht automatisch bessere Ergebnisse. Stiftung Warentest testete das Modell 2025 und bewertete es insgesamt mit <strong>3,5 – befriedigend</strong>. Genau deshalb sollte man den Philips 7000 nicht allein anhand der 28 g/min kaufen.<br><br>" +
+
+        "<strong>🏆 Unsere Einschätzung:</strong> Wer mehr Ausstattung und Flexibilität möchte, bekommt mit dem STH7060/80 einen interessanten Steamer. Wer dagegen hauptsächlich einen möglichst kleinen Reise-Steamer sucht, ist mit dem Philips 3000 besser aufgehoben.<br><br>" +
+
+        "<strong>💡 Kurz gesagt:</strong> Technisch stärker als die kleineren Modelle – aber nicht automatisch die bessere Wahl für jeden.",
+
+
+    sources:[
+
+        [
+
+            "Philips – offizielle Informationen zum 7000 Series STH7060/80",
+
+            "https://www.philips.de/a-w/about/news/archive/standard/news/2023/202305-versuni-tragbarer-dampfglaetter.html"
+
+        ],
+
+        [
+
+            "Philips – Support und Zubehör STH7060/80",
+
+            "https://www.philips.de/c-p/STH7060_80/7000-series-handheld-steamer/support"
+
+        ],
+
+        [
+
+            "Stiftung Warentest – Philips 7000 Series STH7060/80, Test 04/2025",
+
+            "https://www.test.de/Steamer-im-Test-Dampf-auf-Knopfdruck-6191834-detail/320000036000%210006/"
+
+        ],
+
+        [
+
+            "Stiftung Warentest – Steamer-Test 2025",
+
+            "https://www.test.de/Steamer-im-Test-Dampf-auf-Knopfdruck-6191834-0/"
 
         ]
 
@@ -1381,11 +1696,11 @@ const products = {
     comparisonLink:
     "technik.html",
 
-    comparisonTitle:
+    comparisonLinkTitle:
     "Weitere Technik Finds entdecken?",
 
     comparisonText:
-    "Vergleiche weitere virale Technik- und Lifestyle-Produkte und finde heraus, welches Produkt wirklich zu dir passt."
+    "Vergleiche den Philips 7000 mit weiteren Dampfglättern und entdecke weitere virale Technik- und Lifestyle-Produkte bei Produktfinder."
 
 },
 
@@ -1479,7 +1794,7 @@ const products = {
     comparisonLink:
     "zuhause.html",
 
-    comparisonTitle:
+    comparisonLinkTitle:
     "Noch mehr Produkte entdecken?",
 
     comparisonText:
@@ -1563,7 +1878,7 @@ const products = {
     comparisonLink:
     "zuhause.html",
 
-    comparisonTitle:
+    comparisonLinkTitle:
     "Weitere Produkte vergleichen?",
 
     comparisonText:
@@ -1655,7 +1970,7 @@ const products = {
     comparisonLink:
     "zuhause.html",
 
-    comparisonTitle:
+    comparisonLinkTitle:
     "Weitere Produkte vergleichen?",
 
     comparisonText:
@@ -1747,7 +2062,7 @@ const products = {
     comparisonLink:
     "zuhause.html",
 
-    comparisonTitle:
+    comparisonLinkTitle:
     "Weitere Produkte vergleichen?",
 
     comparisonText:
@@ -1837,7 +2152,7 @@ const products = {
     comparisonLink:
     "zuhause.html",
 
-    comparisonTitle:
+    comparisonLinkTitle:
     "Weitere Produkte vergleichen?",
 
     comparisonText:
@@ -1929,7 +2244,7 @@ const products = {
     comparisonLink:
     "zuhause.html",
 
-    comparisonTitle:
+    comparisonLinkTitle:
     "Weitere Produkte für Zuhause entdecken?",
 
     comparisonText:
@@ -2064,9 +2379,9 @@ if(!product){
 
     '<p>Prüfe bitte den Produkt-Link.</p>' +
 
-    '<a href="tiktok-finds.html" class="amazon-button">' +
+    '<a href="technik.html" class="amazon-button">' +
 
-    '← Zu den TikTok Finds' +
+    '← Zu den Technik Finds' +
 
     '</a>' +
 
@@ -2253,6 +2568,11 @@ else{
         productId ===
         "tefal-access-steam-dr8085"
 
+        ||
+
+        productId ===
+        "philips-sth7060-80"
+
     ){
 
         backLink.href =
@@ -2365,7 +2685,7 @@ else{
 
         compareLinkTitle.textContent =
 
-        product.comparisonTitle ||
+        product.comparisonLinkTitle ||
 
         "Du möchtest weitere Modelle vergleichen?";
 
