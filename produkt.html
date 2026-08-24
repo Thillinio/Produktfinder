@@ -1,2306 +1,376 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produkt – Produktfinder</title>
+<meta name="description" content="Produktfinder – Produkt unter die Lupe genommen. Vorteile, Nachteile, Testberichte und unsere Einschätzung.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#f6f7f9;color:#17202a;line-height:1.6}
+a{text-decoration:none;color:inherit}
+header{background:#111827;color:white;position:sticky;top:0;z-index:100}
+.back,.header-inner{max-width:1150px;margin:auto}
+.back{padding:13px 20px}.back a{color:#d1d5db;font-size:14px;font-weight:bold}
+.header-inner{padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:24px;font-weight:800}.logo span{color:#f59e0b}
+nav{display:flex;gap:22px}nav a{color:white;font-size:14px;opacity:.9}
+.hero{background:#111827;color:white;padding:60px 20px;text-align:center}
+.hero-content{max-width:850px;margin:auto}
+.hero-label{display:inline-block;background:#f59e0b;color:#111827;padding:7px 15px;border-radius:30px;font-size:13px;font-weight:bold;margin-bottom:20px}
+.hero h1{font-size:46px;line-height:1.15;margin-bottom:18px}.hero h1 span{color:#f59e0b}
+.hero p{max-width:720px;margin:auto;color:#d1d5db;font-size:18px}
+.container{max-width:1150px;margin:auto;padding:55px 20px}.section{margin-bottom:55px}
+.product-overview{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px;margin-bottom:30px}
+.product-image-large{background:white;border:1px solid #eaecf0;border-radius:18px;min-height:430px;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 18px rgba(0,0,0,.04);overflow:hidden}
+.product-image-large img{width:100%;height:100%;max-height:430px;object-fit:contain;border-radius:18px;padding:20px}
+.product-main{background:white;border:1px solid #eaecf0;border-radius:18px;padding:35px;box-shadow:0 5px 18px rgba(0,0,0,.04)}
+.product-tag{display:inline-block;background:#fff3d6;color:#9a6700;padding:6px 10px;border-radius:7px;font-size:11px;font-weight:bold;margin-bottom:12px}
+.product-main h2{font-size:32px;line-height:1.2;margin-bottom:12px}
+.product-description{color:#667085;font-size:15px;margin-bottom:22px}
+.price{font-size:28px;font-weight:800;margin-bottom:4px}.price small{display:block;color:#98a2b3;font-size:11px;font-weight:normal;margin-top:2px}
+.amazon-button{display:block;width:100%;background:#111827;color:white;padding:13px 16px;border-radius:9px;text-align:center;font-size:13px;font-weight:bold;margin-top:22px}
+.amazon-note{background:#fff8e7;border:1px solid #f2dfad;border-radius:12px;padding:15px 18px;margin-top:20px;color:#6b5500;font-size:12px}
+.section-header{margin-bottom:22px}.section-header h2{font-size:30px;margin-bottom:5px}.section-header p{color:#667085;font-size:14px}
+.pros-cons-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.pros-box,.cons-box{background:white;border:1px solid #eaecf0;border-radius:18px;padding:28px}
+.pros-box h3,.cons-box h3{font-size:20px;margin-bottom:15px}.pros-box ul,.cons-box ul{list-style:none}
+.pros-box li,.cons-box li{font-size:14px;margin-bottom:9px}.pros-box li{color:#217a3b}.cons-box li{color:#667085}
+.recommendation-box,.comparison-box{background:#111827;color:white;border-radius:18px;padding:35px}
+.recommendation-box h2,.comparison-box h2{font-size:27px;margin-bottom:12px}.recommendation-box p,.comparison-box>p{color:#d1d5db;font-size:14px}
+.comparison-box>p{margin-bottom:20px}.table-wrapper{overflow-x:auto}
+.compare-table{width:100%;border-collapse:collapse;background:white;color:#17202a;border-radius:12px;overflow:hidden}
+.compare-table th,.compare-table td{padding:14px;text-align:left;border-bottom:1px solid #eaecf0;font-size:13px}.compare-table th{background:#f2f4f7}
+.compare-link-box{background:#fff8e7;border:1px solid #f2dfad;border-radius:18px;padding:28px}
+.compare-link-label{color:#9a6700;font-size:13px;font-weight:bold;margin-bottom:7px}.compare-link-box h2{font-size:27px;margin-bottom:8px}.compare-link-box p{color:#667085;font-size:14px;max-width:780px}
+.final-verdict{margin-top:25px;background:#f7f8fa;border-radius:15px;padding:25px}.final-verdict h3{font-size:20px;margin-bottom:10px}.final-verdict p{color:#667085;font-size:14px}
+.sources{background:white;border:1px solid #eaecf0;border-radius:18px;padding:30px}.sources h2{font-size:24px;margin-bottom:12px}.sources p,.sources li{color:#667085;font-size:13px;margin-bottom:10px}.sources ul{padding-left:20px}.sources a{color:#9a6700;text-decoration:underline}
+.error{background:white;border:1px solid #eaecf0;border-radius:18px;padding:50px 30px;text-align:center}.error h2{font-size:30px;margin-bottom:10px}.error p{color:#667085;margin-bottom:20px}
+footer{background:#0b1120;color:#9ca3af;text-align:center;padding:35px 20px}footer p{margin-bottom:10px}footer a{color:#d1d5db;margin:0 8px;font-size:13px}.amazon-disclosure{font-size:12px;color:#9ca3af;margin-top:10px}
+@media(max-width:900px){nav{display:none}.product-overview{grid-template-columns:1fr}.product-image-large{min-height:300px}}
+@media(max-width:600px){.hero{padding:55px 20px}.hero h1{font-size:34px}.hero p{font-size:16px}.container{padding:40px 18px}.product-image-large{min-height:250px}.product-main{padding:25px 20px}.product-main h2{font-size:27px}.pros-cons-grid{grid-template-columns:1fr}.comparison-box,.recommendation-box{padding:25px 18px}}
+</style>
+</head>
+<body>
+<header>
+<div class="back"><a href="tiktok-finds.html" id="backLink">← Zurück zu TikTok Finds</a></div>
+<div class="header-inner">
+<a href="index.html" class="logo">Produkt<span>finder</span></a>
+<nav>
+<a href="index.html">Startseite</a><a href="zuhause.html">Zuhause</a><a href="technik.html">Technik</a><a href="auto.html">Auto</a>
+</nav>
+</div>
+</header>
 
-<!DOCTYPE html>  
-<html lang="de">  
-  
-<head>  
-  
-<meta charset="UTF-8">  
-  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  
-<title>Produkt – Produktfinder</title>  
-  
-<meta  
-name="description"  
-content="Produktfinder – Produkt unter die Lupe genommen. Vorteile, Nachteile und unsere Einschätzung."  
->  
-  
-  
-<style>  
-  
-/* ==================================================  
-   GRUNDLAGEN  
-================================================== */  
-  
-* {  
-    box-sizing: border-box;  
-    margin: 0;  
-    padding: 0;  
-}  
-  
-html {  
-    scroll-behavior: smooth;  
-}  
-  
-body {  
-    font-family: Arial, Helvetica, sans-serif;  
-    background: #f6f7f9;  
-    color: #17202a;  
-    line-height: 1.6;  
-}  
-  
-a {  
-    text-decoration: none;  
-    color: inherit;  
-}  
-  
-  
-/* ==================================================  
-   HEADER  
-================================================== */  
-  
-header {  
-    background: #111827;  
-    color: white;  
-  
-    position: sticky;  
-    top: 0;  
-  
-    z-index: 100;  
-}  
-  
-.back {  
-    max-width: 1150px;  
-    margin: auto;  
-  
-    padding: 13px 20px;  
-}  
-  
-.back a {  
-    color: #d1d5db;  
-  
-    font-size: 14px;  
-    font-weight: bold;  
-  
-    transition: color 0.2s ease;  
-}  
-  
-.back a:hover {  
-    color: white;  
-}  
-  
-.header-inner {  
-    max-width: 1150px;  
-    margin: auto;  
-  
-    padding: 16px 20px;  
-  
-    display: flex;  
-    justify-content: space-between;  
-    align-items: center;  
-}  
-  
-.logo {  
-    font-size: 24px;  
-    font-weight: 800;  
-}  
-  
-.logo span {  
-    color: #f59e0b;  
-}  
-  
-nav {  
-    display: flex;  
-    gap: 22px;  
-}  
-  
-nav a {  
-    color: white;  
-  
-    font-size: 14px;  
-  
-    opacity: 0.9;  
-  
-    transition: 0.2s ease;  
-}  
-  
-nav a:hover {  
-    opacity: 1;  
-    color: #f59e0b;  
-}  
-  
-  
-/* ==================================================  
-   HERO  
-================================================== */  
-  
-.hero {  
-    background: #111827;  
-  
-    color: white;  
-  
-    padding: 60px 20px;  
-  
-    text-align: center;  
-}  
-  
-.hero-content {  
-    max-width: 850px;  
-    margin: auto;  
-}  
-  
-.hero-label {  
-    display: inline-block;  
-  
-    background: #f59e0b;  
-    color: #111827;  
-  
-    padding: 7px 15px;  
-  
-    border-radius: 30px;  
-  
-    font-size: 13px;  
-    font-weight: bold;  
-  
-    margin-bottom: 20px;  
-}  
-  
-.hero h1 {  
-    font-size: 46px;  
-  
-    line-height: 1.15;  
-  
-    margin-bottom: 18px;  
-}  
-  
-.hero h1 span {  
-    color: #f59e0b;  
-}  
-  
-.hero p {  
-    max-width: 720px;  
-  
-    margin: auto;  
-  
-    color: #d1d5db;  
-  
-    font-size: 18px;  
-}  
-  
-  
-/* ==================================================  
-   CONTAINER  
-================================================== */  
-  
-.container {  
-    max-width: 1150px;  
-  
-    margin: auto;  
-  
-    padding: 55px 20px;  
-}  
-  
-.section {  
-    margin-bottom: 55px;  
-}  
-  
-  
-/* ==================================================  
-   PRODUCT HERO  
-================================================== */  
-  
-.product-overview {  
-    display: grid;  
-  
-    grid-template-columns: 0.8fr 1.2fr;  
-  
-    gap: 25px;  
-  
-    margin-bottom: 30px;  
-}  
-  
-.product-image-large {  
-    background: white;  
-  
-    border: 1px solid #eaecf0;  
-  
-    border-radius: 18px;  
-  
-    min-height: 430px;  
-  
-    display: flex;  
-  
-    align-items: center;  
-    justify-content: center;  
-  
-    font-size: 125px;  
-  
-    box-shadow:  
-        0 5px 18px rgba(0,0,0,0.04);  
-  
-    overflow: hidden;  
-}  
-  
-.product-main {  
-    background: white;  
-  
-    border: 1px solid #eaecf0;  
-  
-    border-radius: 18px;  
-  
-    padding: 35px;  
-  
-    box-shadow:  
-        0 5px 18px rgba(0,0,0,0.04);  
-}  
-  
-.product-tag {  
-    display: inline-block;  
-  
-    background: #fff3d6;  
-  
-    color: #9a6700;  
-  
-    padding: 6px 10px;  
-  
-    border-radius: 7px;  
-  
-    font-size: 11px;  
-  
-    font-weight: bold;  
-  
-    margin-bottom: 12px;  
-}  
-  
-.product-main h2 {  
-    font-size: 32px;  
-  
-    line-height: 1.2;  
-  
-    margin-bottom: 12px;  
-}  
-  
-.product-description {  
-    color: #667085;  
-  
-    font-size: 15px;  
-  
-    margin-bottom: 22px;  
-}  
-  
-.price {  
-    font-size: 28px;  
-  
-    font-weight: 800;  
-  
-    margin-bottom: 4px;  
-}  
-  
-.price small {  
-    display: block;  
-  
-    color: #98a2b3;  
-  
-    font-size: 11px;  
-  
-    font-weight: normal;  
-  
-    margin-top: 2px;  
-}  
-  
-  
-/* ==================================================  
-   AMAZON BUTTON  
-================================================== */  
-  
-.amazon-button {  
-    display: block;  
-  
-    width: 100%;  
-  
-    background: #111827;  
-  
-    color: white;  
-  
-    padding: 13px 16px;  
-  
-    border-radius: 9px;  
-  
-    text-align: center;  
-  
-    font-size: 13px;  
-  
-    font-weight: bold;  
-  
-    margin-top: 22px;  
-  
-    transition: 0.2s ease;  
-}  
-  
-.amazon-button:hover {  
-    background: #1f2937;  
-  
-    transform: translateY(-2px);  
-}  
-  
-  
-/* ==================================================  
-   AMAZON HINWEIS  
-================================================== */  
-  
-.amazon-note {  
-    background: #fff8e7;  
-  
-    border: 1px solid #f2dfad;  
-  
-    border-radius: 12px;  
-  
-    padding: 15px 18px;  
-  
-    margin-top: 20px;  
-  
-    color: #6b5500;  
-  
-    font-size: 12px;  
-}  
-  
-  
-/* ==================================================  
-   SECTION HEADER  
-================================================== */  
-  
-.section-header {  
-    margin-bottom: 22px;  
-}  
-  
-.section-header h2 {  
-    font-size: 30px;  
-  
-    margin-bottom: 5px;  
-}  
-  
-.section-header p {  
-    color: #667085;  
-  
-    font-size: 14px;  
-}  
-  
-  
-/* ==================================================  
-   VORTEILE / NACHTEILE  
-================================================== */  
-  
-.pros-cons-grid {  
-    display: grid;  
-  
-    grid-template-columns: repeat(2, 1fr);  
-  
-    gap: 20px;  
-}  
-  
-.pros-box,  
-.cons-box {  
-    background: white;  
-  
-    border: 1px solid #eaecf0;  
-  
-    border-radius: 18px;  
-  
-    padding: 28px;  
-}  
-  
-.pros-box h3,  
-.cons-box h3 {  
-    font-size: 20px;  
-  
-    margin-bottom: 15px;  
-}  
-  
-.pros-box ul,  
-.cons-box ul {  
-    list-style: none;  
-}  
-  
-.pros-box li,  
-.cons-box li {  
-    font-size: 14px;  
-  
-    margin-bottom: 9px;  
-}  
-  
-.pros-box li {  
-    color: #217a3b;  
-}  
-  
-.cons-box li {  
-    color: #667085;  
-}  
-  
-  
-/* ==================================================  
-   EMPFEHLUNG  
-================================================== */  
-  
-.recommendation-box {  
-    background: #111827;  
-  
-    color: white;  
-  
-    border-radius: 18px;  
-  
-    padding: 35px;  
-}  
-  
-.recommendation-box h2 {  
-    font-size: 27px;  
-  
-    margin-bottom: 12px;  
-}  
-  
-.recommendation-box p {  
-    color: #d1d5db;  
-  
-    font-size: 15px;  
-}  
-  
-  
-/* ==================================================  
-   VERGLEICH  
-================================================== */  
-  
-.comparison-box {  
-    background: #111827;  
-  
-    color: white;  
-  
-    border-radius: 18px;  
-  
-    padding: 35px;  
-  
-    margin-top: 25px;  
-}  
-  
-.comparison-box h2 {  
-    font-size: 27px;  
-  
-    margin-bottom: 10px;  
-}  
-  
-.comparison-box > p {  
-    color: #d1d5db;  
-  
-    font-size: 14px;  
-  
-    margin-bottom: 20px;  
-}  
-  
-.table-wrapper {  
-    overflow-x: auto;  
-}  
-  
-.compare-table {  
-    width: 100%;  
-  
-    border-collapse: collapse;  
-  
-    background: white;  
-  
-    color: #17202a;  
-  
-    border-radius: 12px;  
-  
-    overflow: hidden;  
-}  
-  
-.compare-table th,  
-.compare-table td {  
-    padding: 14px;  
-  
-    text-align: left;  
-  
-    border-bottom: 1px solid #eaecf0;  
-  
-    font-size: 13px;  
-}  
-  
-.compare-table th {  
-    background: #f2f4f7;  
-}  
-  
-  
-/* ==================================================  
-   VERGLEICH-LINK  
-================================================== */  
-  
-.compare-link-section {  
-    margin-top: 40px;  
-}  
-  
-.compare-link-box {  
-    background: #fff8e7;  
-  
-    border: 1px solid #f2dfad;  
-  
-    border-radius: 18px;  
-  
-    padding: 28px;  
-}  
-  
-.compare-link-label {  
-    color: #9a6700;  
-  
-    font-size: 13px;  
-  
-    font-weight: bold;  
-  
-    margin-bottom: 7px;  
-}  
-  
-.compare-link-box h2 {  
-    font-size: 27px;  
-  
-    margin-bottom: 8px;  
-}  
-  
-.compare-link-box p {  
-    color: #667085;  
-  
-    font-size: 14px;  
-  
-    max-width: 780px;  
-}  
-  
-  
-/* ==================================================  
-   FAZIT  
-================================================== */  
-  
-.final-verdict {  
-    margin-top: 25px;  
-  
-    background: #f7f8fa;  
-  
-    border-radius: 15px;  
-  
-    padding: 25px;  
-}  
-  
-.final-verdict h3 {  
-    font-size: 20px;  
-  
-    margin-bottom: 10px;  
-}  
-  
-.final-verdict p {  
-    color: #667085;  
-  
-    font-size: 14px;  
-}  
-  
-  
-/* ==================================================  
-   QUELLEN  
-================================================== */  
-  
-.sources {  
-    background: white;  
-  
-    border: 1px solid #eaecf0;  
-  
-    border-radius: 18px;  
-  
-    padding: 30px;  
-}  
-  
-.sources h2 {  
-    font-size: 24px;  
-  
-    margin-bottom: 12px;  
-}  
-  
-.sources p {  
-    color: #667085;  
-  
-    font-size: 13px;  
-  
-    margin-bottom: 10px;  
-}  
-  
-  
-/* ==================================================  
-   FEHLER  
-================================================== */  
-  
-.error {  
-    background: white;  
-  
-    border: 1px solid #eaecf0;  
-  
-    border-radius: 18px;  
-  
-    padding: 50px 30px;  
-  
-    text-align: center;  
-}  
-  
-.error h2 {  
-    font-size: 30px;  
-  
-    margin-bottom: 10px;  
-}  
-  
-.error p {  
-    color: #667085;  
-  
-    margin-bottom: 20px;  
-}  
-  
-  
-/* ==================================================  
-   FOOTER  
-================================================== */  
-  
-footer {  
-    background: #0b1120;  
-  
-    color: #9ca3af;  
-  
-    text-align: center;  
-  
-    padding: 35px 20px;  
-}  
-  
-footer p {  
-    margin-bottom: 10px;  
-}  
-  
-footer a {  
-    color: #d1d5db;  
-  
-    margin: 0 8px;  
-  
-    font-size: 13px;  
-}  
-  
-.amazon-disclosure {  
-    font-size: 12px;  
-    color: #9ca3af;  
-    margin-top: 10px;  
-}  
-  
-  
-/* ==================================================  
-   TABLET  
-================================================== */  
-  
-@media (max-width: 900px) {  
-  
-    nav {  
-        display: none;  
-    }  
-  
-    .product-overview {  
-        grid-template-columns: 1fr;  
-    }  
-  
-    .product-image-large {  
-        min-height: 300px;  
-    }  
-  
-}  
-  
-  
-/* ==================================================  
-   HANDY  
-================================================== */  
-  
-@media (max-width: 600px) {  
-  
-    .hero {  
-        padding: 55px 20px;  
-    }  
-  
-    .hero h1 {  
-        font-size: 34px;  
-    }  
-  
-    .hero p {  
-        font-size: 16px;  
-    }  
-  
-    .container {  
-        padding: 40px 18px;  
-    }  
-  
-    .product-image-large {  
-        min-height: 250px;  
-  
-        font-size: 90px;  
-    }  
-  
-    .product-main {  
-        padding: 25px 20px;  
-    }  
-  
-    .product-main h2 {  
-        font-size: 27px;  
-    }  
-  
-    .pros-cons-grid {  
-        grid-template-columns: 1fr;  
-    }  
-  
-    .comparison-box {  
-        padding: 25px 18px;  
-    }  
-  
-    .recommendation-box {  
-        padding: 28px 20px;  
-    }  
-  
-}  
-  
-</style>  
-  
-</head>  
-  
-  
-<body>  
-  
-  
-<!-- ==================================================  
-     HEADER  
-================================================== -->  
-  
-<header>  
-  
-<div class="back">  
-  
-<a  
-href="tiktok-finds.html"  
-id="backLink">  
-  
-← Zurück zu TikTok Finds  
-  
-</a>  
-  
-</div>  
-  
-  
-<div class="header-inner">  
-  
-<a href="index.html" class="logo">  
-Produkt<span>finder</span>  
-</a>  
-  
-  
-<nav>  
-  
-<a href="index.html">  
-Startseite  
-</a>  
-  
-<a href="zuhause.html">  
-Zuhause  
-</a>  
-  
-<a href="technik.html">  
-Technik  
-</a>  
-  
-<a href="auto.html">  
-Auto  
-</a>  
-  
-</nav>  
-  
-</div>  
-  
-</header>  
-  
-  
-  
-<!-- ==================================================  
-     PRODUKT HERO  
-================================================== -->  
-  
-<section class="hero">  
-  
-<div class="hero-content">  
-  
-<div  
-class="hero-label"  
-id="heroLabel">  
-  
-🔥 TIKTOK FIND  
-  
-</div>  
-  
-  
-<h1 id="heroTitle">  
-  
-Produkt <span>entdecken</span>  
-  
-</h1>  
-  
-  
-<p id="heroDescription">  
-  
-Wir schauen genauer hin und zeigen dir,  
-ob sich das Produkt wirklich lohnt.  
-  
-</p>  
-  
-</div>  
-  
-</section>  
-  
-  
-  
-<main class="container">  
-  
-  
-<!-- ==================================================  
-     PRODUKT ÜBERSICHT  
-================================================== -->  
-  
-<section class="section">  
-  
-<div class="product-overview">  
-  
-  
-<div  
-class="product-image-large"  
-id="productImage">  
-  
-</div>  
-  
-  
-<div class="product-main">  
-  
-<span  
-class="product-tag"  
-id="productTag">  
-  
-EINSTIEG  
-  
-</span>  
-  
-  
-<h2 id="productName">  
-  
-Produkt  
-  
-</h2>  
-  
-  
-<p  
-class="product-description"  
-id="productDescription">  
-</p>  
-  
-  
-<div  
-class="price"  
-id="productPrice">  
-</div>  
-  
-  
-<a  
-href="#"  
-id="amazonButton"  
-class="amazon-button"  
-target="_blank"  
-rel="nofollow sponsored noopener">  
-  
-Bei Amazon ansehen →  
-  
-</a>  
-  
-  
-<div class="amazon-note">  
-  
-<strong>  
-Preis-Hinweis:  
-</strong>  
-  
-Preise und Verfügbarkeit können sich jederzeit ändern.  
-Der tatsächlich beim Händler angezeigte Preis ist maßgeblich.  
-  
-<br><br>  
-  
-<strong>  
-Transparenz:  
-</strong>  
-  
-Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.  
-  
-</div>  
-  
-</div>  
-  
-</div>  
-  
-</section>  
-  
-  
-  
-<!-- ==================================================  
-     VORTEILE / NACHTEILE  
-================================================== -->  
-  
-<section class="section">  
-  
-<div class="section-header">  
-  
-<h2>  
-🔎 Was spricht dafür – und was dagegen?  
-</h2>  
-  
-<p>  
-Nicht nur auf den Hype schauen.  
-</p>  
-  
-</div>  
-  
-  
-<div class="pros-cons-grid">  
-  
-  
-<div class="pros-box">  
-  
-<h3>  
-✅ Vorteile  
-</h3>  
-  
-<ul id="advantages">  
-</ul>  
-  
-</div>  
-  
-  
-<div class="cons-box">  
-  
-<h3>  
-❌ Nachteile  
-</h3>  
-  
-<ul id="disadvantages">  
-</ul>  
-  
-</div>  
-  
-  
-</div>  
-  
-</section>  
-  
-  
-  
-<!-- ==================================================  
-     FÜR WEN?  
-================================================== -->  
-  
-<section class="section">  
-  
-<div class="recommendation-box">  
-  
-<h2>  
-💡 Für wen lohnt sich das Produkt?  
-</h2>  
-  
-<p id="forWho">  
-</p>  
-  
-</div>  
-  
-</section>  
-  
-  
-  
-<!-- ==================================================  
-     VERGLEICH  
-================================================== -->  
-  
-<section  
-class="section"  
-id="comparisonSection">  
-  
-<div class="comparison-box">  
-  
-<h2>  
-🤔 Wie schneidet das Produkt ab?  
-</h2>  
-  
-<p>  
-Mehr Funktionen bedeuten nicht automatisch,  
-dass das teuerste Modell die beste Wahl für jeden ist.  
-</p>  
-  
-  
-<div class="table-wrapper">  
-  
-<table class="compare-table">  
-  
-<thead>  
-  
-<tr>  
-  
-<th>  
-Eigenschaft  
-</th>  
-  
-<th id="comparisonProduct">  
-Dieses Produkt  
-</th>  
-  
-<th>  
-Deluxe  
-</th>  
-  
-<th>  
-Scoop & Swirl  
-</th>  
-  
-</tr>  
-  
-</thead>  
-  
-  
-<tbody>  
-  
-<tr>  
-  
-<td>  
-Preisniveau  
-</td>  
-  
-<td id="comparisonPrice">  
-💰  
-</td>  
-  
-<td>  
-💰💰  
-</td>  
-  
-<td>  
-💰💰💰  
-</td>  
-  
-</tr>  
-  
-  
-<tr>  
-  
-<td>  
-Vielseitigkeit  
-</td>  
-  
-<td id="comparisonVersatility">  
-⭐⭐⭐  
-</td>  
-  
-<td>  
-⭐⭐⭐⭐  
-</td>  
-  
-<td>  
-⭐⭐⭐⭐⭐  
-</td>  
-  
-</tr>  
-  
-  
-<tr>  
-  
-<td>  
-Programme  
-</td>  
-  
-<td id="comparisonPrograms">  
-7  
-</td>  
-  
-<td>  
-9  
-</td>  
-  
-<td>  
-13  
-</td>  
-  
-</tr>  
-  
-  
-<tr>  
-  
-<td>  
-Softeis  
-</td>  
-  
-<td id="comparisonSoftServe">  
-❌  
-</td>  
-  
-<td>  
-❌  
-</td>  
-  
-<td>  
-✅  
-</td>  
-  
-</tr>  
-  
-  
-<tr>  
-  
-<td>  
-Unsere Einschätzung  
-</td>  
-  
-<td id="comparisonVerdict">  
-💰 Preisbewusst  
-</td>  
-  
-<td>  
-⭐ Vielseitig  
-</td>  
-  
-<td>  
-🏆 Maximum  
-</td>  
-  
-</tr>  
-  
-</tbody>  
-  
-</table>  
-  
-</div>  
-  
-</div>  
-  
-</section>  
-  
-  
-  
-<!-- ==================================================  
-     VERGLEICH-LINK  
-================================================== -->  
-  
-<section  
-class="section"  
-id="compareLinkSection">  
-  
-<div class="compare-link-section">  
-  
-<div class="compare-link-box">  
-  
-<div class="compare-link-label">  
-🔎 VERGLEICH  
-</div>  
-  
-  
-<h2 id="compareLinkTitle">  
-Du möchtest weitere Modelle vergleichen?  
-</h2>  
-  
-  
-<p id="compareLinkText">  
-Du bist noch nicht sicher, welches Produkt zu dir passt?  
-Vergleiche mehrere Modelle miteinander und entdecke auch  
-günstigere Alternativen.  
-</p>  
-  
-  
-<a  
-href="tiktok-finds.html"  
-id="compareLink"  
-class="amazon-button">  
-  
-Modelle vergleichen →  
-  
-</a>  
-  
-</div>  
-  
-</div>  
-  
-</section>  
-  
-  
-  
-<!-- ==================================================  
-     FAZIT  
-================================================== -->  
-  
-<section class="section">  
-  
-<div class="final-verdict">  
-  
-<h3>  
-🏆 Unsere Einschätzung  
-</h3>  
-  
-<p id="finalVerdict">  
-</p>  
-  
-</div>  
-  
-</section>  
-  
-  
-  
-<!-- ==================================================  
-     QUELLEN  
-================================================== -->  
-  
-<section class="section">  
-  
-<div class="sources">  
-  
-<h2>  
-📚 Quellen & Transparenz  
-</h2>  
-  
-  
-<p>  
-Wir versuchen, Produktinformationen möglichst  
-verständlich und transparent aufzubereiten.  
-Preise und Verfügbarkeit können sich ändern.  
-</p>  
-  
-  
-<p>  
-Die Produktseite stellt keine eigene  
-Produktprüfung oder unabhängige Laborprüfung dar.  
-Für aktuelle Produktdetails und Preise  
-ist die jeweilige Händlerseite maßgeblich.  
-</p>  
-  
-</div>  
-  
-</section>  
-  
-  
-</main>  
-  
-  
-  
-<!-- ==================================================  
-     FOOTER  
-================================================== -->  
-  
-<footer>  
-  
-<p>  
-© 2026 Produktfinder  
-</p>  
-  
-  
-<p>  
-  
-<a href="index.html">  
-Startseite  
-</a>  
-  
-<a href="tiktok-finds.html">  
-TikTok Finds  
-</a>  
-  
-<a href="zuhause.html">  
-Zuhause  
-</a>  
-  
-<a href="technik.html">  
-Technik  
-</a>  
-  
-<a href="auto.html">  
-Auto  
-</a>  
-  
-<a href="unterwegs.html">  
-Unterwegs  
-</a>  
-  
-<a href="heimwerken.html">  
-Heimwerken  
-</a>  
-  
-<a href="geschenke.html">  
-Geschenke  
-</a>  
-  
-</p>  
-  
-<p class="amazon-disclosure">  
-  
-Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.  
-  
-</p>  
-  
-</footer>  
-  
-  
-  
-<script>  
-  
-/* ==================================================  
-   PRODUKTDATEN  
-================================================== */  
-  
-const products = {  
-  
-  
-/* --------------------------------------------------  
-   VIONE CREAMI DELUXE 4ER PACK  
--------------------------------------------------- */  
-  
-"vione-creami-deluxe-4pack": {  
-  
-    name:  
-        "vione Ersatzbehälter für Ninja CREAMi Deluxe – 4er Pack",  
-  
-    category:  
-        "🏠 ZUHAUSE FIND",  
-  
-    tag:  
-        "PREIS-LEISTUNGS-TIPP",  
-  
-    emoji:  
-        "🍦",  
-  
-    image:  
-        "Images/vione-creami-deluxe-4pack.png",  
-  
-    heroTitle:  
-        "vione Ersatzbehälter für Ninja CREAMi Deluxe – lohnt sich das 4er-Set?",  
-  
-    heroDescription:  
-        "Vier zusätzliche Behälter für die Ninja CREAMi Deluxe – praktisch für mehrere vorbereitete Sorten, aber nicht für jeden Nutzer notwendig.",  
-  
-    description:  
-        "Das vione 4er-Set besteht aus zusätzlichen Pint-Behältern mit Deckeln für die Ninja CREAMi Deluxe. Laut Anbieter sind die Behälter für die NC501- und NC500-Serie vorgesehen, BPA-frei und spülmaschinenfest.",  
-  
-    price:  
-        "Preis bei Amazon prüfen",  
-  
-    priceNote:  
-        "Preis und Verfügbarkeit können sich jederzeit ändern.",  
-  
-    amazon:  
-        "https://amzn.to/4hEF8gi",  
-  
-    advantages: [  
-  
-        "4 zusätzliche Behälter",  
-  
-        "Ca. 709 ml Fassungsvermögen pro Behälter",  
-  
-        "BPA-frei laut Anbieter",  
-  
-        "Spülmaschinenfest laut Anbieter",  
-  
-        "Farbige Deckel zur einfachen Unterscheidung",  
-  
-        "Stapelbares Design",  
-  
-        "Praktisch für mehrere vorbereitete Eissorten",  
-  
-        "Interessant für Vielnutzer der CREAMi Deluxe"  
-  
-    ],  
-  
-    disadvantages: [  
-  
-        "Kein Original-Ninja-Produkt",  
-  
-        "Kompatibilität vor dem Kauf prüfen",  
-  
-        "Für Gelegenheitsnutzer möglicherweise unnötig",  
-  
-        "Produktangaben zur Kompatibilität sind nicht vollständig eindeutig",  
-  
-        "Zusätzliche Behälter lösen keine funktionale Einschränkung der CREAMi selbst"  
-  
-    ],  
-  
-    forWho:  
-  
-        "Das Set lohnt sich vor allem für regelmäßige CREAMi-Deluxe-Nutzer, Familien und alle, die mehrere Eissorten, Sorbets oder andere gefrorene Kreationen gleichzeitig vorbereiten möchten. Wer die Maschine nur selten benutzt, benötigt wahrscheinlich keine vier zusätzlichen Behälter.",  
-  
-    programs:  
-        "Zubehör",  
-  
-    versatility:  
-        "⭐⭐⭐⭐",  
-  
-    priceLevel:  
-        "💰",  
-  
-    softServe:  
-        "—",  
-  
-    verdict:  
-        "⭐ Praktisches Zubehör",  
-  
-    finalVerdict:  
-  
-        "<strong>🍦 Unser Fazit:</strong><br><br>" +  
-  
-        "Das vione 4er-Set ist vor allem dann interessant, wenn du deine Ninja CREAMi Deluxe regelmäßig nutzt. Vier zusätzliche Behälter ermöglichen es, mehrere Sorten gleichzeitig vorzubereiten und im Gefrierschrank bereitzuhalten.<br><br>" +  
-  
-        "<strong>👍 Besonders sinnvoll:</strong> für Vielnutzer, Familien und alle, die gerne mehrere Sorten auf Vorrat vorbereiten.<br><br>" +  
-  
-        "<strong>🤷 Weniger sinnvoll:</strong> wenn du die CREAMi nur gelegentlich verwendest und bereits genügend Originalbehälter besitzt.<br><br>" +  
-  
-        "<strong>⚠️ Wichtig:</strong> Der Anbieter nennt NC501/NC500 als kompatibel. Deshalb vor dem Kauf unbedingt die genaue Modellnummer deiner CREAMi prüfen.",  
-  
-    comparisonLink:  
-        "zuhause.html",  
-  
-    comparisonTitle:  
-        "Noch mehr Produkte entdecken?",  
-  
-    comparisonText:  
-        "Entdecke weitere Produkte bei Produktfinder und finde heraus, welche viralen Produkte den Hype wirklich wert sind."  
-  
-},  
-  
-  
-/* --------------------------------------------------  
-   NINJA CREAMI DELUXE  
--------------------------------------------------- */  
-  
-"ninja-creami-deluxe": {  
-  
-    name: "Ninja CREAMi Deluxe",  
-  
-    category: "🔥 TIKTOK FIND",  
-  
-    tag: "PREIS-LEISTUNG",  
-  
-    emoji: "🍨",  
-  
-    image:  
-        "Images/ninja-creami-deluxe-werbung.png",  
-  
-    heroTitle:  
-        "Ninja CREAMi Deluxe – lohnt sich der Aufpreis?",  
-  
-    heroDescription:  
-        "Mehr Programme und mehr Möglichkeiten – aber braucht man das wirklich?",  
-  
-    description:  
-        "Mehr Fassungsvermögen und zusätzliche Programme für Nutzer, die besonders vielseitige Desserts zubereiten möchten.",  
-  
-    price:  
-        "ca. 230–300 €",  
-  
-    priceNote:  
-        "Je nach Angebot und Variante.",  
-  
-    amazon:  
-        "https://amzn.to/4wDzpek",  
-  
-    advantages: [  
-  
-        "Größeres Fassungsvermögen",  
-  
-        "9 Programme",  
-  
-        "Sehr vielseitig",  
-  
-        "Re-Spin & Mix-In"  
-  
-    ],  
-  
-    disadvantages: [  
-  
-        "Höherer Preis",  
-  
-        "Größeres Gerät"  
-  
-    ],  
-  
-    forWho:  
-        "Für Nutzer, die regelmäßig verschiedene Desserts ausprobieren und mehr Möglichkeiten benötigen.",  
-  
-    programs:  
-        "9",  
-  
-    versatility:  
-        "⭐⭐⭐⭐",  
-  
-    priceLevel:  
-        "💰💰",  
-  
-    softServe:  
-        "❌",  
-  
-    verdict:  
-        "⭐ Vielseitig",  
-  
-    finalVerdict:  
-        "<strong>⭐ Du möchtest mehr Möglichkeiten?</strong><br><br>Die Deluxe ist interessant, wenn dir die zusätzlichen Funktionen und das größere Fassungsvermögen wichtig sind.<br><br><strong>💡 Unser Eindruck:</strong> Sie ist ein guter Mittelweg zwischen der normalen CREAMi und der Premium-Variante."  
-  
-},  
-  
-  
-/* --------------------------------------------------  
-   NINJA SCOOP & SWIRL  
--------------------------------------------------- */  
-  
-"ninja-creami-scoop-swirl": {  
-  
-    name: "Ninja CREAMi Scoop & Swirl",  
-  
-    category: "🔥 TIKTOK FIND",  
-  
-    tag: "PREMIUM",  
-  
-    emoji: "🍦",  
-  
-    image:  
-        "Images/ninja-creami-scoop-swirl-werbung.png",  
-  
-    heroTitle:  
-        "Ninja CREAMi Scoop & Swirl – Maximum oder übertrieben?",  
-  
-    heroDescription:  
-        "Das umfangreichste Modell der Auswahl mit 13 Programmen inkl. Softeis-Funktion.",  
-  
-    description:  
-        "Das umfangreichste Modell der Auswahl mit 13 Programmen inklusive Softeis-Funktion.",  
-  
-    price:  
-        "ca. 300 €",  
-  
-    priceNote:  
-        "Aktueller Preis kann schwanken.",  
-  
-    amazon:  
-        "https://amzn.to/4xau27s",  
-  
-    advantages: [  
-  
-        "13 Programme",  
-  
-        "Softeis-Funktion",  
-  
-        "CREAMiFit",  
-  
-        "Mix-In",  
-  
-        "Sehr vielseitig",  
-  
-        "Mit Aufsätzen erweiterbar. Z.B. Spaghetti Eis"  
-  
-    ],  
-  
-    disadvantages: [  
-  
-        "Höchster Preis",  
-  
-        "Nicht jeder benötigt alle Funktionen",  
-  
-        "Keine Slush Funktion wie beim Creami Deluxe",  
-  
-        "Keine Frappe oder Frozen Drink Funktion wie beim Creami Deluxe"  
-  
-    ],  
-  
-    forWho:  
-        "Für Nutzer, die möglichst viele Möglichkeiten haben möchten und besonders die Softeis-Funktion interessant finden und nutzen möchten.",  
-  
-    programs:  
-        "13",  
-  
-    versatility:  
-        "⭐⭐⭐⭐⭐",  
-  
-    priceLevel:  
-        "💰💰💰",  
-  
-    softServe:  
-        "✅",  
-  
-    verdict:  
-        "🏆 Maximum",  
-  
-    finalVerdict:  
-        "<strong>🏆 Du möchtest möglichst viele Möglichkeiten?</strong><br><br>Dann ist die Scoop & Swirl die umfangreichste Variante der drei Modelle. Sie bietet 13 Programme und zusätzlich eine Softeis-Funktion.<br><br><strong>💰 Aber:</strong> Wenn du diese zusätzlichen Funktionen nicht brauchst oder unbedingt Frozen-Drink-Funktionen möchtest, können die günstigeren Modelle das bessere Preis-Leistungs-Verhältnis bieten."  
-  
-},  
-  
-  
-/* --------------------------------------------------  
-   CUISINART FREEZEWAND  
--------------------------------------------------- */  
-  
-"cuisinart-freezewand-icefd10e": {  
-  
-    name:  
-        "Cuisinart FreezeWand ICEFD10E",  
-  
-    category:  
-        "💰 ALTERNATIVE",  
-  
-    tag:  
-        "PREIS-LEISTUNGS-TIPP",  
-  
-    emoji:  
-        "🍦",  
-  
-    image:  
-        "Images/cuisinart-freezewand-werbung.png",  
-  
-    heroTitle:  
-        "Cuisinart FreezeWand – günstige Alternative zur CREAMi?",  
-  
-    heroDescription:  
-        "Ähnliches Grundprinzip, deutlich günstiger – aber auch mit weniger Möglichkeiten.",  
-  
-    description:  
-        "Der Cuisinart FreezeWand ist eine kompakte 5-in-1-Eismaschine für Eiscreme, Sorbet, Milchshake, Slushie und Softeis. Mit drei Behältern und einer schnellen Zubereitung ist er besonders interessant für kleinere Portionen und alle, die eine günstigere Alternative zur Ninja CREAMi suchen.",  
-  
-    price:  
-        "ca. 69 €",  
-  
-    priceNote:  
-        "Preis und Verfügbarkeit können sich ändern.",  
-  
-    amazon:  
-        "https://amzn.to/4gJux2w",  
-  
-    advantages: [  
-  
-        "5-in-1-Eismaschine",  
-  
-        "Eiscreme, Sorbet, Milchshake, Slushie & Softeis",  
-  
-        "3 Behälter",  
-  
-        "Kompaktes Design",  
-  
-        "Günstiger als viele Ninja-CREAMi-Modelle",  
-  
-        "Für kleinere Portionen geeignet"  
-  
-    ],  
-  
-    disadvantages: [  
-  
-        "Kleinere Behälter",  
-  
-        "Weniger Möglichkeiten als die Ninja CREAMi Deluxe",  
-  
-        "Nicht das gleiche System wie eine klassische CREAMi",  
-  
-        "Softeis-Funktion nicht mit der Scoop & Swirl gleichzusetzen"  
-  
-    ],  
-  
-    forWho:  
-        "Für Nutzer, die eine kompakte und vielseitige Eismaschine suchen, aber deutlich weniger als für eine Ninja CREAMi ausgeben möchten.",  
-  
-    programs:  
-        "5",  
-  
-    versatility:  
-        "⭐⭐⭐⭐",  
-  
-    priceLevel:  
-        "💰",  
-  
-    softServe:  
-        "✅",  
-  
-    verdict:  
-        "💰 Preis-Leistungs-Tipp",  
-  
-    finalVerdict:  
-        "<strong>💰 Unser Fazit:</strong><br><br>Der Cuisinart FreezeWand ist interessant, wenn du möglichst viele Funktionen möchtest, aber nicht den Preis einer größeren Ninja CREAMi bezahlen willst.<br><br>Besonders praktisch sind die kompakten Abmessungen, die drei Behälter und die verschiedenen Zubereitungsarten."  
-  
-},  
-  
-  
-/* --------------------------------------------------  
-   WMF  
--------------------------------------------------- */  
-  
-"wmf-kuechenminis-3in1": {  
-  
-    name:  
-        "WMF KÜCHENminis 3-in-1",  
-  
-    category:  
-        "💰 ALTERNATIVE",  
-  
-    tag:  
-        "GÜNSTIGE ALTERNATIVE",  
-  
-    emoji:  
-        "🍨",  
-  
-    image:  
-        "Images/wmf-kuechenminis-3in1-werbung.png",  
-  
-    heroTitle:  
-        "WMF KÜCHENminis 3-in-1 – günstig Eis selber machen?",  
-  
-    heroDescription:  
-        "Eine klassische Eismaschine mit anderem Funktionsprinzip als die Ninja CREAMi.",  
-  
-    description:  
-        "Die WMF ist eine kompakte klassische Eismaschine. Der Gefrierbehälter wird vorgekühlt und die Eismasse anschließend während der Zubereitung gerührt.",  
-  
-    price:  
-        "ca. 54–70 €",  
-  
-    priceNote:  
-        "Je nach aktuellem Angebot.",  
-  
-    amazon:  
-        "https://amzn.to/3TZHkFt",  
-  
-    advantages: [  
-  
-        "Eiscreme",  
-  
-        "Sorbet",  
-  
-        "Frozen Yogurt",  
-  
-        "Kompakt",  
-  
-        "Etablierte Marke"  
-  
-    ],  
-  
-    disadvantages: [  
-  
-        "Anderes Funktionsprinzip",  
-  
-        "300-ml-Behälter",  
-  
-        "Weniger Möglichkeiten als CREAMi",  
-  
-        "Keine eigene Gefrierfunktion – der Behälter muss vor der Zubereitung eingefroren werden"  
-  
-    ],  
-  
-    forWho:  
-        "Wenn dir das CREAMi-Prinzip nicht wichtig ist und du einfach selbst kleinere Portionen Eis, Sorbet oder Frozen Yogurt herstellen möchtest, ist die WMF interessant.",  
-  
-    programs:  
-        "3-in-1",  
-  
-    versatility:  
-        "⭐⭐⭐",  
-  
-    priceLevel:  
-        "💰",  
-  
-    softServe:  
-        "❌",  
-  
-    verdict:  
-        "💰 Günstiger Einstieg",  
-  
-    finalVerdict:  
-        "<strong>🍨 Du willst einfach selbst Eis machen?</strong><br><br>Dann kann die WMF interessant sein. Sie funktioniert anders als die Ninja, ist dafür aber kompakt und preislich deutlich niedriger angesiedelt.<br><br><strong>👉 Wichtig:</strong> Sie ist keine direkte CREAMi-Kopie, sondern verfolgt ein anderes Funktionsprinzip. Der Gefrierbehälter muss vor der Zubereitung eingefroren werden."  
-  
-},  
-  
-  
-/* ==================================================  
-   PREMIUM JERSEY STOFF  
-================================================== */  
-  
-"premium-jersey-stoff": {  
-  
-    name:  
-        "Premium Jersey Stoff – 150 cm breit",  
-  
-    category:  
-        "🧵 ZUHAUSE FIND",  
-  
-    tag:  
-        "🧵 DIY & NÄHEN",  
-  
-    emoji:  
-        "🧵",  
-  
-    image:  
-        "Images/premium-jersey-stoff-neongelb.png",  
-  
-    heroTitle:  
-        "Premium Jersey Stoff – ist er die richtige Wahl für dein Nähprojekt?",  
-  
-    heroDescription:  
-        "Hochwertiger Baumwolljersey in zahlreichen Farben – interessant für Kleidung, Kinderbekleidung und kreative Nähprojekte.",  
-  
-    description:  
-        "Der Premium Jersey Stoff ist ein Baumwolljersey mit 150 cm Breite. Laut Anbieter handelt es sich um hochwertigen Baumwolljersey mit OEKO-TEX® 100. Der Stoff ist in zahlreichen Farben erhältlich und wird als Meterware angeboten.",  
-  
-    price:  
-        "Preis bei Amazon prüfen",  
-  
-    priceNote:  
-        "Preis abhängig von Länge, Farbe und aktuellem Angebot.",  
-  
-    amazon:  
-        "https://amzn.to/4c7Epk8",  
-  
-    advantages: [  
-  
-        "150 cm Stoffbreite",  
-  
-        "100 % Baumwolljersey laut Anbieter",  
-  
-        "OEKO-TEX® 100 laut Anbieter",  
-  
-        "Rund 60 Farben zur Auswahl",  
-  
-        "Viele Einsatzmöglichkeiten",  
-  
-        "Als Meterware erhältlich",  
-  
-        "Interessant für Kleidung und Kinderbekleidung",  
-  
-        "Große Farbauswahl für individuelle Nähprojekte"  
-  
-    ],  
-  
-    disadvantages: [  
-  
-        "Preis abhängig von der bestellten Menge",  
-  
-        "Farbe kann je nach Bildschirm leicht abweichen",  
-  
-        "Jersey ist nicht für jedes Nähprojekt geeignet",  
-  
-        "Für besonders feste oder formstabile Projekte kann ein anderer Stoff geeigneter sein",  
-  
-        "Vor dem Kauf sollte geprüft werden, welche Stoffeigenschaften das konkrete Projekt benötigt"  
-  
-    ],  
-  
-    forWho:  
-        "Der Jersey-Stoff ist besonders interessant für alle, die selbst Kleidung, Kinderbekleidung oder andere textile Projekte nähen möchten. Durch die große Farbauswahl eignet er sich gut für individuelle Projekte. Wer einen sehr festen oder formstabilen Stoff benötigt, sollte dagegen prüfen, ob Jersey die richtige Stoffart ist.",  
-  
-    programs:  
-        "Meterware",  
-  
-    versatility:  
-        "⭐⭐⭐⭐",  
-  
-    priceLevel:  
-        "💰",  
-  
-    softServe:  
-        "—",  
-  
-    verdict:  
-        "🧵 Interessant für DIY",  
-  
-    finalVerdict:  
-        "<strong>🧵 Unser Fazit:</strong><br><br>" +  
-  
-        "Der Premium Jersey Stoff ist vor allem für Näh- und DIY-Projekte interessant. Die Kombination aus 150 cm Breite, Baumwolljersey und einer großen Farbauswahl macht ihn vielseitig einsetzbar.<br><br>" +  
-  
-        "<strong>👍 Besonders interessant:</strong> für Kleidung, Kinderbekleidung und kreative Nähprojekte, bei denen ein Jersey-Stoff gewünscht ist.<br><br>" +  
-  
-        "<strong>🤷 Weniger geeignet:</strong> für Projekte, bei denen ein besonders fester oder formstabiler Stoff benötigt wird.<br><br>" +  
-  
-        "<strong>💡 Unser Tipp:</strong> Vor dem Kauf solltest du prüfen, welche Stoffeigenschaften dein konkretes Nähprojekt benötigt. Die tatsächliche Farbdarstellung kann außerdem je nach Bildschirm variieren.",  
-  
-    comparisonLink:  
-        "zuhause.html",  
-  
-    comparisonTitle:  
-        "Weitere Produkte für Zuhause entdecken?",  
-  
-    comparisonText:  
-        "Entdecke weitere virale Produkte für Haushalt, Küche und Zuhause und finde heraus, welche Produkte den Hype wirklich wert sind."  
-  
-}  
-  
-};  
-  
-  
-  
-/* ==================================================  
-   URL AUSLESEN  
-================================================== */  
-  
-const params =  
-    new URLSearchParams(window.location.search);  
-  
-const productId =  
-    params.get("id");  
-  
-const product =  
-    products[productId];  
-  
-  
-/* ==================================================  
-   ELEMENTE  
-================================================== */  
-  
-const heroLabel =  
-    document.getElementById("heroLabel");  
-  
-const heroTitle =  
-    document.getElementById("heroTitle");  
-  
-const heroDescription =  
-    document.getElementById("heroDescription");  
-  
-const productImage =  
-    document.getElementById("productImage");  
-  
-const productTag =  
-    document.getElementById("productTag");  
-  
-const productName =  
-    document.getElementById("productName");  
-  
-const productDescription =  
-    document.getElementById("productDescription");  
-  
-const productPrice =  
-    document.getElementById("productPrice");  
-  
-const amazonButton =  
-    document.getElementById("amazonButton");  
-  
-const advantages =  
-    document.getElementById("advantages");  
-  
-const disadvantages =  
-    document.getElementById("disadvantages");  
-  
-const forWho =  
-    document.getElementById("forWho");  
-  
-const comparisonProduct =  
-    document.getElementById("comparisonProduct");  
-  
-const comparisonPrice =  
-    document.getElementById("comparisonPrice");  
-  
-const comparisonVersatility =  
-    document.getElementById("comparisonVersatility");  
-  
-const comparisonPrograms =  
-    document.getElementById("comparisonPrograms");  
-  
-const comparisonSoftServe =  
-    document.getElementById("comparisonSoftServe");  
-  
-const comparisonVerdict =  
-    document.getElementById("comparisonVerdict");  
-  
-const finalVerdict =  
-    document.getElementById("finalVerdict");  
-  
-const compareLinkSection =  
-    document.getElementById("compareLinkSection");  
-  
-const compareLinkTitle =  
-    document.getElementById("compareLinkTitle");  
-  
-const compareLinkText =  
-    document.getElementById("compareLinkText");  
-  
-const compareLink =  
-    document.getElementById("compareLink");  
-  
-const backLink =  
-    document.getElementById("backLink");  
-  
-  
-/* ==================================================  
-   PRODUKT NICHT GEFUNDEN  
-================================================== */  
-  
-if (!product) {  
-  
-    document.title =  
-        "Produkt nicht gefunden – Produktfinder";  
-  
-    heroLabel.textContent =  
-        "PRODUKT";  
-  
-    heroTitle.innerHTML =  
-        "Produkt <span>nicht gefunden</span>";  
-  
-    heroDescription.textContent =  
-        "Dieses Produkt konnte leider nicht gefunden werden.";  
-  
-    document.querySelector(".product-overview").innerHTML = `  
-  
-        <div class="error">  
-  
-            <h2>  
-                Produkt nicht gefunden  
-            </h2>  
-  
-            <p>  
-                Prüfe bitte den Produkt-Link.  
-            </p>  
-  
-            <a  
-            href="tiktok-finds.html"  
-            class="amazon-button">  
-  
-                ← Zu den TikTok Finds  
-  
-            </a>  
-  
-        </div>  
-  
-    `;  
-  
-    document.getElementById("comparisonSection").style.display =  
-        "none";  
-  
-    compareLinkSection.style.display =  
-        "none";  
-  
-}  
-  
-  
-/* ==================================================  
-   PRODUKT ANZEIGEN  
-================================================== */  
-  
-else {  
-  
-    document.title =  
-        product.name + " – Produktfinder";  
-  
-  
-    heroLabel.textContent =  
-        product.category;  
-  
-  
-    heroTitle.innerHTML =  
-        product.heroTitle  
-        .replace(  
-            product.name,  
-            "<span>" + product.name + "</span>"  
-        );  
-  
-  
-    heroDescription.textContent =  
-        product.heroDescription;  
-  
-  
-    /* ==============================  
-       PRODUKTBILD  
-    ============================== */  
-  
-    if (product.image) {  
-  
-        productImage.innerHTML = `  
-  
-            <img  
-                src="${product.image}"  
-                alt="${product.name}"  
-                style="  
-                    width:100%;  
-                    height:100%;  
-                    max-height:430px;  
-                    object-fit:contain;  
-                    border-radius:18px;  
-                    padding:20px;  
-                "  
-            >  
-  
-        `;  
-  
-    } else {  
-  
-        productImage.textContent =  
-            product.emoji;  
-  
-    }  
-  
-  
-    /* ==============================  
-       PRODUKTINFORMATIONEN  
-    ============================== */  
-  
-    productTag.textContent =  
-        product.tag;  
-  
-  
-    productName.textContent =  
-        product.name;  
-  
-  
-    productDescription.textContent =  
-        product.description;  
-  
-  
-    productPrice.innerHTML = `  
-  
-        ${product.price}  
-  
-        <small>  
-            ${product.priceNote}  
-        </small>  
-  
-    `;  
-  
-  
-    /* ==============================  
-       AMAZON  
-    ============================== */  
-  
-    amazonButton.href =  
-        product.amazon;  
-  
-  
-    /* ==============================  
-       VORTEILE  
-    ============================== */  
-  
-    advantages.innerHTML =  
-        product.advantages  
-        .map(  
-            item =>  
-                `<li>✓ ${item}</li>`  
-        )  
-        .join("");  
-  
-  
-    /* ==============================  
-       NACHTEILE  
-    ============================== */  
-  
-    disadvantages.innerHTML =  
-        product.disadvantages  
-        .map(  
-            item =>  
-                `<li>✕ ${item}</li>`  
-        )  
-        .join("");  
-  
-  
-    /* ==============================  
-       FÜR WEN?  
-    ============================== */  
-  
-    forWho.textContent =  
-        product.forWho;  
-  
-  
-    /* ==============================  
-       VERGLEICHSDATEN  
-    ============================== */  
-  
-    comparisonProduct.textContent =  
-        product.name;  
-  
-  
-    comparisonPrice.textContent =  
-        product.priceLevel;  
-  
-  
-    comparisonVersatility.textContent =  
-        product.versatility;  
-  
-  
-    comparisonPrograms.textContent =  
-        product.programs;  
-  
-  
-    comparisonSoftServe.textContent =  
-        product.softServe;  
-  
-  
-    comparisonVerdict.textContent =  
-        product.verdict;  
-  
-  
-    /* ==============================  
-       FAZIT  
-    ============================== */  
-  
-    finalVerdict.innerHTML =  
-        product.finalVerdict;  
-  
-  
-    /* ==================================================  
-       ZURÜCK-LINK  
-    ================================================== */  
-  
-    if (  
-        product.category === "🏠 ZUHAUSE FIND" ||  
-        productId === "premium-jersey-stoff" ||  
-        productId === "vione-creami-deluxe-4pack"  
-    ) {  
-  
-        backLink.href =  
-            "zuhause.html";  
-  
-        backLink.textContent =  
-            "← Zurück zu Zuhause";  
-  
-    }  
-  
-  
-    /* ==================================================  
-       VERGLEICHS-LINK  
-    ================================================== */  
-  
-    compareLink.href =  
-        product.comparisonLink ||  
-        "tiktok-finds.html";  
-  
-  
-    compareLinkTitle.textContent =  
-        product.comparisonTitle ||  
-        "Du möchtest weitere Modelle vergleichen?";  
-  
-  
-    compareLinkText.textContent =  
-        product.comparisonText ||  
-        "Du bist noch nicht sicher, welches Produkt zu dir passt? Vergleiche mehrere Modelle miteinander und entdecke auch günstigere Alternativen.";  
-  
-  
-    /* ==================================================  
-       PRODUKTE OHNE SINNVOLLEN VERGLEICH  
-    ================================================== */  
-  
-    if (  
-        productId === "vione-creami-deluxe-4pack" ||  
-        productId === "premium-jersey-stoff" ||  
-        product.category === "💰 ALTERNATIVE"  
-    ) {  
-  
-        compareLinkSection.style.display =  
-            "none";  
-  
-    }  
-  
-}  
-  
-  
-/* ==================================================  
-   PRODUKTE OHNE PRODUKTVERGLEICH  
-================================================== */  
-  
-if (  
-    productId === "vione-creami-deluxe-4pack" ||  
-    productId === "premium-jersey-stoff"  
-) {  
-  
-    document.getElementById(  
-        "comparisonSection"  
-    ).style.display = "none";  
-  
-}  
-  
-</script>  
-  
-  
-</body>  
-  
+<section class="hero">
+<div class="hero-content">
+<div class="hero-label" id="heroLabel">🔥 TIKTOK FIND</div>
+<h1 id="heroTitle">Produkt <span>entdecken</span></h1>
+<p id="heroDescription">Wir schauen genauer hin und zeigen dir, ob sich das Produkt wirklich lohnt.</p>
+</div>
+</section>
+
+<main class="container">
+<section class="section">
+<div class="product-overview">
+<div class="product-image-large" id="productImage"></div>
+<div class="product-main">
+<span class="product-tag" id="productTag">EINSTIEG</span>
+<h2 id="productName">Produkt</h2>
+<p class="product-description" id="productDescription"></p>
+<div class="price" id="productPrice"></div>
+<a href="#" id="amazonButton" class="amazon-button" target="_blank" rel="nofollow sponsored noopener">Bei Amazon ansehen →</a>
+<div class="amazon-note"><strong>Preis-Hinweis:</strong> Preise und Verfügbarkeit können sich jederzeit ändern. Der tatsächlich beim Händler angezeigte Preis ist maßgeblich.<br><br><strong>Transparenz:</strong> Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-header"><h2>🔎 Was spricht dafür – und was dagegen?</h2><p>Nicht nur auf den Hype schauen.</p></div>
+<div class="pros-cons-grid">
+<div class="pros-box"><h3>✅ Vorteile</h3><ul id="advantages"></ul></div>
+<div class="cons-box"><h3>❌ Nachteile</h3><ul id="disadvantages"></ul></div>
+</div>
+</section>
+
+<section class="section">
+<div class="recommendation-box"><h2>💡 Für wen lohnt sich das Produkt?</h2><p id="forWho"></p></div>
+</section>
+
+<section class="section" id="comparisonSection">
+<div class="comparison-box">
+<h2 id="comparisonTitle">🤔 Wie schneidet das Produkt ab?</h2>
+<p id="comparisonDescription">Mehr Funktionen bedeuten nicht automatisch, dass das teuerste Modell die beste Wahl für jeden ist.</p>
+<div class="table-wrapper">
+<table class="compare-table"><thead id="comparisonHead"></thead><tbody id="comparisonBody"></tbody></table>
+</div>
+</div>
+</section>
+
+<section class="section" id="compareLinkSection">
+<div class="compare-link-box">
+<div class="compare-link-label">🔎 VERGLEICH</div>
+<h2 id="compareLinkTitle">Du möchtest weitere Modelle vergleichen?</h2>
+<p id="compareLinkText">Du bist noch nicht sicher, welches Produkt zu dir passt? Vergleiche mehrere Modelle miteinander und entdecke auch günstigere Alternativen.</p>
+<a href="tiktok-finds.html" id="compareLink" class="amazon-button">Modelle vergleichen →</a>
+</div>
+</section>
+
+<section class="section">
+<div class="final-verdict"><h3>🏆 Unsere Einschätzung</h3><p id="finalVerdict"></p></div>
+</section>
+
+<section class="section">
+<div class="sources">
+<h2>📚 Quellen & Transparenz</h2>
+<p>Wir unterscheiden zwischen Herstellerangaben, unabhängigen Tests und Nutzererfahrungen. Die Produktseite stellt keine eigene Laborprüfung dar.</p>
+<ul id="sourcesList"></ul>
+</div>
+</section>
+</main>
+
+<footer>
+<p>© 2026 Produktfinder</p>
+<p>
+<a href="index.html">Startseite</a><a href="tiktok-finds.html">TikTok Finds</a><a href="zuhause.html">Zuhause</a><a href="technik.html">Technik</a><a href="auto.html">Auto</a><a href="unterwegs.html">Unterwegs</a><a href="heimwerken.html">Heimwerken</a><a href="geschenke.html">Geschenke</a>
+</p>
+<p class="amazon-disclosure">Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.</p>
+</footer>
+
+<script>
+const products = {
+
+/* ==================================================
+   PHILIPS STEAMER 3000
+================================================== */
+"philips-sth3020-10": {
+    name:"Philips 3000 Series STH3020/10",
+    category:"📱 TECHNIK FIND",
+    tag:"🔥 VIRAL & GETESTET",
+    emoji:"💨",
+    image:"Images/philips-sth3020-werbung.png",
+
+    heroTitle:"Philips 3000 Series STH3020/10 – lohnt sich der kompakte Steamer?",
+    heroDescription:"Kompakter Dampfglätter für schnelle Faltenkorrekturen – besonders interessant auf Reisen, aber kein vollständiger Ersatz für ein Bügeleisen.",
+
+    description:"Der Philips 3000 Series STH3020/10 ist ein kompakter, zusammenklappbarer Dampfglätter mit 1.000 Watt, 20 g/min Dauerdampf und einem abnehmbaren 120-ml-Wassertank. Laut Hersteller ist das Gerät nach rund 30 Sekunden einsatzbereit und wird mit einer Aufbewahrungstasche geliefert.",
+
+    price:"Preis bei Amazon prüfen",
+    priceNote:"Preis und Verfügbarkeit können sich jederzeit ändern.",
+    amazon:"https://amzn.to/45HIQi7",
+
+    advantages:[
+        "Kompakt und zusammenklappbar – gut für Reisen",
+        "Schnelle Aufheizzeit von rund 30 Sekunden",
+        "1.000 Watt Leistung",
+        "20 g/min Dauerdampf",
+        "Abnehmbarer 120-ml-Wassertank",
+        "Metall-Dampfplatte",
+        "Einfache Bedienung",
+        "Aufbewahrungstasche im Lieferumfang"
+    ],
+
+    disadvantages:[
+        "Nur eine Dampf-/Temperaturstufe",
+        "120 ml Wassertank ist für längere Sessions klein",
+        "20 g/min reichen bei dicken Stoffen nur begrenzt",
+        "Nicht für tiefe Falten wie ein klassisches Bügeleisen ausgelegt",
+        "Keine horizontale Anwendung laut Stiftung Warentest",
+        "Keine Entkalkung laut Anbieter vorgesehen",
+        "Stiftung Warentest wertete die Haltbarkeit ab, da das Gerät die Dauerprüfung nicht bestand"
+    ],
+
+    forWho:"Der Philips ist besonders interessant für alle, die Kleidung schnell auffrischen oder leichte bis mittlere Falten entfernen möchten – etwa morgens vor der Arbeit, auf Reisen oder nach dem Kofferpacken. Für dicke Baumwollstoffe, starke Falten oder als vollständigen Ersatz für ein Bügeleisen ist er weniger geeignet.",
+
+    comparisonTitle:"⚖️ Philips 3000 im Vergleich",
+    comparisonDescription:"Der Philips ist vor allem auf kompakte Abmessungen und schnelle Auffrischung ausgelegt. Für stärkere Falten kann ein leistungsfähigeres Modell sinnvoller sein.",
+
+    comparisonHeaders:["Eigenschaft","Philips 3000","Tefal Access Steam Force","Tefal Access Steam Pocket"],
+    comparisonRows:[
+        ["Dampfleistung","20 g/min","bis 30 g/min","bis 20 g/min"],
+        ["Wassertank","120 ml","185 ml","120 ml"],
+        ["Zusammenklappbar","✅","❌","✅"],
+        ["Reisetauglichkeit","⭐⭐⭐⭐⭐","⭐⭐⭐","⭐⭐⭐⭐⭐"],
+        ["Starke Falten","⭐⭐","⭐⭐⭐⭐","⭐⭐"],
+        ["Unsere Einschätzung","⭐ Reise & schnelle Auffrischung","🏆 Mehr Leistung","💰 Kompakte Alternative"]
+    ],
+
+    verdict:"⭐ Gut für Reisen",
+
+    finalVerdict:
+        "<strong>💨 Unser Fazit:</strong><br><br>" +
+        "Der Philips 3000 Series STH3020/10 macht genau das gut, wofür er konzipiert ist: Kleidung schnell auffrischen und leichte bis mittlere Falten entfernen, ohne dass du ein Bügelbrett aufbauen musst.<br><br>" +
+        "<strong>👍 Besonders stark:</strong> kompakte Bauweise, schnelles Aufheizen und einfache Bedienung. Gerade für Reisen ist das zusammenklappbare Gehäuse praktisch.<br><br>" +
+        "<strong>⚠️ Der wichtigste Haken:</strong> Bei dicken Stoffen und starken Falten stößt die geringe Dampfleistung an Grenzen. Außerdem fiel das Modell bei Stiftung Warentest in der Dauerprüfung auf und wurde bei der Haltbarkeit abgewertet.<br><br>" +
+        "<strong>🏆 Unsere Einschätzung:</strong> Ein sinnvoller Reise- und Schnellglätter, aber kein vollwertiger Ersatz für ein gutes Bügeleisen.",
+
+    sources:[
+        ["Stiftung Warentest – Steamer-Test 04/2025","https://www.test.de/Steamer-im-Test-Dampf-auf-Knopfdruck-6191834-detail/320000036000%210005/"],
+        ["Testberichte.de – Philips 3000 Series STH3020/10","https://www.testberichte.de/p/philips-tests/3000-series-sth3020-10-testbericht.html"],
+        ["COMPUTER BILD – Philips Series 3000 Praxistest","https://www.computerbild.de/artikel/Tests-Haushalt-Philips-Series-3000-im-Praxis-Test-So-pustet-der-Steamer-Falten-aus-dem-Stoff-40413103.html"],
+        ["STERN – Steamer-Vergleich","https://www.stern.de/kaufkosmos/steamer-im-test--fuenf-aktuelle-modelle-im-stern-vergleich-36114056.html"]
+    ],
+
+    comparisonLink:"technik.html",
+    comparisonTitle:"Weitere Technik Finds entdecken?",
+    comparisonText:"Entdecke weitere virale Technik- und Lifestyle-Produkte und finde heraus, welche Produkte den Hype wirklich wert sind."
+},
+
+/* --------------------------------------------------
+   VIONE CREAMI DELUXE 4ER PACK
+-------------------------------------------------- */
+"vione-creami-deluxe-4pack":{
+ name:"vione Ersatzbehälter für Ninja CREAMi Deluxe – 4er Pack",category:"🏠 ZUHAUSE FIND",tag:"PREIS-LEISTUNGS-TIPP",emoji:"🍦",image:"Images/vione-creami-deluxe-4pack.png",
+ heroTitle:"vione Ersatzbehälter für Ninja CREAMi Deluxe – lohnt sich das 4er-Set?",heroDescription:"Vier zusätzliche Behälter für die Ninja CREAMi Deluxe – praktisch für mehrere vorbereitete Sorten, aber nicht für jeden Nutzer notwendig.",
+ description:"Das vione 4er-Set besteht aus zusätzlichen Pint-Behältern mit Deckeln für die Ninja CREAMi Deluxe. Laut Anbieter sind die Behälter für die NC501- und NC500-Serie vorgesehen, BPA-frei und spülmaschinenfest.",
+ price:"Preis bei Amazon prüfen",priceNote:"Preis und Verfügbarkeit können sich jederzeit ändern.",amazon:"https://amzn.to/4hEF8gi",
+ advantages:["4 zusätzliche Behälter","Ca. 709 ml Fassungsvermögen pro Behälter","BPA-frei laut Anbieter","Spülmaschinenfest laut Anbieter","Farbige Deckel zur einfachen Unterscheidung","Stapelbares Design","Praktisch für mehrere vorbereitete Eissorten","Interessant für Vielnutzer der CREAMi Deluxe"],
+ disadvantages:["Kein Original-Ninja-Produkt","Kompatibilität vor dem Kauf prüfen","Für Gelegenheitsnutzer möglicherweise unnötig","Produktangaben zur Kompatibilität sind nicht vollständig eindeutig","Zusätzliche Behälter lösen keine funktionale Einschränkung der CREAMi selbst"],
+ forWho:"Das Set lohnt sich vor allem für regelmäßige CREAMi-Deluxe-Nutzer, Familien und alle, die mehrere Eissorten, Sorbets oder andere gefrorene Kreationen gleichzeitig vorbereiten möchten. Wer die Maschine nur selten benutzt, benötigt wahrscheinlich keine vier zusätzlichen Behälter.",
+ verdict:"⭐ Praktisches Zubehör",priceLevel:"💰",
+ finalVerdict:"<strong>🍦 Unser Fazit:</strong><br><br>Das vione 4er-Set ist vor allem dann interessant, wenn du deine Ninja CREAMi Deluxe regelmäßig nutzt. Vier zusätzliche Behälter ermöglichen es, mehrere Sorten gleichzeitig vorzubereiten und im Gefrierschrank bereitzuhalten.",
+ comparisonLink:"zuhause.html",comparisonTitle:"Noch mehr Produkte entdecken?",comparisonText:"Entdecke weitere Produkte bei Produktfinder und finde heraus, welche viralen Produkte den Hype wirklich wert sind."
+},
+
+"ninja-creami-deluxe":{
+ name:"Ninja CREAMi Deluxe",category:"🔥 TIKTOK FIND",tag:"PREIS-LEISTUNG",emoji:"🍨",image:"Images/ninja-creami-deluxe-werbung.png",
+ heroTitle:"Ninja CREAMi Deluxe – lohnt sich der Aufpreis?",heroDescription:"Mehr Programme und mehr Möglichkeiten – aber braucht man das wirklich?",description:"Mehr Fassungsvermögen und zusätzliche Programme für Nutzer, die besonders vielseitige Desserts zubereiten möchten.",
+ price:"ca. 230–300 €",priceNote:"Je nach Angebot und Variante.",amazon:"https://amzn.to/4wDzpek",
+ advantages:["Größeres Fassungsvermögen","9 Programme","Sehr vielseitig","Re-Spin & Mix-In"],disadvantages:["Höherer Preis","Größeres Gerät"],
+ forWho:"Für Nutzer, die regelmäßig verschiedene Desserts ausprobieren und mehr Möglichkeiten benötigen.",verdict:"⭐ Vielseitig",priceLevel:"💰💰",
+ finalVerdict:"<strong>⭐ Du möchtest mehr Möglichkeiten?</strong><br><br>Die Deluxe ist interessant, wenn dir die zusätzlichen Funktionen und das größere Fassungsvermögen wichtig sind.",
+ comparisonLink:"zuhause.html",comparisonTitle:"Weitere Produkte vergleichen?",comparisonText:"Vergleiche weitere Eismaschinen und entdecke günstigere Alternativen."
+},
+
+"ninja-creami-scoop-swirl":{
+ name:"Ninja CREAMi Scoop & Swirl",category:"🔥 TIKTOK FIND",tag:"PREMIUM",emoji:"🍦",image:"Images/ninja-creami-scoop-swirl-werbung.png",
+ heroTitle:"Ninja CREAMi Scoop & Swirl – Maximum oder übertrieben?",heroDescription:"Das umfangreichste Modell der Auswahl mit 13 Programmen inkl. Softeis-Funktion.",description:"Das umfangreichste Modell der Auswahl mit 13 Programmen inklusive Softeis-Funktion.",
+ price:"ca. 300 €",priceNote:"Aktueller Preis kann schwanken.",amazon:"https://amzn.to/4xau27s",
+ advantages:["13 Programme","Softeis-Funktion","CREAMiFit","Mix-In","Sehr vielseitig","Mit Aufsätzen erweiterbar. Z.B. Spaghetti Eis"],
+ disadvantages:["Höchster Preis","Nicht jeder benötigt alle Funktionen","Keine Slush Funktion wie beim Creami Deluxe","Keine Frappe oder Frozen Drink Funktion wie beim Creami Deluxe"],
+ forWho:"Für Nutzer, die möglichst viele Möglichkeiten haben möchten und besonders die Softeis-Funktion interessant finden und nutzen möchten.",verdict:"🏆 Maximum",priceLevel:"💰💰💰",
+ finalVerdict:"<strong>🏆 Du möchtest möglichst viele Möglichkeiten?</strong><br><br>Dann ist die Scoop & Swirl die umfangreichste Variante der drei Modelle. Sie bietet 13 Programme und zusätzlich eine Softeis-Funktion.",
+ comparisonLink:"zuhause.html",comparisonTitle:"Weitere Produkte vergleichen?",comparisonText:"Vergleiche die CREAMi-Modelle und entdecke Alternativen."
+},
+
+"cuisinart-freezewand-icefd10e":{
+ name:"Cuisinart FreezeWand ICEFD10E",category:"💰 ALTERNATIVE",tag:"PREIS-LEISTUNGS-TIPP",emoji:"🍦",image:"Images/cuisinart-freezewand-werbung.png",
+ heroTitle:"Cuisinart FreezeWand – günstige Alternative zur CREAMi?",heroDescription:"Ähnliches Grundprinzip, deutlich günstiger – aber auch mit weniger Möglichkeiten.",description:"Der Cuisinart FreezeWand ist eine kompakte 5-in-1-Eismaschine für Eiscreme, Sorbet, Milchshake, Slushie und Softeis.",
+ price:"ca. 69 €",priceNote:"Preis und Verfügbarkeit können sich ändern.",amazon:"https://amzn.to/4gJux2w",
+ advantages:["5-in-1-Eismaschine","Eiscreme, Sorbet, Milchshake, Slushie & Softeis","3 Behälter","Kompaktes Design","Günstiger als viele Ninja-CREAMi-Modelle","Für kleinere Portionen geeignet"],
+ disadvantages:["Kleinere Behälter","Weniger Möglichkeiten als die Ninja CREAMi Deluxe","Nicht das gleiche System wie eine klassische CREAMi","Softeis-Funktion nicht mit der Scoop & Swirl gleichzusetzen"],
+ forWho:"Für Nutzer, die eine kompakte und vielseitige Eismaschine suchen, aber deutlich weniger als für eine Ninja CREAMi ausgeben möchten.",verdict:"💰 Preis-Leistungs-Tipp",priceLevel:"💰",
+ finalVerdict:"<strong>💰 Unser Fazit:</strong><br><br>Der Cuisinart FreezeWand ist interessant, wenn du möglichst viele Funktionen möchtest, aber nicht den Preis einer größeren Ninja CREAMi bezahlen willst.",
+ comparisonLink:"zuhause.html",comparisonTitle:"Weitere Produkte vergleichen?",comparisonText:"Vergleiche Eismaschinen und entdecke günstigere Alternativen."
+},
+
+"wmf-kuechenminis-3in1":{
+ name:"WMF KÜCHENminis 3-in-1",category:"💰 ALTERNATIVE",tag:"GÜNSTIGE ALTERNATIVE",emoji:"🍨",image:"Images/wmf-kuechenminis-3in1-werbung.png",
+ heroTitle:"WMF KÜCHENminis 3-in-1 – günstig Eis selber machen?",heroDescription:"Eine klassische Eismaschine mit anderem Funktionsprinzip als die Ninja CREAMi.",description:"Die WMF ist eine kompakte klassische Eismaschine. Der Gefrierbehälter wird vorgekühlt und die Eismasse anschließend während der Zubereitung gerührt.",
+ price:"ca. 54–70 €",priceNote:"Je nach aktuellem Angebot.",amazon:"https://amzn.to/3TZHkFt",
+ advantages:["Eiscreme","Sorbet","Frozen Yogurt","Kompakt","Etablierte Marke"],disadvantages:["Anderes Funktionsprinzip","300-ml-Behälter","Weniger Möglichkeiten als CREAMi","Keine eigene Gefrierfunktion – der Behälter muss vor der Zubereitung eingefroren werden"],
+ forWho:"Wenn dir das CREAMi-Prinzip nicht wichtig ist und du einfach selbst kleinere Portionen Eis, Sorbet oder Frozen Yogurt herstellen möchtest, ist die WMF interessant.",verdict:"💰 Günstiger Einstieg",priceLevel:"💰",
+ finalVerdict:"<strong>🍨 Du willst einfach selbst Eis machen?</strong><br><br>Dann kann die WMF interessant sein. Sie funktioniert anders als die Ninja, ist dafür aber kompakt und preislich deutlich niedriger angesiedelt.",
+ comparisonLink:"zuhause.html",comparisonTitle:"Weitere Produkte vergleichen?",comparisonText:"Vergleiche Eismaschinen und entdecke Alternativen."
+},
+
+"premium-jersey-stoff":{
+ name:"Premium Jersey Stoff – 150 cm breit",category:"🧵 ZUHAUSE FIND",tag:"🧵 DIY & NÄHEN",emoji:"🧵",image:"Images/premium-jersey-stoff-neongelb.png",
+ heroTitle:"Premium Jersey Stoff – ist er die richtige Wahl für dein Nähprojekt?",heroDescription:"Hochwertiger Baumwolljersey in zahlreichen Farben – interessant für Kleidung, Kinderbekleidung und kreative Nähprojekte.",description:"Der Premium Jersey Stoff ist ein Baumwolljersey mit 150 cm Breite. Laut Anbieter handelt es sich um hochwertigen Baumwolljersey mit OEKO-TEX® 100.",
+ price:"Preis bei Amazon prüfen",priceNote:"Preis abhängig von Länge, Farbe und aktuellem Angebot.",amazon:"https://amzn.to/4c7Epk8",
+ advantages:["150 cm Stoffbreite","100 % Baumwolljersey laut Anbieter","OEKO-TEX® 100 laut Anbieter","Rund 60 Farben zur Auswahl","Viele Einsatzmöglichkeiten","Als Meterware erhältlich"],
+ disadvantages:["Preis abhängig von der bestellten Menge","Farbe kann je nach Bildschirm leicht abweichen","Jersey ist nicht für jedes Nähprojekt geeignet","Für besonders feste oder formstabile Projekte kann ein anderer Stoff geeigneter sein"],
+ forWho:"Der Jersey-Stoff ist besonders interessant für alle, die selbst Kleidung, Kinderbekleidung oder andere textile Projekte nähen möchten.",verdict:"🧵 Interessant für DIY",priceLevel:"💰",
+ finalVerdict:"<strong>🧵 Unser Fazit:</strong><br><br>Der Premium Jersey Stoff ist vor allem für Näh- und DIY-Projekte interessant. Vor dem Kauf solltest du prüfen, welche Stoffeigenschaften dein konkretes Nähprojekt benötigt.",
+ comparisonLink:"zuhause.html",comparisonTitle:"Weitere Produkte für Zuhause entdecken?",comparisonText:"Entdecke weitere Produkte für Haushalt, Küche und Zuhause."
+}
+};
+
+const params=new URLSearchParams(window.location.search);
+const productId=params.get("id");
+const product=products[productId];
+
+const heroLabel=document.getElementById("heroLabel");
+const heroTitle=document.getElementById("heroTitle");
+const heroDescription=document.getElementById("heroDescription");
+const productImage=document.getElementById("productImage");
+const productTag=document.getElementById("productTag");
+const productName=document.getElementById("productName");
+const productDescription=document.getElementById("productDescription");
+const productPrice=document.getElementById("productPrice");
+const amazonButton=document.getElementById("amazonButton");
+const advantages=document.getElementById("advantages");
+const disadvantages=document.getElementById("disadvantages");
+const forWho=document.getElementById("forWho");
+const finalVerdict=document.getElementById("finalVerdict");
+const compareLinkSection=document.getElementById("compareLinkSection");
+const compareLinkTitle=document.getElementById("compareLinkTitle");
+const compareLinkText=document.getElementById("compareLinkText");
+const compareLink=document.getElementById("compareLink");
+const backLink=document.getElementById("backLink");
+const comparisonSection=document.getElementById("comparisonSection");
+const comparisonTitle=document.getElementById("comparisonTitle");
+const comparisonDescription=document.getElementById("comparisonDescription");
+const comparisonHead=document.getElementById("comparisonHead");
+const comparisonBody=document.getElementById("comparisonBody");
+const sourcesList=document.getElementById("sourcesList");
+
+if(!product){
+ document.title="Produkt nicht gefunden – Produktfinder";
+ heroLabel.textContent="PRODUKT";
+ heroTitle.innerHTML="Produkt <span>nicht gefunden</span>";
+ heroDescription.textContent="Dieses Produkt konnte leider nicht gefunden werden.";
+ document.querySelector(".product-overview").innerHTML='<div class="error"><h2>Produkt nicht gefunden</h2><p>Prüfe bitte den Produkt-Link.</p><a href="tiktok-finds.html" class="amazon-button">← Zu den TikTok Finds</a></div>';
+ comparisonSection.style.display="none"; compareLinkSection.style.display="none";
+}else{
+ document.title=product.name+" – Produktfinder";
+ heroLabel.textContent=product.category;
+ heroTitle.innerHTML=product.heroTitle.replace(product.name,"<span>"+product.name+"</span>");
+ heroDescription.textContent=product.heroDescription;
+
+ if(product.image){
+   productImage.innerHTML='<img src="'+product.image+'" alt="'+product.name+'">';
+ }else{productImage.textContent=product.emoji}
+
+ productTag.textContent=product.tag;
+ productName.textContent=product.name;
+ productDescription.textContent=product.description;
+ productPrice.innerHTML=product.price+"<small>"+product.priceNote+"</small>";
+ amazonButton.href=product.amazon;
+
+ advantages.innerHTML=product.advantages.map(item=>"<li>✓ "+item+"</li>").join("");
+ disadvantages.innerHTML=product.disadvantages.map(item=>"<li>✕ "+item+"</li>").join("");
+ forWho.textContent=product.forWho;
+ finalVerdict.innerHTML=product.finalVerdict;
+
+ if(product.category==="🏠 ZUHAUSE FIND" || productId==="premium-jersey-stoff" || productId==="vione-creami-deluxe-4pack"){
+   backLink.href="zuhause.html"; backLink.textContent="← Zurück zu Zuhause";
+ } else if(productId==="philips-sth3020-10"){
+   backLink.href="technik.html"; backLink.textContent="← Zurück zu Technik";
+ }
+
+ if(product.comparisonHeaders && product.comparisonRows){
+   comparisonHead.innerHTML="<tr>"+product.comparisonHeaders.map(h=>"<th>"+h+"</th>").join("")+"</tr>";
+   comparisonBody.innerHTML=product.comparisonRows.map(row=>"<tr>"+row.map(cell=>"<td>"+cell+"</td>").join("")+"</tr>").join("");
+   comparisonTitle.textContent=product.comparisonTitle || "🤔 Wie schneidet das Produkt ab?";
+   comparisonDescription.textContent=product.comparisonDescription || "";
+ }else{
+   comparisonSection.style.display="none";
+ }
+
+ if(product.comparisonLink){
+   compareLink.href=product.comparisonLink;
+   compareLinkTitle.textContent=product.comparisonTitle || "Du möchtest weitere Modelle vergleichen?";
+   compareLinkText.textContent=product.comparisonText || "Vergleiche weitere Produkte bei Produktfinder.";
+ }else{compareLinkSection.style.display="none"}
+
+ if(product.sources){
+   sourcesList.innerHTML=product.sources.map(source=>'<li><a href="'+source[1]+'" target="_blank" rel="nofollow noopener">'+source[0]+' →</a></li>').join("");
+ }else{
+   sourcesList.innerHTML="<li>Hersteller- und Händlerangaben</li>";
+ }
+}
+</script>
+</body>
 </html>
