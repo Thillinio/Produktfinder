@@ -518,8 +518,11 @@ nav a:hover {
 
 .product-actions {
     display: flex;
+
     flex-direction: column;
+
     gap: 10px;
+
     margin-top: 18px;
 }
 
@@ -544,21 +547,25 @@ nav a:hover {
 
 .product-detail-button {
     background: #111827;
+
     color: white;
 }
 
 .product-detail-button:hover {
     background: #1f2937;
+
     transform: translateY(-2px);
 }
 
 .product-amazon-button {
     background: #f59e0b;
+
     color: #111827;
 }
 
 .product-amazon-button:hover {
     background: #d97706;
+
     transform: translateY(-2px);
 }
 
@@ -570,6 +577,39 @@ nav a:hover {
     margin-top: 2px;
 
     text-align: left;
+}
+
+
+/* =========================
+   ALTE AMAZON BUTTONS
+========================= */
+
+.amazon-button {
+    display: block;
+
+    width: 100%;
+
+    padding: 13px 16px;
+
+    background: #f59e0b;
+
+    color: #111827;
+
+    border-radius: 9px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.amazon-button:hover {
+    background: #d97706;
+
+    transform: translateY(-2px);
 }
 
 
@@ -942,7 +982,7 @@ class="category-button">
 
 
 <!-- ==================================================
-     PHILIPS STEAMER
+     DAMPFGLÄTTER
 ================================================== -->
 
 <section
@@ -955,11 +995,11 @@ id="dampfglatter"
 <div>
 
 <h2>
-👕 Philips Steamer 3000
+👕 Dampfglätter
 </h2>
 
 <p>
-Kompakt, schnell – aber ist er wirklich ein Bügeleisen-Ersatz?
+Kompakt, schnell – aber welcher Steamer lohnt sich wirklich?
 </p>
 
 </div>
@@ -974,7 +1014,9 @@ Kompakt, schnell – aber ist er wirklich ein Bügeleisen-Ersatz?
 <div class="product-carousel">
 
 
-<!-- PHILIPS -->
+<!-- ==================================================
+     PHILIPS 3000
+================================================== -->
 
 <article class="product-card">
 
@@ -1067,33 +1109,35 @@ Kleidung glätten möchte, sollte zu einem
 leistungsfähigeren Gerät greifen.
 
 </div>
+
+
 <div class="product-actions">
 
-    <a
-    href="produkt.html?id=philips-sth3020-10"
-    class="product-detail-button">
+<a
+href="produkt.html?id=philips-sth3020-10"
+class="product-detail-button">
 
-        Produkt genauer ansehen →
+Produkt genauer ansehen →
 
-    </a>
-
-
-    <a
-    href="https://amzn.to/45HIQi7"
-    class="product-amazon-button"
-    target="_blank"
-    rel="nofollow sponsored noopener">
-
-        Bei Amazon ansehen →
-
-    </a>
+</a>
 
 
-    <div class="affiliate-note">
+<a
+href="https://amzn.to/45HIQi7"
+class="product-amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
 
-        Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.
+Bei Amazon ansehen →
 
-    </div>
+</a>
+
+
+<div class="affiliate-note">
+
+Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.
+
+</div>
 
 </div>
 
@@ -1102,15 +1146,19 @@ leistungsfähigeren Gerät greifen.
 </article>
 
 
-<!-- TEFAL -->
+
+<!-- ==================================================
+     TEFAL ACCESS STEAM DR8085
+================================================== -->
 
 <article class="product-card">
 
 <div class="product-image">
 
-<div style="font-size:75px;">
-👕
-</div>
+<img
+src="Images/tefal-access-steam-dr8085-werbung.png"
+alt="Tefal Access Steam DR8085 Dampfglätter"
+>
 
 </div>
 
@@ -1118,33 +1166,34 @@ leistungsfähigeren Gerät greifen.
 <div class="product-content">
 
 <span class="tag">
-🏆 TESTSIEGER-ALTERNATIVE
+🔥 VIRAL
 </span>
 
 <h3>
-Tefal Access'Steam Pocket DT3041
+Tefal Access Steam DR8085
 </h3>
 
 <p class="description">
 
-Sehr kompakter Reise-Steamer mit
-1.300 Watt und 15 Sekunden Aufheizzeit.
-Stiftung Warentest kürte ihn 2025 zum Testsieger.
+Kompakter Dampfglätter mit 1.500 Watt,
+bis zu 24 g/min Dampf und abnehmbarem
+200-ml-Wassertank. Interessant für schnelle
+Faltenkorrekturen ohne Bügelbrett.
 
 </p>
 
 
 <div class="price">
-Preis prüfen
+ca. 62–63 €
 </div>
 
 <div class="price-note">
-Preis kann je nach Angebot variieren.
+Preis kann je nach Angebot und Verkäufer variieren.
 </div>
 
 
 <div class="rating">
-🏆 <strong>Stiftung Warentest: 2,2 „gut“</strong>
+⭐ <strong>Bis zu 24 g/min Dampf</strong>
 </div>
 
 
@@ -1155,12 +1204,14 @@ Vorteile
 </strong>
 
 <div class="pros">
-✓ Stiftung-Warentest-Testsieger<br>
-✓ 1.300 Watt<br>
-✓ Bis zu 20 g/min<br>
-✓ Nur ca. 15 Sekunden Aufheizzeit<br>
-✓ Klappbares Design<br>
-✓ Kompakt für Reisen
+✓ 1.500 Watt Leistung<br>
+✓ Bis zu 24 g/min Dampf<br>
+✓ 200-ml-Wassertank<br>
+✓ Ca. 45 Sekunden Aufheizzeit<br>
+✓ Abnehmbarer Wassertank<br>
+✓ Kompakte Bauweise<br>
+✓ Lange Kabellänge<br>
+✓ Praktisch für schnelle Outfit-Korrekturen
 </div>
 
 
@@ -1169,9 +1220,9 @@ Nachteile
 </strong>
 
 <div class="cons">
-✕ Weniger vielseitig als größere Steamer<br>
-✕ Tankgröße und Laufzeit beachten<br>
-✕ Nicht unbedingt die beste Wahl für große Wäschemengen
+✕ Ersetzt ein klassisches Bügeleisen nicht vollständig<br>
+✕ Längere Aufheizzeit als manche Reise-Steamer<br>
+✕ Für große Wäschemengen weniger geeignet
 </div>
 
 </div>
@@ -1180,33 +1231,65 @@ Nachteile
 <div class="verdict">
 
 <strong>
-🏆 Warum interessant?
+🤔 Ist der Hype berechtigt?
 </strong>
 
-Wenn dir der Philips zu schwach erscheint,
-ist der Tefal eine besonders interessante
-Alternative. Stiftung Warentest bewertete
-ihn 2025 besser als den Philips.
+Der Tefal Access Steam ist interessant,
+wenn du schnell einzelne Kleidungsstücke
+auffrischen möchtest, ohne erst ein
+Bügelbrett aufzubauen.
+
+Mit 1.500 Watt und bis zu 24 g/min Dampf
+bietet er eine solide Leistung für einen
+kompakten Hand-Steamer.
+
+Für Hemden, T-Shirts und schnelle
+Faltenkorrekturen ist das Konzept sinnvoll.
+Ein vollwertiges Bügeleisen ersetzt er
+allerdings nicht in jeder Situation.
 
 </div>
 
 
-<a
-href="https://www.amazon.de/s?k=Tefal+AccessSteam+Pocket+DT3041"
-class="amazon-button"
-target="_blank"
-rel="nofollow noopener">
+<div class="product-actions">
 
-Tefal Alternative ansehen →
+<a
+href="produkt.html?id=tefal-access-steam-dr8085"
+class="product-detail-button">
+
+Produkt genauer ansehen →
 
 </a>
+
+
+<a
+href="https://amzn.to/4gekl22"
+class="product-amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Bei Amazon ansehen →
+
+</a>
+
+
+<div class="affiliate-note">
+
+Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.
+
+</div>
+
+</div>
 
 </div>
 
 </article>
 
 
-<!-- PHILIPS 7000 -->
+
+<!-- ==================================================
+     PHILIPS 7000
+================================================== -->
 
 <article class="product-card">
 
@@ -1301,7 +1384,7 @@ sind, mehr Geld auszugeben.
 href="https://www.amazon.de/s?k=Philips+STH7060%2F80"
 class="amazon-button"
 target="_blank"
-rel="nofollow noopener">
+rel="nofollow sponsored noopener">
 
 Philips 7000 ansehen →
 
@@ -1319,6 +1402,11 @@ Philips 7000 ansehen →
 👆 Nach links oder rechts wischen
 </div>
 
+
+
+<!-- ==================================================
+     VERGLEICH
+================================================== -->
 
 <div class="compare-box">
 
@@ -1348,7 +1436,7 @@ Philips 3000
 </th>
 
 <th>
-Tefal DT3041
+Tefal DR8085
 </th>
 
 <th>
@@ -1356,6 +1444,7 @@ Philips 7000
 </th>
 
 </tr>
+
 
 <tr>
 
@@ -1368,7 +1457,7 @@ Dampfleistung
 </td>
 
 <td>
-20 g/min
+24 g/min
 </td>
 
 <td>
@@ -1376,6 +1465,7 @@ Dampfleistung
 </td>
 
 </tr>
+
 
 <tr>
 
@@ -1388,7 +1478,7 @@ Leistung
 </td>
 
 <td>
-1.300 W
+1.500 W
 </td>
 
 <td>
@@ -1396,6 +1486,7 @@ Leistung
 </td>
 
 </tr>
+
 
 <tr>
 
@@ -1408,7 +1499,7 @@ Wassertank
 </td>
 
 <td>
-120 ml
+200 ml
 </td>
 
 <td>
@@ -1416,6 +1507,7 @@ Wassertank
 </td>
 
 </tr>
+
 
 <tr>
 
@@ -1428,7 +1520,7 @@ Aufheizzeit
 </td>
 
 <td>
-15 Sek.
+45 Sek.
 </td>
 
 <td>
@@ -1436,6 +1528,7 @@ Aufheizzeit
 </td>
 
 </tr>
+
 
 <tr>
 
@@ -1448,7 +1541,7 @@ Horizontal
 </td>
 
 <td>
-—
+❌
 </td>
 
 <td>
@@ -1456,6 +1549,7 @@ Horizontal
 </td>
 
 </tr>
+
 
 <tr>
 
@@ -1468,7 +1562,7 @@ Klappbar
 </td>
 
 <td>
-✅
+❌
 </td>
 
 <td>
@@ -1476,6 +1570,7 @@ Klappbar
 </td>
 
 </tr>
+
 
 <tr>
 
@@ -1488,7 +1583,7 @@ Unsere Einschätzung
 </td>
 
 <td>
-🏆 Testsieger
+🔥 Stark
 </td>
 
 <td>
