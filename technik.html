@@ -513,35 +513,63 @@ nav a:hover {
 
 
 /* =========================
-   BUTTON
+   PRODUKT BUTTONS
 ========================= */
 
-.amazon-button {
+.product-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.product-detail-button,
+.product-amazon-button {
     display: block;
 
     width: 100%;
 
-    background: #111827;
+    padding: 13px 16px;
 
-    color: white;
-
-    padding: 11px 15px;
-
-    border-radius: 8px;
+    border-radius: 9px;
 
     text-align: center;
 
-    font-size: 12px;
+    font-size: 13px;
 
     font-weight: bold;
 
     transition: 0.2s ease;
 }
 
-.amazon-button:hover {
-    background: #1f2937;
+.product-detail-button {
+    background: #111827;
+    color: white;
+}
 
+.product-detail-button:hover {
+    background: #1f2937;
     transform: translateY(-2px);
+}
+
+.product-amazon-button {
+    background: #f59e0b;
+    color: #111827;
+}
+
+.product-amazon-button:hover {
+    background: #d97706;
+    transform: translateY(-2px);
+}
+
+.affiliate-note {
+    color: #98a2b3;
+
+    font-size: 12px;
+
+    margin-top: 2px;
+
+    text-align: left;
 }
 
 
