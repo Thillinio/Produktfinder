@@ -226,6 +226,8 @@ nav a:hover {
 
     box-shadow:
         0 5px 18px rgba(0,0,0,0.04);
+
+    overflow: hidden;
 }
 
 .product-main {
@@ -763,8 +765,12 @@ footer a {
 
 <div class="back">
 
-<a href="tiktok-finds.html">
+<a
+href="tiktok-finds.html"
+id="backLink">
+
 ← Zurück zu TikTok Finds
+
 </a>
 
 </div>
@@ -811,19 +817,27 @@ Auto
 
 <div class="hero-content">
 
-<div class="hero-label" id="heroLabel">
+<div
+class="hero-label"
+id="heroLabel">
+
 🔥 TIKTOK FIND
+
 </div>
 
 
 <h1 id="heroTitle">
+
 Produkt <span>entdecken</span>
+
 </h1>
 
 
 <p id="heroDescription">
+
 Wir schauen genauer hin und zeigen dir,
 ob sich das Produkt wirklich lohnt.
+
 </p>
 
 </div>
@@ -844,20 +858,28 @@ ob sich das Produkt wirklich lohnt.
 <div class="product-overview">
 
 
-<div class="product-image-large" id="productImage">
+<div
+class="product-image-large"
+id="productImage">
 
 </div>
 
 
 <div class="product-main">
 
-<span class="product-tag" id="productTag">
+<span
+class="product-tag"
+id="productTag">
+
 EINSTIEG
+
 </span>
 
 
 <h2 id="productName">
+
 Produkt
+
 </h2>
 
 
@@ -867,7 +889,9 @@ id="productDescription">
 </p>
 
 
-<div class="price" id="productPrice">
+<div
+class="price"
+id="productPrice">
 </div>
 
 
@@ -885,16 +909,20 @@ Bei Amazon ansehen →
 
 <div class="amazon-note">
 
-<strong>Preis-Hinweis:</strong>
+<strong>
+Preis-Hinweis:
+</strong>
 
 Preise und Verfügbarkeit können sich jederzeit ändern.
 Der tatsächlich beim Händler angezeigte Preis ist maßgeblich.
 
 <br><br>
 
-<strong>Transparenz:</strong>
+<strong>
+Transparenz:
+</strong>
 
-Affiliate-Link
+Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.
 
 </div>
 
@@ -1297,7 +1325,9 @@ Geschenke
 </p>
 
 <p class="amazon-disclosure">
-    Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.
+
+Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.
+
 </p>
 
 </footer>
@@ -1311,6 +1341,7 @@ Geschenke
 ================================================== */
 
 const products = {
+
 
 /* --------------------------------------------------
    VIONE CREAMI DELUXE 4ER PACK
@@ -1414,7 +1445,16 @@ const products = {
 
         "<strong>🤷 Weniger sinnvoll:</strong> wenn du die CREAMi nur gelegentlich verwendest und bereits genügend Originalbehälter besitzt.<br><br>" +
 
-        "<strong>⚠️ Wichtig:</strong> Der Anbieter nennt NC501/NC500 als kompatibel, die Detailangaben sind bei der Modellzuordnung jedoch nicht vollständig eindeutig. Deshalb vor dem Kauf unbedingt die genaue Modellnummer deiner CREAMi prüfen."
+        "<strong>⚠️ Wichtig:</strong> Der Anbieter nennt NC501/NC500 als kompatibel. Deshalb vor dem Kauf unbedingt die genaue Modellnummer deiner CREAMi prüfen.",
+
+    comparisonLink:
+        "zuhause.html",
+
+    comparisonTitle:
+        "Noch mehr Produkte entdecken?",
+
+    comparisonText:
+        "Entdecke weitere Produkte bei Produktfinder und finde heraus, welche viralen Produkte den Hype wirklich wert sind."
 
 },
 
@@ -1580,9 +1620,10 @@ const products = {
         "🏆 Maximum",
 
     finalVerdict:
-        "<strong>🏆 Du möchtest möglichst viele Möglichkeiten?</strong><br><br>Dann ist die Scoop & Swirl die umfangreichste Variante der drei Modelle. Sie bietet 13 Programme und zusätzlich eine Softeis-Funktion.<br><br><strong>💰 Aber:</strong> Wenn du diese zusätzlichen Funktionen nicht brauchst, oder unbedingt Frozen Drink Funktionen haben möchtest, können die günstigeren Modelle das bessere Preis-Leistungs-Verhältnis bieten."
+        "<strong>🏆 Du möchtest möglichst viele Möglichkeiten?</strong><br><br>Dann ist die Scoop & Swirl die umfangreichste Variante der drei Modelle. Sie bietet 13 Programme und zusätzlich eine Softeis-Funktion.<br><br><strong>💰 Aber:</strong> Wenn du diese zusätzlichen Funktionen nicht brauchst oder unbedingt Frozen-Drink-Funktionen möchtest, können die günstigeren Modelle das bessere Preis-Leistungs-Verhältnis bieten."
 
 },
+
 
 /* --------------------------------------------------
    CUISINART FREEZEWAND
@@ -1670,8 +1711,10 @@ const products = {
         "💰 Preis-Leistungs-Tipp",
 
     finalVerdict:
-        "<strong>💰 Unser Fazit:</strong><br><br>Der Cuisinart FreezeWand ist interessant, wenn du möglichst viele Funktionen möchtest,das gleiche Funktionsprinzip, aber nicht den Preis einer größeren Ninja CREAMi bezahlen willst.<br><br>Besonders praktisch sind die kompakten Abmessungen, die drei Behälter und die verschiedenen Zubereitungsarten."
+        "<strong>💰 Unser Fazit:</strong><br><br>Der Cuisinart FreezeWand ist interessant, wenn du möglichst viele Funktionen möchtest, aber nicht den Preis einer größeren Ninja CREAMi bezahlen willst.<br><br>Besonders praktisch sind die kompakten Abmessungen, die drei Behälter und die verschiedenen Zubereitungsarten."
+
 },
+
 
 /* --------------------------------------------------
    WMF
@@ -1679,13 +1722,17 @@ const products = {
 
 "wmf-kuechenminis-3in1": {
 
-    name: "WMF KÜCHENminis 3-in-1",
+    name:
+        "WMF KÜCHENminis 3-in-1",
 
-    category: "💰 ALTERNATIVE",
+    category:
+        "💰 ALTERNATIVE",
 
-    tag: "GÜNSTIGE ALTERNATIVE",
+    tag:
+        "GÜNSTIGE ALTERNATIVE",
 
-    emoji: "🍨",
+    emoji:
+        "🍨",
 
     image:
         "Images/wmf-kuechenminis-3in1-werbung.png",
@@ -1755,6 +1802,120 @@ const products = {
     finalVerdict:
         "<strong>🍨 Du willst einfach selbst Eis machen?</strong><br><br>Dann kann die WMF interessant sein. Sie funktioniert anders als die Ninja, ist dafür aber kompakt und preislich deutlich niedriger angesiedelt.<br><br><strong>👉 Wichtig:</strong> Sie ist keine direkte CREAMi-Kopie, sondern verfolgt ein anderes Funktionsprinzip. Der Gefrierbehälter muss vor der Zubereitung eingefroren werden."
 
+},
+
+
+/* ==================================================
+   PREMIUM JERSEY STOFF
+================================================== */
+
+"premium-jersey-stoff": {
+
+    name:
+        "Premium Jersey Stoff – 150 cm breit",
+
+    category:
+        "🧵 ZUHAUSE FIND",
+
+    tag:
+        "🧵 DIY & NÄHEN",
+
+    emoji:
+        "🧵",
+
+    image:
+        "Images/premium-jersey-stoff-neongelb.png",
+
+    heroTitle:
+        "Premium Jersey Stoff – ist er die richtige Wahl für dein Nähprojekt?",
+
+    heroDescription:
+        "Hochwertiger Baumwolljersey in zahlreichen Farben – interessant für Kleidung, Kinderbekleidung und kreative Nähprojekte.",
+
+    description:
+        "Der Premium Jersey Stoff ist ein Baumwolljersey mit 150 cm Breite. Laut Anbieter handelt es sich um hochwertigen Baumwolljersey mit OEKO-TEX® 100. Der Stoff ist in zahlreichen Farben erhältlich und wird als Meterware angeboten.",
+
+    price:
+        "Preis bei Amazon prüfen",
+
+    priceNote:
+        "Preis abhängig von Länge, Farbe und aktuellem Angebot.",
+
+    amazon:
+        "https://amzn.to/4c7Epk8",
+
+    advantages: [
+
+        "150 cm Stoffbreite",
+
+        "100 % Baumwolljersey laut Anbieter",
+
+        "OEKO-TEX® 100 laut Anbieter",
+
+        "Rund 60 Farben zur Auswahl",
+
+        "Viele Einsatzmöglichkeiten",
+
+        "Als Meterware erhältlich",
+
+        "Interessant für Kleidung und Kinderbekleidung",
+
+        "Große Farbauswahl für individuelle Nähprojekte"
+
+    ],
+
+    disadvantages: [
+
+        "Preis abhängig von der bestellten Menge",
+
+        "Farbe kann je nach Bildschirm leicht abweichen",
+
+        "Jersey ist nicht für jedes Nähprojekt geeignet",
+
+        "Für besonders feste oder formstabile Projekte kann ein anderer Stoff geeigneter sein",
+
+        "Vor dem Kauf sollte geprüft werden, welche Stoffeigenschaften das konkrete Projekt benötigt"
+
+    ],
+
+    forWho:
+        "Der Jersey-Stoff ist besonders interessant für alle, die selbst Kleidung, Kinderbekleidung oder andere textile Projekte nähen möchten. Durch die große Farbauswahl eignet er sich gut für individuelle Projekte. Wer einen sehr festen oder formstabilen Stoff benötigt, sollte dagegen prüfen, ob Jersey die richtige Stoffart ist.",
+
+    programs:
+        "Meterware",
+
+    versatility:
+        "⭐⭐⭐⭐",
+
+    priceLevel:
+        "💰",
+
+    softServe:
+        "—",
+
+    verdict:
+        "🧵 Interessant für DIY",
+
+    finalVerdict:
+        "<strong>🧵 Unser Fazit:</strong><br><br>" +
+
+        "Der Premium Jersey Stoff ist vor allem für Näh- und DIY-Projekte interessant. Die Kombination aus 150 cm Breite, Baumwolljersey und einer großen Farbauswahl macht ihn vielseitig einsetzbar.<br><br>" +
+
+        "<strong>👍 Besonders interessant:</strong> für Kleidung, Kinderbekleidung und kreative Nähprojekte, bei denen ein Jersey-Stoff gewünscht ist.<br><br>" +
+
+        "<strong>🤷 Weniger geeignet:</strong> für Projekte, bei denen ein besonders fester oder formstabiler Stoff benötigt wird.<br><br>" +
+
+        "<strong>💡 Unser Tipp:</strong> Vor dem Kauf solltest du prüfen, welche Stoffeigenschaften dein konkretes Nähprojekt benötigt. Die tatsächliche Farbdarstellung kann außerdem je nach Bildschirm variieren.",
+
+    comparisonLink:
+        "zuhause.html",
+
+    comparisonTitle:
+        "Weitere Produkte für Zuhause entdecken?",
+
+    comparisonText:
+        "Entdecke weitere virale Produkte für Haushalt, Küche und Zuhause und finde heraus, welche Produkte den Hype wirklich wert sind."
+
 }
 
 };
@@ -1773,7 +1934,6 @@ const productId =
 
 const product =
     products[productId];
-
 
 
 /* ==================================================
@@ -1849,6 +2009,8 @@ const compareLinkText =
 const compareLink =
     document.getElementById("compareLink");
 
+const backLink =
+    document.getElementById("backLink");
 
 
 /* ==================================================
@@ -1902,7 +2064,6 @@ if (!product) {
 }
 
 
-
 /* ==================================================
    PRODUKT ANZEIGEN
 ================================================== */
@@ -1929,9 +2090,14 @@ else {
         product.heroDescription;
 
 
+    /* ==============================
+       PRODUKTBILD
+    ============================== */
+
     if (product.image) {
 
         productImage.innerHTML = `
+
             <img
                 src="${product.image}"
                 alt="${product.name}"
@@ -1944,6 +2110,7 @@ else {
                     padding:20px;
                 "
             >
+
         `;
 
     } else {
@@ -1953,6 +2120,10 @@ else {
 
     }
 
+
+    /* ==============================
+       PRODUKTINFORMATIONEN
+    ============================== */
 
     productTag.textContent =
         product.tag;
@@ -1977,9 +2148,17 @@ else {
     `;
 
 
+    /* ==============================
+       AMAZON
+    ============================== */
+
     amazonButton.href =
         product.amazon;
 
+
+    /* ==============================
+       VORTEILE
+    ============================== */
 
     advantages.innerHTML =
         product.advantages
@@ -1990,6 +2169,10 @@ else {
         .join("");
 
 
+    /* ==============================
+       NACHTEILE
+    ============================== */
+
     disadvantages.innerHTML =
         product.disadvantages
         .map(
@@ -1999,9 +2182,17 @@ else {
         .join("");
 
 
+    /* ==============================
+       FÜR WEN?
+    ============================== */
+
     forWho.textContent =
         product.forWho;
 
+
+    /* ==============================
+       VERGLEICHSDATEN
+    ============================== */
 
     comparisonProduct.textContent =
         product.name;
@@ -2027,9 +2218,31 @@ else {
         product.verdict;
 
 
+    /* ==============================
+       FAZIT
+    ============================== */
+
     finalVerdict.innerHTML =
         product.finalVerdict;
 
+
+    /* ==================================================
+       ZURÜCK-LINK
+    ================================================== */
+
+    if (
+        product.category === "🏠 ZUHAUSE FIND" ||
+        productId === "premium-jersey-stoff" ||
+        productId === "vione-creami-deluxe-4pack"
+    ) {
+
+        backLink.href =
+            "zuhause.html";
+
+        backLink.textContent =
+            "← Zurück zu Zuhause";
+
+    }
 
 
     /* ==================================================
@@ -2051,13 +2264,13 @@ else {
         "Du bist noch nicht sicher, welches Produkt zu dir passt? Vergleiche mehrere Modelle miteinander und entdecke auch günstigere Alternativen.";
 
 
-
     /* ==================================================
        PRODUKTE OHNE SINNVOLLEN VERGLEICH
     ================================================== */
 
     if (
         productId === "vione-creami-deluxe-4pack" ||
+        productId === "premium-jersey-stoff" ||
         product.category === "💰 ALTERNATIVE"
     ) {
 
@@ -2069,12 +2282,14 @@ else {
 }
 
 
-
 /* ==================================================
    PRODUKTE OHNE PRODUKTVERGLEICH
 ================================================== */
 
-if (productId === "vione-creami-deluxe-4pack") {
+if (
+    productId === "vione-creami-deluxe-4pack" ||
+    productId === "premium-jersey-stoff"
+) {
 
     document.getElementById(
         "comparisonSection"
