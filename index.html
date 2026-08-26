@@ -552,7 +552,7 @@ nav a:hover {
     display: grid;
 
     grid-template-columns:
-        repeat(7, 1fr);
+        repeat(8, 1fr);
 
     gap: 15px;
 }
@@ -1528,6 +1528,28 @@ Viral & Trending
 </a>
 
 
+
+<!-- GESUNDHEIT -->
+
+<a
+href="gesundheit.html"
+class="category">
+
+<div class="category-icon">
+💪
+</div>
+
+<strong>
+Gesundheit
+</strong>
+
+<small>
+Fitness & Supplements
+</small>
+
+</a>
+
+
 </div>
 
 </section>
@@ -1930,6 +1952,11 @@ Heimwerken
 <a href="geschenke.html">
 Geschenke
 </a>
+
+<a href="gesundheit.html">
+Gesundheit
+</a>
+
 <a href="datenschutz.html">
 Datenschutz
 </a>
@@ -2309,6 +2336,88 @@ const categoryKeywords = {
         "geschenk unter 50",
         "geschenk unter 100"
 
+    ],
+
+
+    /* ==================================================
+       GESUNDHEIT
+    ================================================== */
+
+    "gesundheit.html": [
+
+        "gesundheit",
+        "gesund",
+        "fitness",
+        "sport",
+        "training",
+        "muskelaufbau",
+        "muskel",
+        "krafttraining",
+        "bodybuilding",
+        "supplement",
+        "supplements",
+        "nahrungsergänzung",
+        "nahrungsergaenzung",
+        "eiweiß",
+        "eiweiss",
+        "protein",
+        "proteinpulver",
+        "whey",
+        "whey protein",
+        "casein",
+        "kreatin",
+        "creatin",
+        "creatine",
+        "creatine monohydrate",
+        "kreatin monohydrat",
+        "pre workout",
+        "preworkout",
+        "bcaa",
+        "aminosäuren",
+        "aminosaeuren",
+        "elektrolyte",
+        "elektrolyt",
+        "vitamine",
+        "vitamin",
+        "vitamin d",
+        "vitamin c",
+        "magnesium",
+        "zink",
+        "omega 3",
+        "omega-3",
+        "fischöl",
+        "fischoel",
+        "collagen",
+        "kollagen",
+        "multivitamin",
+        "mineralstoffe",
+        "ernährung",
+        "ernaehrung",
+        "diät",
+        "diaet",
+        "abnehmen",
+        "gewicht",
+        "gewicht verlieren",
+        "regeneration",
+        "erholung",
+        "schlaf",
+        "schlafhilfe",
+        "massage",
+        "massagegerät",
+        "massagegeraet",
+        "faszien",
+        "faszienrolle",
+        "fitness gadget",
+        "sport gadget",
+        "sportzubehör",
+        "sportzubehoer",
+        "gym",
+        "home gym",
+        "yoga",
+        "yogamatte",
+        "gesundheits gadget",
+        "gesundheitsgadget"
+
     ]
 
 };
@@ -2340,7 +2449,10 @@ const categoryNames = {
         "Heimwerken",
 
     "geschenke.html":
-        "Geschenke"
+        "Geschenke",
+
+    "gesundheit.html":
+        "Gesundheit"
 
 };
 
@@ -2530,7 +2642,8 @@ searchForm.addEventListener(
                     Zum Beispiel „Kopfhörer“,
                     „Küche“, „Auto“,
                     „Werkzeug“, „Reise“,
-                    „Geschenk“ oder „viral“.
+                    „Geschenk“, „Kreatin“
+                    oder „Supplement“.
                 </span>
 
             `;
@@ -2598,7 +2711,8 @@ searchForm.addEventListener(
                     Versuch es mit einem Produkt,
                     einer Kategorie oder einem Begriff
                     wie „viral“, „Technik“, „Auto“,
-                    „Küche“, „Werkzeug“ oder „Geschenk“.
+                    „Küche“, „Werkzeug“, „Geschenk“
+                    oder „Kreatin“.
                 </span>
 
             `;
