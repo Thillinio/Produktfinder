@@ -1,0 +1,1981 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gesundheit – Kreatin, Supplements & Fitness | Produktfinder</title>
+
+<meta name="description"
+      content="Kreatin, Supplements und Fitness-Produkte im Vergleich. Produktfinder zeigt Vorteile, Nachteile, günstigere Alternativen und verschiedene Darreichungsformen.">
+
+
+<style>
+
+.amazon-disclosure {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 10px;
+}
+
+
+/* ==================================================
+   GRUNDLAGEN
+================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f7f9;
+    color: #17202a;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+/* ==================================================
+   SCROLL ANIMATION
+================================================== */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+header {
+    background: #111827;
+    color: white;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+.header-inner {
+    max-width: 1150px;
+    margin: auto;
+
+    padding: 16px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #f59e0b;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: #ffffff;
+    font-size: 14px;
+    opacity: 0.9;
+
+    transition: 0.2s ease;
+}
+
+nav a:hover {
+    opacity: 1;
+    color: #f59e0b;
+}
+
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+    background: #ffffff;
+
+    padding: 65px 20px 55px;
+
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.hero-label {
+    display: inline-block;
+
+    background: #fff3d6;
+    color: #9a6700;
+
+    padding: 7px 14px;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: 44px;
+
+    line-height: 1.15;
+
+    margin-bottom: 18px;
+}
+
+.hero h1 span {
+    color: #f59e0b;
+}
+
+.hero p {
+    max-width: 720px;
+
+    margin: auto;
+
+    color: #667085;
+
+    font-size: 18px;
+}
+
+
+/* ==================================================
+   MAIN CONTAINER
+================================================== */
+
+.container {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 55px 20px;
+}
+
+.section {
+    margin-bottom: 65px;
+}
+
+.section-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 25px;
+}
+
+.section-header h2 {
+    font-size: 30px;
+}
+
+.section-header p {
+    color: #667085;
+
+    font-size: 14px;
+}
+
+
+/* ==================================================
+   FEATURED PRODUCT
+================================================== */
+
+.featured-product {
+    background: white;
+
+    border: 1px solid #eaecf0;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.06);
+}
+
+.featured-top {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 0;
+}
+
+.featured-image {
+    min-height: 470px;
+
+    background: #111827;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+}
+
+.featured-image img {
+    width: 100%;
+    max-width: 540px;
+    max-height: 520px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+.featured-content {
+    padding: 38px;
+}
+
+.tag {
+    display: inline-block;
+
+    background: #fff3d6;
+    color: #9a6700;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+
+.featured-content h2 {
+    font-size: 30px;
+
+    line-height: 1.2;
+
+    margin-bottom: 12px;
+}
+
+.featured-content .intro {
+    color: #667085;
+
+    font-size: 15px;
+
+    margin-bottom: 22px;
+}
+
+.product-facts {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 24px;
+}
+
+.fact {
+    background: #f6f7f9;
+
+    border-radius: 9px;
+
+    padding: 11px;
+}
+
+.fact strong {
+    display: block;
+
+    font-size: 13px;
+}
+
+.fact span {
+    color: #667085;
+
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   PACK VARIANTEN
+================================================== */
+
+.pack-options {
+    border-top: 1px solid #eaecf0;
+
+    padding: 25px;
+}
+
+.pack-options h3 {
+    font-size: 20px;
+
+    margin-bottom: 16px;
+
+    text-align: center;
+}
+
+.pack-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+.pack-option {
+    border: 1px solid #eaecf0;
+
+    border-radius: 12px;
+
+    padding: 17px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.pack-option:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.07);
+}
+
+.pack-option.featured {
+    border: 2px solid #f59e0b;
+}
+
+.pack-option h4 {
+    font-size: 18px;
+
+    margin-bottom: 4px;
+}
+
+.pack-option p {
+    color: #667085;
+
+    font-size: 12px;
+
+    margin-bottom: 13px;
+}
+
+
+/* ==================================================
+   BUTTONS
+================================================== */
+
+.product-actions {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+.product-detail-button,
+.product-amazon-button {
+    display: block;
+
+    width: 100%;
+
+    text-align: center;
+
+    padding: 11px 15px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.product-detail-button {
+    background: #111827;
+
+    color: white;
+}
+
+.product-detail-button:hover {
+    background: #1f2937;
+
+    transform: translateY(-1px);
+}
+
+.product-amazon-button {
+    background: #f59e0b;
+
+    color: #111827;
+}
+
+.product-amazon-button:hover {
+    background: #d97706;
+
+    transform: translateY(-1px);
+}
+
+
+/* ==================================================
+   VOR- UND NACHTEILE
+================================================== */
+
+.pros-cons {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.pros,
+.cons {
+    background: white;
+
+    border: 1px solid #eaecf0;
+
+    border-radius: 15px;
+
+    padding: 25px;
+}
+
+.pros h3,
+.cons h3 {
+    font-size: 20px;
+
+    margin-bottom: 15px;
+}
+
+.pros h3 {
+    color: #16a34a;
+}
+
+.cons h3 {
+    color: #dc2626;
+}
+
+.pros ul,
+.cons ul {
+    padding-left: 20px;
+}
+
+.pros li,
+.cons li {
+    margin-bottom: 9px;
+
+    font-size: 14px;
+}
+
+.pros li::marker {
+    color: #16a34a;
+}
+
+.cons li::marker {
+    color: #dc2626;
+}
+
+
+/* ==================================================
+   ALTERNATIVEN
+================================================== */
+
+.alternatives {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.alternative-card {
+    background: white;
+
+    border: 1px solid #eaecf0;
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.alternative-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.07);
+}
+
+.alternative-badge {
+    display: inline-block;
+
+    background: #f2f4f7;
+
+    color: #475467;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.alternative-card h3 {
+    font-size: 21px;
+
+    margin-bottom: 8px;
+}
+
+.alternative-card p {
+    color: #667085;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+.price-note {
+    font-size: 12px;
+
+    color: #667085;
+
+    margin-bottom: 10px;
+}
+
+
+/* ==================================================
+   DARREICHUNGSFORMEN
+================================================== */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.form-card {
+    background: white;
+
+    border: 1px solid #eaecf0;
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.form-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.07);
+}
+
+.form-icon {
+    font-size: 34px;
+
+    margin-bottom: 10px;
+}
+
+.form-card h3 {
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+.form-card p {
+    color: #667085;
+
+    font-size: 13px;
+
+    margin-bottom: 14px;
+}
+
+.form-card .button {
+    display: inline-block;
+
+    background: #111827;
+
+    color: white;
+
+    padding: 10px 15px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.form-card .button:hover {
+    background: #1f2937;
+}
+
+
+/* ==================================================
+   WISSENSBEREICH
+================================================== */
+
+.info-box {
+    background: #ffffff;
+
+    border: 1px solid #eaecf0;
+
+    border-radius: 15px;
+
+    padding: 28px;
+}
+
+.info-box h3 {
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    color: #667085;
+
+    font-size: 14px;
+
+    margin-bottom: 12px;
+}
+
+.info-box p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ==================================================
+   QUELLEN
+================================================== */
+
+.sources {
+    background: #111827;
+
+    color: white;
+
+    padding: 38px;
+
+    border-radius: 18px;
+}
+
+.sources h2 {
+    font-size: 27px;
+
+    margin-bottom: 12px;
+}
+
+.sources p {
+    color: #d1d5db;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+.sources a {
+    color: #fbbf24;
+
+    font-weight: bold;
+}
+
+.sources a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+    background: #0b1120;
+
+    color: #9ca3af;
+
+    text-align: center;
+
+    padding: 35px 20px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #d1d5db;
+
+    margin: 0 8px;
+
+    font-size: 13px;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 950px) {
+
+    nav {
+        display: none;
+    }
+
+    .featured-top {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-image {
+        min-height: 400px;
+    }
+
+    .pack-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .form-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 40px 18px;
+    }
+
+    .section-header {
+        display: block;
+    }
+
+    .section-header p {
+        margin-top: 5px;
+    }
+
+    .featured-image {
+        min-height: 330px;
+
+        padding: 15px;
+    }
+
+    .featured-content {
+        padding: 25px 20px;
+    }
+
+    .featured-content h2 {
+        font-size: 25px;
+    }
+
+    .product-facts {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .pack-options {
+        padding: 20px 15px;
+    }
+
+    .pack-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .pros-cons,
+    .alternatives,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sources {
+        padding: 28px 20px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     HEADER
+================================================== -->
+
+<header>
+
+<div class="header-inner">
+
+<a href="index.html" class="logo">
+Produkt<span>finder</span>
+</a>
+
+
+<nav>
+
+<a href="index.html#kategorien">
+Kategorien
+</a>
+
+<a href="tiktok-finds.html">
+TikTok Finds
+</a>
+
+<a href="#kreatin">
+Kreatin
+</a>
+
+<a href="#alternativen">
+Alternativen
+</a>
+
+<a href="#darreichungsformen">
+Kapseln & Co.
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- ==================================================
+     HERO
+================================================== -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-label">
+💪 GESUNDHEIT · FITNESS · SUPPLEMENTS
+</div>
+
+
+<h1>
+
+Kreatin:
+<span>Was ist wirklich sinnvoll?</span>
+
+</h1>
+
+
+<p>
+
+Wir schauen uns das beliebte Kreatin-Monohydrat von ESN genauer an,
+vergleichen die verschiedenen Packungsgrößen und zeigen dir günstigere
+Alternativen sowie Kreatin in Kapseln und Tabletten.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<main class="container">
+
+
+
+<!-- ==================================================
+     ESN PRODUKT
+================================================== -->
+
+<section
+class="section fade-in"
+id="kreatin">
+
+
+<div class="section-header">
+
+<div>
+
+<h2>
+Unser genauer Blick: ESN Ultrapure Creatine
+</h2>
+
+<p>
+Mikrofeines Kreatin-Monohydrat als Pulver.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="featured-product">
+
+
+<div class="featured-top">
+
+
+<div class="featured-image">
+
+<img
+src="esn-ultrapure-creatine-werbebild.png"
+alt="ESN Ultrapure Creatine Monohydrate 500 g">
+
+</div>
+
+
+<div class="featured-content">
+
+<span class="tag">
+KREATIN MONOHYDRAT
+</span>
+
+
+<h2>
+ESN Ultrapure Creatine
+</h2>
+
+
+<p class="intro">
+
+Mikrofeines, geschmacksneutrales Kreatin-Monohydrat.
+ESN gibt einen hohen Reinheitsgrad, einen Mesh-Faktor von über 200
+und regelmäßige externe Laborprüfungen an.
+
+</p>
+
+
+
+<div class="product-facts">
+
+
+<div class="fact">
+
+<strong>
+3 g Kreatin
+</strong>
+
+<span>
+pro angegebener Portion
+</span>
+
+</div>
+
+
+<div class="fact">
+
+<strong>
+Mikrofeines Pulver
+</strong>
+
+<span>
+hoher Mesh-Faktor
+</span>
+
+</div>
+
+
+<div class="fact">
+
+<strong>
+Vegan
+</strong>
+
+<span>
+ohne tierische Bestandteile
+</span>
+
+</div>
+
+
+<div class="fact">
+
+<strong>
+Neutral
+</strong>
+
+<span>
+leicht in Getränke mischbar
+</span>
+
+</div>
+
+
+</div>
+
+
+
+<div class="product-actions">
+
+<a
+href="kreatin-esn.html"
+class="product-detail-button">
+
+Genaue Infos →
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ==================================================
+     PACK VARIANTEN
+================================================== -->
+
+<div class="pack-options">
+
+<h3>
+Welche Packungsgröße passt zu dir?
+</h3>
+
+
+<div class="pack-grid">
+
+
+<div class="pack-option">
+
+<h4>
+1er-Pack
+</h4>
+
+<p>
+Ein Beutel – ideal zum Ausprobieren.
+</p>
+
+
+<div class="product-actions">
+
+<a
+href="kreatin-esn.html"
+class="product-detail-button">
+
+Genaue Infos
+
+</a>
+
+<a
+href="https://amzn.to/46lw210"
+class="product-amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Bei Amazon ansehen →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="pack-option featured">
+
+<h4>
+2er-Pack
+</h4>
+
+<p>
+Zwei Beutel – sinnvoller Vorrat.
+</p>
+
+
+<div class="product-actions">
+
+<a
+href="kreatin-esn.html"
+class="product-detail-button">
+
+Genaue Infos
+
+</a>
+
+<a
+href="https://amzn.to/3UBZY6o"
+class="product-amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Bei Amazon ansehen →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="pack-option">
+
+<h4>
+3er-Pack
+</h4>
+
+<p>
+Drei Beutel – großer Vorrat.
+</p>
+
+
+<div class="product-actions">
+
+<a
+href="kreatin-esn.html"
+class="product-detail-button">
+
+Genaue Infos
+
+</a>
+
+<a
+href="https://amzn.to/4wVDNpp"
+class="product-amazon-button"
+target="_blank"
+rel="nofollow sponsored noopener">
+
+Bei Amazon ansehen →
+
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<p class="amazon-disclosure">
+
+Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     VOR- UND NACHTEILE
+================================================== -->
+
+<section
+class="section fade-in">
+
+
+<div class="section-header">
+
+<div>
+
+<h2>
+ESN Ultrapure Creatine: Vor- & Nachteile
+</h2>
+
+<p>
+Was für das Produkt spricht – und was dagegen.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="pros-cons">
+
+
+<div class="pros">
+
+<h3>
+✓ Vorteile
+</h3>
+
+<ul>
+
+<li>
+100 % Kreatin-Monohydrat als einzige Zutat.
+</li>
+
+<li>
+Mikrofeine Konsistenz und dadurch laut Hersteller gute Löslichkeit.
+</li>
+
+<li>
+Geschmacksneutral und einfach in Wasser, Saft oder Shakes mischbar.
+</li>
+
+<li>
+Vegan und für unterschiedliche Ernährungsweisen geeignet.
+</li>
+
+<li>
+ESN gibt regelmäßige externe Laborprüfungen der Chargen an.
+</li>
+
+<li>
+Kreatin-Monohydrat gehört zu den am besten untersuchten Kreatin-Formen.
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="cons">
+
+<h3>
+✕ Nachteile
+</h3>
+
+<ul>
+
+<li>
+Es gibt günstigere Kreatin-Monohydrat-Produkte anderer Marken.
+</li>
+
+<li>
+Pulver ist unterwegs weniger bequem als Kapseln oder portionierte Sticks.
+</li>
+
+<li>
+Die Premium-Aufmachung und sehr feine Pulverstruktur bedeuten nicht automatisch eine bessere Wirkung als bei einfachem Kreatin-Monohydrat.
+</li>
+
+<li>
+Der Preis pro Gramm kann je nach Packungsgröße und Angebot deutlich schwanken.
+</li>
+
+<li>
+Wie bei Kreatin allgemein kann es bei manchen Personen zu Magen-Darm-Beschwerden kommen.
+</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     GÜNSTIGERE ALTERNATIVEN
+================================================== -->
+
+<section
+class="section fade-in"
+id="alternativen">
+
+
+<div class="section-header">
+
+<div>
+
+<h2>
+Günstigere Alternativen
+</h2>
+
+<p>
+Ebenfalls Kreatin-Monohydrat – aber teilweise günstiger pro Gramm.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="alternatives">
+
+
+<!-- BODYLAB -->
+
+<article class="alternative-card">
+
+<span class="alternative-badge">
+GÜNSTIGE PULVER-ALTERNATIVE
+</span>
+
+
+<h3>
+Bodylab Creatine Monohydrate
+</h3>
+
+
+<p>
+
+100 % reines Kreatin-Monohydrat als Pulver.
+Die große 1-kg-Variante ist besonders interessant,
+wenn der Preis pro Gramm entscheidend ist.
+
+</p>
+
+
+<div class="price-note">
+Preis laut Herstellerseite zum Recherchezeitpunkt: 1 kg-Variante.
+</div>
+
+
+<div class="product-actions">
+
+<a
+href="https://www.bodylab24.de/products/creatine-monohydrate-100-pure-powder-1000g"
+class="product-detail-button"
+target="_blank"
+rel="noopener">
+
+Produkt ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- PEAK -->
+
+<article class="alternative-card">
+
+<span class="alternative-badge">
+GÜNSTIGERE ALTERNATIVE
+</span>
+
+
+<h3>
+PEAK Creatine Monohydrate
+</h3>
+
+
+<p>
+
+100 % Kreatin-Monohydrat als Pulver.
+Die 500-g-Variante liegt laut Hersteller aktuell bei
+39,80 € pro kg und damit unter dem beim Preisvergleich
+gefundenen ESN-Niveau.
+
+</p>
+
+
+<div class="price-note">
+Zum Recherchezeitpunkt: 19,90 € für 500 g bzw. 39,80 €/kg.
+</div>
+
+
+<div class="product-actions">
+
+<a
+href="https://www.peak.ag/en/products/creatine-monohydrate"
+class="product-detail-button"
+target="_blank"
+rel="noopener">
+
+Produkt ansehen →
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     KAPSELN & TABLETTEN
+================================================== -->
+
+<section
+class="section fade-in"
+id="darreichungsformen">
+
+
+<div class="section-header">
+
+<div>
+
+<h2>
+Kreatin ohne Pulver?
+</h2>
+
+<p>
+Kapseln und Tabletten können unterwegs deutlich praktischer sein.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="form-grid">
+
+
+<!-- SUNDAY -->
+
+<article class="form-card">
+
+<div class="form-icon">
+💊
+</div>
+
+
+<h3>
+Sunday Natural Creatin Kapseln
+</h3>
+
+
+<p>
+
+Kreatin-Monohydrat mit 1.240 mg pro Kapsel.
+Laut Hersteller enthalten vier Kapseln 4.960 mg Kreatin-Monohydrat.
+
+</p>
+
+
+<a
+href="https://www.sunday.de/creatin-monohydrat-kapseln.html"
+class="button"
+target="_blank"
+rel="noopener">
+
+Kapseln ansehen →
+
+</a>
+
+</article>
+
+
+
+<!-- PROFUEL -->
+
+<article class="form-card">
+
+<div class="form-icon">
+💊
+</div>
+
+
+<h3>
+ProFuel CREATINE Kapseln
+</h3>
+
+
+<p>
+
+Kreatin-Monohydrat in Kapselform.
+ProFuel gibt 1.000 mg reines Kreatin pro Kapsel
+und 5.000 mg pro Tagesportion an.
+
+</p>
+
+
+<a
+href="https://profuel.de/creatin-kapseln-mit-creatin-monohydrat"
+class="button"
+target="_blank"
+rel="noopener">
+
+Kapseln ansehen →
+
+</a>
+
+</article>
+
+
+
+<!-- PROFUEL TABLETTEN -->
+
+<article class="form-card">
+
+<div class="form-icon">
+💊
+</div>
+
+
+<h3>
+ProFuel CREATINE Tabletten
+</h3>
+
+
+<p>
+
+Kreatin-Monohydrat als Tablette.
+Fünf Tabletten liefern laut Hersteller 5.000 mg reines Kreatin.
+
+</p>
+
+
+<a
+href="https://profuel.de/creatine-tabletten-hochdosiert-5000-mg-kreatin"
+class="button"
+target="_blank"
+rel="noopener">
+
+Tabletten ansehen →
+
+</a>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     WAS IST SINNVOLL?
+================================================== -->
+
+<section
+class="section fade-in">
+
+
+<div class="section-header">
+
+<div>
+
+<h2>
+Pulver, Kapseln oder Tabletten?
+</h2>
+
+<p>
+Die Darreichungsform ist vor allem eine Frage der Bequemlichkeit.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="info-box">
+
+<h3>
+Unser Fazit zur Darreichungsform
+</h3>
+
+
+<p>
+
+Wenn du möglichst günstig pro Gramm kaufen möchtest,
+ist reines Kreatin-Monohydrat als Pulver meistens die naheliegende Wahl.
+
+</p>
+
+
+<p>
+
+Kapseln und Tabletten sind dagegen praktisch, wenn du Kreatin
+unterwegs oder ohne Abwiegen einnehmen möchtest. Der Nachteil:
+Für mehrere Gramm pro Tag müssen teilweise mehrere Kapseln oder
+Tabletten geschluckt werden.
+
+</p>
+
+
+<p>
+
+Entscheidend ist weniger die Verpackungsform als das enthaltene
+Kreatin-Monohydrat und die tatsächlich enthaltene Kreatinmenge.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     WISSEN
+================================================== -->
+
+<section
+class="section fade-in">
+
+
+<div class="section-header">
+
+<div>
+
+<h2>
+Was sagt die Forschung?
+</h2>
+
+<p>
+Kreatin-Monohydrat ist deutlich besser untersucht als viele andere Kreatinformen.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="info-box">
+
+<h3>
+Kreatin und körperliche Leistung
+</h3>
+
+
+<p>
+
+Die EU zugelassene Health Claim-Aussage lautet, dass Kreatin
+bei einer täglichen Aufnahme von 3 g die körperliche Leistung
+bei Schnellkrafttraining im Rahmen kurzzeitiger, hochintensiver
+körperlicher Betätigung erhöht.
+
+</p>
+
+
+<p>
+
+Kreatin-Monohydrat ist außerdem die am besten untersuchte
+Kreatinform. Für eine Kaufentscheidung bedeutet das:
+Ein teureres Produkt ist nicht automatisch wirksamer, wenn
+beide Produkte schlicht Kreatin-Monohydrat in vergleichbarer
+Qualität liefern.
+
+</p>
+
+
+<p>
+
+Nahrungsergänzungsmittel ersetzen keine ausgewogene Ernährung
+und eine gesunde Lebensweise. Bei bestehenden Erkrankungen,
+Medikamenteneinnahme oder Unsicherheit sollte vor der Einnahme
+ärztlicher Rat eingeholt werden.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     QUELLEN
+================================================== -->
+
+<section
+class="section fade-in">
+
+
+<div class="sources">
+
+<h2>
+🔎 Quellen & Produktinformationen
+</h2>
+
+
+<p>
+
+Für die Produktangaben zu ESN haben wir unter anderem die
+offizielle Produktseite und das ESN Helpcenter herangezogen.
+
+</p>
+
+
+<p>
+
+Für die Vergleichsprodukte wurden die jeweiligen Herstellerseiten
+sowie aktuelle Preisvergleichsdaten berücksichtigt. Preise können
+sich jederzeit ändern und dienen deshalb nur als Momentaufnahme.
+
+</p>
+
+
+<p>
+
+<a
+href="https://www.esn.com/products/esn-ultrapure-creatine-monohydrate"
+target="_blank"
+rel="noopener">
+
+ESN – Ultrapure Creatine
+
+</a>
+
+</p>
+
+
+<p>
+
+<a
+href="https://www.bodylab24.de/products/creatine-monohydrate-100-pure-powder-1000g"
+target="_blank"
+rel="noopener">
+
+Bodylab – Creatine Monohydrate
+
+</a>
+
+</p>
+
+
+<p>
+
+<a
+href="https://www.peak.ag/en/products/creatine-monohydrate"
+target="_blank"
+rel="noopener">
+
+PEAK – Creatine Monohydrate
+
+</a>
+
+</p>
+
+
+<p>
+
+<a
+href="https://www.sunday.de/creatin-monohydrat-kapseln.html"
+target="_blank"
+rel="noopener">
+
+Sunday Natural – Creatin Kapseln
+
+</a>
+
+</p>
+
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer>
+
+<p>
+© 2026 Produktfinder
+</p>
+
+
+<p>
+
+<a href="index.html">
+Startseite
+</a>
+
+<a href="tiktok-finds.html">
+TikTok Finds
+</a>
+
+<a href="technik.html">
+Technik
+</a>
+
+<a href="zuhause.html">
+Zuhause
+</a>
+
+<a href="unterwegs.html">
+Unterwegs
+</a>
+
+<a href="auto.html">
+Auto
+</a>
+
+<a href="heimwerken.html">
+Heimwerken
+</a>
+
+<a href="geschenke.html">
+Geschenke
+</a>
+
+<a href="gesundheit.html">
+Gesundheit
+</a>
+
+<a href="datenschutz.html">
+Datenschutz
+</a>
+
+<a href="impressum.html">
+Impressum
+</a>
+
+</p>
+
+
+<p class="amazon-disclosure">
+Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.
+</p>
+
+</footer>
+
+
+
+<!-- ==================================================
+     SCROLL ANIMATION
+================================================== -->
+
+<script>
+
+const observer =
+new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(
+            entry => {
+
+                if (
+                    entry.isIntersecting
+                ) {
+
+                    entry.target.classList.add(
+                        "visible"
+                    );
+
+                    observer.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            }
+        );
+
+    },
+
+    {
+        threshold: 0.12
+    }
+
+);
+
+
+document
+.querySelectorAll(".fade-in")
+.forEach(
+    element => {
+
+        observer.observe(element);
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
