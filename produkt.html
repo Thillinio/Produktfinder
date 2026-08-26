@@ -3,15 +3,12 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Produkt – Produktfinder</title>
 
-<meta
-name="description"
-content="Produktfinder – Produkt unter die Lupe genommen. Vorteile, Nachteile, Testberichte und unsere Einschätzung."
->
+<meta name="description"
+content="Produktfinder – Produkt unter die Lupe genommen. Vorteile, Nachteile, Testberichte und unsere Einschätzung.">
 
 <style>
 
@@ -21,9 +18,7 @@ content="Produktfinder – Produkt unter die Lupe genommen. Vorteile, Nachteile,
     padding:0
 }
 
-html{
-    scroll-behavior:smooth
-}
+html{scroll-behavior:smooth}
 
 body{
     font-family:Arial,Helvetica,sans-serif;
@@ -32,10 +27,7 @@ body{
     line-height:1.6
 }
 
-a{
-    text-decoration:none;
-    color:inherit
-}
+a{text-decoration:none;color:inherit}
 
 header{
     background:#111827;
@@ -45,15 +37,12 @@ header{
     z-index:100
 }
 
-.back,
-.header-inner{
+.back,.header-inner{
     max-width:1150px;
     margin:auto
 }
 
-.back{
-    padding:13px 20px
-}
+.back{padding:13px 20px}
 
 .back a{
     color:#d1d5db;
@@ -73,9 +62,7 @@ header{
     font-weight:800
 }
 
-.logo span{
-    color:#f59e0b
-}
+.logo span{color:#f59e0b}
 
 nav{
     display:flex;
@@ -88,9 +75,7 @@ nav a{
     opacity:.9
 }
 
-nav a:hover{
-    opacity:1
-}
+nav a:hover{opacity:1}
 
 .hero{
     background:#111827;
@@ -121,9 +106,7 @@ nav a:hover{
     margin-bottom:18px
 }
 
-.hero h1 span{
-    color:#f59e0b
-}
+.hero h1 span{color:#f59e0b}
 
 .hero p{
     max-width:720px;
@@ -138,9 +121,7 @@ nav a:hover{
     padding:55px 20px
 }
 
-.section{
-    margin-bottom:55px
-}
+.section{margin-bottom:55px}
 
 .product-overview{
     display:grid;
@@ -244,9 +225,7 @@ nav a:hover{
     font-size:12px
 }
 
-.section-header{
-    margin-bottom:22px
-}
+.section-header{margin-bottom:22px}
 
 .section-header h2{
     font-size:30px;
@@ -264,66 +243,51 @@ nav a:hover{
     gap:20px
 }
 
-.pros-box,
-.cons-box{
+.pros-box,.cons-box{
     background:white;
     border:1px solid #eaecf0;
     border-radius:18px;
     padding:28px
 }
 
-.pros-box h3,
-.cons-box h3{
+.pros-box h3,.cons-box h3{
     font-size:20px;
     margin-bottom:15px
 }
 
-.pros-box ul,
-.cons-box ul{
+.pros-box ul,.cons-box ul{
     list-style:none
 }
 
-.pros-box li,
-.cons-box li{
+.pros-box li,.cons-box li{
     font-size:14px;
     margin-bottom:9px
 }
 
-.pros-box li{
-    color:#217a3b
-}
+.pros-box li{color:#217a3b}
 
-.cons-box li{
-    color:#667085
-}
+.cons-box li{color:#667085}
 
-.recommendation-box,
-.comparison-box{
+.recommendation-box,.comparison-box{
     background:#111827;
     color:white;
     border-radius:18px;
     padding:35px
 }
 
-.recommendation-box h2,
-.comparison-box h2{
+.recommendation-box h2,.comparison-box h2{
     font-size:27px;
     margin-bottom:12px
 }
 
-.recommendation-box p,
-.comparison-box>p{
+.recommendation-box p,.comparison-box>p{
     color:#d1d5db;
     font-size:14px
 }
 
-.comparison-box>p{
-    margin-bottom:20px
-}
+.comparison-box>p{margin-bottom:20px}
 
-.table-wrapper{
-    overflow-x:auto
-}
+.table-wrapper{overflow-x:auto}
 
 .compare-table{
     width:100%;
@@ -334,17 +298,14 @@ nav a:hover{
     overflow:hidden
 }
 
-.compare-table th,
-.compare-table td{
+.compare-table th,.compare-table td{
     padding:14px;
     text-align:left;
     border-bottom:1px solid #eaecf0;
     font-size:13px
 }
 
-.compare-table th{
-    background:#f2f4f7
-}
+.compare-table th{background:#f2f4f7}
 
 .compare-link-box{
     background:#fff8e7;
@@ -400,16 +361,13 @@ nav a:hover{
     margin-bottom:12px
 }
 
-.sources p,
-.sources li{
+.sources p,.sources li{
     color:#667085;
     font-size:13px;
     margin-bottom:10px
 }
 
-.sources ul{
-    padding-left:20px
-}
+.sources ul{padding-left:20px}
 
 .sources a{
     color:#9a6700;
@@ -441,9 +399,7 @@ footer{
     padding:35px 20px
 }
 
-footer p{
-    margin-bottom:10px
-}
+footer p{margin-bottom:10px}
 
 footer a{
     color:#d1d5db;
@@ -458,306 +414,153 @@ footer a{
 }
 
 @media(max-width:900px){
-
-    nav{
-        display:none
-    }
-
-    .product-overview{
-        grid-template-columns:1fr
-    }
-
-    .product-image-large{
-        min-height:300px
-    }
-
+    nav{display:none}
+    .product-overview{grid-template-columns:1fr}
+    .product-image-large{min-height:300px}
 }
 
 @media(max-width:600px){
-
-    .hero{
-        padding:55px 20px
-    }
-
-    .hero h1{
-        font-size:34px
-    }
-
-    .hero p{
-        font-size:16px
-    }
-
-    .container{
-        padding:40px 18px
-    }
-
-    .product-image-large{
-        min-height:250px
-    }
-
-    .product-main{
-        padding:25px 20px
-    }
-
-    .product-main h2{
-        font-size:27px
-    }
-
-    .pros-cons-grid{
-        grid-template-columns:1fr
-    }
-
-    .comparison-box,
-    .recommendation-box{
-        padding:25px 18px
-    }
-
+    .hero{padding:55px 20px}
+    .hero h1{font-size:34px}
+    .hero p{font-size:16px}
+    .container{padding:40px 18px}
+    .product-image-large{min-height:250px}
+    .product-main{padding:25px 20px}
+    .product-main h2{font-size:27px}
+    .pros-cons-grid{grid-template-columns:1fr}
+    .comparison-box,.recommendation-box{padding:25px 18px}
 }
 
 </style>
-
 </head>
 
-
 <body>
-
 
 <header>
 
 <div class="back">
-
-<a
-href="technik.html"
-id="backLink">
-
+<a href="technik.html" id="backLink">
 ← Zurück zu Technik
-
 </a>
-
 </div>
-
 
 <div class="header-inner">
 
-<a
-href="index.html"
-class="logo">
-
+<a href="index.html" class="logo">
 Produkt<span>finder</span>
-
 </a>
-
 
 <nav>
-
-<a href="index.html">
-Startseite
-</a>
-
-<a href="zuhause.html">
-Zuhause
-</a>
-
-<a href="technik.html">
-Technik
-</a>
-
-<a href="auto.html">
-Auto
-</a>
-
+<a href="index.html">Startseite</a>
+<a href="zuhause.html">Zuhause</a>
+<a href="technik.html">Technik</a>
+<a href="auto.html">Auto</a>
 </nav>
 
 </div>
-
 </header>
-
-
 
 <section class="hero">
 
 <div class="hero-content">
 
-<div
-class="hero-label"
-id="heroLabel">
-
+<div class="hero-label" id="heroLabel">
 📱 TECHNIK FIND
-
 </div>
 
-
 <h1 id="heroTitle">
-
 Produkt <span>entdecken</span>
-
 </h1>
 
-
 <p id="heroDescription">
-
 Wir schauen genauer hin und zeigen dir,
 ob sich das Produkt wirklich lohnt.
-
 </p>
 
 </div>
-
 </section>
 
-
-
 <main class="container">
-
 
 <section class="section">
 
 <div class="product-overview">
 
-
-<div
-class="product-image-large"
-id="productImage">
-
-</div>
-
+<div class="product-image-large" id="productImage"></div>
 
 <div class="product-main">
 
-
-<span
-class="product-tag"
-id="productTag">
-
+<span class="product-tag" id="productTag">
 EINSTIEG
-
 </span>
 
+<h2 id="productName">Produkt</h2>
 
-<h2 id="productName">
-Produkt
-</h2>
+<p class="product-description" id="productDescription"></p>
 
+<div class="price" id="productPrice"></div>
 
-<p
-class="product-description"
-id="productDescription">
-</p>
-
-
-<div
-class="price"
-id="productPrice">
-</div>
-
-
-<a
-href="#"
-id="amazonButton"
-class="amazon-button"
-target="_blank"
-rel="nofollow sponsored noopener">
-
+<a href="#" id="amazonButton" class="amazon-button"
+target="_blank" rel="nofollow sponsored noopener">
 Bei Amazon ansehen →
-
 </a>
-
 
 <div class="amazon-note">
 
-<strong>
-Preis-Hinweis:
-</strong>
+<strong>Preis-Hinweis:</strong>
 
 Preise und Verfügbarkeit können sich jederzeit ändern.
 Der tatsächlich beim Händler angezeigte Preis ist maßgeblich.
 
 <br><br>
 
-<strong>
-Transparenz:
-</strong>
+<strong>Transparenz:</strong>
 
 Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.
 
 </div>
 
 </div>
-
 </div>
-
 </section>
-
-
 
 <section class="section">
 
 <div class="section-header">
 
-<h2>
-🔎 Was spricht dafür – und was dagegen?
-</h2>
+<h2>🔎 Was spricht dafür – und was dagegen?</h2>
 
-<p>
-Nicht nur auf den Hype schauen.
-</p>
+<p>Nicht nur auf den Hype schauen.</p>
 
 </div>
-
 
 <div class="pros-cons-grid">
 
-
 <div class="pros-box">
-
-<h3>
-✅ Vorteile
-</h3>
-
-<ul id="advantages">
-</ul>
-
+<h3>✅ Vorteile</h3>
+<ul id="advantages"></ul>
 </div>
-
 
 <div class="cons-box">
-
-<h3>
-❌ Nachteile
-</h3>
-
-<ul id="disadvantages">
-</ul>
-
+<h3>❌ Nachteile</h3>
+<ul id="disadvantages"></ul>
 </div>
 
-
 </div>
-
 </section>
-
-
 
 <section class="section">
 
 <div class="recommendation-box">
 
-<h2>
-💡 Für wen lohnt sich das Produkt?
-</h2>
+<h2>💡 Für wen lohnt sich das Produkt?</h2>
 
-<p id="forWho">
-</p>
+<p id="forWho"></p>
 
 </div>
-
 </section>
 
-
-
-<section
-class="section"
-id="comparisonSection">
+<section class="section" id="comparisonSection">
 
 <div class="comparison-box">
 
@@ -766,945 +569,377 @@ id="comparisonSection">
 </h2>
 
 <p id="comparisonDescription">
-
 Mehr Funktionen bedeuten nicht automatisch,
 dass das teuerste Modell die beste Wahl für jeden ist.
-
 </p>
-
 
 <div class="table-wrapper">
 
 <table class="compare-table">
 
-<thead id="comparisonHead">
-</thead>
+<thead id="comparisonHead"></thead>
 
-<tbody id="comparisonBody">
-</tbody>
+<tbody id="comparisonBody"></tbody>
 
 </table>
 
 </div>
 
 </div>
-
 </section>
 
-
-
-<section
-class="section"
-id="compareLinkSection">
+<section class="section" id="compareLinkSection">
 
 <div class="compare-link-box">
 
-<div class="compare-link-label">
-🔎 VERGLEICH
-</div>
-
+<div class="compare-link-label">🔎 VERGLEICH</div>
 
 <h2 id="compareLinkTitle">
 Du möchtest weitere Modelle vergleichen?
 </h2>
 
-
 <p id="compareLinkText">
-
 Du bist noch nicht sicher, welches Produkt zu dir passt?
 Vergleiche mehrere Modelle miteinander und entdecke
 auch günstigere Alternativen.
-
 </p>
 
-
-<a
-href="technik.html"
-id="compareLink"
-class="amazon-button">
-
+<a href="technik.html" id="compareLink" class="amazon-button">
 Modelle vergleichen →
-
 </a>
 
 </div>
-
 </section>
-
-
 
 <section class="section">
 
 <div class="final-verdict">
 
-<h3>
-🏆 Unsere Einschätzung
-</h3>
+<h3>🏆 Unsere Einschätzung</h3>
 
-<p id="finalVerdict">
-</p>
+<p id="finalVerdict"></p>
 
 </div>
-
 </section>
-
-
 
 <section class="section">
 
 <div class="sources">
 
-<h2>
-📚 Quellen & Transparenz
-</h2>
+<h2>📚 Quellen & Transparenz</h2>
 
 <p>
-
 Wir unterscheiden zwischen Herstellerangaben,
 unabhängigen Tests und Nutzererfahrungen.
 Die Produktseite stellt keine eigene Laborprüfung dar.
-
 </p>
 
-
-<ul id="sourcesList">
-</ul>
+<ul id="sourcesList"></ul>
 
 </div>
-
 </section>
-
 
 </main>
 
-
-
 <footer>
 
-<p>
-© 2026 Produktfinder
-</p>
-
+<p>© 2026 Produktfinder</p>
 
 <p>
-
-<a href="index.html">
-Startseite
-</a>
-
-<a href="tiktok-finds.html">
-TikTok Finds
-</a>
-
-<a href="zuhause.html">
-Zuhause
-</a>
-
-<a href="technik.html">
-Technik
-</a>
-
-<a href="auto.html">
-Auto
-</a>
-
-<a href="unterwegs.html">
-Unterwegs
-</a>
-
-<a href="heimwerken.html">
-Heimwerken
-</a>
-
-<a href="geschenke.html">
-Geschenke
-</a>
-
+<a href="index.html">Startseite</a>
+<a href="tiktok-finds.html">TikTok Finds</a>
+<a href="zuhause.html">Zuhause</a>
+<a href="technik.html">Technik</a>
+<a href="auto.html">Auto</a>
+<a href="unterwegs.html">Unterwegs</a>
+<a href="heimwerken.html">Heimwerken</a>
+<a href="geschenke.html">Geschenke</a>
 </p>
-
 
 <p class="amazon-disclosure">
-
 Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.
-
 </p>
 
 </footer>
 
-
-
 <script>
 
-
 const products = {
-
 
 /* ==================================================
    PHILIPS STEAMER 3000
 ================================================== */
 
-"philips-sth3020-10": {
+"philips-sth3020-10":{
 
-    name:"Philips 3000 Series STH3020/10",
+name:"Philips 3000 Series STH3020/10",
+category:"📱 TECHNIK FIND",
+tag:"🔥 VIRAL & GETESTET",
+emoji:"💨",
+image:"Images/philips-sth3020-werbung.png",
 
-    category:"📱 TECHNIK FIND",
+heroTitle:
+"Philips 3000 Series STH3020/10 – lohnt sich der kompakte Steamer?",
 
-    tag:"🔥 VIRAL & GETESTET",
+heroDescription:
+"Kompakter Dampfglätter für schnelle Faltenkorrekturen – besonders interessant auf Reisen, aber kein vollständiger Ersatz für ein Bügeleisen.",
 
-    emoji:"💨",
+description:
+"Der Philips 3000 Series STH3020/10 ist ein kompakter, zusammenklappbarer Dampfglätter mit 1.000 Watt, 20 g/min Dauerdampf und einem abnehmbaren 120-ml-Wassertank. Laut Hersteller ist das Gerät nach rund 30 Sekunden einsatzbereit und wird mit einer Aufbewahrungstasche geliefert.",
 
-    image:"Images/philips-sth3020-werbung.png",
+price:"Preis bei Amazon prüfen",
 
-    heroTitle:
-    "Philips 3000 Series STH3020/10 – lohnt sich der kompakte Steamer?",
+priceNote:"Preis und Verfügbarkeit können sich jederzeit ändern.",
 
-    heroDescription:
-    "Kompakter Dampfglätter für schnelle Faltenkorrekturen – besonders interessant auf Reisen, aber kein vollständiger Ersatz für ein Bügeleisen.",
+amazon:"https://amzn.to/45HIQi7",
 
-    description:
-    "Der Philips 3000 Series STH3020/10 ist ein kompakter, zusammenklappbarer Dampfglätter mit 1.000 Watt, 20 g/min Dauerdampf und einem abnehmbaren 120-ml-Wassertank. Laut Hersteller ist das Gerät nach rund 30 Sekunden einsatzbereit und wird mit einer Aufbewahrungstasche geliefert.",
+advantages:[
+"Kompakt und zusammenklappbar – gut für Reisen",
+"Schnelle Aufheizzeit von rund 30 Sekunden",
+"1.000 Watt Leistung",
+"20 g/min Dauerdampf",
+"Abnehmbarer 120-ml-Wassertank",
+"Metall-Dampfplatte",
+"Einfache Bedienung",
+"Aufbewahrungstasche im Lieferumfang"
+],
 
-    price:
-    "Preis bei Amazon prüfen",
+disadvantages:[
+"Nur eine Dampf-/Temperaturstufe",
+"120 ml Wassertank ist für längere Sessions klein",
+"20 g/min reichen bei dicken Stoffen nur begrenzt",
+"Nicht für tiefe Falten wie ein klassisches Bügeleisen ausgelegt",
+"Keine horizontale Anwendung laut Stiftung Warentest",
+"Keine Entkalkung laut Anbieter vorgesehen",
+"Stiftung Warentest wertete die Haltbarkeit ab, da das Gerät die Dauerprüfung nicht bestand"
+],
 
-    priceNote:
-    "Preis und Verfügbarkeit können sich jederzeit ändern.",
+forWho:
+"Der Philips ist besonders interessant für alle, die Kleidung schnell auffrischen oder leichte bis mittlere Falten entfernen möchten – etwa morgens vor der Arbeit, auf Reisen oder nach dem Kofferpacken. Für dicke Baumwollstoffe, starke Falten oder als vollständigen Ersatz für ein Bügeleisen ist er weniger geeignet.",
 
-    amazon:
-    "https://amzn.to/45HIQi7",
+comparisonTitle:"⚖️ Philips 3000 im Vergleich",
 
-    advantages:[
+comparisonDescription:
+"Der Philips ist vor allem auf kompakte Abmessungen und schnelle Auffrischung ausgelegt. Für stärkere Falten kann ein leistungsfähigeres Modell sinnvoller sein.",
 
-        "Kompakt und zusammenklappbar – gut für Reisen",
+comparisonHeaders:[
+"Eigenschaft","Philips 3000","Tefal Access Steam Force","Tefal Access Steam Pocket"
+],
 
-        "Schnelle Aufheizzeit von rund 30 Sekunden",
+comparisonRows:[
+["Dampfleistung","20 g/min","bis 30 g/min","bis 20 g/min"],
+["Wassertank","120 ml","185 ml","120 ml"],
+["Zusammenklappbar","✅","❌","✅"],
+["Reisetauglichkeit","⭐⭐⭐⭐⭐","⭐⭐⭐","⭐⭐⭐⭐⭐"],
+["Starke Falten","⭐⭐","⭐⭐⭐⭐","⭐⭐"],
+["Unsere Einschätzung","⭐ Reise & schnelle Auffrischung","🏆 Mehr Leistung","💰 Kompakte Alternative"]
+],
 
-        "1.000 Watt Leistung",
+verdict:"⭐ Gut für Reisen",
 
-        "20 g/min Dauerdampf",
+finalVerdict:
+"<strong>💨 Unser Fazit:</strong><br><br>" +
+"Der Philips 3000 Series STH3020/10 macht genau das gut, wofür er konzipiert ist: Kleidung schnell auffrischen und leichte bis mittlere Falten entfernen, ohne dass du ein Bügelbrett aufbauen musst.<br><br>" +
+"<strong>👍 Besonders stark:</strong> kompakte Bauweise, schnelles Aufheizen und einfache Bedienung. Gerade für Reisen ist das zusammenklappbare Gehäuse praktisch.<br><br>" +
+"<strong>⚠️ Der wichtigste Haken:</strong> Bei dicken Stoffen und starken Falten stößt die geringe Dampfleistung an Grenzen. Außerdem fiel das Modell bei Stiftung Warentest in der Dauerprüfung auf und wurde bei der Haltbarkeit abgewertet.<br><br>" +
+"<strong>🏆 Unsere Einschätzung:</strong> Ein sinnvoller Reise- und Schnellglätter, aber kein vollwertiger Ersatz für ein gutes Bügeleisen.",
 
-        "Abnehmbarer 120-ml-Wassertank",
+sources:[
+["Stiftung Warentest – Steamer-Test 04/2025","https://www.test.de/Steamer-im-Test-Dampf-auf-Knopfdruck-6191834-detail/320000036000%210005/"],
+["Testberichte.de – Philips 3000 Series STH3020/10","https://www.testberichte.de/p/philips-tests/3000-series-sth3020-10-testbericht.html"],
+["COMPUTER BILD – Philips Series 3000 Praxistest","https://www.computerbild.de/artikel/Tests-Haushalt-Philips-Series-3000-im-Praxis-Test-So-pustet-der-Steamer-Falten-aus-dem-Stoff-40413103.html"]
+],
 
-        "Metall-Dampfplatte",
-
-        "Einfache Bedienung",
-
-        "Aufbewahrungstasche im Lieferumfang"
-
-    ],
-
-    disadvantages:[
-
-        "Nur eine Dampf-/Temperaturstufe",
-
-        "120 ml Wassertank ist für längere Sessions klein",
-
-        "20 g/min reichen bei dicken Stoffen nur begrenzt",
-
-        "Nicht für tiefe Falten wie ein klassisches Bügeleisen ausgelegt",
-
-        "Keine horizontale Anwendung laut Stiftung Warentest",
-
-        "Keine Entkalkung laut Anbieter vorgesehen",
-
-        "Stiftung Warentest wertete die Haltbarkeit ab, da das Gerät die Dauerprüfung nicht bestand"
-
-    ],
-
-    forWho:
-    "Der Philips ist besonders interessant für alle, die Kleidung schnell auffrischen oder leichte bis mittlere Falten entfernen möchten – etwa morgens vor der Arbeit, auf Reisen oder nach dem Kofferpacken. Für dicke Baumwollstoffe, starke Falten oder als vollständigen Ersatz für ein Bügeleisen ist er weniger geeignet.",
-
-    comparisonTitle:
-    "⚖️ Philips 3000 im Vergleich",
-
-    comparisonDescription:
-    "Der Philips ist vor allem auf kompakte Abmessungen und schnelle Auffrischung ausgelegt. Für stärkere Falten kann ein leistungsfähigeres Modell sinnvoller sein.",
-
-    comparisonHeaders:[
-        "Eigenschaft",
-        "Philips 3000",
-        "Tefal Access Steam Force",
-        "Tefal Access Steam Pocket"
-    ],
-
-    comparisonRows:[
-
-        [
-            "Dampfleistung",
-            "20 g/min",
-            "bis 30 g/min",
-            "bis 20 g/min"
-        ],
-
-        [
-            "Wassertank",
-            "120 ml",
-            "185 ml",
-            "120 ml"
-        ],
-
-        [
-            "Zusammenklappbar",
-            "✅",
-            "❌",
-            "✅"
-        ],
-
-        [
-            "Reisetauglichkeit",
-            "⭐⭐⭐⭐⭐",
-            "⭐⭐⭐",
-            "⭐⭐⭐⭐⭐"
-        ],
-
-        [
-            "Starke Falten",
-            "⭐⭐",
-            "⭐⭐⭐⭐",
-            "⭐⭐"
-        ],
-
-        [
-            "Unsere Einschätzung",
-            "⭐ Reise & schnelle Auffrischung",
-            "🏆 Mehr Leistung",
-            "💰 Kompakte Alternative"
-        ]
-
-    ],
-
-    verdict:
-    "⭐ Gut für Reisen",
-
-    finalVerdict:
-
-        "<strong>💨 Unser Fazit:</strong><br><br>" +
-
-        "Der Philips 3000 Series STH3020/10 macht genau das gut, wofür er konzipiert ist: Kleidung schnell auffrischen und leichte bis mittlere Falten entfernen, ohne dass du ein Bügelbrett aufbauen musst.<br><br>" +
-
-        "<strong>👍 Besonders stark:</strong> kompakte Bauweise, schnelles Aufheizen und einfache Bedienung. Gerade für Reisen ist das zusammenklappbare Gehäuse praktisch.<br><br>" +
-
-        "<strong>⚠️ Der wichtigste Haken:</strong> Bei dicken Stoffen und starken Falten stößt die geringe Dampfleistung an Grenzen. Außerdem fiel das Modell bei Stiftung Warentest in der Dauerprüfung auf und wurde bei der Haltbarkeit abgewertet.<br><br>" +
-
-        "<strong>🏆 Unsere Einschätzung:</strong> Ein sinnvoller Reise- und Schnellglätter, aber kein vollwertiger Ersatz für ein gutes Bügeleisen.",
-
-    sources:[
-
-        [
-            "Stiftung Warentest – Steamer-Test 04/2025",
-            "https://www.test.de/Steamer-im-Test-Dampf-auf-Knopfdruck-6191834-detail/320000036000%210005/"
-        ],
-
-        [
-            "Testberichte.de – Philips 3000 Series STH3020/10",
-            "https://www.testberichte.de/p/philips-tests/3000-series-sth3020-10-testbericht.html"
-        ],
-
-        [
-            "COMPUTER BILD – Philips Series 3000 Praxistest",
-            "https://www.computerbild.de/artikel/Tests-Haushalt-Philips-Series-3000-im-Praxis-Test-So-pustet-der-Steamer-Falten-aus-dem-Stoff-40413103.html"
-        ]
-
-    ],
-
-    comparisonLink:
-    "technik.html",
-
-    comparisonLinkTitle:
-    "Weitere Technik Finds entdecken?",
-
-    comparisonText:
-    "Entdecke weitere virale Technik- und Lifestyle-Produkte und finde heraus, welche Produkte den Hype wirklich wert sind."
-
+comparisonLink:"technik.html",
+comparisonLinkTitle:"Weitere Technik Finds entdecken?",
+comparisonText:"Entdecke weitere virale Technik- und Lifestyle-Produkte und finde heraus, welche Produkte den Hype wirklich wert sind."
 },
-
-
 
 /* ==================================================
    TEFAL ACCESS STEAM DR8085
 ================================================== */
 
-"tefal-access-steam-dr8085": {
-
-    name:
-    "Tefal Access Steam DR8085",
-
-    category:
-    "📱 TECHNIK FIND",
-
-    tag:
-    "🔥 VIRAL & LEISTUNGSSTARK",
-
-    emoji:
-    "💨",
-
-    image:
-    "Images/tefal-access-steam-dr8085-werbung.png",
-
-    heroTitle:
-    "Tefal Access Steam DR8085 – ist der kompakte Steamer den Hype wert?",
-
-    heroDescription:
-    "1.500 Watt, bis zu 24 g/min Dampf und ein 200-ml-Wassertank – ein kompakter Steamer für schnelle Faltenkorrekturen ohne Bügelbrett.",
-
-    description:
-    "Der Tefal Access Steam DR8085 ist ein kompakter Dampfglätter mit 1.500 Watt Leistung und bis zu 24 g/min Dampf. Der abnehmbare 200-ml-Wassertank ermöglicht laut Tefal bis zu 10 Minuten Betrieb. Das Gerät ist nach etwa 45 Sekunden einsatzbereit und besitzt ein 3 Meter langes Netzkabel.",
-
-    price:
-    "Preis bei Amazon prüfen",
-
-    priceNote:
-    "Preis und Verfügbarkeit können sich jederzeit ändern.",
-
-    amazon:
-    "https://amzn.to/4gekl22",
-
-    advantages:[
-
-        "1.500 Watt Leistung",
-
-        "Bis zu 24 g/min Dampf",
-
-        "Abnehmbarer 200-ml-Wassertank",
-
-        "Bis zu 10 Minuten Betrieb mit einer Tankfüllung laut Tefal",
-
-        "Nach ca. 45 Sekunden einsatzbereit",
-
-        "3 Meter langes Netzkabel",
-
-        "Konstante Dampfeinstellung möglich",
-
-        "Integrierter Türhaken",
-
-        "Für verschiedene bügelbare Stoffarten geeignet",
-
-        "Metall-Dampfplatte"
-
-    ],
-
-    disadvantages:[
-
-        "Nicht so schnell aufgeheizt wie manche moderne Reise-Steamer",
-
-        "Nicht klappbar",
-
-        "Für große Wäschemengen weniger praktisch als ein klassisches Bügelsystem",
-
-        "Ein Dampfglätter ersetzt ein Bügeleisen nicht in jeder Situation",
-
-        "Bei sehr starken Falten kann ein klassisches Bügeleisen überlegen sein",
-
-        "Mit rund 62–63 € deutlich teurer als einfache Reise-Steamer"
-
-    ],
-
-    forWho:
-    "Der Tefal Access Steam DR8085 ist besonders interessant für Menschen, die regelmäßig einzelne Kleidungsstücke schnell glätten möchten, ohne dafür ein Bügelbrett aufzubauen. Durch die 1.500 Watt Leistung, bis zu 24 g/min Dampf und den 200-ml-Tank ist er vor allem für Hemden, T-Shirts, Blusen und schnelle Outfit-Korrekturen interessant. Wer hauptsächlich auf Reisen möglichst wenig Platz benötigt, findet bei klappbaren Reise-Modellen kompaktere Alternativen.",
-
-    comparisonTitle:
-    "⚖️ Tefal DR8085 im Vergleich",
-
-    comparisonDescription:
-    "Der DR8085 liegt bei der Dampfleistung zwischen dem Philips 3000 und dem Philips 7000. Interessant sind vor allem die Kombination aus 1.500 Watt, 24 g/min Dampf und dem 200-ml-Tank.",
-
-    comparisonHeaders:[
-
-        "Eigenschaft",
-
-        "Philips 3000",
-
-        "Tefal DR8085",
-
-        "Philips 7000"
-
-    ],
-
-    comparisonRows:[
-
-        [
-
-            "Dampfleistung",
-
-            "20 g/min",
-
-            "24 g/min",
-
-            "28 g/min"
-
-        ],
-
-        [
-
-            "Leistung",
-
-            "1.000 W",
-
-            "1.500 W",
-
-            "1.500 W"
-
-        ],
-
-        [
-
-            "Wassertank",
-
-            "120 ml",
-
-            "200 ml",
-
-            "100 + 200 ml"
-
-        ],
-
-        [
-
-            "Aufheizzeit",
-
-            "ca. 30 Sek.",
-
-            "45 Sek.",
-
-            "ca. 30 Sek."
-
-        ],
-
-        [
-
-            "Kabel",
-
-            "ca. 2 m",
-
-            "3 m",
-
-            "ca. 2,5 m"
-
-        ],
-
-        [
-
-            "Zusammenklappbar",
-
-            "✅",
-
-            "❌",
-
-            "❌"
-
-        ],
-
-        [
-
-            "Horizontal",
-
-            "❌",
-
-            "❌",
-
-            "✅"
-
-        ],
-
-        [
-
-            "Unsere Einschätzung",
-
-            "💰 Reise",
-
-            "🔥 Stark & vielseitig",
-
-            "💪 Mehr Ausstattung"
-
-        ]
-
-    ],
-
-    verdict:
-    "🔥 Stark für schnelle Outfit-Korrekturen",
-
-    finalVerdict:
-
-        "<strong>🔥 Unser Fazit:</strong><br><br>" +
-
-        "Der Tefal Access Steam DR8085 ist ein interessanter Mittelweg zwischen einem kleinen Reise-Steamer und einem leistungsstärkeren Dampfglätter.<br><br>" +
-
-        "<strong>👍 Besonders stark:</strong> 1.500 Watt Leistung, bis zu 24 g/min Dampf, 200-ml-Wassertank und das 3 Meter lange Kabel. Dadurch eignet er sich gut für schnelle Faltenkorrekturen im Alltag.<br><br>" +
-
-        "<strong>💧 Praktisch:</strong> Der Wassertank ist abnehmbar und bietet laut Tefal bis zu 10 Minuten Betriebszeit. Außerdem kann der Dampf für kontinuierliches Arbeiten arretiert werden.<br><br>" +
-
-        "<strong>⚠️ Der wichtigste Punkt:</strong> Mit 45 Sekunden Aufheizzeit ist er nicht der schnellste Reise-Steamer. Außerdem ist das Gerät nicht zusammenklappbar und nimmt dadurch mehr Platz ein.<br><br>" +
-
-        "<strong>🏆 Unsere Einschätzung:</strong> Eine gute Wahl für alle, die häufiger schnell Kleidung glätten möchten und mehr Leistung als bei einem kleinen Reise-Steamer suchen.",
-
-    sources:[
-
-        [
-
-            "Tefal – offizielle Produktinformationen zum Access Steam DR8085",
-
-            "https://www.tefal.de/bedienungsanleitungen/waeschepflege/dampfbuersten/accesssteam-dr8085/csp/1830005800"
-
-        ],
-
-        [
-
-            "Tefal – technische Informationen",
-
-            "https://www.tefal.com/Linen-Care/Garment-Steamers/Handheld-Garment-Steamers-/ACCESS-STEAM-/p/1830005800"
-
-        ]
-
-    ],
-
-    comparisonLink:
-    "technik.html",
-
-    comparisonLinkTitle:
-    "Weitere Technik Finds entdecken?",
-
-    comparisonText:
-    "Vergleiche weitere virale Technik- und Lifestyle-Produkte und finde heraus, welches Produkt wirklich zu dir passt."
-
+"tefal-access-steam-dr8085":{
+
+name:"Tefal Access Steam DR8085",
+category:"📱 TECHNIK FIND",
+tag:"🔥 VIRAL & LEISTUNGSSTARK",
+emoji:"💨",
+image:"Images/tefal-access-steam-dr8085-werbung.png",
+
+heroTitle:
+"Tefal Access Steam DR8085 – ist der kompakte Steamer den Hype wert?",
+
+heroDescription:
+"1.500 Watt, bis zu 24 g/min Dampf und ein 200-ml-Wassertank – ein kompakter Steamer für schnelle Faltenkorrekturen ohne Bügelbrett.",
+
+description:
+"Der Tefal Access Steam DR8085 ist ein kompakter Dampfglätter mit 1.500 Watt Leistung und bis zu 24 g/min Dampf. Der abnehmbare 200-ml-Wassertank ermöglicht laut Tefal bis zu 10 Minuten Betrieb. Das Gerät ist nach etwa 45 Sekunden einsatzbereit und besitzt ein 3 Meter langes Netzkabel.",
+
+price:"Preis bei Amazon prüfen",
+priceNote:"Preis und Verfügbarkeit können sich jederzeit ändern.",
+amazon:"https://amzn.to/4gekl22",
+
+advantages:[
+"1.500 Watt Leistung",
+"Bis zu 24 g/min Dampf",
+"Abnehmbarer 200-ml-Wassertank",
+"Bis zu 10 Minuten Betrieb mit einer Tankfüllung laut Tefal",
+"Nach ca. 45 Sekunden einsatzbereit",
+"3 Meter langes Netzkabel",
+"Konstante Dampfeinstellung möglich",
+"Integrierter Türhaken",
+"Für verschiedene bügelbare Stoffarten geeignet",
+"Metall-Dampfplatte"
+],
+
+disadvantages:[
+"Nicht so schnell aufgeheizt wie manche moderne Reise-Steamer",
+"Nicht klappbar",
+"Für große Wäschemengen weniger praktisch als ein klassisches Bügelsystem",
+"Ein Dampfglätter ersetzt ein Bügeleisen nicht in jeder Situation",
+"Bei sehr starken Falten kann ein klassisches Bügeleisen überlegen sein",
+"Mit rund 62–63 € deutlich teurer als einfache Reise-Steamer"
+],
+
+forWho:
+"Der Tefal Access Steam DR8085 ist besonders interessant für Menschen, die regelmäßig einzelne Kleidungsstücke schnell glätten möchten, ohne dafür ein Bügelbrett aufzubauen. Durch die 1.500 Watt Leistung, bis zu 24 g/min Dampf und den 200-ml-Tank ist er vor allem für Hemden, T-Shirts, Blusen und schnelle Outfit-Korrekturen interessant. Wer hauptsächlich auf Reisen möglichst wenig Platz benötigt, findet bei klappbaren Reise-Modellen kompaktere Alternativen.",
+
+comparisonTitle:"⚖️ Tefal DR8085 im Vergleich",
+
+comparisonDescription:
+"Der DR8085 liegt bei der Dampfleistung zwischen dem Philips 3000 und dem Philips 7000. Interessant sind vor allem die Kombination aus 1.500 Watt, 24 g/min Dampf und dem 200-ml-Tank.",
+
+comparisonHeaders:["Eigenschaft","Philips 3000","Tefal DR8085","Philips 7000"],
+
+comparisonRows:[
+["Dampfleistung","20 g/min","24 g/min","28 g/min"],
+["Leistung","1.000 W","1.500 W","1.500 W"],
+["Wassertank","120 ml","200 ml","100 + 200 ml"],
+["Aufheizzeit","ca. 30 Sek.","45 Sek.","ca. 30 Sek."],
+["Kabel","ca. 2 m","3 m","ca. 2,5 m"],
+["Zusammenklappbar","✅","❌","❌"],
+["Horizontal","❌","❌","✅"],
+["Unsere Einschätzung","💰 Reise","🔥 Stark & vielseitig","💪 Mehr Ausstattung"]
+],
+
+verdict:"🔥 Stark für schnelle Outfit-Korrekturen",
+
+finalVerdict:
+"<strong>🔥 Unser Fazit:</strong><br><br>" +
+"Der Tefal Access Steam DR8085 ist ein interessanter Mittelweg zwischen einem kleinen Reise-Steamer und einem leistungsstärkeren Dampfglätter.<br><br>" +
+"<strong>👍 Besonders stark:</strong> 1.500 Watt Leistung, bis zu 24 g/min Dampf, 200-ml-Wassertank und das 3 Meter lange Kabel. Dadurch eignet er sich gut für schnelle Faltenkorrekturen im Alltag.<br><br>" +
+"<strong>💧 Praktisch:</strong> Der Wassertank ist abnehmbar und bietet laut Tefal bis zu 10 Minuten Betriebszeit. Außerdem kann der Dampf für kontinuierliches Arbeiten arretiert werden.<br><br>" +
+"<strong>⚠️ Der wichtigste Punkt:</strong> Mit 45 Sekunden Aufheizzeit ist er nicht der schnellste Reise-Steamer. Außerdem ist das Gerät nicht zusammenklappbar und nimmt dadurch mehr Platz ein.<br><br>" +
+"<strong>🏆 Unsere Einschätzung:</strong> Eine gute Wahl für alle, die häufiger schnell Kleidung glätten möchten und mehr Leistung als bei einem kleinen Reise-Steamer suchen.",
+
+sources:[
+["Tefal – offizielle Produktinformationen zum Access Steam DR8085","https://www.tefal.de/bedienungsanleitungen/waeschepflege/dampfbuersten/accesssteam-dr8085/csp/1830005800"],
+["Tefal – technische Informationen","https://www.tefal.com/Linen-Care/Garment-Steamers/Handheld-Garment-Steamers-/ACCESS-STEAM-/p/1830005800"]
+],
+
+comparisonLink:"technik.html",
+comparisonLinkTitle:"Weitere Technik Finds entdecken?",
+comparisonText:"Vergleiche weitere virale Technik- und Lifestyle-Produkte und finde heraus, welches Produkt wirklich zu dir passt."
 },
-
-
 
 /* ==================================================
    PHILIPS STEAMER 7000
 ================================================== */
 
-"philips-sth7060-80": {
-
-    name:
-    "Philips 7000 Series STH7060/80",
-
-    category:
-    "📱 TECHNIK FIND",
-
-    tag:
-    "💪 28 g/min & HORIZONTAL",
-
-    emoji:
-    "💨",
-
-    image:
-    "Images/philips-sth7060-80-produktbild.png",
-
-
-    heroTitle:
-    "Philips 7000 Series STH7060/80 – lohnt sich der leistungsstärkere Steamer?",
-
-    heroDescription:
-    "28 g/min Dampf, 1.500 Watt und horizontales sowie vertikales Glätten – aber bringt die zusätzliche Ausstattung auch bessere Ergebnisse?",
-
-
-    description:
-    "Der Philips 7000 Series STH7060/80 ist ein leistungsstärkerer Hand-Dampfglätter mit 1.500 Watt und bis zu 28 g/min konstantem Dampfausstoß. Das Gerät besitzt zwei Dampfeinstellungen, einen verstellbaren Kopf sowie zwei austauschbare Wasserbehälter mit 100 und 200 ml. Zusätzlich kann es sowohl vertikal als auch horizontal eingesetzt werden.",
-
-
-    price:
-    "ca. 85 €",
-
-    priceNote:
-    "Mittlerer Onlinepreis laut Stiftung Warentest: 85 € (Stand 11.08.2026). Der tatsächliche Händlerpreis kann abweichen.",
-
-
-    amazon:
-    "https://amzn.to/4zAnQHt",
-
-
-    advantages:[
-
-        "Bis zu 28 g/min konstanter Dampfausstoß",
-
-        "1.500 Watt Leistung",
-
-        "2 Dampfeinstellungen: ECO und MAX",
-
-        "100-ml- und 200-ml-Wasserbehälter im Lieferumfang",
-
-        "Vertikales und horizontales Glätten",
-
-        "Aufheizzeit von rund 30 Sekunden",
-
-        "Verstellbarer Kopf",
-
-        "Zugespitzte Heizplatte für schwer erreichbare Stellen",
-
-        "OptimalTEMP-Technologie",
-
-        "Handschuh im Lieferumfang",
-
-        "Aufbewahrungsbeutel bzw. Matte im Lieferumfang",
-
-        "Kann laut Hersteller entkalkt werden"
-
-    ],
-
-
-    disadvantages:[
-
-        "Nicht zusammenklappbar",
-
-        "Mit rund 1,3 kg deutlich schwerer als kleine Reise-Steamer",
-
-        "Maximales Tankvolumen beträgt 200 ml",
-
-        "Höherer Preis als der Philips 3000",
-
-        "Größer und weniger reisefreundlich als der Philips 3000",
-
-        "Die höhere Dampfleistung garantiert nicht automatisch ein besseres Glättergebnis",
-
-        "Stiftung Warentest bewertete das Modell insgesamt nur mit 'befriedigend'",
-
-        "Im unabhängigen Test wurde die tatsächliche Glättleistung nicht entsprechend der technischen Daten herausgestellt"
-
-    ],
-
-
-    forWho:
-    "Der Philips 7000 ist interessant für Nutzer, die mehr Ausstattung und Flexibilität als bei einem einfachen Reise-Steamer möchten. Besonders sinnvoll ist er, wenn du sowohl vertikal als auch horizontal arbeiten möchtest und zwei Dampfstufen sowie die höhere Dampfleistung nutzen kannst. Für gelegentliche Reisen ist der kleinere Philips 3000 dagegen praktischer.",
-
-
-    comparisonTitle:
-    "⚖️ Philips 7000 im Vergleich",
-
-    comparisonDescription:
-    "Auf dem Papier bietet der Philips 7000 die höchste Dampfleistung der drei Modelle. Gleichzeitig zeigt der Stiftung-Warentest-Test, dass technische Leistungsdaten allein kein Garant für ein überzeugendes Glättergebnis sind.",
-
-
-    comparisonHeaders:[
-
-        "Eigenschaft",
-
-        "Philips 3000",
-
-        "Tefal DR8085",
-
-        "Philips 7000"
-
-    ],
-
-
-    comparisonRows:[
-
-        [
-
-            "Dampfleistung",
-
-            "20 g/min",
-
-            "24 g/min",
-
-            "28 g/min"
-
-        ],
-
-        [
-
-            "Leistung",
-
-            "1.000 W",
-
-            "1.500 W",
-
-            "1.500 W"
-
-        ],
-
-        [
-
-            "Wassertank",
-
-            "120 ml",
-
-            "200 ml",
-
-            "100 + 200 ml"
-
-        ],
-
-        [
-
-            "Aufheizzeit",
-
-            "ca. 30 Sek.",
-
-            "45 Sek.",
-
-            "ca. 30 Sek."
-
-        ],
-
-        [
-
-            "Horizontal",
-
-            "❌",
-
-            "❌",
-
-            "✅"
-
-        ],
-
-        [
-
-            "Vertikal",
-
-            "✅",
-
-            "✅",
-
-            "✅"
-
-        ],
-
-        [
-
-            "Zusammenklappbar",
-
-            "✅",
-
-            "❌",
-
-            "❌"
-
-        ],
-
-        [
-
-            "Dampfstufen",
-
-            "1",
-
-            "1",
-
-            "2: ECO & MAX"
-
-        ],
-
-        [
-
-            "Gewicht",
-
-            "ca. 0,8 kg",
-
-            "ca. 1,1 kg",
-
-            "ca. 1,3 kg"
-
-        ],
-
-        [
-
-            "Besonderheit",
-
-            "💼 Kompakt & faltbar",
-
-            "⚡ 3-m-Kabel",
-
-            "💪 28 g/min + horizontal"
-
-        ],
-
-        [
-
-            "Stiftung Warentest",
-
-            "Getestet",
-
-            "Nicht im Vergleichstest",
-
-            "3,5 – befriedigend"
-
-        ],
-
-        [
-
-            "Unsere Einschätzung",
-
-            "💼 Reise",
-
-            "🔥 Alltag",
-
-            "💪 Ausstattung & Flexibilität"
-
-        ]
-
-    ],
-
-
-    verdict:
-    "💪 Mehr Ausstattung – nicht automatisch besseres Ergebnis",
-
-
-    finalVerdict:
-
-        "<strong>💪 Unser Fazit:</strong><br><br>" +
-
-        "Der Philips 7000 Series STH7060/80 ist auf dem Papier der leistungsstärkste Steamer in unserem Vergleich. Mit 28 g/min Dampf, 1.500 Watt, zwei Dampfstufen und der Möglichkeit zum horizontalen und vertikalen Glätten bietet er deutlich mehr Ausstattung als der Philips 3000.<br><br>" +
-
-        "<strong>👍 Besonders stark:</strong> Die Kombination aus hoher Dampfleistung, zwei austauschbaren Wasserbehältern, verstellbarem Kopf und horizontaler Anwendung macht ihn deutlich flexibler als einen einfachen Reise-Steamer.<br><br>" +
-
-        "<strong>⚠️ Aber:</strong> Mehr Leistung bedeutet nicht automatisch bessere Ergebnisse. Stiftung Warentest testete das Modell 2025 und bewertete es insgesamt mit <strong>3,5 – befriedigend</strong>. Genau deshalb sollte man den Philips 7000 nicht allein anhand der 28 g/min kaufen.<br><br>" +
-
-        "<strong>🏆 Unsere Einschätzung:</strong> Wer mehr Ausstattung und Flexibilität möchte, bekommt mit dem STH7060/80 einen interessanten Steamer. Wer dagegen hauptsächlich einen möglichst kleinen Reise-Steamer sucht, ist mit dem Philips 3000 besser aufgehoben.<br><br>" +
-
-        "<strong>💡 Kurz gesagt:</strong> Technisch stärker als die kleineren Modelle – aber nicht automatisch die bessere Wahl für jeden.",
-
-
-    sources:[
-
-        [
-
-            "Philips – offizielle Informationen zum 7000 Series STH7060/80",
-
-            "https://www.philips.de/a-w/about/news/archive/standard/news/2023/202305-versuni-tragbarer-dampfglaetter.html"
-
-        ],
-
-        [
-
-            "Philips – Support und Zubehör STH7060/80",
-
-            "https://www.philips.de/c-p/STH7060_80/7000-series-handheld-steamer/support"
-
-        ],
-
-        [
-
-            "Stiftung Warentest – Philips 7000 Series STH7060/80, Test 04/2025",
-
-            "https://www.test.de/Steamer-im-Test-Dampf-auf-Knopfdruck-6191834-detail/320000036000%210006/"
-
-        ],
-
-        [
-
-            "Stiftung Warentest – Steamer-Test 2025",
-
-            "https://www.test.de/Steamer-im-Test-Dampf-auf-Knopfdruck-6191834-0/"
-
-        ]
-
-    ],
-
-
-    comparisonLink:
-    "technik.html",
-
-    comparisonLinkTitle:
-    "Weitere Technik Finds entdecken?",
-
-    comparisonText:
-    "Vergleiche den Philips 7000 mit weiteren Dampfglättern und entdecke weitere virale Technik- und Lifestyle-Produkte bei Produktfinder."
-
+"philips-sth7060-80":{
+
+name:"Philips 7000 Series STH7060/80",
+category:"📱 TECHNIK FIND",
+tag:"💪 28 g/min & HORIZONTAL",
+emoji:"💨",
+image:"Images/philips-sth7060-80-produktbild.png",
+
+heroTitle:
+"Philips 7000 Series STH7060/80 – lohnt sich der leistungsstärkere Steamer?",
+
+heroDescription:
+"28 g/min Dampf, 1.500 Watt und horizontales sowie vertikales Glätten – aber bringt die zusätzliche Ausstattung auch bessere Ergebnisse?",
+
+description:
+"Der Philips 7000 Series STH7060/80 ist ein leistungsstärkerer Hand-Dampfglätter mit 1.500 Watt und bis zu 28 g/min konstantem Dampfausstoß. Das Gerät besitzt zwei Dampfeinstellungen, einen verstellbaren Kopf sowie zwei austauschbare Wasserbehälter mit 100 und 200 ml. Zusätzlich kann es sowohl vertikal als auch horizontal eingesetzt werden.",
+
+price:"ca. 85 €",
+priceNote:"Mittlerer Onlinepreis laut Stiftung Warentest: 85 € (Stand 11.08.2026). Der tatsächliche Händlerpreis kann abweichen.",
+amazon:"https://amzn.to/4zAnQHt",
+
+advantages:[
+"Bis zu 28 g/min konstanter Dampfausstoß",
+"1.500 Watt Leistung",
+"2 Dampfeinstellungen: ECO und MAX",
+"100-ml- und 200-ml-Wasserbehälter im Lieferumfang",
+"Vertikales und horizontales Glätten",
+"Aufheizzeit von rund 30 Sekunden",
+"Verstellbarer Kopf",
+"Zugespitzte Heizplatte für schwer erreichbare Stellen",
+"OptimalTEMP-Technologie",
+"Handschuh im Lieferumfang",
+"Aufbewahrungsbeutel bzw. Matte im Lieferumfang",
+"Kann laut Hersteller entkalkt werden"
+],
+
+disadvantages:[
+"Nicht zusammenklappbar",
+"Mit rund 1,3 kg deutlich schwerer als kleine Reise-Steamer",
+"Maximales Tankvolumen beträgt 200 ml",
+"Höherer Preis als der Philips 3000",
+"Größer und weniger reisefreundlich als der Philips 3000",
+"Die höhere Dampfleistung garantiert nicht automatisch ein besseres Glättergebnis",
+"Stiftung Warentest bewertete das Modell insgesamt nur mit 'befriedigend'",
+"Im unabhängigen Test wurde die tatsächliche Glättleistung nicht entsprechend der technischen Daten herausgestellt"
+],
+
+forWho:
+"Der Philips 7000 ist interessant für Nutzer, die mehr Ausstattung und Flexibilität als bei einem einfachen Reise-Steamer möchten. Besonders sinnvoll ist er, wenn du sowohl vertikal als auch horizontal arbeiten möchtest und zwei Dampfstufen sowie die höhere Dampfleistung nutzen kannst. Für gelegentliche Reisen ist der kleinere Philips 3000 dagegen praktischer.",
+
+comparisonTitle:"⚖️ Philips 7000 im Vergleich",
+
+comparisonDescription:
+"Auf dem Papier bietet der Philips 7000 die höchste Dampfleistung der drei Modelle. Gleichzeitig zeigt der Stiftung-Warentest-Test, dass technische Leistungsdaten allein kein Garant für ein überzeugendes Glättergebnis sind.",
+
+comparisonHeaders:["Eigenschaft","Philips 3000","Tefal DR8085","Philips 7000"],
+
+comparisonRows:[
+["Dampfleistung","20 g/min","24 g/min","28 g/min"],
+["Leistung","1.000 W","1.500 W","1.500 W"],
+["Wassertank","120 ml","200 ml","100 + 200 ml"],
+["Aufheizzeit","ca. 30 Sek.","45 Sek.","ca. 30 Sek."],
+["Horizontal","❌","❌","✅"],
+["Vertikal","✅","✅","✅"],
+["Zusammenklappbar","✅","❌","❌"],
+["Dampfstufen","1","1","2: ECO & MAX"],
+["Gewicht","ca. 0,8 kg","ca. 1,1 kg","ca. 1,3 kg"],
+["Besonderheit","💼 Kompakt & faltbar","⚡ 3-m-Kabel","💪 28 g/min + horizontal"],
+["Stiftung Warentest","Getestet","Nicht im Vergleichstest","3,5 – befriedigend"],
+["Unsere Einschätzung","💼 Reise","🔥 Alltag","💪 Ausstattung & Flexibilität"]
+],
+
+verdict:"💪 Mehr Ausstattung – nicht automatisch besseres Ergebnis",
+
+finalVerdict:
+"<strong>💪 Unser Fazit:</strong><br><br>" +
+"Der Philips 7000 Series STH7060/80 ist auf dem Papier der leistungsstärkste Steamer in unserem Vergleich. Mit 28 g/min Dampf, 1.500 Watt, zwei Dampfstufen und der Möglichkeit zum horizontalen und vertikalen Glätten bietet er deutlich mehr Ausstattung als der Philips 3000.<br><br>" +
+"<strong>👍 Besonders stark:</strong> Die Kombination aus hoher Dampfleistung, zwei austauschbaren Wasserbehältern, verstellbarem Kopf und horizontaler Anwendung macht ihn deutlich flexibler als einen einfachen Reise-Steamer.<br><br>" +
+"<strong>⚠️ Aber:</strong> Mehr Leistung bedeutet nicht automatisch bessere Ergebnisse. Stiftung Warentest testete das Modell 2025 und bewertete es insgesamt mit <strong>3,5 – befriedigend</strong>. Genau deshalb sollte man den Philips 7000 nicht allein anhand der 28 g/min kaufen.<br><br>" +
+"<strong>🏆 Unsere Einschätzung:</strong> Wer mehr Ausstattung und Flexibilität möchte, bekommt mit dem STH7060/80 einen interessanten Steamer. Wer dagegen hauptsächlich einen möglichst kleinen Reise-Steamer sucht, ist mit dem Philips 3000 besser aufgehoben.<br><br>" +
+"<strong>💡 Kurz gesagt:</strong> Technisch stärker als die kleineren Modelle – aber nicht automatisch die bessere Wahl für jeden.",
+
+sources:[
+["Philips – offizielle Informationen zum 7000 Series STH7060/80","https://www.philips.de/a-w/about/news/archive/standard/news/2023/202305-versuni-tragbarer-dampfglaetter.html"],
+["Philips – Support und Zubehör STH7060/80","https://www.philips.de/c-p/STH7060_80/7000-series-handheld-steamer/support"],
+["Stiftung Warentest – Philips 7000 Series STH7060/80, Test 04/2025","https://www.test.de/Steamer-im-Test-Dampf-auf-Knopfdruck-6191834-detail/320000036000%210006/"],
+["Stiftung Warentest – Steamer-Test 2025","https://www.test.de/Steamer-im-Test-Dampf-auf-Knopfdruck-6191834-0/"]
+],
+
+comparisonLink:"technik.html",
+comparisonLinkTitle:"Weitere Technik Finds entdecken?",
+comparisonText:"Vergleiche den Philips 7000 mit weiteren Dampfglättern und entdecke weitere virale Technik- und Lifestyle-Produkte bei Produktfinder."
 },
-
-
 
 /* ==================================================
    VIONE CREAMI DELUXE 4ER PACK
@@ -1712,97 +947,57 @@ const products = {
 
 "vione-creami-deluxe-4pack":{
 
-    name:
-    "vione Ersatzbehälter für Ninja CREAMi Deluxe – 4er Pack",
+name:"vione Ersatzbehälter für Ninja CREAMi Deluxe – 4er Pack",
+category:"🏠 ZUHAUSE FIND",
+tag:"PREIS-LEISTUNGS-TIPP",
+emoji:"🍦",
+image:"Images/vione-creami-deluxe-4pack.png",
 
-    category:
-    "🏠 ZUHAUSE FIND",
+heroTitle:
+"vione Ersatzbehälter für Ninja CREAMi Deluxe – lohnt sich das 4er-Set?",
 
-    tag:
-    "PREIS-LEISTUNGS-TIPP",
+heroDescription:
+"Vier zusätzliche Behälter für die Ninja CREAMi Deluxe – praktisch für mehrere vorbereitete Sorten, aber nicht für jeden Nutzer notwendig.",
 
-    emoji:
-    "🍦",
+description:
+"Das vione 4er-Set besteht aus zusätzlichen Pint-Behältern mit Deckeln für die Ninja CREAMi Deluxe. Laut Anbieter sind die Behälter für die NC501- und NC500-Serie vorgesehen, BPA-frei und spülmaschinenfest.",
 
-    image:
-    "Images/vione-creami-deluxe-4pack.png",
+price:"Preis bei Amazon prüfen",
+priceNote:"Preis und Verfügbarkeit können sich jederzeit ändern.",
+amazon:"https://amzn.to/4hEF8gi",
 
-    heroTitle:
-    "vione Ersatzbehälter für Ninja CREAMi Deluxe – lohnt sich das 4er-Set?",
+advantages:[
+"4 zusätzliche Behälter",
+"Ca. 709 ml Fassungsvermögen pro Behälter",
+"BPA-frei laut Anbieter",
+"Spülmaschinenfest laut Anbieter",
+"Farbige Deckel zur einfachen Unterscheidung",
+"Stapelbares Design",
+"Praktisch für mehrere vorbereitete Eissorten",
+"Interessant für Vielnutzer der CREAMi Deluxe"
+],
 
-    heroDescription:
-    "Vier zusätzliche Behälter für die Ninja CREAMi Deluxe – praktisch für mehrere vorbereitete Sorten, aber nicht für jeden Nutzer notwendig.",
+disadvantages:[
+"Kein Original-Ninja-Produkt",
+"Kompatibilität vor dem Kauf prüfen",
+"Für Gelegenheitsnutzer möglicherweise unnötig",
+"Produktangaben zur Kompatibilität sind nicht vollständig eindeutig",
+"Zusätzliche Behälter lösen keine funktionale Einschränkung der CREAMi selbst"
+],
 
-    description:
-    "Das vione 4er-Set besteht aus zusätzlichen Pint-Behältern mit Deckeln für die Ninja CREAMi Deluxe. Laut Anbieter sind die Behälter für die NC501- und NC500-Serie vorgesehen, BPA-frei und spülmaschinenfest.",
+forWho:
+"Das Set lohnt sich vor allem für regelmäßige CREAMi-Deluxe-Nutzer, Familien und alle, die mehrere Eissorten, Sorbets oder andere gefrorene Kreationen gleichzeitig vorbereiten möchten. Wer die Maschine nur selten benutzt, benötigt wahrscheinlich keine vier zusätzlichen Behälter.",
 
-    price:
-    "Preis bei Amazon prüfen",
+verdict:"⭐ Praktisches Zubehör",
+priceLevel:"💰",
 
-    priceNote:
-    "Preis und Verfügbarkeit können sich jederzeit ändern.",
+finalVerdict:
+"<strong>🍦 Unser Fazit:</strong><br><br>Das vione 4er-Set ist vor allem dann interessant, wenn du deine Ninja CREAMi Deluxe regelmäßig nutzt. Vier zusätzliche Behälter ermöglichen es, mehrere Sorten gleichzeitig vorzubereiten und im Gefrierschrank bereitzuhalten.",
 
-    amazon:
-    "https://amzn.to/4hEF8gi",
-
-    advantages:[
-
-        "4 zusätzliche Behälter",
-
-        "Ca. 709 ml Fassungsvermögen pro Behälter",
-
-        "BPA-frei laut Anbieter",
-
-        "Spülmaschinenfest laut Anbieter",
-
-        "Farbige Deckel zur einfachen Unterscheidung",
-
-        "Stapelbares Design",
-
-        "Praktisch für mehrere vorbereitete Eissorten",
-
-        "Interessant für Vielnutzer der CREAMi Deluxe"
-
-    ],
-
-    disadvantages:[
-
-        "Kein Original-Ninja-Produkt",
-
-        "Kompatibilität vor dem Kauf prüfen",
-
-        "Für Gelegenheitsnutzer möglicherweise unnötig",
-
-        "Produktangaben zur Kompatibilität sind nicht vollständig eindeutig",
-
-        "Zusätzliche Behälter lösen keine funktionale Einschränkung der CREAMi selbst"
-
-    ],
-
-    forWho:
-    "Das Set lohnt sich vor allem für regelmäßige CREAMi-Deluxe-Nutzer, Familien und alle, die mehrere Eissorten, Sorbets oder andere gefrorene Kreationen gleichzeitig vorbereiten möchten. Wer die Maschine nur selten benutzt, benötigt wahrscheinlich keine vier zusätzlichen Behälter.",
-
-    verdict:
-    "⭐ Praktisches Zubehör",
-
-    priceLevel:
-    "💰",
-
-    finalVerdict:
-    "<strong>🍦 Unser Fazit:</strong><br><br>Das vione 4er-Set ist vor allem dann interessant, wenn du deine Ninja CREAMi Deluxe regelmäßig nutzt. Vier zusätzliche Behälter ermöglichen es, mehrere Sorten gleichzeitig vorzubereiten und im Gefrierschrank bereitzuhalten.",
-
-    comparisonLink:
-    "zuhause.html",
-
-    comparisonLinkTitle:
-    "Noch mehr Produkte entdecken?",
-
-    comparisonText:
-    "Entdecke weitere Produkte bei Produktfinder und finde heraus, welche viralen Produkte den Hype wirklich wert sind."
-
+comparisonLink:"zuhause.html",
+comparisonLinkTitle:"Noch mehr Produkte entdecken?",
+comparisonText:"Entdecke weitere Produkte bei Produktfinder und finde heraus, welche viralen Produkte den Hype wirklich wert sind."
 },
-
-
 
 /* ==================================================
    NINJA CREAMI DELUXE
@@ -1810,83 +1005,44 @@ const products = {
 
 "ninja-creami-deluxe":{
 
-    name:
-    "Ninja CREAMi Deluxe",
+name:"Ninja CREAMi Deluxe",
+category:"🔥 TIKTOK FIND",
+tag:"PREIS-LEISTUNG",
+emoji:"🍨",
+image:"Images/ninja-creami-deluxe-werbung.png",
 
-    category:
-    "🔥 TIKTOK FIND",
+heroTitle:"Ninja CREAMi Deluxe – lohnt sich der Aufpreis?",
+heroDescription:"Mehr Programme und mehr Möglichkeiten – aber braucht man das wirklich?",
+description:"Mehr Fassungsvermögen und zusätzliche Programme für Nutzer, die besonders vielseitige Desserts zubereiten möchten.",
+price:"ca. 230–300 €",
+priceNote:"Je nach Angebot und Variante.",
+amazon:"https://amzn.to/4wDzpek",
 
-    tag:
-    "PREIS-LEISTUNG",
+advantages:[
+"Größeres Fassungsvermögen",
+"9 Programme",
+"Sehr vielseitig",
+"Re-Spin & Mix-In"
+],
 
-    emoji:
-    "🍨",
+disadvantages:[
+"Höherer Preis",
+"Größeres Gerät"
+],
 
-    image:
-    "Images/ninja-creami-deluxe-werbung.png",
+forWho:
+"Für Nutzer, die regelmäßig verschiedene Desserts ausprobieren und mehr Möglichkeiten benötigen.",
 
-    heroTitle:
-    "Ninja CREAMi Deluxe – lohnt sich der Aufpreis?",
+verdict:"⭐ Vielseitig",
+priceLevel:"💰💰",
 
-    heroDescription:
-    "Mehr Programme und mehr Möglichkeiten – aber braucht man das wirklich?",
+finalVerdict:
+"<strong>⭐ Du möchtest mehr Möglichkeiten?</strong><br><br>Die Deluxe ist interessant, wenn dir die zusätzlichen Funktionen und das größere Fassungsvermögen wichtig sind.",
 
-    description:
-    "Mehr Fassungsvermögen und zusätzliche Programme für Nutzer, die besonders vielseitige Desserts zubereiten möchten.",
-
-    price:
-    "ca. 230–300 €",
-
-    priceNote:
-    "Je nach Angebot und Variante.",
-
-    amazon:
-    "https://amzn.to/4wDzpek",
-
-    advantages:[
-
-        "Größeres Fassungsvermögen",
-
-        "9 Programme",
-
-        "Sehr vielseitig",
-
-        "Re-Spin & Mix-In"
-
-    ],
-
-    disadvantages:[
-
-        "Höherer Preis",
-
-        "Größeres Gerät"
-
-    ],
-
-    forWho:
-    "Für Nutzer, die regelmäßig verschiedene Desserts ausprobieren und mehr Möglichkeiten benötigen.",
-
-    verdict:
-    "⭐ Vielseitig",
-
-    priceLevel:
-    "💰💰",
-
-    finalVerdict:
-    "<strong>⭐ Du möchtest mehr Möglichkeiten?</strong><br><br>Die Deluxe ist interessant, wenn dir die zusätzlichen Funktionen und das größere Fassungsvermögen wichtig sind.",
-
-    comparisonLink:
-    "zuhause.html",
-
-    comparisonLinkTitle:
-    "Weitere Produkte vergleichen?",
-
-    comparisonText:
-    "Vergleiche weitere Eismaschinen und entdecke günstigere Alternativen."
-
+comparisonLink:"zuhause.html",
+comparisonLinkTitle:"Weitere Produkte vergleichen?",
+comparisonText:"Vergleiche weitere Eismaschinen und entdecke günstigere Alternativen."
 },
-
-
 
 /* ==================================================
    NINJA CREAMI SCOOP & SWIRL
@@ -1894,91 +1050,48 @@ const products = {
 
 "ninja-creami-scoop-swirl":{
 
-    name:
-    "Ninja CREAMi Scoop & Swirl",
+name:"Ninja CREAMi Scoop & Swirl",
+category:"🔥 TIKTOK FIND",
+tag:"PREMIUM",
+emoji:"🍦",
+image:"Images/ninja-creami-scoop-swirl-werbung.png",
 
-    category:
-    "🔥 TIKTOK FIND",
+heroTitle:"Ninja CREAMi Scoop & Swirl – Maximum oder übertrieben?",
+heroDescription:"Das umfangreichste Modell der Auswahl mit 13 Programmen inkl. Softeis-Funktion.",
+description:"Das umfangreichste Modell der Auswahl mit 13 Programmen inklusive Softeis-Funktion.",
+price:"ca. 300 €",
+priceNote:"Aktueller Preis kann schwanken.",
+amazon:"https://amzn.to/4xau27s",
 
-    tag:
-    "PREMIUM",
+advantages:[
+"13 Programme",
+"Softeis-Funktion",
+"CREAMiFit",
+"Mix-In",
+"Sehr vielseitig",
+"Mit Aufsätzen erweiterbar"
+],
 
-    emoji:
-    "🍦",
+disadvantages:[
+"Höchster Preis",
+"Nicht jeder benötigt alle Funktionen",
+"Keine Slush Funktion wie beim Creami Deluxe",
+"Keine Frappe oder Frozen Drink Funktion wie beim Creami Deluxe"
+],
 
-    image:
-    "Images/ninja-creami-scoop-swirl-werbung.png",
+forWho:
+"Für Nutzer, die möglichst viele Möglichkeiten haben möchten und besonders die Softeis-Funktion interessant finden und nutzen möchten.",
 
-    heroTitle:
-    "Ninja CREAMi Scoop & Swirl – Maximum oder übertrieben?",
+verdict:"🏆 Maximum",
+priceLevel:"💰💰💰",
 
-    heroDescription:
-    "Das umfangreichste Modell der Auswahl mit 13 Programmen inkl. Softeis-Funktion.",
+finalVerdict:
+"<strong>🏆 Du möchtest möglichst viele Möglichkeiten?</strong><br><br>Dann ist die Scoop & Swirl die umfangreichste Variante der drei Modelle. Sie bietet 13 Programme und zusätzlich eine Softeis-Funktion.",
 
-    description:
-    "Das umfangreichste Modell der Auswahl mit 13 Programmen inklusive Softeis-Funktion.",
-
-    price:
-    "ca. 300 €",
-
-    priceNote:
-    "Aktueller Preis kann schwanken.",
-
-    amazon:
-    "https://amzn.to/4xau27s",
-
-    advantages:[
-
-        "13 Programme",
-
-        "Softeis-Funktion",
-
-        "CREAMiFit",
-
-        "Mix-In",
-
-        "Sehr vielseitig",
-
-        "Mit Aufsätzen erweiterbar"
-
-    ],
-
-    disadvantages:[
-
-        "Höchster Preis",
-
-        "Nicht jeder benötigt alle Funktionen",
-
-        "Keine Slush Funktion wie beim Creami Deluxe",
-
-        "Keine Frappe oder Frozen Drink Funktion wie beim Creami Deluxe"
-
-    ],
-
-    forWho:
-    "Für Nutzer, die möglichst viele Möglichkeiten haben möchten und besonders die Softeis-Funktion interessant finden und nutzen möchten.",
-
-    verdict:
-    "🏆 Maximum",
-
-    priceLevel:
-    "💰💰💰",
-
-    finalVerdict:
-    "<strong>🏆 Du möchtest möglichst viele Möglichkeiten?</strong><br><br>Dann ist die Scoop & Swirl die umfangreichste Variante der drei Modelle. Sie bietet 13 Programme und zusätzlich eine Softeis-Funktion.",
-
-    comparisonLink:
-    "zuhause.html",
-
-    comparisonLinkTitle:
-    "Weitere Produkte vergleichen?",
-
-    comparisonText:
-    "Vergleiche die CREAMi-Modelle und entdecke Alternativen."
-
+comparisonLink:"zuhause.html",
+comparisonLinkTitle:"Weitere Produkte vergleichen?",
+comparisonText:"Vergleiche die CREAMi-Modelle und entdecke Alternativen."
 },
-
-
 
 /* ==================================================
    CUISINART FREEZEWAND
@@ -1986,91 +1099,48 @@ const products = {
 
 "cuisinart-freezewand-icefd10e":{
 
-    name:
-    "Cuisinart FreezeWand ICEFD10E",
+name:"Cuisinart FreezeWand ICEFD10E",
+category:"💰 ALTERNATIVE",
+tag:"PREIS-LEISTUNGS-TIPP",
+emoji:"🍦",
+image:"Images/cuisinart-freezewand-werbung.png",
 
-    category:
-    "💰 ALTERNATIVE",
+heroTitle:"Cuisinart FreezeWand – günstige Alternative zur CREAMi?",
+heroDescription:"Ähnliches Grundprinzip, deutlich günstiger – aber auch mit weniger Möglichkeiten.",
+description:"Der Cuisinart FreezeWand ist eine kompakte 5-in-1-Eismaschine für Eiscreme, Sorbet, Milchshake, Slushie und Softeis.",
+price:"ca. 69 €",
+priceNote:"Preis und Verfügbarkeit können sich ändern.",
+amazon:"https://amzn.to/4gJux2w",
 
-    tag:
-    "PREIS-LEISTUNGS-TIPP",
+advantages:[
+"5-in-1-Eismaschine",
+"Eiscreme, Sorbet, Milchshake, Slushie & Softeis",
+"3 Behälter",
+"Kompaktes Design",
+"Günstiger als viele Ninja-CREAMi-Modelle",
+"Für kleinere Portionen geeignet"
+],
 
-    emoji:
-    "🍦",
+disadvantages:[
+"Kleinere Behälter",
+"Weniger Möglichkeiten als die Ninja CREAMi Deluxe",
+"Nicht das gleiche System wie eine klassische CREAMi",
+"Softeis-Funktion nicht mit der Scoop & Swirl gleichzusetzen"
+],
 
-    image:
-    "Images/cuisinart-freezewand-werbung.png",
+forWho:
+"Für Nutzer, die eine kompakte und vielseitige Eismaschine suchen, aber deutlich weniger als für eine Ninja CREAMi ausgeben möchten.",
 
-    heroTitle:
-    "Cuisinart FreezeWand – günstige Alternative zur CREAMi?",
+verdict:"💰 Preis-Leistungs-Tipp",
+priceLevel:"💰",
 
-    heroDescription:
-    "Ähnliches Grundprinzip, deutlich günstiger – aber auch mit weniger Möglichkeiten.",
+finalVerdict:
+"<strong>💰 Unser Fazit:</strong><br><br>Der Cuisinart FreezeWand ist interessant, wenn du möglichst viele Funktionen möchtest, aber nicht den Preis einer größeren Ninja CREAMi bezahlen willst.",
 
-    description:
-    "Der Cuisinart FreezeWand ist eine kompakte 5-in-1-Eismaschine für Eiscreme, Sorbet, Milchshake, Slushie und Softeis.",
-
-    price:
-    "ca. 69 €",
-
-    priceNote:
-    "Preis und Verfügbarkeit können sich ändern.",
-
-    amazon:
-    "https://amzn.to/4gJux2w",
-
-    advantages:[
-
-        "5-in-1-Eismaschine",
-
-        "Eiscreme, Sorbet, Milchshake, Slushie & Softeis",
-
-        "3 Behälter",
-
-        "Kompaktes Design",
-
-        "Günstiger als viele Ninja-CREAMi-Modelle",
-
-        "Für kleinere Portionen geeignet"
-
-    ],
-
-    disadvantages:[
-
-        "Kleinere Behälter",
-
-        "Weniger Möglichkeiten als die Ninja CREAMi Deluxe",
-
-        "Nicht das gleiche System wie eine klassische CREAMi",
-
-        "Softeis-Funktion nicht mit der Scoop & Swirl gleichzusetzen"
-
-    ],
-
-    forWho:
-    "Für Nutzer, die eine kompakte und vielseitige Eismaschine suchen, aber deutlich weniger als für eine Ninja CREAMi ausgeben möchten.",
-
-    verdict:
-    "💰 Preis-Leistungs-Tipp",
-
-    priceLevel:
-    "💰",
-
-    finalVerdict:
-    "<strong>💰 Unser Fazit:</strong><br><br>Der Cuisinart FreezeWand ist interessant, wenn du möglichst viele Funktionen möchtest, aber nicht den Preis einer größeren Ninja CREAMi bezahlen willst.",
-
-    comparisonLink:
-    "zuhause.html",
-
-    comparisonLinkTitle:
-    "Weitere Produkte vergleichen?",
-
-    comparisonText:
-    "Vergleiche Eismaschinen und entdecke günstigere Alternativen."
-
+comparisonLink:"zuhause.html",
+comparisonLinkTitle:"Weitere Produkte vergleichen?",
+comparisonText:"Vergleiche Eismaschinen und entdecke günstigere Alternativen."
 },
-
-
 
 /* ==================================================
    WMF KÜCHENMINIS 3-IN-1
@@ -2078,89 +1148,47 @@ const products = {
 
 "wmf-kuechenminis-3in1":{
 
-    name:
-    "WMF KÜCHENminis 3-in-1",
+name:"WMF KÜCHENminis 3-in-1",
+category:"💰 ALTERNATIVE",
+tag:"GÜNSTIGE ALTERNATIVE",
+emoji:"🍨",
+image:"Images/wmf-kuechenminis-3in1-werbung.png",
 
-    category:
-    "💰 ALTERNATIVE",
+heroTitle:"WMF KÜCHENminis 3-in-1 – günstig Eis selber machen?",
+heroDescription:"Eine klassische Eismaschine mit anderem Funktionsprinzip als die Ninja CREAMi.",
+description:"Die WMF ist eine kompakte klassische Eismaschine. Der Gefrierbehälter wird vorgekühlt und die Eismasse anschließend während der Zubereitung gerührt.",
+price:"ca. 54–70 €",
+priceNote:"Je nach aktuellem Angebot.",
+amazon:"https://amzn.to/3TZHkFt",
 
-    tag:
-    "GÜNSTIGE ALTERNATIVE",
+advantages:[
+"Eiscreme",
+"Sorbet",
+"Frozen Yogurt",
+"Kompakt",
+"Etablierte Marke"
+],
 
-    emoji:
-    "🍨",
+disadvantages:[
+"Anderes Funktionsprinzip",
+"300-ml-Behälter",
+"Weniger Möglichkeiten als CREAMi",
+"Keine eigene Gefrierfunktion – der Behälter muss vor der Zubereitung eingefroren werden"
+],
 
-    image:
-    "Images/wmf-kuechenminis-3in1-werbung.png",
+forWho:
+"Wenn dir das CREAMi-Prinzip nicht wichtig ist und du einfach selbst kleinere Portionen Eis, Sorbet oder Frozen Yogurt herstellen möchtest, ist die WMF interessant.",
 
-    heroTitle:
-    "WMF KÜCHENminis 3-in-1 – günstig Eis selber machen?",
+verdict:"💰 Günstiger Einstieg",
+priceLevel:"💰",
 
-    heroDescription:
-    "Eine klassische Eismaschine mit anderem Funktionsprinzip als die Ninja CREAMi.",
+finalVerdict:
+"<strong>🍨 Du willst einfach selbst Eis machen?</strong><br><br>Dann kann die WMF interessant sein. Sie funktioniert anders als die Ninja, ist dafür aber kompakt und preislich deutlich niedriger angesiedelt.",
 
-    description:
-    "Die WMF ist eine kompakte klassische Eismaschine. Der Gefrierbehälter wird vorgekühlt und die Eismasse anschließend während der Zubereitung gerührt.",
-
-    price:
-    "ca. 54–70 €",
-
-    priceNote:
-    "Je nach aktuellem Angebot.",
-
-    amazon:
-    "https://amzn.to/3TZHkFt",
-
-    advantages:[
-
-        "Eiscreme",
-
-        "Sorbet",
-
-        "Frozen Yogurt",
-
-        "Kompakt",
-
-        "Etablierte Marke"
-
-    ],
-
-    disadvantages:[
-
-        "Anderes Funktionsprinzip",
-
-        "300-ml-Behälter",
-
-        "Weniger Möglichkeiten als CREAMi",
-
-        "Keine eigene Gefrierfunktion – der Behälter muss vor der Zubereitung eingefroren werden"
-
-    ],
-
-    forWho:
-    "Wenn dir das CREAMi-Prinzip nicht wichtig ist und du einfach selbst kleinere Portionen Eis, Sorbet oder Frozen Yogurt herstellen möchtest, ist die WMF interessant.",
-
-    verdict:
-    "💰 Günstiger Einstieg",
-
-    priceLevel:
-    "💰",
-
-    finalVerdict:
-    "<strong>🍨 Du willst einfach selbst Eis machen?</strong><br><br>Dann kann die WMF interessant sein. Sie funktioniert anders als die Ninja, ist dafür aber kompakt und preislich deutlich niedriger angesiedelt.",
-
-    comparisonLink:
-    "zuhause.html",
-
-    comparisonLinkTitle:
-    "Weitere Produkte vergleichen?",
-
-    comparisonText:
-    "Vergleiche Eismaschinen und entdecke Alternativen."
-
+comparisonLink:"zuhause.html",
+comparisonLinkTitle:"Weitere Produkte vergleichen?",
+comparisonText:"Vergleiche Eismaschinen und entdecke Alternativen."
 },
-
-
 
 /* ==================================================
    PREMIUM JERSEY STOFF
@@ -2168,188 +1196,209 @@ const products = {
 
 "premium-jersey-stoff":{
 
-    name:
-    "Premium Jersey Stoff – 150 cm breit",
+name:"Premium Jersey Stoff – 150 cm breit",
+category:"🏠 ZUHAUSE FIND",
+tag:"🧵 DIY & NÄHEN",
+emoji:"🧵",
+image:"Images/premium-jersey-stoff-neongelb.png",
 
-    category:
-    "🧵 ZUHAUSE FIND",
+heroTitle:
+"Premium Jersey Stoff – ist er die richtige Wahl für dein Nähprojekt?",
 
-    tag:
-    "🧵 DIY & NÄHEN",
+heroDescription:
+"Hochwertiger Baumwolljersey in zahlreichen Farben – interessant für Kleidung, Kinderbekleidung und kreative Nähprojekte.",
 
-    emoji:
-    "🧵",
+description:
+"Der Premium Jersey Stoff ist ein Baumwolljersey mit 150 cm Breite. Laut Anbieter handelt es sich um hochwertigen Baumwolljersey mit OEKO-TEX® 100.",
 
-    image:
-    "Images/premium-jersey-stoff-neongelb.png",
+price:"Preis bei Amazon prüfen",
+priceNote:"Preis abhängig von Länge, Farbe und aktuellem Angebot.",
+amazon:"https://amzn.to/4c7Epk8",
 
-    heroTitle:
-    "Premium Jersey Stoff – ist er die richtige Wahl für dein Nähprojekt?",
+advantages:[
+"150 cm Stoffbreite",
+"100 % Baumwolljersey laut Anbieter",
+"OEKO-TEX® 100 laut Anbieter",
+"Rund 60 Farben zur Auswahl",
+"Viele Einsatzmöglichkeiten",
+"Als Meterware erhältlich"
+],
 
-    heroDescription:
-    "Hochwertiger Baumwolljersey in zahlreichen Farben – interessant für Kleidung, Kinderbekleidung und kreative Nähprojekte.",
+disadvantages:[
+"Preis abhängig von der bestellten Menge",
+"Farbe kann je nach Bildschirm leicht abweichen",
+"Jersey ist nicht für jedes Nähprojekt geeignet",
+"Für besonders feste oder formstabile Projekte kann ein anderer Stoff geeigneter sein"
+],
 
-    description:
-    "Der Premium Jersey Stoff ist ein Baumwolljersey mit 150 cm Breite. Laut Anbieter handelt es sich um hochwertigen Baumwolljersey mit OEKO-TEX® 100.",
+forWho:
+"Der Jersey-Stoff ist besonders interessant für alle, die selbst Kleidung, Kinderbekleidung oder andere textile Projekte nähen möchten.",
 
-    price:
-    "Preis bei Amazon prüfen",
+verdict:"🧵 Interessant für DIY",
+priceLevel:"💰",
 
-    priceNote:
-    "Preis abhängig von Länge, Farbe und aktuellem Angebot.",
+finalVerdict:
+"<strong>🧵 Unser Fazit:</strong><br><br>Der Premium Jersey Stoff ist vor allem für Näh- und DIY-Projekte interessant. Vor dem Kauf solltest du prüfen, welche Stoffeigenschaften dein konkretes Nähprojekt benötigt.",
 
-    amazon:
-    "https://amzn.to/4c7Epk8",
+comparisonLink:"zuhause.html",
+comparisonLinkTitle:"Weitere Produkte für Zuhause entdecken?",
+comparisonText:"Entdecke weitere Produkte für Haushalt, Küche und Zuhause."
+},
 
-    advantages:[
+/* ==================================================
+   EINFA BAUMWOLLSHANDSCHUHE
+================================================== */
 
-        "150 cm Stoffbreite",
+"einfa-baumwollhandschuhe-l":{
 
-        "100 % Baumwolljersey laut Anbieter",
+name:
+"Einfa Baumwollhandschuhe Weiß – 20 Stück (10 Paar) – Größe L",
 
-        "OEKO-TEX® 100 laut Anbieter",
+category:
+"🏠 ZUHAUSE FIND",
 
-        "Rund 60 Farben zur Auswahl",
+tag:
+"🧵 STOFFE & DIY",
 
-        "Viele Einsatzmöglichkeiten",
+emoji:
+"🧤",
 
-        "Als Meterware erhältlich"
+image:
+"Images/baumwoll-handschuhe.png",
 
-    ],
+heroTitle:
+"Einfa Baumwollhandschuhe – sind 10 Paar für Hobby & Alltag sinnvoll?",
 
-    disadvantages:[
+heroDescription:
+"20 weiße Baumwollhandschuhe in Größe L – ein praktisches Vorratspack für verschiedene leichte Anwendungen.",
 
-        "Preis abhängig von der bestellten Menge",
+description:
+"Das Set enthält 20 weiße Baumwollhandschuhe beziehungsweise 10 Paar in Größe L. Laut Produktangebot sind die Handschuhe etwa 25 cm lang und als vielseitig einsetzbare Stoffhandschuhe für verschiedene Anwendungen vorgesehen.",
 
-        "Farbe kann je nach Bildschirm leicht abweichen",
+price:
+"Preis bei Amazon prüfen",
 
-        "Jersey ist nicht für jedes Nähprojekt geeignet",
+priceNote:
+"Preis und Verfügbarkeit können sich jederzeit ändern.",
 
-        "Für besonders feste oder formstabile Projekte kann ein anderer Stoff geeigneter sein"
+amazon:
+"https://amzn.to/4wOsFdK",
 
-    ],
+advantages:[
 
-    forWho:
-    "Der Jersey-Stoff ist besonders interessant für alle, die selbst Kleidung, Kinderbekleidung oder andere textile Projekte nähen möchten.",
+"20 Handschuhe bzw. 10 Paar im Set",
 
-    verdict:
-    "🧵 Interessant für DIY",
+"Größe L",
 
-    priceLevel:
-    "💰",
+"Ca. 25 cm Länge laut Produktangebot",
 
-    finalVerdict:
-    "<strong>🧵 Unser Fazit:</strong><br><br>Der Premium Jersey Stoff ist vor allem für Näh- und DIY-Projekte interessant. Vor dem Kauf solltest du prüfen, welche Stoffeigenschaften dein konkretes Nähprojekt benötigt.",
+"Weiße Ausführung",
 
-    comparisonLink:
-    "zuhause.html",
+"Praktisches Vorratspack",
 
-    comparisonLinkTitle:
-    "Weitere Produkte für Zuhause entdecken?",
+"Für verschiedene leichte Anwendungen geeignet",
 
-    comparisonText:
-    "Entdecke weitere Produkte für Haushalt, Küche und Zuhause."
+"Interessant für Hobby, Handling und weitere Einsatzbereiche"
+
+],
+
+disadvantages:[
+
+"Nicht als Ersatz für spezielle Schutzhandschuhe geeignet",
+
+"Keine Angabe zu einer speziellen Schutzklasse",
+
+"Passform kann je nach Handgröße unterschiedlich ausfallen",
+
+"Für schwere oder gefährliche Arbeiten sollten geeignete zertifizierte Schutzhandschuhe verwendet werden",
+
+"Bei regelmäßigem Einsatz sollte die tatsächliche Haltbarkeit individuell bewertet werden"
+
+],
+
+forWho:
+"Die Baumwollhandschuhe sind vor allem interessant, wenn du mehrere einfache Stoffhandschuhe für Hobby, Handling, leichte Arbeiten oder andere alltägliche Anwendungen benötigst. Durch 10 Paar im Set eignet sich das Produkt besonders als Vorrat. Für Arbeiten mit speziellen mechanischen, chemischen oder thermischen Risiken solltest du dagegen ausdrücklich dafür geeignete Schutzhandschuhe verwenden.",
+
+verdict:
+"🧵 Praktisches Vorratspack",
+
+priceLevel:
+"💰",
+
+finalVerdict:
+"<strong>🧤 Unser Fazit:</strong><br><br>" +
+
+"Die Einfa Baumwollhandschuhe sind kein Spezialprodukt mit besonderen Schutzfunktionen, sondern vor allem ein einfaches Vorratspack für leichte Anwendungen. Mit 20 Handschuhen beziehungsweise 10 Paar und der Größe L bekommst du eine größere Menge, die sich für Hobby, Handling und verschiedene alltägliche Einsatzzwecke eignet.<br><br>" +
+
+"<strong>👍 Besonders interessant:</strong> Die Kombination aus 10 Paar, weißer Ausführung und einer Länge von rund 25 cm macht das Set vielseitig einsetzbar.<br><br>" +
+
+"<strong>⚠️ Wichtig:</strong> Baumwollhandschuhe sollten nicht mit zertifizierten Schutzhandschuhen für gefährliche Arbeiten verwechselt werden. Wenn du Schutz vor Schnittverletzungen, Chemikalien, Hitze oder anderen konkreten Gefahren brauchst, ist ein dafür ausgelegter Handschuh die bessere Wahl.<br><br>" +
+
+"<strong>🏆 Unsere Einschätzung:</strong> Ein günstiges und praktisches Vorratspack für einfache Anwendungen – besonders interessant, wenn du gleich mehrere Paar benötigst.",
+
+sources:[
+
+[
+"Produktangebot – Einfa Baumwollhandschuhe, 20 Stück / 10 Paar, Größe L",
+"https://amzn.to/4wOsFdK"
+],
+
+[
+"Produktvergleich – Angaben zum Einfa-Modell",
+"https://de.which.one/weisse-baumwollhandschuh/"
+]
+
+],
+
+comparisonLink:
+"zuhause.html",
+
+comparisonLinkTitle:
+"Weitere Stoffe & DIY-Produkte entdecken?",
+
+comparisonText:
+"Entdecke weitere Produkte für Haushalt, Stoffe, DIY und Zuhause und finde heraus, welche Produkte wirklich sinnvoll sind."
 
 }
 
 };
 
-
-
 /* ==================================================
    URL AUSLESEN
 ================================================== */
 
-const params =
-new URLSearchParams(
-window.location.search
-);
-
-const productId =
-params.get("id");
-
-const product =
-products[productId];
-
-
+const params = new URLSearchParams(window.location.search);
+const productId = params.get("id");
+const product = products[productId];
 
 /* ==================================================
    ELEMENTE
 ================================================== */
 
-const heroLabel =
-document.getElementById("heroLabel");
-
-const heroTitle =
-document.getElementById("heroTitle");
-
-const heroDescription =
-document.getElementById("heroDescription");
-
-const productImage =
-document.getElementById("productImage");
-
-const productTag =
-document.getElementById("productTag");
-
-const productName =
-document.getElementById("productName");
-
-const productDescription =
-document.getElementById("productDescription");
-
-const productPrice =
-document.getElementById("productPrice");
-
-const amazonButton =
-document.getElementById("amazonButton");
-
-const advantages =
-document.getElementById("advantages");
-
-const disadvantages =
-document.getElementById("disadvantages");
-
-const forWho =
-document.getElementById("forWho");
-
-const finalVerdict =
-document.getElementById("finalVerdict");
-
-const compareLinkSection =
-document.getElementById("compareLinkSection");
-
-const compareLinkTitle =
-document.getElementById("compareLinkTitle");
-
-const compareLinkText =
-document.getElementById("compareLinkText");
-
-const compareLink =
-document.getElementById("compareLink");
-
-const backLink =
-document.getElementById("backLink");
-
-const comparisonSection =
-document.getElementById("comparisonSection");
-
-const comparisonTitle =
-document.getElementById("comparisonTitle");
-
-const comparisonDescription =
-document.getElementById("comparisonDescription");
-
-const comparisonHead =
-document.getElementById("comparisonHead");
-
-const comparisonBody =
-document.getElementById("comparisonBody");
-
-const sourcesList =
-document.getElementById("sourcesList");
-
-
+const heroLabel = document.getElementById("heroLabel");
+const heroTitle = document.getElementById("heroTitle");
+const heroDescription = document.getElementById("heroDescription");
+const productImage = document.getElementById("productImage");
+const productTag = document.getElementById("productTag");
+const productName = document.getElementById("productName");
+const productDescription = document.getElementById("productDescription");
+const productPrice = document.getElementById("productPrice");
+const amazonButton = document.getElementById("amazonButton");
+const advantages = document.getElementById("advantages");
+const disadvantages = document.getElementById("disadvantages");
+const forWho = document.getElementById("forWho");
+const finalVerdict = document.getElementById("finalVerdict");
+const compareLinkSection = document.getElementById("compareLinkSection");
+const compareLinkTitle = document.getElementById("compareLinkTitle");
+const compareLinkText = document.getElementById("compareLinkText");
+const compareLink = document.getElementById("compareLink");
+const backLink = document.getElementById("backLink");
+const comparisonSection = document.getElementById("comparisonSection");
+const comparisonTitle = document.getElementById("comparisonTitle");
+const comparisonDescription = document.getElementById("comparisonDescription");
+const comparisonHead = document.getElementById("comparisonHead");
+const comparisonBody = document.getElementById("comparisonBody");
+const sourcesList = document.getElementById("sourcesList");
 
 /* ==================================================
    PRODUKT NICHT GEFUNDEN
@@ -2395,8 +1444,6 @@ if(!product){
 
 }
 
-
-
 /* ==================================================
    PRODUKT LADEN
 ================================================== */
@@ -2407,10 +1454,8 @@ else{
     product.name +
     " – Produktfinder";
 
-
     heroLabel.textContent =
     product.category;
-
 
     heroTitle.innerHTML =
     product.heroTitle
@@ -2421,11 +1466,8 @@ else{
         "</span>"
     );
 
-
     heroDescription.textContent =
     product.heroDescription;
-
-
 
     /* PRODUKTBILD */
 
@@ -2448,8 +1490,6 @@ else{
 
     }
 
-
-
     /* PRODUKTINFOS */
 
     productTag.textContent =
@@ -2461,73 +1501,48 @@ else{
     productDescription.textContent =
     product.description;
 
-
     productPrice.innerHTML =
     product.price +
-
     "<small>" +
-
     product.priceNote +
-
     "</small>";
-
 
     amazonButton.href =
     product.amazon;
-
-
 
     /* VORTEILE */
 
     advantages.innerHTML =
     product.advantages
-
     .map(
-
         item =>
-
         "<li>✓ " +
         item +
         "</li>"
-
     )
-
     .join("");
-
-
 
     /* NACHTEILE */
 
     disadvantages.innerHTML =
     product.disadvantages
-
     .map(
-
         item =>
-
         "<li>✕ " +
         item +
         "</li>"
-
     )
-
     .join("");
-
-
 
     /* FÜR WEN */
 
     forWho.textContent =
     product.forWho;
 
-
-
     /* FAZIT */
 
     finalVerdict.innerHTML =
     product.finalVerdict;
-
-
 
     /* ==================================================
        ZURÜCK-LINK
@@ -2583,83 +1598,55 @@ else{
 
     }
 
-
-
     /* ==================================================
        VERGLEICHSTABELLE
     ================================================== */
 
     if(
-
         product.comparisonHeaders
-
         &&
-
         product.comparisonRows
-
     ){
 
         comparisonHead.innerHTML =
-
         "<tr>" +
 
         product.comparisonHeaders
-
         .map(
-
             h =>
             "<th>" +
             h +
             "</th>"
-
         )
-
         .join("") +
 
         "</tr>";
 
-
         comparisonBody.innerHTML =
-
         product.comparisonRows
-
         .map(
-
             row =>
-
             "<tr>" +
 
             row
-
             .map(
-
                 cell =>
                 "<td>" +
                 cell +
                 "</td>"
-
             )
-
             .join("") +
 
             "</tr>"
-
         )
-
         .join("");
 
-
         comparisonTitle.textContent =
-
         product.comparisonTitle ||
-
         "🤔 Wie schneidet das Produkt ab?";
 
-
         comparisonDescription.textContent =
-
         product.comparisonDescription ||
-
         "";
 
     }
@@ -2671,8 +1658,6 @@ else{
 
     }
 
-
-
     /* ==================================================
        VERGLEICHSLINK
     ================================================== */
@@ -2682,18 +1667,12 @@ else{
         compareLink.href =
         product.comparisonLink;
 
-
         compareLinkTitle.textContent =
-
         product.comparisonLinkTitle ||
-
         "Du möchtest weitere Modelle vergleichen?";
 
-
         compareLinkText.textContent =
-
         product.comparisonText ||
-
         "Vergleiche weitere Produkte bei Produktfinder.";
 
     }
@@ -2705,8 +1684,6 @@ else{
 
     }
 
-
-
     /* ==================================================
        QUELLEN
     ================================================== */
@@ -2714,13 +1691,9 @@ else{
     if(product.sources){
 
         sourcesList.innerHTML =
-
         product.sources
-
         .map(
-
             source =>
-
             '<li>' +
 
             '<a href="' +
@@ -2732,9 +1705,7 @@ else{
             ' →</a>' +
 
             '</li>'
-
         )
-
         .join("");
 
     }
@@ -2749,7 +1720,6 @@ else{
 }
 
 </script>
-
 
 </body>
 </html>
