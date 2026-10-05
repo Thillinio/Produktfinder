@@ -5482,12 +5482,16 @@ document.getElementById("amazon2Button");
 const amazon3Button =
 document.getElementById("amazon3Button");
 
-const variant1Button =
-document.getElementById("variant1Button");
-
-const variant2Button =
-document.getElementById("variant2Button");
-
+const variant1Button = document.getElementById("variant1Button");
+const variant2Button = document.getElementById("variant2Button");
+const variant3Button = document.getElementById("variant3Button");
+const variant4Button = document.getElementById("variant4Button");
+const variant5Button = document.getElementById("variant5Button");
+const variant6Button = document.getElementById("variant6Button");
+const variant7Button = document.getElementById("variant7Button");
+const variant8Button = document.getElementById("variant8Button");
+const variant9Button = document.getElementById("variant9Button");
+const variant10Button = document.getElementById("variant10Button");
 const variantLabel =
 document.getElementById("variantLabel");
 
@@ -5830,61 +5834,78 @@ else{
 
 
     /* ==================================================
-       MEHRERE FARBVARIANTEN
-    ================================================== */
+   MEHRERE FARBVARIANTEN – BIS ZU 10
+================================================== */
 
-    if(product.variants){
+if(product.variants){
 
-        amazonButton.style.display =
-        "none";
+    amazonButton.style.display =
+    "none";
 
-        productActions.style.display =
-        "flex";
-
-
-        amazon1Button.style.display =
-        "none";
-
-        amazon2Button.style.display =
-        "none";
-
-        amazon3Button.style.display =
-        "none";
+    productActions.style.display =
+    "flex";
 
 
-        variantLabel.textContent =
-        "Variante auswählen:";
+    // Alle Varianten-Buttons
+    const variantButtons = [
+        variant1Button,
+        variant2Button,
+        variant3Button,
+        variant4Button,
+        variant5Button,
+        variant6Button,
+        variant7Button,
+        variant8Button,
+        variant9Button,
+        variant10Button
+    ];
 
 
-        product.variants.forEach(
-            (variant,index) => {
+    // Zuerst ALLE Buttons ausblenden
+    variantButtons.forEach(button => {
 
-                const button =
-                index === 0
-                ? variant1Button
-                : variant2Button;
+        if(button){
 
+            button.style.display =
+            "none";
 
-                if(button){
+        }
 
-                    button.style.display =
-                    "block";
+    });
 
 
-                    button.href =
-                    variant.url;
+    variantLabel.textContent =
+    "Variante auswählen:";
 
 
-                    button.textContent =
-                    variant.label +
-                    " bei Amazon ansehen →";
+    // Nur vorhandene Varianten anzeigen
+    product.variants.forEach(
+        (variant,index) => {
 
-                }
+            if(index >= 10) return;
+
+            const button =
+            variantButtons[index];
+
+
+            if(button){
+
+                button.style.display =
+                "block";
+
+                button.href =
+                variant.url;
+
+                button.textContent =
+                variant.label +
+                " bei Amazon ansehen →";
 
             }
-        );
 
-    }
+        }
+    );
+
+}
 
 
     /* ==================================================
